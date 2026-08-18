@@ -54,6 +54,12 @@ def kaydet(yol, veri):
 def kucuk(s):  # Türkçe duyarlı küçültme
     return s.replace("I","ı").replace("İ","i").lower()
 
+def temizle(s):
+    """Gelen metin siteye gömülüyor: etiket açma/kapama ve kontrol karakterlerini at."""
+    s = s.replace("<", " ").replace(">", " ").replace("\u2028", " ").replace("\u2029", " ")
+    s = "".join(c for c in s if unicodedata.category(c)[0] != "C" or c in "\n\t")
+    return re.sub(r"[ \t]+", " ", s).strip()
+
 def graph(yol, params, token):
     params = dict(params); params["access_token"] = token
     url = f"https://graph.facebook.com/v21.0/{yol}?" + urllib.parse.urlencode(params)
@@ -91,7 +97,7 @@ def ayikla(metin):
         m = re.search(kalip, d)
         if m: baslik = m.group(1 if m.lastindex else 0).strip(); break
     return {
-        "baslik": (baslik[:60].strip().capitalize() or "İş ilanı"),
+        "baslik": (temizle(baslik)[:60].strip().capitalize() or "İş ilanı"),
         "ilce": ilce, "semt": semt or ilce, "calisma": calisma,
         "vardiya": "Vardiyalı" if "vardiya" in d else ("Akşam" if re.search(r"akşam|gece", d) else "Gündüz"),
         "kategori": "genel",
@@ -125,7 +131,7 @@ def main():
                 red.append({"mesaj_id": mid, "gerekce": "konum belirlenemedi", "tarih": m["created_time"], "ozet": metin[:160]})
                 continue
             durum["son_kod"] += 1
-            alan.update({"kod": f"A-{durum['son_kod']}", "aciklama": re.sub(r"\s+", " ", metin)[:400],
+            alan.update({"kod": f"A-{durum['son_kod']}", "aciklama": temizle(metin)[:400],
                          "kaynak": "facebook-mesaj", "tarih": m["created_time"][:10]})
             yeni.append(alan)
 

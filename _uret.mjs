@@ -9,9 +9,13 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const KOK = path.dirname(fileURLToPath(import.meta.url));
-const SITE = 'https://ankaraisilanlari.com.tr';
+/* Alan adı alınınca tek satır değişir: SITE_URL ortam değişkeni ya da buradaki varsayılan.
+   Canonical adresin yayında olmayan bir alan adını göstermesi indekslemeyi engeller. */
+const SITE = process.env.SITE_URL || 'https://isilanlari.vercel.app';
 const oku = p => fs.readFileSync(path.join(KOK,p),'utf8');
 const yaz = (p,s) => { fs.mkdirSync(path.dirname(path.join(KOK,p)),{recursive:true}); fs.writeFileSync(path.join(KOK,p),s); };
+/* JSON-LD gövdesi kullanıcıdan gelen metin taşıyabilir: script kapatmasını ve satır ayırıcıları etkisizleştir */
+const ldGuvenli = o => JSON.stringify(o).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
 const kac = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const duz = s => String(s).replace(/<[^>]+>/g,'');
 const TR = {'ç':'c','Ç':'c','ğ':'g','Ğ':'g','ı':'i','I':'i','İ':'i','ö':'o','Ö':'o','ş':'s','Ş':'s','ü':'u','Ü':'u'};
@@ -59,7 +63,7 @@ const kafa = (baslik,aciklama,kanonik,ld=[],k='') => `<!doctype html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${k}stil.css">
-${ld.map(x=>`<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}
+${ld.map(x=>`<script type="application/ld+json">${ldGuvenli(x)}</script>`).join('\n')}
 </head>`;
 
 const menu = (aktif,k='') => `
