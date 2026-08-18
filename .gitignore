@@ -1,0 +1,6 @@
+_kontrol/
+veri/_toplama_durumu.json
+veri/_reddedilenler.json
+veri/_aday_kuyrugu.json
+.DS_Store
+node_modules/

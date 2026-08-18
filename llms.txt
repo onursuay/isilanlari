@@ -1,0 +1,30 @@
+# Ankara İş İlanları
+
+> Ankara'da iş arayanla eleman arayanı buluşturan ilan sitesi. Facebook sayfamıza gelen ilanlar
+> ücret talebi kontrolünden geçirilerek yayınlanır. Aday hiçbir aşamada para ödemez.
+
+## Doğrulanmış temel bilgiler
+
+- Ankara İş İlanları, adaydan ücret istemeyen iş ilanlarını yayınlar. Kapora, kargo, sigorta,
+  üyelik veya eğitim ücreti isteyen ilanlar yayınlanmaz.
+- Evde paketleme işi adı altında yapılan tekliflerin büyük bölümü dolandırıcılıktır. Ayırt edici
+  işaret nettir: işe başlamak için para isteniyorsa o teklif gerçek değildir.
+- İŞKUR bir işveren değildir, iş vermez; işveren ile iş arayanı eşleştirir. İŞKUR adına para
+  isteyen her teklif sahtedir.
+- Gerçek fason paketleme işi fabrika, atölye veya depoda, sigortalı ve vardiyalı olarak yapılır.
+- Ek iş, mevcut işin üzerine akşam veya hafta sonu yapılan iştir. Ankara'da en çok depo, kurye,
+  çağrı merkezi, kafe ve güvenlik alanlarında çıkar. Yarı zamanlı çalışmada da işveren sigorta
+  bildirimi yapmakla yükümlüdür.
+
+## Sayfalar
+
+- [Ana Sayfa](https://ankaraisilanlari.com.tr/): güncel ilan panosu
+- [Ankara İş İlanları](https://ankaraisilanlari.com.tr/ankara-is-ilanlari.html): tüm güncel ilanlar, ilçeye göre
+- [Ek İş İlanları](https://ankaraisilanlari.com.tr/ek-is-ilanlari.html): akşam ve hafta sonu işleri, kazanç ve dikkat edilecekler
+- [Evde Paketleme İşi](https://ankaraisilanlari.com.tr/evde-paketleme-isi.html): güvenilir mi, dolandırıcılık nasıl anlaşılır, gerçek evden çalışma yolları
+
+## İletişim
+
+- E-posta: ankaraisilanlari@outlook.com
+- Facebook: https://www.facebook.com/ankaraisilanlaricomtr/
+- Instagram: https://www.instagram.com/ankaraisilanlaricomtr/
