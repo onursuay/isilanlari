@@ -1,13 +1,20 @@
 {
   "guncelleme": "2026-08-19",
   "ilanlar": [
-    {"kod":"A-1482","baslik":"Market reyon görevlisi","ilce":"Keçiören","semt":"İncirli","calisma":"Tam zamanlı","vardiya":"Gündüz","kategori":"magaza","sigorta":true,"tecrube":false,"aciklama":"Keçiören İncirli'de market reyon düzeni ve müşteri karşılama işini yapacak personel aranıyor. Sigortalı çalışma, hafta içi gündüz vardiyası.","kaynak":"facebook-mesaj","tarih":"2026-08-19"},
-    {"kod":"A-1481","baslik":"Otel ön büro görevlisi","ilce":"Çankaya","semt":"Kızılay","calisma":"Tam zamanlı","vardiya":"Vardiyalı","kategori":"turizm","sigorta":true,"tecrube":false,"aciklama":"Kızılay'daki otelin ön bürosunda misafir karşılama ve rezervasyon işini yürütecek personel aranıyor. Tecrübe şart değil, yetiştirilerek işe alınır.","kaynak":"facebook-mesaj","tarih":"2026-08-19"},
-    {"kod":"A-1480","baslik":"Depo ayrıştırma elemanı","ilce":"Sincan","semt":"Organize Sanayi","calisma":"Yarı zamanlı","vardiya":"Akşam","kategori":"depo","sigorta":true,"tecrube":false,"aciklama":"Kargo deposunda paket ayrıştırma ve etiketleme işi. Akşam 18.00 – 23.00 arası, hafta içi. Ek iş arayanlar için uygun.","kaynak":"facebook-mesaj","tarih":"2026-08-18"},
-    {"kod":"A-1479","baslik":"Kafe servis elemanı","ilce":"Çankaya","semt":"Bahçelievler","calisma":"Part time","vardiya":"Hafta sonu","kategori":"yeme-icme","sigorta":true,"tecrube":false,"aciklama":"Bahçelievler'deki kafede servis ve kasa işini yapacak personel aranıyor. Hafta sonu vardiyası, öğrencilere uygun.","kaynak":"facebook-mesaj","tarih":"2026-08-18"},
-    {"kod":"A-1478","baslik":"Temizlik personeli","ilce":"Yenimahalle","semt":"Batıkent","calisma":"Tam zamanlı","vardiya":"Gündüz","kategori":"temizlik","sigorta":true,"tecrube":false,"aciklama":"Batıkent'teki iş merkezinde genel temizlik işi. Servis ve yemek işveren tarafından karşılanır.","kaynak":"facebook-mesaj","tarih":"2026-08-17"},
-    {"kod":"A-1477","baslik":"Motokurye","ilce":"Çankaya","semt":"Çukurambar","calisma":"Yarı zamanlı","vardiya":"Akşam","kategori":"kurye","sigorta":true,"tecrube":true,"aciklama":"Çukurambar çevresinde akşam saatlerinde paket dağıtımı. A2 ehliyet ve kendi motosikleti olanlar tercih edilir.","kaynak":"facebook-mesaj","tarih":"2026-08-17"},
-    {"kod":"A-1476","baslik":"Üretim ve paketleme elemanı","ilce":"Yenimahalle","semt":"Ostim","calisma":"Tam zamanlı","vardiya":"Gündüz","kategori":"uretim","sigorta":true,"tecrube":false,"aciklama":"Ostim'deki üretim tesisinde bant üzerinde paketleme ve kalite kontrol işi. Sigortalı, servisli çalışma. İş yerinde yapılır, eve iş verilmez.","kaynak":"facebook-mesaj","tarih":"2026-08-16"},
-    {"kod":"A-1475","baslik":"Çağrı merkezi müşteri temsilcisi","ilce":"Çankaya","semt":"Balgat","calisma":"Yarı zamanlı","vardiya":"Vardiyalı","kategori":"cagri-merkezi","sigorta":true,"tecrube":false,"aciklama":"Balgat'taki çağrı merkezinde gelen çağrıları karşılayacak yarı zamanlı temsilci aranıyor. Vardiya seçimi ders programına göre yapılabilir.","kaynak":"facebook-mesaj","tarih":"2026-08-16"}
+    {
+      "kod": "A-1483",
+      "baslik": "Fabrikada kutulama görevlisi",
+      "ilce": "Mamak",
+      "semt": "Servis güzergâhı: Mamak, Yeşilbayır, Zerdalitepe, Boğaziçi",
+      "calisma": "Tam zamanlı",
+      "vardiya": "Gündüz",
+      "kategori": "uretim",
+      "sigorta": true,
+      "tecrube": false,
+      "ucret": "İşveren beyanı: 33.000 TL",
+      "aciklama": "Fabrikanın kutulama bölümünde çalışacak personel aranıyor. Çalışma saatleri 08.00 – 16.00, pazar günleri tatil. Sigorta, yemek ve servis işveren tarafından karşılanıyor. Servis güzergâhı Mamak Belediyesi çevresi, Yeşilbayır, Zerdalitepe, Boğaziçi ve İkea çevresini kapsıyor.",
+      "kaynak": "facebook-mesaj",
+      "tarih": "2026-08-04"
+    }
   ]
 }

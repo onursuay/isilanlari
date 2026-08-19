@@ -449,6 +449,7 @@ ${menu('guncel','../')}
         <li><strong>Vardiya:</strong> ${kac(i.vardiya)}</li>
         <li><strong>Sigorta:</strong> ${i.sigorta?'İşveren tarafından yapılır':'İlanda belirtilmemiş'}</li>
         <li><strong>Tecrübe:</strong> ${i.tecrube?'Tecrübeli aday aranıyor':'Şart değil'}</li>
+${i.ucret?`        <li><strong>Ücret:</strong> ${kac(i.ucret)}</li>`:''}
         <li><strong>İlan kodu:</strong> ${kac(i.kod)}</li>
       </ul>
     </div>
