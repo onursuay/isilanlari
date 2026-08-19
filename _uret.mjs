@@ -164,6 +164,14 @@ const ORG = {'@context':'https://schema.org','@type':'Organization',name:'Ankara
 const yolIzi = (parcalar) => ({'@context':'https://schema.org','@type':'BreadcrumbList',
   itemListElement:parcalar.map((p,n)=>({'@type':'ListItem',position:n+1,name:p.ad,item:`${SITE}/${p.yol}`}))});
 
+/* her kategoriden dönüşümlü seçerek ana sayfada tek kategori yığılmasını önle */
+const sonYazilar = (() => {
+  const grup = Object.keys(KATEGORI).map(k => yazi.filter(y=>y.kategori===k).sort((a,b)=>b.tarih.localeCompare(a.tarih)));
+  const cikti = [];
+  for (let n=0; cikti.length<3 && n<5; n++) for (const g of grup) if (g[n] && cikti.length<3) cikti.push(g[n]);
+  return cikti;
+})();
+
 /* ——— 1. ANA SAYFA ——— */
 {
   const secilen = ilanlar.slice(0,5);
@@ -178,7 +186,7 @@ ${menu('ana')}
     <div class="hero-tez">
       <p class="ustbaslik">Ankara · güncel ilan panosu</p>
       <h1 class="gorsel-baslik">Ankara'da iş bulun,<br><span class="vurgu-cizgi">dolandırılmadan.</span></h1>
-      <p class="giris" style="margin-top:1.4rem">Facebook sayfamıza her gün iş ilanı geliyor. Hepsini tek tek okuyoruz; sizden kapora, kargo ya da üyelik ücreti isteyen ilanları yayınlamıyoruz. Kalanı burada, Instagram'da ve Facebook sayfamızda paylaşıyoruz.</p>
+      <p class="giris" style="margin-top:1.05rem">Facebook sayfamıza her gün iş ilanı geliyor. Hepsini tek tek okuyoruz; sizden kapora, kargo ya da üyelik ücreti isteyen ilanları yayınlamıyoruz. Kalanı burada, Instagram'da ve Facebook sayfamızda paylaşıyoruz.</p>
       <div style="display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.5rem">
         <a class="dugme" href="guncel-ilanlar.html">Güncel ilanlara bakın</a>
         <a class="dugme dugme-vurgu" href="mailto:ankaraisilanlari@outlook.com?subject=${encodeURIComponent('İlan vermek istiyorum')}">Eleman arıyorum</a>
@@ -232,7 +240,7 @@ ${secilen.map((i,n)=>satir(i,0.05+n*0.07)).join('\n')}
     <div>
       <p class="ustbaslik">Yayın kuralımız</p>
       <h2 class="gorsel-baslik">Sizden para isteyen ilanı yayınlamıyoruz</h2>
-      <p style="margin-top:1.2rem">Ankara'da iş arayan en çok iki soruyu soruyor: “Bu ilan gerçek mi?” ve “Para isterlerse ne olacak?” Bu yüzden panoya giren her ilan aynı kontrolden geçiyor. Kural basit: işe girmek için sizden para isteniyorsa o ilan yayınlanmaz.</p>
+      <p style="margin-top:.9rem">Ankara'da iş arayan en çok iki soruyu soruyor: “Bu ilan gerçek mi?” ve “Para isterlerse ne olacak?” Bu yüzden panoya giren her ilan aynı kontrolden geçiyor. Kural basit: işe girmek için sizden para isteniyorsa o ilan yayınlanmaz.</p>
       <p>İşveren tarafında da karşılığı var. İlanınız burada, Instagram'da ve Facebook sayfamızda aynı gün yayınlanıyor.</p>
     </div>
     <div class="uyari-blok">
@@ -243,7 +251,7 @@ ${secilen.map((i,n)=>satir(i,0.05+n*0.07)).join('\n')}
         <li><span class="im im-hayir" aria-hidden="true">✕</span> Kimlik fotokopisi ve IBAN isteyip iş sözü verenler</li>
         <li><span class="im im-hayir" aria-hidden="true">✕</span> “Sermayesiz yüksek kazanç” diyenler</li>
       </ul>
-      <h3 style="margin-top:1.6rem">Panoya alınan ilanlar</h3>
+      <h3 style="margin-top:1.2rem">Panoya alınan ilanlar</h3>
       <ul class="liste-kontrol">
         <li><span class="im im-evet" aria-hidden="true">✓</span> İşveren arıyor, aday para ödemiyor</li>
         <li><span class="im im-evet" aria-hidden="true">✓</span> İşin yeri, saati ve şartları belli</li>
@@ -257,7 +265,7 @@ ${secilen.map((i,n)=>satir(i,0.05+n*0.07)).join('\n')}
   <div class="kap">
     <div class="bolum-bas"><h2 class="gorsel-baslik">Son yazılar</h2><p>Ek iş ve evde paketleme konusunda düzenli olarak rehber yayınlıyoruz.</p></div>
     <div class="izgara-3">
-${yazi.slice(0,3).map(y=>yaziKart(y)).join('\n')}
+${sonYazilar.map(y=>yaziKart(y)).join('\n')}
     </div>
   </div>
 </section>
@@ -283,8 +291,8 @@ ${menu('guncel')}
   <div class="kap">
     <p class="ustbaslik">Pano · son güncelleme ${trTarih(bugun)}</p>
     <h1 class="gorsel-baslik" style="max-width:20ch">Ankara'da <span class="vurgu-cizgi">${ilanlar.length} güncel ilan</span></h1>
-    <p class="giris" style="margin-top:1.4rem; max-width:72ch">Bu sayfadaki ilanlar Facebook sayfamıza gelen taleplerden derleniyor. Aday hiçbir aşamada para ödemez; kapora, kargo ya da üyelik ücreti isteyen ilanlar panoya girmez. Başvuru doğrudan işverene gider.</p>
-    <div class="etiketler" style="margin-top:1.5rem">${ilceler.map(s=>`<span class="etiket">${kac(s)}</span>`).join(' ')}</div>
+    <p class="giris" style="margin-top:1.05rem; max-width:72ch">Bu sayfadaki ilanlar Facebook sayfamıza gelen taleplerden derleniyor. Aday hiçbir aşamada para ödemez; kapora, kargo ya da üyelik ücreti isteyen ilanlar panoya girmez. Başvuru doğrudan işverene gider.</p>
+    <div class="etiketler" style="margin-top:1.1rem">${ilceler.map(s=>`<span class="etiket">${kac(s)}</span>`).join(' ')}</div>
   </div>
 </section>
 
@@ -305,7 +313,7 @@ ${ilanlar.map((i,n)=>satir(i,0.04+Math.min(n,8)*0.05)).join('\n')}
     <div>
       <p class="ustbaslik">Başvurmadan önce</p>
       <h2 class="gorsel-baslik">İlanı üç soruyla tartın</h2>
-      <p style="margin-top:1.2rem"><strong>Para isteniyor mu?</strong> İşe girmek için ödeme yapılmaz. İstenirse başvurmayın ve bize bildirin.</p>
+      <p style="margin-top:.9rem"><strong>Para isteniyor mu?</strong> İşe girmek için ödeme yapılmaz. İstenirse başvurmayın ve bize bildirin.</p>
       <p><strong>Yer ve saat belli mi?</strong> Çalışma yeri, vardiya ve ücret işe başlamadan netleşmeli.</p>
       <p><strong>Sigorta var mı?</strong> Yarı zamanlı çalışmada da işveren sigorta bildirimi yapmakla yükümlüdür.</p>
     </div>
@@ -340,7 +348,7 @@ ${menu(anahtar)}
   <div class="kap">
     <p class="ustbaslik">${kac(k.ad)} · ${kendi.length} yazı</p>
     <h1 class="gorsel-baslik" style="max-width:18ch">${k.girisBaslik}</h1>
-    <p class="giris" style="margin-top:1.4rem; max-width:74ch">${k.giris}</p>
+    <p class="giris" style="margin-top:1.05rem; max-width:74ch">${k.giris}</p>
   </div>
 </section>
 
@@ -378,22 +386,22 @@ ${menu(y.kategori,'../')}
   <div class="kap" style="max-width:820px">
     <p class="ustbaslik"><a href="../${k.dosya}" style="text-decoration:none">${kac(k.ad)}</a> · ${trTarih(y.tarih)} · ${y.okuma} dakikalık okuma</p>
     <h1 class="gorsel-baslik">${kac(y.baslik)}</h1>
-    <p class="giris" style="margin-top:1.4rem">${kac(y.ozet)}</p>
+    <p class="giris" style="margin-top:1.05rem">${kac(y.ozet)}</p>
   </div>
 </section>
 
 <section class="bolum">
   <div class="kap" style="max-width:820px">
-${y.bolumler.map(b=>`    <h2 class="gorsel-baslik" style="font-size:clamp(1.5rem,2.4vw,2rem); margin-top:2.2rem">${kac(b.h)}</h2>
+${y.bolumler.map(b=>`    <h2 class="gorsel-baslik" style="font-size:clamp(1.45rem,2.2vw,1.85rem); margin-top:1.7rem; margin-bottom:.6rem">${kac(b.h)}</h2>
 ${b.p.map(p=>`    <p>${p}</p>`).join('\n')}`).join('\n')}
-    <div class="uyari-blok" style="margin-top:2.5rem">
+    <div class="uyari-blok" style="margin-top:1.8rem">
       <h3>Kısaca</h3>
       <ul class="liste-kontrol">
         <li><span class="im im-evet" aria-hidden="true">✓</span> Gerçek işveren, işe alacağı kişiden para istemez.</li>
         <li><span class="im im-evet" aria-hidden="true">✓</span> Çalışma yeri, saati ve ücreti işe başlamadan yazılı hale gelmeli.</li>
         <li><span class="im im-hayir" aria-hidden="true">✕</span> Kimlik ve IBAN bilgisi görüşme öncesi paylaşılmaz.</li>
       </ul>
-      <a class="dugme dugme-vurgu" href="../guncel-ilanlar.html" style="margin-top:1.2rem">Güncel ilanlara bakın</a>
+      <a class="dugme dugme-vurgu" href="../guncel-ilanlar.html" style="margin-top:.9rem">Güncel ilanlara bakın</a>
     </div>
   </div>
 </section>
