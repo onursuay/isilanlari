@@ -13,7 +13,7 @@
   --uyari:#B8342A;        /* sahte ilan uyarısı */
 
   --olcu-1:.5rem; --olcu-2:1rem; --olcu-3:1.5rem; --olcu-4:2rem;
-  --bolum:4px;            /* iki bölüm arası toplam 8px — Owner kuralı */      /* bölüm dikey dolgusu — dar tutulur */
+  --bolum:16px;           /* iki bölüm arası toplam 32px — 8px fazla dardı, 68px fazla açıktı */      /* bölüm dikey dolgusu — dar tutulur */
   --bas-ara:clamp(18px,2vw,26px);  /* bölüm başlığı ile içeriği arası */
   --izgara:24px;                     /* kart ızgarası boşluğu */
   --en:1220px;
@@ -74,7 +74,7 @@ p{margin:0 0 var(--olcu-2); max-width:none}
 .dugme-vurgu:hover{background:#ffd42e}
 
 /* ——— hero ——— */
-.hero{padding:20px 0 var(--bolum); border-bottom:1px solid var(--hat)}
+.hero{padding:28px 0 24px; border-bottom:1px solid var(--hat)}
 .hero-izgara{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--izgara); align-items:start}
 .hero-tez p{max-width:52ch}
 .vurgu-cizgi{display:inline-block; background:linear-gradient(to top, rgba(245,197,24,.6) .3em, transparent .3em)}
