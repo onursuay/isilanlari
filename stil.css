@@ -41,6 +41,7 @@ a{color:inherit}
 }
 h1.gorsel-baslik{font-size:clamp(2.3rem,5.1vw,3.9rem); text-wrap:balance}
 h2.gorsel-baslik{font-size:clamp(1.9rem,3.6vw,2.9rem); line-height:1.03}
+h2.kart-bas{font-family:"Archivo",sans-serif; font-weight:700; letter-spacing:-.02em; font-size:1.22rem; margin:0 0 var(--olcu-1)}
 h3{font-family:"Archivo",sans-serif; font-weight:700; letter-spacing:-.02em; font-size:1.22rem; margin:0 0 var(--olcu-1)}
 p{margin:0 0 var(--olcu-2); max-width:none}
 .kod{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase}

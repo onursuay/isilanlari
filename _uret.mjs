@@ -42,18 +42,20 @@ const KATEGORI = {
 };
 
 /* ——— ortak parçalar ——— */
+const kisalt = (t,n) => { t=String(t).trim(); if(t.length<=n) return t;
+  const kes=t.slice(0,n); const bos=kes.lastIndexOf(' '); return (bos>n*0.6?kes.slice(0,bos):kes).replace(/[.,;:]$/,'')+'…'; };
 const kafa = (baslik,aciklama,kanonik,ld=[],k='') => `<!doctype html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${kac(baslik)}</title>
-<meta name="description" content="${kac(aciklama)}">
+<title>${kac(kisalt(baslik,60))}</title>
+<meta name="description" content="${kac(kisalt(aciklama,155))}">
 <link rel="canonical" href="${kanonik}">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta property="og:site_name" content="Ankara İş İlanları">
 <meta property="og:title" content="${kac(baslik)}">
-<meta property="og:description" content="${kac(aciklama)}">
+<meta property="og:description" content="${kac(kisalt(aciklama,155))}">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="${kanonik}">
 <meta name="twitter:card" content="summary">
@@ -429,7 +431,7 @@ for (const i of ilanlar) {
       directApply:false,inLanguage:'tr-TR',
       identifier:{'@type':'PropertyValue',name:'Ankara İş İlanları',value:i.kod}},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Güncel İlanlar',yol:'guncel-ilanlar.html'},{ad:i.baslik,yol:ilanYol(i)}])];
-  const govde=`${kafa(`${i.baslik} — ${i.ilce}, Ankara | ${i.calisma} İş İlanı`,
+  const govde=`${kafa(`${i.baslik} — ${i.ilce}, Ankara`,
     `${i.ilce} ${i.semt} bölgesinde ${i.calisma.toLowerCase()} ${i.baslik.toLowerCase()} ilanı. ${i.sigorta?'Sigortalı çalışma. ':''}Aday para ödemez.`,
     `${SITE}/${ilanYol(i)}`, ld, '../')}
 <body>
@@ -450,7 +452,7 @@ ${menu('guncel','../')}
 <section class="bolum">
   <div class="kap izgara-2">
     <div class="kart">
-      <h3>İlan bilgileri</h3>
+      <h2 class="kart-bas">İlan bilgileri</h2>
       <ul class="alt-liste" style="margin-top:.6rem">
         <li><strong>Konum:</strong> ${kac(i.semt)}, ${kac(i.ilce)} / Ankara</li>
         <li><strong>Çalışma şekli:</strong> ${kac(i.calisma)}</li>
@@ -462,7 +464,7 @@ ${i.ucret?`        <li><strong>Ücret:</strong> ${kac(i.ucret)}</li>`:''}
       </ul>
     </div>
     <div class="uyari-blok">
-      <h3>Başvuru güvenliği</h3>
+      <h2 class="kart-bas">Başvuru güvenliği</h2>
       <p>Bu ilan ücret talebi kontrolünden geçti. İşe girmek için sizden kapora, kargo, üyelik ya da eğitim ücreti istenmez.</p>
       <ul class="liste-kontrol">
         <li><span class="im im-evet" aria-hidden="true">✓</span> Başvuru doğrudan işverene gider</li>

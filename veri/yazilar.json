@@ -1,107 +1,541 @@
 {
-  "yazilar": [
+ "yazilar": [
+  {
+   "slug": "evde-paketleme-isi-guvenilir-mi",
+   "kategori": "evde-paketleme-isi",
+   "baslik": "Evde paketleme işi güvenilir mi?",
+   "ozet": "Tek cümlelik cevap: işe başlamak için sizden para isteniyorsa o iş gerçek değildir. Sahte teklifin dört işaretini ve gerçek fason paketlemenin nasıl yürüdüğünü anlattık.",
+   "tarih": "2026-08-19",
+   "okuma": 6,
+   "bolumler": [
     {
-      "slug": "evde-paketleme-isi-guvenilir-mi",
-      "kategori": "evde-paketleme-isi",
-      "baslik": "Evde paketleme işi güvenilir mi?",
-      "ozet": "Tek cümlelik cevap: işe başlamak için sizden para isteniyorsa o iş gerçek değildir. Sahte teklifin dört işaretini ve gerçek fason paketlemenin nasıl yürüdüğünü anlattık.",
-      "tarih": "2026-08-19",
-      "okuma": 6,
-      "bolumler": [
-        {"h": "Kısa cevap", "p": ["Evde paketleme adı altında yapılan tekliflerin büyük bölümü gerçek iş değildir. Ayırt etmek için tek bir ölçüt yeter: <strong>işe girmek için sizden para isteniyorsa o teklif sahtedir.</strong> Gerçek bir işveren, işe alacağı kişiden kapora, kargo, sigorta ya da üyelik ücreti istemez.", "Bu sayfa bir iş vaadi içermez. Amacı, karar vermeden önce neye baktığınızı bilmenizi sağlamaktır."]},
-        {"h": "Sahte teklifin dört işareti", "p": ["<strong>1. Para isteniyor.</strong> Kapora, depozito, kargo, sigorta, üyelik ya da eğitim ücreti. Adı değişir, sonuç aynıdır: önce ödeme, sonra sessizlik.", "<strong>2. Her şey tek bir cep numarasından yürüyor.</strong> Şirketin sabit hattı, ofis adresi ve kurumsal e-postası yoktur; görüşme yalnız mesajlaşma uygulaması üzerinden ilerler.", "<strong>3. Şirketin açık kimliği verilmiyor.</strong> Ticaret unvanı, vergi numarası ve adres sorulduğunda konu değiştirilir.", "<strong>4. Sözleşme yerine kimlik ve IBAN isteniyor.</strong> Bu bilgilerle sizin adınıza hesap açılabilir; sonrasında ödeme aklama işlemlerine karışabilirsiniz."]},
-        {"h": "Gerçek paketleme işi nasıl yürür?", "p": ["Paketleme gerçek bir iş koludur. Gıda, kozmetik, tekstil ve kargo firmaları düzenli olarak paketleme elemanı arar. Ancak bu iş neredeyse her zaman <strong>iş yerinde</strong> yapılır: fabrikada, atölyede ya da depoda, vardiyalı ve sigortalı olarak.", "Sebebi basit. Firma ürünün hijyenini, sayımını ve teslim süresini denetlemek zorundadır. Ürünü tanımadığı kişilerin evine dağıtmak hem maliyetli hem risklidir. Bu yüzden “eve iş veriyoruz” diyen tekliflerin karşılığı çoğunlukla yoktur.", "Ankara'da gerçek paketleme ilanları en çok Ostim, İvedik, Sincan ve Kazan çevresindeki üretim tesislerinden çıkar."]},
-        {"h": "Para ödediyseniz ne yapmalısınız?", "p": ["Önce bankanıza başvurup işlemin iadesini talep edin; erken davranmak sonucu değiştirebilir.", "Dekontları, yazışmaları, numarayı ve hesap bilgilerini saklayın. Bunlar savcılığa yapacağınız şikâyetin dayanağıdır.", "Kimlik bilgilerinizi paylaştıysanız e-Devlet üzerinden adınıza kayıtlı hesapları ve şirket kayıtlarını kontrol edin."]}
-      ],
-      "sss": [
-        {"s": "Evde paketleme işi ne kadar kazandırır?", "c": "Sahte ilanlarda söylenen yüksek rakamların karşılığı yoktur; o rakamlar ödeme yapmaya ikna etmek için söylenir. Gerçek paketleme işi iş yerinde, saat ücretiyle ve sigortalı yapılır."},
-        {"s": "İŞKUR evde paketleme işi veriyor mu?", "c": "Hayır. İŞKUR bir işveren değildir; işveren ile iş arayanı eşleştirir. İŞKUR adını kullanarak para isteyen her teklif sahtedir."},
-        {"s": "Hiç mi gerçek evde paketleme işi yok?", "c": "İstisnai olarak fason el işi verilebilir, ancak bu genellikle tanıdık üzerinden ve ücret talebi olmadan yürür. İnternette ilan olarak dolaşan tekliflerin neredeyse tamamı sahtedir."}
-      ]
+     "h": "Kısa cevap",
+     "p": [
+      "Evde paketleme adı altında yapılan tekliflerin büyük bölümü gerçek iş değildir. Ayırt etmek için tek bir ölçüt yeter: <strong>işe girmek için sizden para isteniyorsa o teklif sahtedir.</strong> Gerçek bir işveren, işe alacağı kişiden kapora, kargo, sigorta ya da üyelik ücreti istemez.",
+      "Bu sayfa bir iş vaadi içermez. Amacı, karar vermeden önce neye baktığınızı bilmenizi sağlamaktır."
+     ]
     },
     {
-      "slug": "evde-paketleme-isi-ne-kadar-kazandirir",
-      "kategori": "evde-paketleme-isi",
-      "baslik": "Evde paketleme işi ne kadar kazandırır?",
-      "ozet": "Vaat edilen rakamlarla gerçek paketleme işinin kazancı arasındaki farkı ve bir teklifin kazancını nasıl doğrulayacağınızı yazdık.",
-      "tarih": "2026-08-19",
-      "okuma": 5,
-      "bolumler": [
-        {"h": "Vaat edilen rakam neden gerçek değil?", "p": ["Sahte ilanlarda kazanç, çalışma saatinden bağımsız biçimde anlatılır: “günde birkaç saat, ayda şu kadar”. Gerçek işlerde kazanç iki şeye bağlıdır — saat ücreti ve çalıştığınız saat. Bu ikisi söylenmeden verilen her rakam boştur.", "Rakamın büyüklüğü ikna aracıdır. Amaç sizi ödeme yapmaya yaklaştırmaktır; iş teslim edilmez."]},
-        {"h": "Gerçek paketleme işinde kazanç nasıl belirlenir?", "p": ["Üretim tesislerinde paketleme elemanı saat ücretiyle ya da aylık ücretle çalışır, sigortası işveren tarafından yapılır. Vardiya, mesai ve servis gibi kalemler ücretin üstüne eklenir.", "Bir ilanı değerlendirirken şunu sorun: ücret nedir, kaç saat çalışacağım, sigorta yapılıyor mu, servis ve yemek var mı? Bu dördü belli değilse ilan eksiktir."]},
-        {"h": "Kazancı doğrulamanın yolu", "p": ["İş yerinin adını ve adresini isteyin. Gerçek işveren bunu vermekten çekinmez.", "Görüşmeyi iş yerinde yapmayı teklif edin. Yalnız mesajla ilerlemek isteyen teklife mesafeli olun.", "Ödeme şeklini sorun: banka kanalıyla ve bordroyla mı ödenecek? Elden ödeme, kayıt dışı çalışma anlamına gelir."]}
-      ],
-      "sss": [
-        {"s": "Paketleme işinde asgari ücretin altında ödeme yapılabilir mi?", "c": "Yapılamaz. Tam zamanlı çalışmada işveren asgari ücretin altında ödeme yapamaz; yarı zamanlı çalışmada ücret çalışılan saate oranlanır."},
-        {"s": "Eve iş veren firma bulursam ne yapmalıyım?", "c": "Firmanın ticaret unvanını ve adresini doğrulayın, yazılı sözleşme isteyin ve hiçbir gerekçeyle ön ödeme yapmayın."}
-      ]
+     "h": "Sahte teklifin dört işareti",
+     "p": [
+      "<strong>1. Para isteniyor.</strong> Kapora, depozito, kargo, sigorta, üyelik ya da eğitim ücreti. Adı değişir, sonuç aynıdır: önce ödeme, sonra sessizlik.",
+      "<strong>2. Her şey tek bir cep numarasından yürüyor.</strong> Şirketin sabit hattı, ofis adresi ve kurumsal e-postası yoktur; görüşme yalnız mesajlaşma uygulaması üzerinden ilerler.",
+      "<strong>3. Şirketin açık kimliği verilmiyor.</strong> Ticaret unvanı, vergi numarası ve adres sorulduğunda konu değiştirilir.",
+      "<strong>4. Sözleşme yerine kimlik ve IBAN isteniyor.</strong> Bu bilgilerle sizin adınıza hesap açılabilir; sonrasında ödeme aklama işlemlerine karışabilirsiniz."
+     ]
     },
     {
-      "slug": "evde-paketleme-dolandiriciligi-nasil-anlasilir",
-      "kategori": "evde-paketleme-isi",
-      "baslik": "Evde paketleme dolandırıcılığı nasıl anlaşılır?",
-      "ozet": "Dolandırıcılığın adım adım nasıl işlediğini, hangi cümlelerin uyarı işareti olduğunu ve mağdur olunca izlenecek yolu anlattık.",
-      "tarih": "2026-08-19",
-      "okuma": 6,
-      "bolumler": [
-        {"h": "Düzen nasıl işliyor?", "p": ["Önce küçük bir tutar istenir: “kayıt ücreti”, “kargo bedeli” ya da “numune parası”. Tutar küçüktür, çünkü amaç güven kazanmaktır.", "Ödeme yapılınca ikinci istek gelir: sigorta, teminat, vergi. Her adımda tutar büyür.", "Sorulduğunda gecikme gerekçeleri sıralanır; bir noktada iletişim tamamen kesilir."]},
-        {"h": "Uyarı işareti sayılan cümleler", "p": ["“Ürünü kargoya vermemiz için önce kargo ücretini yatırmanız gerekiyor.”", "“Sigorta bedelini yatırmayan adaya iş teslim edemiyoruz.”", "“Kimlik fotokopinizi ve IBAN'ınızı gönderin, kaydınızı açalım.”", "“Bu iş için kontenjan az, bugün ödeme yaparsanız yerinizi ayıralım.”"]},
-        {"h": "Mağdur olduysanız", "p": ["Bankanıza hemen başvurup iade talebinde bulunun.", "Dekont, yazışma ve numaraları saklayarak savcılığa şikâyette bulunun.", "Kimlik bilgilerinizi paylaştıysanız e-Devlet'ten adınıza açılmış hesap ve şirket kaydı olup olmadığını denetleyin."]}
-      ],
-      "sss": [
-        {"s": "Şikâyet nereye yapılır?", "c": "Cumhuriyet Başsavcılığına dilekçeyle ya da e-Devlet üzerinden suç duyurusunda bulunabilirsiniz. Bankaya iade talebini aynı gün iletmek önemlidir."},
-        {"s": "Küçük tutar için uğraşmaya değer mi?", "c": "Değer. Şikâyetler birleştiğinde aynı hesap ve numaralar tespit edilir; bildirim yapmadığınızda düzen sürer."}
-      ]
+     "h": "Gerçek paketleme işi nasıl yürür?",
+     "p": [
+      "Paketleme gerçek bir iş koludur. Gıda, kozmetik, tekstil ve kargo firmaları düzenli olarak paketleme elemanı arar. Ancak bu iş neredeyse her zaman <strong>iş yerinde</strong> yapılır: fabrikada, atölyede ya da depoda, vardiyalı ve sigortalı olarak.",
+      "Sebebi basit. Firma ürünün hijyenini, sayımını ve teslim süresini denetlemek zorundadır. Ürünü tanımadığı kişilerin evine dağıtmak hem maliyetli hem risklidir. Bu yüzden “eve iş veriyoruz” diyen tekliflerin karşılığı çoğunlukla yoktur.",
+      "Ankara'da gerçek paketleme ilanları en çok Ostim, İvedik, Sincan ve Kazan çevresindeki üretim tesislerinden çıkar."
+     ]
     },
     {
-      "slug": "ankarada-ek-is-nerelerde-cikiyor",
-      "kategori": "ek-is-ilanlari",
-      "baslik": "Ankara'da ek iş nerelerde çıkıyor?",
-      "ozet": "Akşam ve hafta sonu iş çıkan altı alan, hangi semtlerde yoğunlaştığı ve kimin için uygun olduğu.",
-      "tarih": "2026-08-19",
-      "okuma": 5,
-      "bolumler": [
-        {"h": "Ek iş nedir?", "p": ["Ek iş, mevcut işinizin ya da okulunuzun üzerine, genellikle akşam saatlerinde veya hafta sonu yaptığınız iştir. Ankara'da bu ilanlar belli alanlarda toplanır; nerede arayacağınızı bilmek arama sürenizi kısaltır."]},
-        {"h": "İş çıkan altı alan", "p": ["<strong>Depo ve ayrıştırma.</strong> Kargo ve e-ticaret depoları akşam vardiyası açar. Tecrübe aranmaz, ayakta çalışmayı gerektirir. Ostim, Sincan ve Kazan çevresinde yoğunlaşır.", "<strong>Kurye ve dağıtım.</strong> Kendi motosikleti ya da otomobili olanlar için akşam en kazançlı dilimdir. Yakıt ve bakım gideri hesaba katılmalıdır.", "<strong>Çağrı merkezi.</strong> Yarı zamanlı vardiyalar açılır, çoğu sigortalıdır. Balgat, Söğütözü ve Ostim çevresinde yaygındır.", "<strong>Kafe ve restoran.</strong> Cumartesi ve pazar en yoğun günlerdir; öğrenciler için en uygun alandır.", "<strong>Güvenlik.</strong> Özel güvenlik kimlik kartı olanlar için gece vardiyası düzenli bir ek gelir kapısıdır.", "<strong>Mağaza ve sayım.</strong> Bayram, indirim dönemi ve sezon sonu sayımlarında kısa süreli ilan çıkar."]},
-        {"h": "Hangi ek iş size uygun?", "p": ["Sabah işiniz masa başıysa akşam ayakta çalışılan bir iş yorabilir; tersi de geçerlidir.", "Yol süresini kazancın içinde düşünün. Şehrin öbür ucundaki iş, saat ücreti yüksek olsa bile elinizde daha az bırakabilir.", "Ana işinizin sözleşmesinde ek iş kısıtı olup olmadığını kontrol edin."]}
-      ],
-      "sss": [
-        {"s": "Ek iş için sigorta yapılır mı?", "c": "Yapılır. Yarı zamanlı çalışmada da işveren sigorta bildirimi yapmakla yükümlüdür. Sigortasız çalışmada risk çalışana kalır."},
-        {"s": "Öğrenciler ek iş yapabilir mi?", "c": "Yapabilir. Kafe, mağaza, çağrı merkezi ve hafta sonu etkinlik işleri ders programına en kolay uyan alanlardır."}
-      ]
-    },
-    {
-      "slug": "ek-is-ne-kadar-kazandirir",
-      "kategori": "ek-is-ilanlari",
-      "baslik": "Ek iş ne kadar kazandırır?",
-      "ozet": "Ek işte kazancı belirleyen üç kalem, gizli giderler ve bir teklifin gerçekte ne bıraktığını hesaplamanın yolu.",
-      "tarih": "2026-08-19",
-      "okuma": 4,
-      "bolumler": [
-        {"h": "Kazancı üç şey belirler", "p": ["<strong>Saat ücreti.</strong> İlanda yazmıyorsa görüşmede sorun; yazılı olarak netleştirin.", "<strong>Haftalık saat.</strong> Haftada 10 saatle 25 saat arasında ciddi fark vardır; vardiya sayısını baştan konuşun.", "<strong>Ödeme düzeni.</strong> Haftalık mı aylık mı, banka kanalıyla mı ödenecek? Elden ödeme kayıt dışı çalışma demektir."]},
-        {"h": "Gizli giderler", "p": ["Yol parası, yemek ve varsa yakıt kazancın içinden çıkar. Bu üçünü düşmeden yapılan hesap yanıltır.", "Kurye işlerinde bakım, lastik ve sigorta da hesaba girer.", "Servis ve yemek veren iş yerleri, saat ücreti biraz düşük olsa bile daha çok bırakabilir."]},
-        {"h": "Hesabı nasıl yaparsınız?", "p": ["Haftalık saati saat ücretiyle çarpın, aylığa çevirin, sonra yol ve yemek giderini düşün. Elde kalan tutar gerçek kazancınızdır.", "İki teklifi karşılaştırırken saat ücretine değil, bu son rakama bakın."]}
-      ],
-      "sss": [
-        {"s": "Ek iş kazancından vergi kesilir mi?", "c": "Sigortalı çalışmada kesintiler bordroda görünür. Serbest çalışma ya da fatura karşılığı işlerde vergi yükümlülüğü size ait olur."},
-        {"s": "İki işte birden sigortalı olunur mu?", "c": "Olunur. Aynı anda birden fazla işverende çalışmak mümkündür; bildirimleri işverenler ayrı ayrı yapar."}
-      ]
-    },
-    {
-      "slug": "ogrenciye-uygun-ek-isler",
-      "kategori": "ek-is-ilanlari",
-      "baslik": "Öğrenciye uygun ek işler",
-      "ozet": "Ders programını bozmayan işler, Ankara'da hangi semtlerde çıktığı ve öğrencinin dikkat etmesi gereken haklar.",
-      "tarih": "2026-08-19",
-      "okuma": 4,
-      "bolumler": [
-        {"h": "Ders programına uyan işler", "p": ["<strong>Kafe ve restoran servisi.</strong> Hafta sonu ve akşam vardiyaları öğrenciye en uygun seçenektir; Bahçelievler, Kızılay ve Çukurambar çevresinde ilan çoktur.", "<strong>Mağaza satış danışmanlığı.</strong> Alışveriş merkezleri hafta sonu için yarı zamanlı personel arar.", "<strong>Çağrı merkezi.</strong> Vardiya seçimi esnektir, oturarak çalışılır ve çoğu iş sigortalıdır.", "<strong>Etkinlik ve fuar görevlisi.</strong> Dönemsel çıkar, kısa sürelidir, ödemesi genelde peşindir."]},
-        {"h": "Öğrencinin bilmesi gerekenler", "p": ["Yarı zamanlı çalışmada da sigorta bildirimi yapılır; “öğrencisin, sigorta gerekmez” doğru değildir.", "Staj ile ek iş farklıdır. Staj okul üzerinden yürür, ek iş normal iş sözleşmesine tabidir.", "Sınav dönemlerinde vardiya azaltma imkânını işe başlarken konuşun."]}
-      ],
-      "sss": [
-        {"s": "Öğrenciyken sigortalı çalışmak burs veya öğrenim kredisini etkiler mi?", "c": "Kurumların koşulları farklıdır; başvurduğunuz kurumun güncel şartlarını doğrulayın. Bu konuda genel geçer tek bir kural yoktur."},
-        {"s": "Kaç saat çalışabilirim?", "c": "Yarı zamanlı çalışmada haftalık süre iş sözleşmesiyle belirlenir. Ders programınızı bozmayacak vardiyayı baştan yazılı hale getirin."}
-      ]
+     "h": "Para ödediyseniz ne yapmalısınız?",
+     "p": [
+      "Önce bankanıza başvurup işlemin iadesini talep edin; erken davranmak sonucu değiştirebilir.",
+      "Dekontları, yazışmaları, numarayı ve hesap bilgilerini saklayın. Bunlar savcılığa yapacağınız şikâyetin dayanağıdır.",
+      "Kimlik bilgilerinizi paylaştıysanız e-Devlet üzerinden adınıza kayıtlı hesapları ve şirket kayıtlarını kontrol edin."
+     ]
     }
-  ]
+   ],
+   "sss": [
+    {
+     "s": "Evde paketleme işi ne kadar kazandırır?",
+     "c": "Sahte ilanlarda söylenen yüksek rakamların karşılığı yoktur; o rakamlar ödeme yapmaya ikna etmek için söylenir. Gerçek paketleme işi iş yerinde, saat ücretiyle ve sigortalı yapılır."
+    },
+    {
+     "s": "İŞKUR evde paketleme işi veriyor mu?",
+     "c": "Hayır. İŞKUR bir işveren değildir; işveren ile iş arayanı eşleştirir. İŞKUR adını kullanarak para isteyen her teklif sahtedir."
+    },
+    {
+     "s": "Hiç mi gerçek evde paketleme işi yok?",
+     "c": "İstisnai olarak fason el işi verilebilir, ancak bu genellikle tanıdık üzerinden ve ücret talebi olmadan yürür. İnternette ilan olarak dolaşan tekliflerin neredeyse tamamı sahtedir."
+    }
+   ]
+  },
+  {
+   "slug": "evde-paketleme-isi-ne-kadar-kazandirir",
+   "kategori": "evde-paketleme-isi",
+   "baslik": "Evde paketleme işi ne kadar kazandırır?",
+   "ozet": "Vaat edilen rakamlarla gerçek paketleme işinin kazancı arasındaki farkı ve bir teklifin kazancını nasıl doğrulayacağınızı yazdık.",
+   "tarih": "2026-08-19",
+   "okuma": 5,
+   "bolumler": [
+    {
+     "h": "Vaat edilen rakam neden gerçek değil?",
+     "p": [
+      "Sahte ilanlarda kazanç, çalışma saatinden bağımsız biçimde anlatılır: “günde birkaç saat, ayda şu kadar”. Gerçek işlerde kazanç iki şeye bağlıdır — saat ücreti ve çalıştığınız saat. Bu ikisi söylenmeden verilen her rakam boştur.",
+      "Rakamın büyüklüğü ikna aracıdır. Amaç sizi ödeme yapmaya yaklaştırmaktır; iş teslim edilmez."
+     ]
+    },
+    {
+     "h": "Gerçek paketleme işinde kazanç nasıl belirlenir?",
+     "p": [
+      "Üretim tesislerinde paketleme elemanı saat ücretiyle ya da aylık ücretle çalışır, sigortası işveren tarafından yapılır. Vardiya, mesai ve servis gibi kalemler ücretin üstüne eklenir.",
+      "Bir ilanı değerlendirirken şunu sorun: ücret nedir, kaç saat çalışacağım, sigorta yapılıyor mu, servis ve yemek var mı? Bu dördü belli değilse ilan eksiktir."
+     ]
+    },
+    {
+     "h": "Kazancı doğrulamanın yolu",
+     "p": [
+      "İş yerinin adını ve adresini isteyin. Gerçek işveren bunu vermekten çekinmez.",
+      "Görüşmeyi iş yerinde yapmayı teklif edin. Yalnız mesajla ilerlemek isteyen teklife mesafeli olun.",
+      "Ödeme şeklini sorun: banka kanalıyla ve bordroyla mı ödenecek? Elden ödeme, kayıt dışı çalışma anlamına gelir."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Paketleme işinde asgari ücretin altında ödeme yapılabilir mi?",
+     "c": "Yapılamaz. Tam zamanlı çalışmada işveren asgari ücretin altında ödeme yapamaz; yarı zamanlı çalışmada ücret çalışılan saate oranlanır."
+    },
+    {
+     "s": "Eve iş veren firma bulursam ne yapmalıyım?",
+     "c": "Firmanın ticaret unvanını ve adresini doğrulayın, yazılı sözleşme isteyin ve hiçbir gerekçeyle ön ödeme yapmayın."
+    }
+   ]
+  },
+  {
+   "slug": "evde-paketleme-dolandiriciligi-nasil-anlasilir",
+   "kategori": "evde-paketleme-isi",
+   "baslik": "Evde paketleme dolandırıcılığı nasıl anlaşılır?",
+   "ozet": "Dolandırıcılığın adım adım nasıl işlediğini, hangi cümlelerin uyarı işareti olduğunu ve mağdur olunca izlenecek yolu anlattık.",
+   "tarih": "2026-08-19",
+   "okuma": 6,
+   "bolumler": [
+    {
+     "h": "Düzen nasıl işliyor?",
+     "p": [
+      "Önce küçük bir tutar istenir: “kayıt ücreti”, “kargo bedeli” ya da “numune parası”. Tutar küçüktür, çünkü amaç güven kazanmaktır.",
+      "Ödeme yapılınca ikinci istek gelir: sigorta, teminat, vergi. Her adımda tutar büyür.",
+      "Sorulduğunda gecikme gerekçeleri sıralanır; bir noktada iletişim tamamen kesilir."
+     ]
+    },
+    {
+     "h": "Uyarı işareti sayılan cümleler",
+     "p": [
+      "“Ürünü kargoya vermemiz için önce kargo ücretini yatırmanız gerekiyor.”",
+      "“Sigorta bedelini yatırmayan adaya iş teslim edemiyoruz.”",
+      "“Kimlik fotokopinizi ve IBAN'ınızı gönderin, kaydınızı açalım.”",
+      "“Bu iş için kontenjan az, bugün ödeme yaparsanız yerinizi ayıralım.”"
+     ]
+    },
+    {
+     "h": "Mağdur olduysanız",
+     "p": [
+      "Bankanıza hemen başvurup iade talebinde bulunun.",
+      "Dekont, yazışma ve numaraları saklayarak savcılığa şikâyette bulunun.",
+      "Kimlik bilgilerinizi paylaştıysanız e-Devlet'ten adınıza açılmış hesap ve şirket kaydı olup olmadığını denetleyin."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Şikâyet nereye yapılır?",
+     "c": "Cumhuriyet Başsavcılığına dilekçeyle ya da e-Devlet üzerinden suç duyurusunda bulunabilirsiniz. Bankaya iade talebini aynı gün iletmek önemlidir."
+    },
+    {
+     "s": "Küçük tutar için uğraşmaya değer mi?",
+     "c": "Değer. Şikâyetler birleştiğinde aynı hesap ve numaralar tespit edilir; bildirim yapmadığınızda düzen sürer."
+    }
+   ]
+  },
+  {
+   "slug": "ankarada-ek-is-nerelerde-cikiyor",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Ankara'da ek iş nerelerde çıkıyor?",
+   "ozet": "Akşam ve hafta sonu iş çıkan altı alan, hangi semtlerde yoğunlaştığı ve kimin için uygun olduğu.",
+   "tarih": "2026-08-19",
+   "okuma": 5,
+   "bolumler": [
+    {
+     "h": "Ek iş nedir?",
+     "p": [
+      "Ek iş, mevcut işinizin ya da okulunuzun üzerine, genellikle akşam saatlerinde veya hafta sonu yaptığınız iştir. Ankara'da bu ilanlar belli alanlarda toplanır; nerede arayacağınızı bilmek arama sürenizi kısaltır."
+     ]
+    },
+    {
+     "h": "İş çıkan altı alan",
+     "p": [
+      "<strong>Depo ve ayrıştırma.</strong> Kargo ve e-ticaret depoları akşam vardiyası açar. Tecrübe aranmaz, ayakta çalışmayı gerektirir. Ostim, Sincan ve Kazan çevresinde yoğunlaşır.",
+      "<strong>Kurye ve dağıtım.</strong> Kendi motosikleti ya da otomobili olanlar için akşam en kazançlı dilimdir. Yakıt ve bakım gideri hesaba katılmalıdır.",
+      "<strong>Çağrı merkezi.</strong> Yarı zamanlı vardiyalar açılır, çoğu sigortalıdır. Balgat, Söğütözü ve Ostim çevresinde yaygındır.",
+      "<strong>Kafe ve restoran.</strong> Cumartesi ve pazar en yoğun günlerdir; öğrenciler için en uygun alandır.",
+      "<strong>Güvenlik.</strong> Özel güvenlik kimlik kartı olanlar için gece vardiyası düzenli bir ek gelir kapısıdır.",
+      "<strong>Mağaza ve sayım.</strong> Bayram, indirim dönemi ve sezon sonu sayımlarında kısa süreli ilan çıkar."
+     ]
+    },
+    {
+     "h": "Hangi ek iş size uygun?",
+     "p": [
+      "Sabah işiniz masa başıysa akşam ayakta çalışılan bir iş yorabilir; tersi de geçerlidir.",
+      "Yol süresini kazancın içinde düşünün. Şehrin öbür ucundaki iş, saat ücreti yüksek olsa bile elinizde daha az bırakabilir.",
+      "Ana işinizin sözleşmesinde ek iş kısıtı olup olmadığını kontrol edin."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Ek iş için sigorta yapılır mı?",
+     "c": "Yapılır. Yarı zamanlı çalışmada da işveren sigorta bildirimi yapmakla yükümlüdür. Sigortasız çalışmada risk çalışana kalır."
+    },
+    {
+     "s": "Öğrenciler ek iş yapabilir mi?",
+     "c": "Yapabilir. Kafe, mağaza, çağrı merkezi ve hafta sonu etkinlik işleri ders programına en kolay uyan alanlardır."
+    }
+   ]
+  },
+  {
+   "slug": "ek-is-ne-kadar-kazandirir",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Ek iş ne kadar kazandırır?",
+   "ozet": "Ek işte kazancı belirleyen üç kalem, gizli giderler ve bir teklifin gerçekte ne bıraktığını hesaplamanın yolu.",
+   "tarih": "2026-08-19",
+   "okuma": 4,
+   "bolumler": [
+    {
+     "h": "Kazancı üç şey belirler",
+     "p": [
+      "<strong>Saat ücreti.</strong> İlanda yazmıyorsa görüşmede sorun; yazılı olarak netleştirin.",
+      "<strong>Haftalık saat.</strong> Haftada 10 saatle 25 saat arasında ciddi fark vardır; vardiya sayısını baştan konuşun.",
+      "<strong>Ödeme düzeni.</strong> Haftalık mı aylık mı, banka kanalıyla mı ödenecek? Elden ödeme kayıt dışı çalışma demektir."
+     ]
+    },
+    {
+     "h": "Gizli giderler",
+     "p": [
+      "Yol parası, yemek ve varsa yakıt kazancın içinden çıkar. Bu üçünü düşmeden yapılan hesap yanıltır.",
+      "Kurye işlerinde bakım, lastik ve sigorta da hesaba girer.",
+      "Servis ve yemek veren iş yerleri, saat ücreti biraz düşük olsa bile daha çok bırakabilir."
+     ]
+    },
+    {
+     "h": "Hesabı nasıl yaparsınız?",
+     "p": [
+      "Haftalık saati saat ücretiyle çarpın, aylığa çevirin, sonra yol ve yemek giderini düşün. Elde kalan tutar gerçek kazancınızdır.",
+      "İki teklifi karşılaştırırken saat ücretine değil, bu son rakama bakın."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Ek iş kazancından vergi kesilir mi?",
+     "c": "Sigortalı çalışmada kesintiler bordroda görünür. Serbest çalışma ya da fatura karşılığı işlerde vergi yükümlülüğü size ait olur."
+    },
+    {
+     "s": "İki işte birden sigortalı olunur mu?",
+     "c": "Olunur. Aynı anda birden fazla işverende çalışmak mümkündür; bildirimleri işverenler ayrı ayrı yapar."
+    }
+   ]
+  },
+  {
+   "slug": "ogrenciye-uygun-ek-isler",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Öğrenciye uygun ek işler",
+   "ozet": "Ders programını bozmayan işler, Ankara'da hangi semtlerde çıktığı ve öğrencinin dikkat etmesi gereken haklar.",
+   "tarih": "2026-08-19",
+   "okuma": 4,
+   "bolumler": [
+    {
+     "h": "Ders programına uyan işler",
+     "p": [
+      "<strong>Kafe ve restoran servisi.</strong> Hafta sonu ve akşam vardiyaları öğrenciye en uygun seçenektir; Bahçelievler, Kızılay ve Çukurambar çevresinde ilan çoktur.",
+      "<strong>Mağaza satış danışmanlığı.</strong> Alışveriş merkezleri hafta sonu için yarı zamanlı personel arar.",
+      "<strong>Çağrı merkezi.</strong> Vardiya seçimi esnektir, oturarak çalışılır ve çoğu iş sigortalıdır.",
+      "<strong>Etkinlik ve fuar görevlisi.</strong> Dönemsel çıkar, kısa sürelidir, ödemesi genelde peşindir."
+     ]
+    },
+    {
+     "h": "Öğrencinin bilmesi gerekenler",
+     "p": [
+      "Yarı zamanlı çalışmada da sigorta bildirimi yapılır; “öğrencisin, sigorta gerekmez” doğru değildir.",
+      "Staj ile ek iş farklıdır. Staj okul üzerinden yürür, ek iş normal iş sözleşmesine tabidir.",
+      "Sınav dönemlerinde vardiya azaltma imkânını işe başlarken konuşun."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Öğrenciyken sigortalı çalışmak burs veya öğrenim kredisini etkiler mi?",
+     "c": "Kurumların koşulları farklıdır; başvurduğunuz kurumun güncel şartlarını doğrulayın. Bu konuda genel geçer tek bir kural yoktur."
+    },
+    {
+     "s": "Kaç saat çalışabilirim?",
+     "c": "Yarı zamanlı çalışmada haftalık süre iş sözleşmesiyle belirlenir. Ders programınızı bozmayacak vardiyayı baştan yazılı hale getirin."
+    }
+   ]
+  },
+  {
+   "slug": "evde-paketleme-isi-veren-firmalar",
+   "kategori": "evde-paketleme-isi",
+   "baslik": "Evde paketleme işi veren firmalar gerçek mi?",
+   "ozet": "\"Evde paketleme işi veren firmalar\" araması en çok dolandırıcılığın olduğu alan. Firmanın gerçek olup olmadığını beş adımda nasıl doğrulayacağınızı yazdık.",
+   "tarih": "2026-08-19",
+   "okuma": 5,
+   "bolumler": [
+    {
+     "h": "Neden bu kadar çok sahte firma var?",
+     "p": [
+      "Evden çalışma talebi yüksek, arz ise neredeyse yok. Bu boşluk sahte tekliflerle dolduruluyor: gerçek bir üretim yapmayan kişiler firma görüntüsü kurup adaylardan küçük tutarlar topluyor.",
+      "Gerçek üretim firmaları paketlemeyi kendi tesisinde yaptırır. Ürünü dağıtmak, toplamak ve sayımını tutmak eve iş vermenin maliyetini yükseltir; bu yüzden ciddi firmaların çoğu bu yola girmez."
+     ]
+    },
+    {
+     "h": "Firmayı doğrulamanın beş adımı",
+     "p": [
+      "<strong>1. Ticaret unvanını isteyin.</strong> Gerçek firma adını, vergi dairesini ve numarasını söylemekten çekinmez.",
+      "<strong>2. Adresi haritada arayın.</strong> Verilen adres bir üretim tesisi mi, yoksa boş bir konum mu?",
+      "<strong>3. Sabit hat sorun.</strong> Yalnız cep numarasıyla yürüyen firma, bir hafta sonra ulaşılamaz olabilir.",
+      "<strong>4. Sözleşme talep edin.</strong> Yazılı sözleşme veremeyen firma sizi çalışan olarak görmüyor demektir.",
+      "<strong>5. Ödeme yönünü kontrol edin.</strong> Para sizden firmaya değil, firmadan size akmalıdır. Tersi olan her yapı sahtedir."
+     ]
+    },
+    {
+     "h": "Ankara'da gerçek paketleme işi nerede çıkar?",
+     "p": [
+      "Gerçek ilanlar üretim ve lojistik bölgelerinden çıkar: Ostim, İvedik, Sincan Organize Sanayi, Kazan ve Temelli çevresi.",
+      "Bu ilanlar iş yerinde çalışmayı gerektirir, vardiyalıdır ve sigortalıdır. Servis ve yemek çoğu tesiste vardır.",
+      "Panomuza gelen üretim ilanlarını <a href=\"../guncel-ilanlar.html\">Güncel İlanlar</a> sayfasında yayınlıyoruz."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Evde paketleme işi veren firmalar listesi var mı?",
+     "c": "Güvenilir bir liste yoktur. İnternette dolaşan listeler genellikle aynı sahte yapıların farklı adlarıdır. Firma adı yerine doğrulama adımlarına bakmak daha güvenlidir."
+    },
+    {
+     "s": "Firma önce ürün gönderip sonra ücret istiyor, bu güvenli mi?",
+     "c": "Değildir. Kargo gönderildiğinin söylenmesi ödeme yaptırmak için kurulmuş bir adımdır; çoğu vakada kargo hiç çıkmaz."
+    },
+    {
+     "s": "Sözleşme imzalarsam güvende olur muyum?",
+     "c": "Sözleşme tek başına yeterli değildir. İmzalayan tarafın ticaret unvanı, adresi ve vergi kaydı doğrulanmadan imzalanan belge işe yaramaz."
+    }
+   ]
+  },
+  {
+   "slug": "evde-paketleme-acentesi-nedir",
+   "kategori": "evde-paketleme-isi",
+   "baslik": "Evde paketleme acentesi nedir, güvenilir mi?",
+   "ozet": "Son dönemde \"acente\" adıyla çıkan tekliflerin nasıl işlediğini, klasik paketleme dolandırıcılığından farkını ve neye dikkat edilmesi gerektiğini anlattık.",
+   "tarih": "2026-08-19",
+   "okuma": 4,
+   "bolumler": [
+    {
+     "h": "\"Acente\" ne anlama geliyor?",
+     "p": [
+      "Bu tekliflerde size iş veren değil, sizi işe yerleştirdiğini söyleyen bir aracı vardır. Aracı, iş bulma karşılığında kayıt veya üyelik ücreti ister.",
+      "Türkiye'de özel istihdam bürosu olmak İŞKUR iznine tabidir ve <strong>iş arayandan ücret alınması kural olarak yasaktır.</strong> Sizden para isteyen bir aracı, bu iznin dışında çalışıyor demektir."
+     ]
+    },
+    {
+     "h": "Nasıl ayırt edilir?",
+     "p": [
+      "İzin belgesi numarasını sorun; gerçek özel istihdam bürosu belge numarasını verir ve İŞKUR listesinde görünür.",
+      "Ücretin ne karşılığı olduğunu sorun. \"Kayıt\", \"dosya\", \"üyelik\" gibi adlarla istenen bedeller uyarı işaretidir.",
+      "Sizi işe alacak firmanın adını isteyin. Aracı gerçek bir işverenle çalışıyorsa bu bilgiyi gizlemez."
+     ]
+    },
+    {
+     "h": "Ne yapmalısınız?",
+     "p": [
+      "Ücret istenmeyen kanallardan ilerleyin: İŞKUR, firmaların kendi kariyer sayfaları ve ilan siteleri.",
+      "Ödeme yaptıysanız bankanıza iade başvurusu yapın, dekont ve yazışmalarla savcılığa şikâyette bulunun."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "İş bulma karşılığında ücret alınabilir mi?",
+     "c": "Özel istihdam büroları iş arayandan ücret alamaz; sınırlı istisnalar dışında ücreti işveren öder. Sizden ücret isteyen aracıya karşı temkinli olun."
+    },
+    {
+     "s": "Acente üyeliği iptal edilebilir mi?",
+     "c": "Ödemeyi kartla yaptıysanız bankanız üzerinden itiraz başvurusu yapabilirsiniz. Havale veya kripto ile yapılan ödemelerin iadesi çok daha zordur."
+    }
+   ]
+  },
+  {
+   "slug": "ev-hanimlarina-evde-is-imkani",
+   "kategori": "evde-paketleme-isi",
+   "baslik": "Ev hanımlarına evde iş imkânı: gerçekte ne var?",
+   "ozet": "Evden gelir elde etmenin gerçekten işleyen yolları, hangi tekliflerin sahte olduğu ve devlet destekli kanalların ne sunduğu.",
+   "tarih": "2026-08-19",
+   "okuma": 5,
+   "bolumler": [
+    {
+     "h": "Sahte teklifler neden hep bu başlıkla geliyor?",
+     "p": [
+      "Evden çalışmak isteyen çok, teklif az. Sahte yapılar bu talebi hedefliyor ve genellikle \"ev hanımlarına özel\" ifadesiyle güven kurmaya çalışıyor.",
+      "Ölçü yine aynı: para sizden çıkıyorsa iş değildir."
+     ]
+    },
+    {
+     "h": "Gerçekten işleyen yollar",
+     "p": [
+      "<strong>Kendi ürününüzü üretip satmak.</strong> El emeği ürün, ev yemeği ve hediyelik üretimi gerçek bir gelir yolu. Bu iş bulmak değil, kendi işini kurmaktır.",
+      "<strong>Uzaktan çalışan pozisyonlar.</strong> Çağrı merkezi, veri girişi, müşteri desteği ve muhasebe desteği evden yürütülebilir; bu işlerde sigortalı çalışılır.",
+      "<strong>Kooperatif ve halk eğitim kursları.</strong> Belediyelerin ve halk eğitim merkezlerinin ücretsiz kursları üretim ve satış tarafında beceri kazandırıyor.",
+      "<strong>Yarı zamanlı yakın çevre işleri.</strong> Okul, kreş, market ve kafe gibi eve yakın iş yerlerinde yarı zamanlı vardiyalar açılıyor."
+     ]
+    },
+    {
+     "h": "Başlarken üç kural",
+     "p": [
+      "İşe girmek için hiçbir ad altında ödeme yapmayın.",
+      "Kimlik, IBAN ve adres bilgisini görüşme öncesinde paylaşmayın.",
+      "Ödemenin nasıl ve ne zaman yapılacağını yazılı hale getirin."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "İŞKUR ev hanımlarına iş veriyor mu?",
+     "c": "İŞKUR işveren değildir, iş vermez; açık işleri duyurur ve kurslara yönlendirir. İŞKUR adına ücret isteyen her teklif sahtedir."
+    },
+    {
+     "s": "Evden çalışmak için sigorta yapılır mı?",
+     "c": "Uzaktan çalışma bir iş sözleşmesi türüdür; işveren sigorta bildirimi yapar. Kendi işini kuranlar ise vergi ve sigorta kaydını kendileri yaptırır."
+    }
+   ]
+  },
+  {
+   "slug": "aksam-ve-hafta-sonu-ek-is",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Akşam ve hafta sonu yapılabilecek ek işler",
+   "ozet": "Mesai sonrası ve cumartesi-pazar çalışılabilecek işler, Ankara'da hangi semtlerde çıktığı ve vardiya seçerken dikkat edilecekler.",
+   "tarih": "2026-08-19",
+   "okuma": 5,
+   "bolumler": [
+    {
+     "h": "Akşam vardiyası olan işler",
+     "p": [
+      "<strong>Kargo ve e-ticaret depoları.</strong> Sipariş yoğunluğu akşam arttığı için 18.00 – 23.00 arası vardiya açılır. Ostim, Sincan ve Kazan çevresinde yaygındır.",
+      "<strong>Kurye ve dağıtım.</strong> Yemek siparişleri akşam zirve yapar; kendi aracı olanlar için en kazançlı dilim budur.",
+      "<strong>Güvenlik.</strong> Özel güvenlik kimlik kartı olanlar gece vardiyasında düzenli çalışabilir.",
+      "<strong>Çağrı merkezi.</strong> Akşam vardiyaları genelde sigortalıdır ve oturarak çalışılır."
+     ]
+    },
+    {
+     "h": "Hafta sonu iş çıkan yerler",
+     "p": [
+      "Kafe, restoran ve pastaneler cumartesi-pazar en yoğun günlerini yaşar.",
+      "Alışveriş merkezlerindeki mağazalar hafta sonu için yarı zamanlı personel arar.",
+      "Fuar, kongre ve etkinlik görevliliği dönemsel olarak açılır; süresi kısadır, ödemesi peşindir."
+     ]
+    },
+    {
+     "h": "Vardiya seçerken üç ölçü",
+     "p": [
+      "<strong>Uyku düzeni.</strong> Sabah işi olan biri için gece vardiyası uzun vadede sürdürülebilir olmayabilir.",
+      "<strong>Ulaşım.</strong> Gece biten işlerde servis olup olmadığını baştan sorun.",
+      "<strong>Ana işinizin sözleşmesi.</strong> Bazı sözleşmelerde ek iş kısıtı bulunur."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Hafta sonu çalışmak için ayrı sözleşme gerekir mi?",
+     "c": "Ek iş ayrı bir işverenle yapılıyorsa ayrı bir iş sözleşmesi kurulur ve o işveren de sigorta bildirimini kendi yapar."
+    },
+    {
+     "s": "Gece çalışmasının süresi sınırlı mı?",
+     "c": "İş Kanunu gece çalışmasını düzenler ve süre sınırı getirir. Vardiya planını işverenle yazılı olarak netleştirin."
+    }
+   ]
+  },
+  {
+   "slug": "aracla-yapilabilecek-ek-isler",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Aracı olanlar için ek iş yolları",
+   "ozet": "Otomobili ya da motosikleti olanların Ankara'da yapabileceği ek işler, gerçek kazancın nasıl hesaplandığı ve gözden kaçan giderler.",
+   "tarih": "2026-08-19",
+   "okuma": 4,
+   "bolumler": [
+    {
+     "h": "Araçla yapılan işler",
+     "p": [
+      "<strong>Motokurye.</strong> Yemek ve paket dağıtımı; akşam saatleri en yoğun dilimdir.",
+      "<strong>Kargo dağıtım desteği.</strong> Yoğun dönemlerde firmalar kendi aracıyla çalışacak kişi arar.",
+      "<strong>Kurumsal transfer.</strong> Personel ve misafir taşıma işleri sözleşmeli yürür, belge şartı vardır.",
+      "<strong>Malzeme ve numune taşıma.</strong> Sanayi bölgelerinde küçük hacimli taşımalar için düzenli talep vardır."
+     ]
+    },
+    {
+     "h": "Gerçek kazancı hesaplamak",
+     "p": [
+      "Kazançtan önce şu dört kalemi düşün: yakıt, bakım ve lastik, sigorta, aracın yıpranması.",
+      "Kilometre başına ödeme yapan işlerde günlük ortalama kilometreyi sorun; rakam belli olmadan teklif değerlendirilemez.",
+      "Sabit ücret artı prim düzeninde primin hangi eşikte başladığını yazılı isteyin."
+     ]
+    },
+    {
+     "h": "Yasal tarafı",
+     "p": [
+      "Ticari taşımacılık belge ve yetki gerektirir. Kendi aracıyla dağıtım yapan çoğu işte bu yükümlülük işverendedir; sözleşmede kimin sorumlu olduğunu netleştirin.",
+      "Trafik cezası ve hasar durumunda sorumluluğun kimde olduğunu işe başlamadan sorun."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Kendi aracımla çalışırsam sigortam yapılır mı?",
+     "c": "İş sözleşmesiyle çalışıyorsanız işveren sigorta bildirimi yapar. Fatura karşılığı çalışıyorsanız kaydınızı kendiniz yaptırırsınız."
+    },
+    {
+     "s": "Yakıtı kim karşılar?",
+     "c": "Bu işten işe değişir. Yakıtın kime ait olduğu yazılı olarak belirlenmezse kazancınız beklediğinizin altına iner."
+    }
+   ]
+  },
+  {
+   "slug": "ankara-part-time-is-ilanlari-rehberi",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Ankara'da part time iş nasıl bulunur?",
+   "ozet": "Part time iş aramanın işleyen yolları, ilçelere göre hangi işlerin çıktığı ve başvuruda öne geçmenin yolları.",
+   "tarih": "2026-08-19",
+   "okuma": 5,
+   "bolumler": [
+    {
+     "h": "Nereden aranır?",
+     "p": [
+      "<strong>İlan sayfaları ve gruplar.</strong> Yerel iş ilanı sayfaları küçük işletmelerin ilk başvurduğu yerdir; büyük ilan sitelerine düşmeyen işler buradan çıkar.",
+      "<strong>Doğrudan başvuru.</strong> Kafe, market ve mağazalarda ilan verilmeden eleman aranır; yüz yüze başvuru çoğu zaman en hızlı yoldur.",
+      "<strong>İŞKUR.</strong> Açık işleri duyurur, kursa yönlendirir ve hiçbir aşamada ücret almaz."
+     ]
+    },
+    {
+     "h": "İlçelere göre iş profili",
+     "p": [
+      "<strong>Çankaya ve Kızılay:</strong> kafe, restoran, mağaza ve ofis desteği.",
+      "<strong>Keçiören ve Altındağ:</strong> market, tekstil ve küçük üretim.",
+      "<strong>Yenimahalle, Ostim ve İvedik:</strong> depo, üretim ve teknik işler.",
+      "<strong>Sincan ve Etimesgut:</strong> fabrika, lojistik ve servisli üretim işleri."
+     ]
+    },
+    {
+     "h": "Başvuruda öne geçmek",
+     "p": [
+      "Uygun olduğunuz vardiyaları mesajın başında yazın; işveren en çok bunu arıyor.",
+      "Ulaşım durumunuzu belirtin. Servis güzergâhındaysanız bunu söylemek olumlu ayrım yaratır.",
+      "Kısa ve net yazın: ne iş aradığınız, ne zaman başlayabileceğiniz ve nasıl ulaşılacağı."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Part time çalışanın hakları tam zamanlıdan farklı mı?",
+     "c": "Çalışma süresi kısadır ama iş sözleşmesinden doğan haklar geçerlidir; sigorta bildirimi ve ücret ödemesi işverenin yükümlülüğüdür."
+    },
+    {
+     "s": "Öğrenciyken part time çalışabilir miyim?",
+     "c": "Çalışabilirsiniz. Vardiyayı ders programınıza göre seçin ve sınav dönemlerindeki esnekliği işe başlarken konuşun."
+    }
+   ]
+  }
+ ]
 }
