@@ -36,9 +36,9 @@ const KATEGORI = {
     giris:'Ek iş, mevcut işinizin ya da okulunuzun üzerine akşam veya hafta sonu yaptığınız iştir. Bu bölümde ek iş arayanlar için yazdığımız rehberler var: iş hangi alanlarda çıkıyor, kazanç nasıl hesaplanır, hangi teklife mesafe konur. Güncel ilanları görmek için <a href="guncel-ilanlar.html">Güncel İlanlar</a> sayfasına bakın.'},
   'evde-paketleme-isi':{dosya:'evde-paketleme-isi.html', ad:'Evde Paketleme İşi', anahtar:'evde paketleme işi',
     baslik:'Evde Paketleme İşi — güvenilir mi, ne kadar kazandırır?',
-    ozet:'Evde paketleme işi güvenilir mi, dolandırıcılık nasıl anlaşılır, gerçek fason paketleme nasıl yürür? Koruyucu bilgilendirme yazıları.',
+    ozet:'Evde paketleme işi güvenilir mi, ücret talebi nasıl anlaşılır, fason paketleme gerçekte nasıl yürür? Koruyucu bilgilendirme yazıları.',
     girisBaslik:'Evde paketleme işi<br><span class="vurgu-cizgi">güvenilir mi?</span>',
-    giris:'Tek cümlelik cevap: <strong>işe başlamak için sizden para isteniyorsa o iş gerçek değildir.</strong> Bu bölümde sahte teklifin işaretlerini, gerçek paketleme işinin nasıl yürüdüğünü ve mağdur olunca izlenecek yolu yazıyoruz. Bu sayfalar bilgilendirmedir, iş vaadi içermez.'}
+    giris:'Tek cümlelik cevap: <strong>işe başlamak için sizden ödeme isteniyorsa o süreç işe alım süreci değildir.</strong> Bu bölümde ücret talebine dayanan tekliflerin işaretlerini, fason paketleme işinin gerçekte nasıl yürüdüğünü ve mağdur olunca izlenecek yolu yazıyoruz. Bu sayfalar bilgilendirmedir, iş vaadi içermez.'}
 };
 
 /* ——— ortak parçalar ——— */
@@ -187,8 +187,8 @@ ${menu('ana')}
   <div class="kap hero-izgara">
     <div class="hero-tez">
       <p class="ustbaslik">Ankara · güncel ilan panosu</p>
-      <h1 class="gorsel-baslik">Ankara'da iş bulun,<br><span class="vurgu-cizgi">dolandırılmadan.</span></h1>
-      <p class="giris" style="margin-top:1.05rem">Facebook sayfamıza her gün iş ilanı geliyor. Hepsini tek tek okuyoruz; sizden kapora, kargo ya da üyelik ücreti isteyen ilanları yayınlamıyoruz. Kalanı burada, Instagram'da ve Facebook sayfamızda paylaşıyoruz.</p>
+      <h1 class="gorsel-baslik">Ankara'da iş bulun,<br><span class="vurgu-cizgi">güvenle başvurun.</span></h1>
+      <p class="giris" style="margin-top:1.05rem">Facebook sayfamıza her gün iş ilanı geliyor. Hepsini tek tek okuyoruz; adaydan kapora, kargo ya da üyelik ücreti talep eden ilanları yayınlamıyoruz. Kalanı burada, Instagram'da ve Facebook sayfamızda paylaşıyoruz.</p>
       <div style="display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.5rem">
         <a class="dugme" href="guncel-ilanlar.html">Güncel ilanlara bakın</a>
         <a class="dugme dugme-vurgu" href="mailto:ankaraisilanlari@outlook.com?subject=${encodeURIComponent('İlan vermek istiyorum')}">Eleman arıyorum</a>
@@ -230,7 +230,7 @@ ${secilen.map((i,n)=>satir(i,0.05+n*0.07)).join('\n')}
       <a class="kart kart-bag" href="evde-paketleme-isi.html">
         <p class="ustbaslik" style="margin-bottom:.3rem">Rehber · ${yazi.filter(y=>y.kategori==='evde-paketleme-isi').length} yazı</p>
         <h3>Evde paketleme işi</h3>
-        <p>En çok sorulan konu ve en çok dolandırıcılığın olduğu alan. Gerçeği, sahtesini ve ayırt etme yolunu yazdık.</p>
+        <p>En çok sorulan konu ve mağduriyetin en sık görüldüğü alan. İşin gerçekte nasıl yürüdüğünü ve ayırt etme yolunu yazdık.</p>
         <span class="kart-ok">Yazıları okuyun →</span>
       </a>
     </div>

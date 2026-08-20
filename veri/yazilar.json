@@ -4,19 +4,19 @@
    "slug": "evde-paketleme-isi-guvenilir-mi",
    "kategori": "evde-paketleme-isi",
    "baslik": "Evde paketleme işi güvenilir mi?",
-   "ozet": "Tek cümlelik cevap: işe başlamak için sizden para isteniyorsa o iş gerçek değildir. Sahte teklifin dört işaretini ve gerçek fason paketlemenin nasıl yürüdüğünü anlattık.",
+   "ozet": "Tek cümlelik cevap: işe başlamak için sizden ödeme isteniyorsa o süreç işe alım süreci değildir. Ücret talebine dayanan tekliflerin dört işaretini ve gerçek fason paketlemenin nasıl yürüdüğünü anlattık.",
    "tarih": "2026-08-19",
    "okuma": 6,
    "bolumler": [
     {
      "h": "Kısa cevap",
      "p": [
-      "Evde paketleme adı altında yapılan tekliflerin büyük bölümü gerçek iş değildir. Ayırt etmek için tek bir ölçüt yeter: <strong>işe girmek için sizden para isteniyorsa o teklif sahtedir.</strong> Gerçek bir işveren, işe alacağı kişiden kapora, kargo, sigorta ya da üyelik ücreti istemez.",
+      "Evde paketleme adı altında yapılan tekliflerin büyük bölümü işe alım süreci değildir. Ayırt etmek için tek bir ölçüt yeter: <strong>işe girmek için sizden para isteniyorsa o teklif işe alım teklifi değildir.</strong> Gerçek bir işveren, işe alacağı kişiden kapora, kargo, sigorta ya da üyelik ücreti istemez.",
       "Bu sayfa bir iş vaadi içermez. Amacı, karar vermeden önce neye baktığınızı bilmenizi sağlamaktır."
      ]
     },
     {
-     "h": "Sahte teklifin dört işareti",
+     "h": "Dikkat edilmesi gereken dört işaret",
      "p": [
       "<strong>1. Para isteniyor.</strong> Kapora, depozito, kargo, sigorta, üyelik ya da eğitim ücreti. Adı değişir, sonuç aynıdır: önce ödeme, sonra sessizlik.",
       "<strong>2. Her şey tek bir cep numarasından yürüyor.</strong> Şirketin sabit hattı, ofis adresi ve kurumsal e-postası yoktur; görüşme yalnız mesajlaşma uygulaması üzerinden ilerler.",
@@ -44,15 +44,15 @@
    "sss": [
     {
      "s": "Evde paketleme işi ne kadar kazandırır?",
-     "c": "Sahte ilanlarda söylenen yüksek rakamların karşılığı yoktur; o rakamlar ödeme yapmaya ikna etmek için söylenir. Gerçek paketleme işi iş yerinde, saat ücretiyle ve sigortalı yapılır."
+     "c": "Ücret talep eden ilanlarda söylenen yüksek rakamların karşılığı yoktur; o rakamlar ödeme yapmaya ikna etmek için söylenir. Gerçek paketleme işi iş yerinde, saat ücretiyle ve sigortalı yapılır."
     },
     {
      "s": "İŞKUR evde paketleme işi veriyor mu?",
-     "c": "Hayır. İŞKUR bir işveren değildir; işveren ile iş arayanı eşleştirir. İŞKUR adını kullanarak para isteyen her teklif sahtedir."
+     "c": "Hayır. İŞKUR bir işveren değildir; işveren ile iş arayanı eşleştirir. İŞKUR adını kullanarak para isteyen her teklif geçersizdir."
     },
     {
      "s": "Hiç mi gerçek evde paketleme işi yok?",
-     "c": "İstisnai olarak fason el işi verilebilir, ancak bu genellikle tanıdık üzerinden ve ücret talebi olmadan yürür. İnternette ilan olarak dolaşan tekliflerin neredeyse tamamı sahtedir."
+     "c": "İstisnai olarak fason el işi verilebilir, ancak bu genellikle tanıdık üzerinden ve ücret talebi olmadan yürür. İnternette ilan olarak dolaşan tekliflerin neredeyse tamamı ücret talebine dayanır."
     }
    ]
   },
@@ -67,7 +67,7 @@
     {
      "h": "Vaat edilen rakam neden gerçek değil?",
      "p": [
-      "Sahte ilanlarda kazanç, çalışma saatinden bağımsız biçimde anlatılır: “günde birkaç saat, ayda şu kadar”. Gerçek işlerde kazanç iki şeye bağlıdır — saat ücreti ve çalıştığınız saat. Bu ikisi söylenmeden verilen her rakam boştur.",
+      "Ücret talep eden ilanlarda kazanç, çalışma saatinden bağımsız biçimde anlatılır: “günde birkaç saat, ayda şu kadar”. Gerçek işlerde kazanç iki şeye bağlıdır — saat ücreti ve çalıştığınız saat. Bu ikisi söylenmeden verilen her rakam boştur.",
       "Rakamın büyüklüğü ikna aracıdır. Amaç sizi ödeme yapmaya yaklaştırmaktır; iş teslim edilmez."
      ]
     },
@@ -101,8 +101,8 @@
   {
    "slug": "evde-paketleme-dolandiriciligi-nasil-anlasilir",
    "kategori": "evde-paketleme-isi",
-   "baslik": "Evde paketleme dolandırıcılığı nasıl anlaşılır?",
-   "ozet": "Dolandırıcılığın adım adım nasıl işlediğini, hangi cümlelerin uyarı işareti olduğunu ve mağdur olunca izlenecek yolu anlattık.",
+   "baslik": "Evde paketleme işinde mağduriyet nasıl anlaşılır?",
+   "ozet": "Ücret talebine dayanan sürecin adım adım nasıl işlediğini, hangi ifadelerin uyarı işareti olduğunu ve mağdur olunca izlenecek yolu anlattık.",
    "tarih": "2026-08-19",
    "okuma": 6,
    "bolumler": [
@@ -272,12 +272,12 @@
    "slug": "evde-paketleme-isi-veren-firmalar",
    "kategori": "evde-paketleme-isi",
    "baslik": "Evde paketleme işi veren firmalar gerçek mi?",
-   "ozet": "\"Evde paketleme işi veren firmalar\" araması en çok dolandırıcılığın olduğu alan. Firmanın gerçek olup olmadığını beş adımda nasıl doğrulayacağınızı yazdık.",
+   "ozet": "\"Evde paketleme işi veren firmalar\" araması en çok mağduriyetin olduğu alan. Firmanın gerçek olup olmadığını beş adımda nasıl doğrulayacağınızı yazdık.",
    "tarih": "2026-08-19",
    "okuma": 5,
    "bolumler": [
     {
-     "h": "Neden bu kadar çok sahte firma var?",
+     "h": "Neden bu kadar çok ücret talep eden firma var?",
      "p": [
       "Evden çalışma talebi yüksek, arz ise neredeyse yok. Bu boşluk sahte tekliflerle dolduruluyor: gerçek bir üretim yapmayan kişiler firma görüntüsü kurup adaylardan küçük tutarlar topluyor.",
       "Gerçek üretim firmaları paketlemeyi kendi tesisinde yaptırır. Ürünü dağıtmak, toplamak ve sayımını tutmak eve iş vermenin maliyetini yükseltir; bu yüzden ciddi firmaların çoğu bu yola girmez."
@@ -305,7 +305,7 @@
    "sss": [
     {
      "s": "Evde paketleme işi veren firmalar listesi var mı?",
-     "c": "Güvenilir bir liste yoktur. İnternette dolaşan listeler genellikle aynı sahte yapıların farklı adlarıdır. Firma adı yerine doğrulama adımlarına bakmak daha güvenlidir."
+     "c": "Güvenilir bir liste yoktur. İnternette dolaşan listeler genellikle aynı aynı düzenin farklı adlarıdır. Firma adı yerine doğrulama adımlarına bakmak daha güvenlidir."
     },
     {
      "s": "Firma önce ürün gönderip sonra ücret istiyor, bu güvenli mi?",
@@ -321,7 +321,7 @@
    "slug": "evde-paketleme-acentesi-nedir",
    "kategori": "evde-paketleme-isi",
    "baslik": "Evde paketleme acentesi nedir, güvenilir mi?",
-   "ozet": "Son dönemde \"acente\" adıyla çıkan tekliflerin nasıl işlediğini, klasik paketleme dolandırıcılığından farkını ve neye dikkat edilmesi gerektiğini anlattık.",
+   "ozet": "Son dönemde \"acente\" adıyla çıkan tekliflerin nasıl işlediğini, klasik paketleme mağduriyetindan farkını ve neye dikkat edilmesi gerektiğini anlattık.",
    "tarih": "2026-08-19",
    "okuma": 4,
    "bolumler": [
@@ -363,12 +363,12 @@
    "slug": "ev-hanimlarina-evde-is-imkani",
    "kategori": "evde-paketleme-isi",
    "baslik": "Ev hanımlarına evde iş imkânı: gerçekte ne var?",
-   "ozet": "Evden gelir elde etmenin gerçekten işleyen yolları, hangi tekliflerin sahte olduğu ve devlet destekli kanalların ne sunduğu.",
+   "ozet": "Evden gelir elde etmenin gerçekten işleyen yolları, hangi tekliflerin ücret talebine dayandığı ve devlet destekli kanalların ne sunduğu.",
    "tarih": "2026-08-19",
    "okuma": 5,
    "bolumler": [
     {
-     "h": "Sahte teklifler neden hep bu başlıkla geliyor?",
+     "h": "Ücret talep eden teklifler neden hep bu başlıkla geliyor?",
      "p": [
       "Evden çalışmak isteyen çok, teklif az. Sahte yapılar bu talebi hedefliyor ve genellikle \"ev hanımlarına özel\" ifadesiyle güven kurmaya çalışıyor.",
       "Ölçü yine aynı: para sizden çıkıyorsa iş değildir."
@@ -395,7 +395,7 @@
    "sss": [
     {
      "s": "İŞKUR ev hanımlarına iş veriyor mu?",
-     "c": "İŞKUR işveren değildir, iş vermez; açık işleri duyurur ve kurslara yönlendirir. İŞKUR adına ücret isteyen her teklif sahtedir."
+     "c": "İŞKUR işveren değildir, iş vermez; açık işleri duyurur ve kurslara yönlendirir. İŞKUR adına ücret isteyen her teklif geçersizdir."
     },
     {
      "s": "Evden çalışmak için sigorta yapılır mı?",
