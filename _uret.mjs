@@ -456,9 +456,9 @@ ${menu('guncel','../')}
       <ul class="alt-liste" style="margin-top:.6rem">
         <li><strong>Konum:</strong> ${kac(i.semt)}, ${kac(i.ilce)} / Ankara</li>
         <li><strong>Çalışma şekli:</strong> ${kac(i.calisma)}</li>
-        <li><strong>Vardiya:</strong> ${kac(i.vardiya)}</li>
+${i.vardiya?`        <li><strong>Vardiya:</strong> ${kac(i.vardiya)}</li>`:''}
         <li><strong>Sigorta:</strong> ${i.sigorta?'İşveren tarafından yapılır':'İlanda belirtilmemiş'}</li>
-        <li><strong>Tecrübe:</strong> ${i.tecrube?'Tecrübeli aday aranıyor':'Şart değil'}</li>
+${(i.tecrube===true||i.tecrube===false)?`        <li><strong>Tecrübe:</strong> ${i.tecrube?'Tecrübeli aday aranıyor':'Şart değil'}</li>`:''}
 ${i.ucret?`        <li><strong>Ücret:</strong> ${kac(i.ucret)}</li>`:''}
         <li><strong>İlan kodu:</strong> ${kac(i.kod)}</li>
       </ul>

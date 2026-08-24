@@ -1,20 +1,35 @@
 {
-  "guncelleme": "2026-08-19",
-  "ilanlar": [
-    {
-      "kod": "A-1483",
-      "baslik": "Fabrikada kutulama görevlisi",
-      "ilce": "Mamak",
-      "semt": "Servis güzergâhı: Mamak, Yeşilbayır, Zerdalitepe, Boğaziçi",
-      "calisma": "Tam zamanlı",
-      "vardiya": "Gündüz",
-      "kategori": "uretim",
-      "sigorta": true,
-      "tecrube": false,
-      "ucret": "İşveren beyanı: 33.000 TL",
-      "aciklama": "Fabrikanın kutulama bölümünde çalışacak personel aranıyor. Çalışma saatleri 08.00 – 16.00, pazar günleri tatil. Sigorta, yemek ve servis işveren tarafından karşılanıyor. Servis güzergâhı Mamak Belediyesi çevresi, Yeşilbayır, Zerdalitepe, Boğaziçi ve İkea çevresini kapsıyor.",
-      "kaynak": "facebook-mesaj",
-      "tarih": "2026-08-04"
-    }
-  ]
+ "guncelleme": "2026-08-24",
+ "ilanlar": [
+  {
+   "kod": "A-1484",
+   "baslik": "Kuruyemiş satış görevlisi",
+   "ilce": "Çankaya",
+   "semt": "Tunalı Hilmi Caddesi",
+   "calisma": "Tam zamanlı",
+   "vardiya": "",
+   "kategori": "satis",
+   "sigorta": true,
+   "tecrube": null,
+   "ucret": "İşveren beyanı: 35.000 TL",
+   "aciklama": "Tunalı Hilmi Caddesi üzerindeki kuruyemiş satış noktasında görev alacak çalışma arkadaşları aranıyor. Sigorta ve yemek işveren tarafından karşılanıyor, kapanışta eve servis sağlanıyor.",
+   "kaynak": "isveren-ilani",
+   "tarih": "2026-08-24"
+  },
+  {
+   "kod": "A-1483",
+   "baslik": "Fabrikada kutulama görevlisi",
+   "ilce": "Mamak",
+   "semt": "Servis güzergâhı: Mamak, Yeşilbayır, Zerdalitepe, Boğaziçi",
+   "calisma": "Tam zamanlı",
+   "vardiya": "Gündüz",
+   "kategori": "uretim",
+   "sigorta": true,
+   "tecrube": null,
+   "ucret": "İşveren beyanı: 33.000 TL",
+   "aciklama": "Fabrikanın kutulama bölümünde çalışacak personel aranıyor. Çalışma saatleri 08.00 – 16.00, pazar günleri tatil. Sigorta, yemek ve servis işveren tarafından karşılanıyor. Servis güzergâhı Mamak Belediyesi çevresi, Yeşilbayır, Zerdalitepe, Boğaziçi ve İkea çevresini kapsıyor.",
+   "kaynak": "facebook-mesaj",
+   "tarih": "2026-08-04"
+  }
+ ]
 }
