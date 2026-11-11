@@ -605,6 +605,7 @@ ${cagri()}`;
     <h2>Çerezler</h2>
     <p><strong>Gerekli çerez bilgisi:</strong> çerez tercihinizi tarayıcınızda saklarız. Bunun için onayınız aranmaz.</p>
     <p><strong>Analiz ve reklam ölçümü:</strong> Google Analytics ve Meta (Facebook, Instagram) ölçüm araçlarını yalnız “Tümünü kabul et” seçeneğini seçerseniz çalıştırırız. “Yalnız gerekli olanlar” seçeneğinde bu araçlar çerez bırakmaz.</p>
+        <p><strong>Sunucu taraflı Meta ölçümü:</strong> “Tümünü kabul et” seçeneğini seçtiyseniz sayfa görüntüleme, ilan formu gönderme ve başvuru tıklaması olayları sitemizin sunucusu üzerinden de Meta'nın Conversions API hizmetine iletilir. Bu iletide IP adresiniz, tarayıcı bilginiz, Meta çerezleriniz ve ziyaret ettiğiniz sayfanın adresi yer alır; ad, telefon ve e-posta yer almaz. “Yalnız gerekli olanlar” seçeneğini seçerseniz bu ileti gönderilmez.</p>
     <p>Tercihinizi istediğiniz zaman değiştirebilirsiniz: <a href="#" data-cerez-ac>çerez tercihlerini yeniden aç</a>.</p>
     <h2>Bilgiler yurt dışına aktarılır mı?</h2>
     <p>Google ve Meta hizmetleri yurt dışındaki sunucularda çalışır. Bu araçlar yalnız çerez onayınız varsa çalışır; onay vermezseniz verileriniz bu şirketlere ulaşmaz.</p>
@@ -638,7 +639,7 @@ ${cagri()}`;
     </ul>
     <p>Ad, telefon ya da e-posta gibi kimlik bilgilerinizi reklam hedeflemesi için Meta'ya göndermiyoruz.</p>
     <h2>Reklam ölçümü nasıl çalışır?</h2>
-    <p>Reklamlarımızın etkisini ölçmek için Meta ölçüm araçlarını yalnız “Tümünü kabul et” seçeneğini seçerseniz çalıştırırız. “Yalnız gerekli olanlar” seçeneğini seçerseniz bu araçlar çalışmaz. Ayrıntılar için <a href="gizlilik.html">Gizlilik, KVKK ve Çerez Bildirimi</a> sayfamıza bakın.</p>
+    <p>Reklamlarımızın etkisini ölçmek için Meta ölçüm araçlarını (tarayıcıdaki piksel ve sunucu taraflı Conversions API) yalnız “Tümünü kabul et” seçeneğini seçerseniz çalıştırırız. “Yalnız gerekli olanlar” seçeneğini seçerseniz bu araçlar çalışmaz. Ayrıntılar için <a href="gizlilik.html">Gizlilik, KVKK ve Çerez Bildirimi</a> sayfamıza bakın.</p>
     <h2>Bir reklamı neden gördüğümü nasıl öğrenirim?</h2>
     <p>Facebook ve Instagram'da reklamın üç nokta menüsünden “Bu reklamı neden görüyorum?” seçeneğini kullanabilirsiniz.</p>
     <h2>Tercihlerimi nasıl değiştiririm?</h2>
