@@ -19,13 +19,13 @@
 ## Sayfalar
 
 - [Ana Sayfa](https://ankaraisilani.com/): işverenler için ücretsiz ilan verme ve güncel ilan panosu
-- [Ücretsiz İlan Ver](https://ankaraisilani.com/ilan-ver.html): işverenler için ilan formu
-- [Güncel İlanlar](https://ankaraisilani.com/guncel-ilanlar.html): yayındaki ilanlar
-- [Genel İlanlar](https://ankaraisilani.com/genel-ilanlar.html): ilanlar sektöre ve ilçeye göre
-- [Hakkımızda](https://ankaraisilani.com/hakkimizda.html): topluluğumuz ve yayın ilkelerimiz
-- [İletişim](https://ankaraisilani.com/iletisim.html): e-posta ve sosyal hesaplar
-- [Ek İş İlanları](https://ankaraisilani.com/ek-is-ilanlari.html): akşam ve hafta sonu işleri, kazanç ve dikkat edilecekler
-- [Evde Paketleme İşi](https://ankaraisilani.com/evde-paketleme-isi.html): güvenilir mi, dolandırıcılık nasıl anlaşılır, gerçek evden çalışma yolları
+- [Ücretsiz İlan Ver](https://ankaraisilani.com/ilan-ver): işverenler için ilan formu
+- [Güncel İlanlar](https://ankaraisilani.com/guncel-ilanlar): yayındaki ilanlar
+- [Genel İlanlar](https://ankaraisilani.com/genel-ilanlar): ilanlar sektöre ve ilçeye göre
+- [Hakkımızda](https://ankaraisilani.com/hakkimizda): topluluğumuz ve yayın ilkelerimiz
+- [İletişim](https://ankaraisilani.com/iletisim): e-posta ve sosyal hesaplar
+- [Ek İş İlanları](https://ankaraisilani.com/ek-is-ilanlari): akşam ve hafta sonu işleri, kazanç ve dikkat edilecekler
+- [Evde Paketleme İşi](https://ankaraisilani.com/evde-paketleme-isi): güvenilir mi, dolandırıcılık nasıl anlaşılır, gerçek evden çalışma yolları
 
 ## İletişim
 

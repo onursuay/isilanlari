@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56" role="img" aria-label="Ankara İş İlanları">
-  <title>Ankara İş İlanları</title>
-  <!-- İki bacak birbirine yaklaşıp "A" olur: sol aday (ultramarin), sağ işveren (sarı). Ortadaki nokta eşleşme. -->
-  <path d="M43.5 47 L28 9" fill="none" stroke="#FFB81C" stroke-width="9" stroke-linecap="round"/>
-  <path d="M12.5 47 L28 9" fill="none" stroke="#3B46F2" stroke-width="9" stroke-linecap="round"/>
-  <circle cx="28" cy="35" r="4.6" fill="#14152E"/>
-</svg>

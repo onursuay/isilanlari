@@ -18,7 +18,14 @@ const INSTAGRAM = 'https://www.instagram.com/ankaraisilanlaricomtr/';
 const LINKEDIN = 'https://www.linkedin.com/company/85396970/';
 
 const oku = p => fs.readFileSync(path.join(KOK,p),'utf8');
-const yaz = (p,s) => { fs.mkdirSync(path.dirname(path.join(KOK,p)),{recursive:true}); fs.writeFileSync(path.join(KOK,p),s); };
+/* Adres kuralı (Owner 11.11.2026): hiçbir adreste .html görünmez; ana sayfa "/" olur.
+   Üreteç dosyaları .html olarak yazar, Vercel cleanUrls ile uzantısız sunar. Bağlantılar burada tek noktadan düzeltilir. */
+const temizAdres = s => s
+  .replace(/(href|src)="(?:\.\.\/)*(?!https?:|mailto:|tel:|#|\/)([^"]*)"/g,(m,a,r)=>`${a}="/${r}"`)
+  .replace(/href="(\/[^"#?]*?)\.html((?:[#?][^"]*)?)"/g,(m,r,q)=>`href="${r==='/index'?'/':r}${q}"`)
+  .replace(/(https:\/\/ankaraisilani\.com\/[^"'\s<\\]*?)\.html/g,'$1')
+  .replace(/https:\/\/ankaraisilani\.com\/index(?=["'\s<\\])/g,'https://ankaraisilani.com/');
+const yaz = (p,s) => { if(p.endsWith('.html')) s = temizAdres(s); fs.mkdirSync(path.dirname(path.join(KOK,p)),{recursive:true}); fs.writeFileSync(path.join(KOK,p),s); };
 const ldGuvenli = o => JSON.stringify(o).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
 const kac = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const duz = s => String(s).replace(/<[^>]+>/g,'');
@@ -53,32 +60,32 @@ const KATEGORI = {
 
 /* ——— simgeler ——— */
 const IK = {
-  is:`<svg viewBox="0 0 24 24" fill="none" stroke="#8A5A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>`,
-  kisi:`<svg viewBox="0 0 24 24" fill="none" stroke="#2630C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`,
+  is:`<svg viewBox="0 0 24 24" fill="none" stroke="#9E0004" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>`,
+  kisi:`<svg viewBox="0 0 24 24" fill="none" stroke="#061C48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`,
   tik:`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`,
   ok:`<svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`,
   para:`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2c-.5-.8-1.5-1.2-2.8-1.2-1.6 0-2.8.8-2.8 2s1.1 1.7 2.8 2 2.8.8 2.8 2-1.2 2-2.8 2c-1.3 0-2.3-.4-2.8-1.2M12 6.5V8m0 8v1.5"/></svg>`,
   yayin:`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 6a9 9 0 0 1 0 12"/></svg>`,
   kalkan:`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>`,
-  posta:`<svg viewBox="0 0 24 24" fill="none" stroke="#3B46F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>`,
+  posta:`<svg viewBox="0 0 24 24" fill="none" stroke="#0A2A66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>`,
   fb:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.2h2.4l.4-2.9h-2.8V9.1c0-.8.2-1.4 1.4-1.4h1.5V5.1c-.3 0-1.1-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.1H8.1v2.9h2.4V21z"/></svg>`,
   ig:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zM17.2 6.1a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM16 3H8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5V8a5 5 0 0 0-5-5zm3.3 13a3.3 3.3 0 0 1-3.3 3.3H8A3.3 3.3 0 0 1 4.7 16V8A3.3 3.3 0 0 1 8 4.7h8A3.3 3.3 0 0 1 19.3 8z"/></svg>`,
   in:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.6a1.9 1.9 0 1 0 0-3.8 1.9 1.9 0 0 0 0 3.8zM3.6 10.2h3.2V20H3.6zM9.1 10.2h3v1.3c.5-.9 1.6-1.6 3.1-1.6 3.2 0 3.8 2.1 3.8 4.8V20h-3.2v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V20H9.1z"/></svg>`,
-  grup:`<svg viewBox="0 0 24 24" fill="none" stroke="#3B46F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.7a3.5 3.5 0 0 1 0 6.6M18 14.3a6.5 6.5 0 0 1 3.5 5.7"/></svg>`
+  grup:`<svg viewBox="0 0 24 24" fill="none" stroke="#0A2A66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.7a3.5 3.5 0 0 1 0 6.6M18 14.3a6.5 6.5 0 0 1 3.5 5.7"/></svg>`
 };
 
 /* ——— ortak iskelet ——— */
 const GOM = {baslik:'', ld:[]};
-const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,follow,max-image-preview:large,max-snippet:-1'}) => `<!doctype html>
+const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,follow,max-image-preview:large,max-snippet:-1'}) => { if(baslik.length>60) console.warn('⚠ başlık 60 karakteri aşıyor ('+baslik.length+'): '+baslik); return `<!doctype html>
 <html lang="tr" class="js-yok">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${kac(kisalt(baslik,60))}</title>
+<title>${kac(baslik)}</title>
 <meta name="description" content="${kac(kisalt(aciklama,155))}">
 <link rel="canonical" href="${SITE}/${yol}">
 <meta name="robots" content="${robots}">
-<meta name="theme-color" content="#3B46F2">
+<meta name="theme-color" content="#0A2A66">
 <meta property="og:site_name" content="Ankara İş İlanları">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${kac(baslik)}">
@@ -91,8 +98,9 @@ const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,foll
 <meta name="twitter:card" content="summary_large_image">
 <meta name="geo.region" content="TR-06">
 <meta name="geo.placename" content="Ankara">
-<link rel="icon" href="${k}medya/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="${k}medya/logo.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/medya/favicon.png" type="image/png" sizes="256x256">
+<link rel="apple-touch-icon" href="/medya/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -117,17 +125,17 @@ ${govde}
 ${alt(k)}
 <script src="${k}betik.js" defer></script>
 </body>
-</html>`;
+</html>`; };
 
 const MENU = [['ana','index.html','Ana Sayfa'],['guncel','guncel-ilanlar.html','Güncel İlanlar'],['genel','genel-ilanlar.html','Genel İlanlar'],['hakkimizda','hakkimizda.html','Hakkımızda'],['iletisim','iletisim.html','İletişim']];
 const ust = (aktif,k='') => `<header class="ust">
   <div class="kap ust-ic">
-    <a class="marka" href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo.svg" width="44" height="44" alt=""></a>
+    <a class="marka" href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-256.png" width="60" height="60" alt=""></a>
     <nav class="menu" id="ana-menu" aria-label="Ana menü">
 ${MENU.map(([a,h,t])=>`      <a href="${k}${h}"${aktif===a?' aria-current="page"':''}>${t}</a>`).join('\n')}
     </nav>
     <div class="ust-sag">
-      <a class="dugme dugme-sari dugme-kucuk" href="${k}ilan-ver.html" data-ilan-ver="ust">Ücretsiz ilan ver</a>
+      <a class="dugme dugme-vurgu dugme-kucuk" href="${k}ilan-ver.html" data-ilan-ver="ust">Ücretsiz ilan ver</a>
       <button class="menu-dugme" type="button" aria-label="Menüyü aç veya kapat" aria-expanded="false" aria-controls="ana-menu"><span></span></button>
     </div>
   </div>
@@ -137,7 +145,7 @@ const alt = (k='') => `<footer class="alt">
   <div class="kap">
     <div class="alt-izgara">
       <div class="alt-marka">
-        <a href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo.svg" width="52" height="52" alt=""></a>
+        <a href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-256.png" width="84" height="84" alt=""></a>
         <p>Ankara'da iş arayanla eleman arayanı buluşturan ilan platformu. İlanlar yayından önce okunur, adaydan ücret isteyen ilan yayınlanmaz.</p>
         <div class="alt-sosyal">
           <a href="${FB_SAYFA}" rel="me noopener" target="_blank" aria-label="Facebook sayfamız" data-sosyal="facebook_sayfa">${IK.fb}</a>
@@ -182,7 +190,7 @@ const alt = (k='') => `<footer class="alt">
 <div class="cerez" id="cerez" role="dialog" aria-live="polite" aria-label="Çerez tercihleri">
   <p>Siteyi iyileştirmek ve ilan reklamlarımızın etkisini ölçmek için çerez kullanıyoruz. Yalnız gerekli olanlarla da devam edebilirsiniz. Ayrıntılar: <a href="${k}gizlilik.html">Gizlilik ve KVKK</a>.</p>
   <div class="cerez-dugme">
-    <button class="dugme dugme-sari dugme-kucuk" type="button" data-cerez="hepsi">Tümünü kabul et</button>
+    <button class="dugme dugme-vurgu dugme-kucuk" type="button" data-cerez="hepsi">Tümünü kabul et</button>
     <button class="dugme dugme-hat-acik dugme-kucuk" type="button" data-cerez="gerekli">Yalnız gerekli olanlar</button>
   </div>
 </div>`;
@@ -210,7 +218,7 @@ const cagri = (k='',baslik='Ekibinize yeni biri mi lazım?',metin='İlanınızı
       <h2>${baslik}</h2>
       <p>${metin}</p>
     </div>
-    <a class="dugme dugme-sari" href="${k}ilan-ver.html" data-ilan-ver="cagri">Ücretsiz ilan verin ${IK.ok}</a>
+    <a class="dugme dugme-vurgu" href="${k}ilan-ver.html" data-ilan-ver="cagri">Ücretsiz ilan verin ${IK.ok}</a>
   </div>
 </section>`;
 
@@ -243,16 +251,47 @@ ${sss.map((q,n)=>`      <details${n===0?' open':''}>
   </div>
 </section>`;
 
+
+/* ——— form bileşenleri ——— */
+const PIN = `<svg class="acilir-ik" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
+const OK2 = `<svg viewBox="0 0 24 24" fill="none" stroke="#0A2A66" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>`;
+const acilir = ({id,ad,yer,secenekler,tumu,varyant='',oznitelik=''}) => `<div class="acilir ${varyant}" data-acilir>
+  <input type="hidden" ${ad?`name="${ad}"`:''} ${oznitelik} value="${tumu?'hepsi':''}" id="${id}">
+  <button class="acilir-dugme" type="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="${id}-etiket ${id}-deger">${PIN}<span class="acilir-deger" id="${id}-deger" data-yer="${kac(yer)}">${kac(tumu||yer)}</span><span class="acilir-ok">${OK2}</span></button>
+  <div class="acilir-panel" hidden>
+    <label class="acilir-ara"><span class="gizli">Ara</span><input type="search" placeholder="Ara" autocomplete="off"></label>
+    <ul class="acilir-liste" role="listbox" aria-label="${kac(yer)}">
+${tumu?`      <li><button type="button" role="option" data-deger="hepsi" aria-selected="true">${kac(tumu)}</button></li>\n`:''}${secenekler.map(s=>`      <li><button type="button" role="option" data-deger="${kac(s)}" aria-selected="false">${kac(s)}</button></li>`).join('\n')}
+    </ul>
+  </div>
+</div>`;
+const segment = ({ad,baslik,secenekler,renk}) => `<fieldset class="alan segment-grup"><legend>${baslik}</legend>
+  <div class="segment segment-${renk}" style="--n:${secenekler.length}">
+${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${kac(s)}"${n===0?' checked':''}><span>${kac(s)}</span></label>`).join('\n')}
+  </div></fieldset>`;
+
 /* ——— 1. ANA SAYFA ——— */
+const SSS_ANA = [
+  {s:'İlan vermek ücretli mi?', c:"Hayır. İlanınızı sitemizde, Instagram'da ve Facebook sayfamızda ücretsiz yayınlıyoruz."},
+  {s:'İlan vermek için üyelik gerekir mi?', c:'Hayır. İlan formunu doldurmanız yeterli. Üyelik ya da ödeme adımı yoktur.'},
+  {s:'İlanım nerelerde yayınlanır?', c:"İlanınız sitemizde kendi sayfasında, Instagram hesabımızda görsel bir kart olarak ve Facebook sayfamızda gönderi olarak yayınlanır."},
+  {s:'Hangi ilanları yayınlamıyorsunuz?', c:'Adaydan kapora, kargo, sigorta, üyelik ya da eğitim bedeli isteyen ilanları yayınlamıyoruz. Cinsiyet ve yaş şartı gibi ayrımcı ifadeleri yayından önce metinden çıkarıyoruz.'},
+  {s:'Telefon numaram ilanda görünür mü?', c:'Hayır. Telefon numaranız ilanda yayınlanmaz. Başvurular bizim üzerimizden size iletilir.'},
+  {s:'Adaylar bana nasıl ulaşır?', c:'Adaylar ilan sayfasındaki başvuru düğmesiyle bize yazar, başvuruları size biz iletiriz.'},
+  {s:"Platform yalnızca Ankara için mi?", c:"Evet. Şu an Ankara'daki işverenlerin ilanlarına odaklanıyoruz."},
+  {s:'İş arıyorum, nasıl başvururum?', c:'Güncel İlanlar sayfasından ilanı seçip başvuru düğmesine tıklayın. Üyelik gerekmez ve sizden ücret istenmez.'}
+];
+const POZISYON = ['Kasiyer','Garson','Kurye','Depo görevlisi','Temizlik personeli','Satış danışmanı','Üretim elemanı','Şoför','Aşçı yardımcısı','Güvenlik görevlisi','Ön büro görevlisi','Barista'];
 {
   const secilen = ilanlar.slice(0,3);
+  const seritOge = POZISYON.map(x=>`<span>${x}</span>`).join('');
   const govde = `<section class="hero">
   <div class="kap hero-izgara">
     <div class="hero-metin">
       <h1>Ankara'da eleman arıyorsanız ilanınızı ücretsiz yayınlayalım</h1>
       <p class="lead">İlanınız sitemizde, Instagram'da ve Facebook sayfamızda yayınlanır. Topluluğumuzda 41 binden fazla üyeli bir Facebook grubu var.</p>
       <div class="hero-eylem">
-        <a class="dugme dugme-sari" href="ilan-ver.html" data-ilan-ver="hero">Ücretsiz ilan verin ${IK.ok}</a>
+        <a class="dugme dugme-vurgu" href="ilan-ver.html" data-ilan-ver="hero">Ücretsiz ilan verin ${IK.ok}</a>
         <a class="dugme dugme-hat" href="guncel-ilanlar.html">İş mi arıyorsunuz?</a>
       </div>
       <p class="hero-not"><b>Üyelik gerekmez.</b> Formu doldurmanız birkaç dakika sürer.</p>
@@ -273,6 +312,13 @@ ${sss.map((q,n)=>`      <details${n===0?' open':''}>
   </div>
 </section>
 
+<div class="serit" role="group" aria-label="İlan verebileceğiniz pozisyonlardan bazıları">
+  <div class="kap serit-ic">
+    <span class="serit-etiket">İlan verebileceğiniz pozisyonlardan bazıları</span>
+    <div class="serit-pencere"><div class="serit-iz">${seritOge}${seritOge.replace(/<span>/g,'<span aria-hidden="true">')}</div></div>
+  </div>
+</div>
+
 <section class="erisim" aria-label="Topluluğumuz">
   <div class="kap erisim-izgara">
     <div class="erisim-oge"><span class="erisim-sayi" data-sayi="41" data-son=" bin+">41 bin+</span><span class="erisim-ad">üyeli Facebook grubu</span></div>
@@ -289,7 +335,7 @@ ${sss.map((q,n)=>`      <details${n===0?' open':''}>
     </div>
     <div class="adimlar">
       <div class="adim" data-goster="1"><div class="adim-no">1</div><h3>İlanı bize iletin</h3><p>Pozisyonu, çalışma yerini ve şartları kısa bir formla yazın.</p></div>
-      <div class="adim" data-goster="2"><div class="adim-no">2</div><h3>Biz kontrol edip yayınlayalım</h3><p>Ücret talebi ve ayrımcı ifade gibi sorunları ayıklar, ilanı sitemizde, Instagram'da ve Facebook sayfamızda yayınlarız.</p></div>
+      <div class="adim" data-goster="2"><div class="adim-no">2</div><h3>Biz kontrol edip yayınlayalım</h3><p>Ücret talebi ve ayrımcı ifade gibi sorunları ayıklar, ilanı üç yerde yayınlarız.</p></div>
       <div class="adim" data-goster="3"><div class="adim-no">3</div><h3>Adaylar size ulaşsın</h3><p>Adaylar ilan üzerinden başvurur, başvuruları size biz iletiriz.</p></div>
     </div>
   </div>
@@ -298,10 +344,48 @@ ${sss.map((q,n)=>`      <details${n===0?' open':''}>
 <section class="bolum bolum-yuzey">
   <div class="kap">
     <div class="bolum-bas" data-goster>
+      <h2>İlanınız üç yerde böyle görünür</h2>
+      <p>Aşağıdakiler örnek görünümdür; ilanınızın bilgileri yerine yazılır.</p>
+    </div>
+    <div class="mock-izgara">
+      <figure class="mock mock-site" data-goster="1">
+        <div class="mock-sahne">
+          <div class="mock-cubuk"><i></i><i></i><i></i><span>ankaraisilani.com/guncel-ilanlar</span></div>
+          <div class="mock-ilan"><span class="ilan-etiket t-satis" aria-hidden="true">Satış</span><div><b>Satış görevlisi</b><small>Çankaya · Tam zamanlı · Sigortalı</small></div></div>
+          <div class="mock-ilan"><span class="ilan-etiket t-uretim" aria-hidden="true">Üretim</span><div><b>Kutulama görevlisi</b><small>Mamak · Tam zamanlı · Servisli</small></div></div>
+          <div class="mock-ilan soluk"><span class="ilan-etiket" aria-hidden="true"></span><div><b></b><small></small></div></div>
+        </div>
+        <figcaption><h3>Sitemizde</h3><p>İlanınızın kendi adresi ve ayrıntı sayfası olur.</p></figcaption>
+      </figure>
+      <figure class="mock mock-ig" data-goster="2">
+        <div class="mock-sahne">
+          <div class="ig-ust"><img src="medya/logo-256.png" width="30" height="30" alt=""><b>ankaraisilanlaricomtr</b></div>
+          <div class="ig-kare"><span>Eleman aranıyor</span><strong>Satış görevlisi</strong><em>Çankaya · Tam zamanlı</em><i>ankaraisilani.com</i></div>
+          <div class="ig-alt"><u></u><u></u><u></u></div>
+        </div>
+        <figcaption><h3>Instagram'da</h3><p>İlanınız görsel bir kart olarak paylaşılır.</p></figcaption>
+      </figure>
+      <figure class="mock mock-fb" data-goster="3">
+        <div class="mock-sahne">
+          <div class="fb-ust"><img src="medya/logo-256.png" width="36" height="36" alt=""><div><b>Ankara İş İlanları</b><small>Az önce</small></div></div>
+          <p class="fb-metin">Satış görevlisi aranıyor. Çankaya, tam zamanlı, sigortalı. Başvuru için bize yazın.</p>
+          <div class="fb-baglanti"><div class="fb-gorsel"><img src="medya/logo-256.png" width="60" height="60" alt=""></div><div class="fb-bilgi"><span>ankaraisilani.com</span><b>Satış görevlisi: Çankaya, Ankara</b></div></div>
+          <div class="fb-alt"><u></u><u></u><u></u></div>
+        </div>
+        <figcaption><h3>Facebook sayfamızda</h3><p>İlanınız sayfamızda gönderi olarak yayınlanır.</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="bolum">
+  <div class="kap">
+    <div class="bolum-bas" data-goster>
       <h2>İşverenler için ne yapıyoruz</h2>
     </div>
     <div class="sunu">
       <div class="sunu-kutu sunu-buyuk" data-goster="1">
+        <div class="sifir" aria-hidden="true">0 ₺</div>
         <div>
           <h3>İlan vermek ücretsiz</h3>
           <p>İlanınızı yayınlamak için ödeme yapmazsınız.</p>
@@ -322,7 +406,7 @@ ${sss.map((q,n)=>`      <details${n===0?' open':''}>
   </div>
 </section>
 
-<section class="bolum">
+<section class="bolum bolum-yuzey">
   <div class="kap">
     <div class="bolum-bas" data-goster>
       <h2>Panoda şimdi</h2>
@@ -331,13 +415,15 @@ ${sss.map((q,n)=>`      <details${n===0?' open':''}>
     <div class="ilan-liste">
 ${secilen.map(i=>satir(i)).join('\n')}
     </div>
-    <p style="margin-top:1.6rem"><a class="dugme dugme-hat" href="guncel-ilanlar.html">Tüm güncel ilanlar ${IK.ok}</a></p>
+    <p style="margin:1.25rem 0 0"><a class="dugme dugme-hat" href="guncel-ilanlar.html">Tüm güncel ilanlar ${IK.ok}</a></p>
   </div>
 </section>
+${sssBlok(SSS_ANA)}
 ${cagri()}`;
-  yaz('index.html', sayfa({baslik:"Ankara İş İlanları | Ücretsiz iş ilanı verin, Ankara'da eleman bulun",
+  yaz('index.html', sayfa({baslik:"Ankara İş İlanları | Ücretsiz İlan Verin, Eleman Bulun",
     aciklama:"Ankara'da eleman arıyorsanız ilanınızı ücretsiz yayınlayalım. İlanınız sitemizde, Instagram'da ve Facebook sayfamızda yer alır. Üyelik gerekmez.",
-    yol:'',ld:[ORG,{'@context':'https://schema.org','@type':'WebSite',name:'Ankara İş İlanları',url:SITE,inLanguage:'tr-TR'}],aktif:'ana',govde}));
+    yol:'',ld:[ORG,{'@context':'https://schema.org','@type':'WebSite',name:'Ankara İş İlanları',url:SITE,inLanguage:'tr-TR'},
+      {'@context':'https://schema.org','@type':'FAQPage',inLanguage:'tr-TR',mainEntity:SSS_ANA.map(q=>({'@type':'Question',name:q.s,acceptedAnswer:{'@type':'Answer',text:duz(q.c)}}))}],aktif:'ana',govde}));
 }
 
 /* ——— 2. GÜNCEL İLANLAR ——— */
@@ -387,10 +473,7 @@ ${cagri()}`;
     <div class="suzgec" role="group" aria-label="İlan süzgeci">
       <button class="chip" type="button" data-sektor-sec="hepsi" aria-pressed="true">Tüm sektörler</button>
 ${sektorler.map(s=>`      <button class="chip" type="button" data-sektor-sec="${kac(s)}" aria-pressed="false">${kac(SEKTOR[s]||s)}</button>`).join('\n')}
-      <select class="secim" data-ilce-sec aria-label="İlçe seç">
-        <option value="hepsi">Tüm ilçeler</option>
-${ilceler.map(s=>`        <option value="${kac(s)}">${kac(s)}</option>`).join('\n')}
-      </select>
+      ${acilir({id:'ilce-suz',yer:'İlçe seçin',tumu:'Tüm ilçeler',secenekler:ilceler,varyant:'acilir-pill',oznitelik:'data-ilce-sec'})}
     </div>
     <div class="ilan-liste" data-suzulecek>
 ${ilanlar.map(i=>satir(i)).join('\n')}
@@ -437,7 +520,7 @@ ${cagri()}`;
     <div class="panel">
       <h3>İşveren misiniz?</h3>
       <p>İlanınızı ücretsiz yayınlayalım. Formu doldurmanız birkaç dakika sürer.</p>
-      <a class="dugme dugme-sari" href="ilan-ver.html" data-ilan-ver="hakkimizda">Ücretsiz ilan verin ${IK.ok}</a>
+      <a class="dugme dugme-vurgu" href="ilan-ver.html" data-ilan-ver="hakkimizda">Ücretsiz ilan verin ${IK.ok}</a>
       <hr style="border:0;border-top:1px solid var(--hat);margin:1.5rem 0">
       <h3>İş mi arıyorsunuz?</h3>
       <p>Yayındaki ilanlara göz atın. Başvurmak için üyelik gerekmez.</p>
@@ -468,15 +551,15 @@ ${cagri()}`;
       <ul class="iletisim-liste">
         <li><a href="mailto:${EPOSTA}" data-yer="iletisim"><span class="ik">${IK.posta}</span><span><b>E-posta</b><small>${EPOSTA}</small></span></a></li>
         <li><a href="${FB_GRUP}" target="_blank" rel="noopener" data-sosyal="facebook_grup"><span class="ik">${IK.grup}</span><span><b>Facebook grubu</b><small>41 binden fazla üyeli topluluğumuz</small></span></a></li>
-        <li><a href="${FB_SAYFA}" target="_blank" rel="noopener" data-sosyal="facebook_sayfa"><span class="ik">${IK.fb.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>Facebook sayfası</b><small>@ankaraisilanlaricomtr</small></span></a></li>
-        <li><a href="${INSTAGRAM}" target="_blank" rel="noopener" data-sosyal="instagram"><span class="ik">${IK.ig.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>Instagram</b><small>@ankaraisilanlaricomtr</small></span></a></li>
-        <li><a href="${LINKEDIN}" target="_blank" rel="noopener" data-sosyal="linkedin"><span class="ik">${IK.in.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>LinkedIn</b><small>Ankara İş İlanları</small></span></a></li>
+        <li><a href="${FB_SAYFA}" target="_blank" rel="noopener" data-sosyal="facebook_sayfa"><span class="ik">${IK.fb.replace('<svg','<svg fill="#0A2A66"')}</span><span><b>Facebook sayfası</b><small>@ankaraisilanlaricomtr</small></span></a></li>
+        <li><a href="${INSTAGRAM}" target="_blank" rel="noopener" data-sosyal="instagram"><span class="ik">${IK.ig.replace('<svg','<svg fill="#0A2A66"')}</span><span><b>Instagram</b><small>@ankaraisilanlaricomtr</small></span></a></li>
+        <li><a href="${LINKEDIN}" target="_blank" rel="noopener" data-sosyal="linkedin"><span class="ik">${IK.in.replace('<svg','<svg fill="#0A2A66"')}</span><span><b>LinkedIn</b><small>Ankara İş İlanları</small></span></a></li>
       </ul>
     </div>
     <div class="panel panel-yuzey">
       <h2 style="font-size:1.4rem">İlan vermek mi istiyorsunuz?</h2>
       <p>E-posta yazmanıza gerek yok. Formu doldurun, ilanınızı kontrol edip yayınlayalım.</p>
-      <a class="dugme dugme-sari" href="ilan-ver.html" data-ilan-ver="iletisim">Ücretsiz ilan verin ${IK.ok}</a>
+      <a class="dugme dugme-vurgu" href="ilan-ver.html" data-ilan-ver="iletisim">Ücretsiz ilan verin ${IK.ok}</a>
       <hr style="border:0;border-top:1px solid var(--hat);margin:1.5rem 0">
       <h2 style="font-size:1.4rem">Sahte ilan mı gördünüz?</h2>
       <p>İlan kodunu ya da bağlantısını yazarak bildirin. İlanı aynı gün kaldırıyoruz.</p>
@@ -495,31 +578,31 @@ ${cagri()}`;
     lead:"Formu doldurun, ilanınızı kontrol edip sitemizde, Instagram'da ve Facebook sayfamızda yayınlayalım."})}
 <section class="bolum">
   <div class="kap ikili ikili-dar">
-    <div class="panel">
+    <div class="panel panel-form">
       <form class="form" id="ilan-formu" novalidate>
-        <div class="form-ikili">
-          <div class="alan"><label for="firma">Firma veya yetkili adı</label><input id="firma" name="firma" type="text" autocomplete="organization"><p class="hata">Firma veya yetkili adını yazın.</p></div>
-          <div class="alan"><label for="telefon">Telefon <span class="not">(ilanda yayınlanmaz)</span></label><input id="telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel"><p class="hata">Size ulaşabileceğimiz bir telefon yazın.</p></div>
+        <div class="form-bolum">
+          <h2 class="form-baslik">İletişim bilgileri</h2>
+          <div class="form-ikili">
+            <div class="alan"><label for="firma">Firma veya yetkili adı</label><input id="firma" name="firma" type="text" autocomplete="organization"><p class="hata">Firma veya yetkili adını yazın.</p></div>
+            <div class="alan"><label for="telefon">Telefon <span class="not">(ilanda yayınlanmaz)</span></label><input id="telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel"><p class="hata">Size ulaşabileceğimiz bir telefon yazın.</p></div>
+          </div>
+          <div class="alan"><label for="eposta">E-posta</label><input id="eposta" name="eposta" type="email" autocomplete="email"><p class="hata">Geçerli bir e-posta adresi yazın.</p></div>
         </div>
-        <div class="alan"><label for="eposta">E-posta</label><input id="eposta" name="eposta" type="email" autocomplete="email"><p class="hata">Geçerli bir e-posta adresi yazın.</p></div>
-        <div class="form-ikili">
-          <div class="alan"><label for="pozisyon">Aradığınız pozisyon</label><input id="pozisyon" name="pozisyon" type="text" placeholder="Örnek: Kasiyer"><p class="hata">Aradığınız pozisyonu yazın.</p></div>
-          <div class="alan"><label for="ilce">Çalışma yeri (ilçe)</label>
-            <select id="ilce" name="ilce"><option value="">İlçeyi seçin</option>${ILCELER.map(s=>`<option>${s}</option>`).join('')}</select><p class="hata">İlçeyi seçin.</p></div>
+        <div class="form-bolum">
+          <h2 class="form-baslik">İlan bilgileri</h2>
+          <div class="form-ikili">
+            <div class="alan"><label for="pozisyon">Aradığınız pozisyon</label><input id="pozisyon" name="pozisyon" type="text" placeholder="Örnek: Kasiyer"><p class="hata">Aradığınız pozisyonu yazın.</p></div>
+            <div class="alan"><span class="etiket" id="ilce-etiket">Çalışma yeri (ilçe)</span>${acilir({id:'ilce',ad:'ilce',yer:'İlçeyi seçin',secenekler:ILCELER})}<p class="hata">İlçeyi seçin.</p></div>
+          </div>
+          <div class="form-segmentler">
+            ${segment({ad:'calisma',baslik:'Çalışma şekli',secenekler:['Tam zamanlı','Yarı zamanlı','Vardiyalı'],renk:'mavi'})}
+            ${segment({ad:'sigorta',baslik:'Sigortalı çalışma',secenekler:['Var','Yok'],renk:'vurgu'})}
+          </div>
+          <div class="alan"><label for="ucret">Ücret <span class="not">(isteğe bağlı)</span></label><input id="ucret" name="ucret" type="text" placeholder="Örnek: 33.000 TL"></div>
+          <div class="alan"><label for="aciklama">İş tanımı ve şartlar <span class="not">(isteğe bağlı)</span></label><textarea id="aciklama" name="aciklama" placeholder="Çalışma saatleri, yemek, servis gibi bilgileri yazabilirsiniz."></textarea></div>
         </div>
-        <fieldset class="alan secenekler"><legend>Çalışma şekli</legend>
-          <label class="secenek"><input type="radio" name="calisma" value="Tam zamanlı" checked><span>Tam zamanlı</span></label>
-          <label class="secenek"><input type="radio" name="calisma" value="Yarı zamanlı"><span>Yarı zamanlı</span></label>
-          <label class="secenek"><input type="radio" name="calisma" value="Vardiyalı"><span>Vardiyalı</span></label>
-        </fieldset>
-        <fieldset class="alan secenekler"><legend>Sigortalı çalışma</legend>
-          <label class="secenek"><input type="radio" name="sigorta" value="Var" checked><span>Var</span></label>
-          <label class="secenek"><input type="radio" name="sigorta" value="Yok"><span>Yok</span></label>
-        </fieldset>
-        <div class="alan"><label for="ucret">Ücret <span class="not">(isteğe bağlı)</span></label><input id="ucret" name="ucret" type="text" placeholder="Örnek: 33.000 TL"></div>
-        <div class="alan"><label for="aciklama">İş tanımı ve şartlar <span class="not">(isteğe bağlı)</span></label><textarea id="aciklama" name="aciklama" placeholder="Çalışma saatleri, yemek, servis gibi bilgileri yazabilirsiniz."></textarea></div>
         <div class="alan"><label class="onay"><input type="checkbox" name="kvkk"><span><a href="gizlilik.html" target="_blank">Gizlilik ve KVKK bildirimini</a> okudum.</span></label><p class="hata">Devam etmek için bildirimi okuduğunuzu onaylayın.</p></div>
-        <button class="dugme dugme-mavi" type="submit">İlanı e-posta ile gönder ${IK.ok}</button>
+        <button class="dugme dugme-mavi dugme-tam" type="submit">İlanı e-posta ile gönder ${IK.ok}</button>
         <div class="form-sonuc" id="form-sonuc" tabindex="-1" role="status"><strong>E-posta uygulamanız açıldı.</strong>Hazırlanan iletiyi göndermeniz yeterli. Uygulama açılmazsa aynı bilgileri ${EPOSTA} adresine yazabilirsiniz.</div>
       </form>
     </div>
@@ -631,7 +714,7 @@ ${digerleri.map(d=>yaziKart(d,'../')).join('\n')}
   </div>
 </section>`:''}
 ${cagri('../')}`;
-  yaz(yaziYol(y), sayfa({baslik:`${y.baslik} | Ankara İş İlanları`,aciklama:y.ozet,yol:yaziYol(y),ld,k:'../',govde}));
+  yaz(yaziYol(y), sayfa({baslik:(y.baslik.length+22<=60?`${y.baslik} | Ankara İş İlanları`:y.baslik),aciklama:y.ozet,yol:yaziYol(y),ld,k:'../',govde}));
 }
 
 /* ——— 10. İLAN SAYFALARI ——— */
@@ -645,7 +728,7 @@ for (const i of ilanlar) {
       identifier:{'@type':'PropertyValue',name:'Ankara İş İlanları',value:i.kod}},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Güncel İlanlar',yol:'guncel-ilanlar.html'},{ad:i.baslik,yol:ilanYol(i)}])];
   const govde=`${sayfaBas({yol:yolBas('../', `<a href="../guncel-ilanlar.html">Güncel İlanlar</a>`),baslik:kac(i.baslik),lead:kac(i.aciklama),
-    eylem:`<a class="dugme dugme-sari" href="mailto:${EPOSTA}?subject=${encodeURIComponent(i.kod+' – '+i.baslik)}" data-basvur="${kac(i.kod)}">Bu ilana başvurun ${IK.ok}</a><a class="dugme dugme-hat" href="../guncel-ilanlar.html">Diğer ilanlar</a>`})}
+    eylem:`<a class="dugme dugme-vurgu" href="mailto:${EPOSTA}?subject=${encodeURIComponent(i.kod+' – '+i.baslik)}" data-basvur="${kac(i.kod)}">Bu ilana başvurun ${IK.ok}</a><a class="dugme dugme-hat" href="../guncel-ilanlar.html">Diğer ilanlar</a>`})}
 <section class="bolum">
   <div class="kap ikili">
     <div class="panel">
@@ -686,7 +769,7 @@ ${cagri('../')}`;
 
 /* ——— 10b. 404 ——— */
 yaz('404.html', sayfa({baslik:'Sayfa bulunamadı | Ankara İş İlanları',aciklama:'Aradığınız sayfa bulunamadı. Ana sayfaya dönebilir ya da güncel ilanlara bakabilirsiniz.',yol:'404.html',k:'/',robots:'noindex,follow',
-  govde:`${sayfaBas({yol:'',baslik:'Bu sayfayı bulamadık',lead:'Adres değişmiş ya da yanlış yazılmış olabilir. Aşağıdaki sayfalardan devam edebilirsiniz.',eylem:'<a class="dugme dugme-sari" href="/index.html">Ana sayfa</a><a class="dugme dugme-hat" href="/guncel-ilanlar.html">Güncel ilanlar</a>'})}`}));
+  govde:`${sayfaBas({yol:'',baslik:'Bu sayfayı bulamadık',lead:'Adres değişmiş ya da yanlış yazılmış olabilir. Aşağıdaki sayfalardan devam edebilirsiniz.',eylem:'<a class="dugme dugme-vurgu" href="/index.html">Ana sayfa</a><a class="dugme dugme-hat" href="/guncel-ilanlar.html">Güncel ilanlar</a>'})}`}));
 
 /* ——— 11. SITEMAP ——— */
 const sayfalar=[
@@ -696,7 +779,7 @@ const sayfalar=[
   ...ilanlar.map(i=>[ilanYol(i),0.7,'weekly'])];
 yaz('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sayfalar.map(([s,p,f])=>`  <url><loc>${SITE}/${s}</loc><lastmod>${bugun}</lastmod><changefreq>${f}</changefreq><priority>${p}</priority></url>`).join('\n')}
+${sayfalar.map(([s,p,f])=>`  <url><loc>${SITE}/${s.replace(/\.html$/,'')}</loc><lastmod>${bugun}</lastmod><changefreq>${f}</changefreq><priority>${p}</priority></url>`).join('\n')}
 </urlset>`);
 
 console.log(`✓ üretildi: ana sayfa · güncel · genel · hakkımızda · iletişim · ilan ver · gizlilik · 2 rehber kategorisi · ${yazi.length} yazı · ${ilanlar.length} ilan sayfası · sitemap (${sayfalar.length} adres)`);
