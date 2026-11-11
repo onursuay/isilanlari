@@ -103,7 +103,8 @@ const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,foll
 <link rel="apple-touch-icon" href="/medya/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="${k}stil.css">
 <script>
 /* Çerez onayı (Consent Mode v2): her şey reddedilmiş başlar, onayla güncellenir. GTM'den ÖNCE çalışmalıdır. */
@@ -130,7 +131,7 @@ ${alt(k)}
 const MENU = [['ana','index.html','Ana Sayfa'],['guncel','guncel-ilanlar.html','Güncel İlanlar'],['genel','genel-ilanlar.html','Genel İlanlar'],['hakkimizda','hakkimizda.html','Hakkımızda'],['iletisim','iletisim.html','İletişim']];
 const ust = (aktif,k='') => `<header class="ust">
   <div class="kap ust-ic">
-    <a class="marka" href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-256.png" width="60" height="60" alt=""></a>
+    <a class="marka" href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-128.png" width="60" height="60" alt=""></a>
     <nav class="menu" id="ana-menu" aria-label="Ana menü">
 ${MENU.map(([a,h,t])=>`      <a href="${k}${h}"${aktif===a?' aria-current="page"':''}>${t}</a>`).join('\n')}
     </nav>
@@ -145,7 +146,7 @@ const alt = (k='') => `<footer class="alt">
   <div class="kap">
     <div class="alt-izgara">
       <div class="alt-marka">
-        <a href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-256.png" width="84" height="84" alt=""></a>
+        <a href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-192.png" width="84" height="84" alt=""></a>
         <p>Ankara'da iş arayanla eleman arayanı buluşturan ilan platformu. İlanlar yayından önce okunur, adaydan ücret isteyen ilan yayınlanmaz.</p>
         <div class="alt-sosyal">
           <a href="${FB_SAYFA}" rel="me noopener" target="_blank" aria-label="Facebook sayfamız" data-sosyal="facebook_sayfa">${IK.fb}</a>
@@ -154,7 +155,7 @@ const alt = (k='') => `<footer class="alt">
         </div>
       </div>
       <div>
-        <h4>Platform</h4>
+        <h3 class="alt-baslik">Platform</h3>
         <ul>
           <li><a href="${k}index.html">Ana Sayfa</a></li>
           <li><a href="${k}guncel-ilanlar.html">Güncel İlanlar</a></li>
@@ -165,14 +166,14 @@ const alt = (k='') => `<footer class="alt">
         </ul>
       </div>
       <div>
-        <h4>Rehberler</h4>
+        <h3 class="alt-baslik">Rehberler</h3>
         <ul>
           <li><a href="${k}ek-is-ilanlari.html">Ek İş İlanları</a></li>
           <li><a href="${k}evde-paketleme-isi.html">Evde Paketleme İşi</a></li>
         </ul>
       </div>
       <div>
-        <h4>İletişim</h4>
+        <h3 class="alt-baslik">İletişim</h3>
         <ul>
           <li><a href="mailto:${EPOSTA}" data-yer="alt">${EPOSTA}</a></li>
           <li><a href="${FB_GRUP}" rel="noopener" target="_blank" data-sosyal="facebook_grup">Facebook grubumuz</a></li>
@@ -359,7 +360,7 @@ const POZISYON = ['Kasiyer','Garson','Kurye','Depo görevlisi','Temizlik persone
       </figure>
       <figure class="mock mock-ig" data-goster="2">
         <div class="mock-sahne">
-          <div class="ig-ust"><img src="medya/logo-256.png" width="30" height="30" alt=""><b>ankaraisilanlaricomtr</b></div>
+          <div class="ig-ust"><img src="medya/logo-128.png" width="30" height="30" alt=""><b>ankaraisilanlaricomtr</b></div>
           <div class="ig-kare"><span>Eleman aranıyor</span><strong>Satış görevlisi</strong><em>Çankaya · Tam zamanlı</em><i>ankaraisilani.com</i></div>
           <div class="ig-alt"><u></u><u></u><u></u></div>
         </div>
@@ -367,9 +368,9 @@ const POZISYON = ['Kasiyer','Garson','Kurye','Depo görevlisi','Temizlik persone
       </figure>
       <figure class="mock mock-fb" data-goster="3">
         <div class="mock-sahne">
-          <div class="fb-ust"><img src="medya/logo-256.png" width="36" height="36" alt=""><div><b>Ankara İş İlanları</b><small>Az önce</small></div></div>
+          <div class="fb-ust"><img src="medya/logo-128.png" width="36" height="36" alt=""><div><b>Ankara İş İlanları</b><small>Az önce</small></div></div>
           <p class="fb-metin">Satış görevlisi aranıyor. Çankaya, tam zamanlı, sigortalı. Başvuru için bize yazın.</p>
-          <div class="fb-baglanti"><div class="fb-gorsel"><img src="medya/logo-256.png" width="60" height="60" alt=""></div><div class="fb-bilgi"><span>ankaraisilani.com</span><b>Satış görevlisi: Çankaya, Ankara</b></div></div>
+          <div class="fb-baglanti"><div class="fb-gorsel"><img src="medya/logo-128.png" width="60" height="60" alt=""></div><div class="fb-bilgi"><span>ankaraisilani.com</span><b>Satış görevlisi: Çankaya, Ankara</b></div></div>
           <div class="fb-alt"><u></u><u></u><u></u></div>
         </div>
         <figcaption><h3>Facebook sayfamızda</h3><p>İlanınız sayfamızda gönderi olarak yayınlanır.</p></figcaption>

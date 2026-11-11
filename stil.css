@@ -12,7 +12,7 @@
   --vurgu-koyu:#B30004;
   --yuzey:#F4F7FC;        /* lavanta yüzey */
   --hat:#DCE4F0;
-  --yesil:#0B8A5F;
+  --yesil:#07744F;
   --kirmizi:#B3261E;
   --beyaz:#fff;
 
@@ -240,7 +240,7 @@ h3{font-size:1.15rem;font-weight:600;letter-spacing:-.015em}
 .ilan-baslik{display:block;font:600 1.05rem/1.3 "Poppins",sans-serif;letter-spacing:-.01em}
 .ilan-alt{display:flex;flex-wrap:wrap;gap:.35rem .8rem;margin-top:.25rem;font-size:.86rem;color:var(--ink-2)}
 .ilan-alt span:not(:last-child)::after{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--hat);margin-left:.8rem;vertical-align:middle}
-.ilan-rozet{grid-column:1/-1;justify-self:start;display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:var(--yesil);background:#E5F6EE;padding:.35rem .75rem;border-radius:999px}
+.ilan-rozet{grid-column:1/-1;justify-self:start;display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:#066A44;background:#E5F6EE;padding:.35rem .75rem;border-radius:999px}
 @media (min-width:700px){.ilan{grid-template-columns:auto 1fr auto}.ilan-rozet{grid-column:auto;justify-self:end}}
 .liste-bos{padding:2rem;border-radius:22px;background:var(--yuzey);border:2px dashed var(--hat);text-align:center;color:var(--ink-2)}
 
@@ -363,7 +363,7 @@ h3{font-size:1.15rem;font-weight:600;letter-spacing:-.015em}
 @media (min-width:780px){.alt-izgara{grid-template-columns:1.5fr 1fr 1fr 1fr}}
 .alt-marka img{width:84px;height:84px;margin-bottom:1rem}
 .alt p{font-size:.93rem;max-width:34ch}
-.alt h4{font:600 .95rem/1 "Poppins",sans-serif;color:#fff;margin:0 0 1rem;letter-spacing:-.005em}
+.alt .alt-baslik{font:600 .95rem/1 "Poppins",sans-serif;color:#fff;margin:0 0 1rem;letter-spacing:-.005em}
 .alt ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;font-size:.93rem}
 .alt-sosyal{display:flex;gap:.6rem;margin-top:1.2rem}
 .alt-sosyal a{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:background-color .2s,transform .25s var(--yay)}
