@@ -1,0 +1,47 @@
+name: İlan hattı
+
+# Ankara İş İlanı: sayfa gelen kutusunu okur, süzer; YAYIN_ACIK=1 ise siteye ve sosyal medyaya alır.
+# Varsayılan mod "hazirlik": hiçbir şey yayınlamaz, yalnız sayıları günlüğe yazar.
+on:
+  schedule:
+    - cron: '17 5,8,11,14,17,20 * * *'   # UTC; Türkiye saatiyle 08:17 - 23:17, 3 saatte bir
+  workflow_dispatch:
+    inputs:
+      mod:
+        description: 'hazirlik | yayinla | sinama'
+        default: 'hazirlik'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ilan-hatti
+  cancel-in-progress: false
+
+jobs:
+  hat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      META_SAYFA_TOKEN: ${{ secrets.META_SAYFA_TOKEN }}
+      YAYIN_ACIK: ${{ vars.YAYIN_ACIK }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Playwright (yalnız kart üretimi için)
+        if: ${{ (github.event.inputs.mod || 'hazirlik') == 'yayinla' }}
+        run: |
+          npm install --no-save playwright@1.49.0
+      - name: Hattı çalıştır
+        run: |
+          MOD="${{ github.event.inputs.mod || 'hazirlik' }}"
+          python3 otomasyon/hat.py "$MOD"
+      - name: Durumu kaydet (yalnız kimlik, karar ve gerekçe)
+        if: ${{ (github.event.inputs.mod || 'hazirlik') == 'hazirlik' }}
+        run: |
+          git config user.name "ankara-is-ilani-hat"
+          git config user.email "hat@ankaraisilani.com"
+          git add veri/_hat_durumu.json
+          git diff --cached --quiet || (git commit -q -m "Hat: gelen kutusu kararları" && git pull -q --rebase origin main && git push -q origin main)
