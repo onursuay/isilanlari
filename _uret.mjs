@@ -194,6 +194,7 @@ const alt = (k='') => `<footer class="alt">
           <li><a href="mailto:${EPOSTA}" data-yer="alt">${EPOSTA}</a></li>
           <li><a href="${FB_GRUP}" rel="noopener" target="_blank" data-sosyal="facebook_grup">Facebook grubumuz</a></li>
           <li><a href="${k}gizlilik.html">Gizlilik ve KVKK</a></li>
+          <li><a href="${k}reklam-aydinlatmasi.html">Hedefli reklam aydınlatması</a></li>
           <li><a href="#" data-cerez-ac>Çerez tercihleri</a></li>
         </ul>
       </div>
@@ -609,6 +610,8 @@ ${cagri()}`;
     <p>Google ve Meta hizmetleri yurt dışındaki sunucularda çalışır. Bu araçlar yalnız çerez onayınız varsa çalışır; onay vermezseniz verileriniz bu şirketlere ulaşmaz.</p>
     <h2>Ne kadar saklıyoruz?</h2>
     <p>İlan bilgilerini ilan yayında olduğu sürece ve amacın gerektirdiği süre kadar saklarız. Sonrasında siler ya da anonim hâle getiririz.</p>
+    <h2>Reklamlar</h2>
+    <p>Reklamlarımızın kimlere, hangi ölçütlerle gösterildiğini <a href="reklam-aydinlatmasi.html">hedefli reklam aydınlatması</a> sayfasında açıkladık.</p>
     <h2>Haklarınız</h2>
     <p>6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 11. maddesi kapsamındaki haklarınızı kullanmak için ${EPOSTA} adresine yazabilirsiniz.</p>
   </div>
@@ -616,6 +619,39 @@ ${cagri()}`;
   yaz('gizlilik.html', sayfa({baslik:'Gizlilik, KVKK ve Çerez Bildirimi | Ankara İş İlanı',
     aciklama:'Ankara İş İlanı gizlilik, KVKK ve çerez bildirimi: hangi bilgileri neden işlediğimiz ve çerez tercihlerinizi nasıl değiştirebileceğiniz.',
     yol:'gizlilik.html',ld:[yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Gizlilik ve KVKK',yol:'gizlilik.html'}])],govde}));
+}
+
+/* ——— 7b. HEDEFLİ REKLAM AYDINLATMASI (Ticari Reklam Yönetmeliği md.25/A) ——— */
+{
+  const govde=`${sayfaBas({yol:yolBas('', 'Hedefli reklam aydınlatması'),baslik:'Hedefli reklam aydınlatması',lead:'Reklamlarımızın kimlere, hangi ölçütlerle gösterildiğini ve tercihlerinizi nasıl değiştirebileceğinizi burada açıkça yazıyoruz. Son güncelleme: 11 Kasım 2026.'})}
+<section class="bolum">
+  <div class="kap yazi">
+    <h2>Reklamlarımızı kim yayınlıyor?</h2>
+    <p>Ankara İş İlanı, ücretsiz ilan hizmetini tanıtmak için Meta'nın (Facebook ve Instagram) reklam araçlarını kullanır. Reklamları yayınlayan Ankara İş İlanı'dır.</p>
+    <h2>Reklamları kimlere gösteriyoruz?</h2>
+    <p>Reklamlarımızı hedeflerken şu ölçütlerden bir ya da birkaçını kullanırız:</p>
+    <ul>
+      <li><strong>Konum:</strong> Ankara.</li>
+      <li><strong>Yaş:</strong> yalnız 18 yaş ve üzeri. 18 yaşın altındaki kişilere reklam göstermiyoruz ve çocuklara ait verilerle profilleme yapmıyoruz.</li>
+      <li><strong>İş ve işletme bilgisi:</strong> Meta'nın kendi sınıflandırmasındaki küçük işletme sahibi davranışı ve işveren unvanları.</li>
+      <li><strong>Site ziyareti:</strong> çerez onayı vererek sitemizi ziyaret etmiş kişilere yeniden reklam gösterebiliriz.</li>
+    </ul>
+    <p>Ad, telefon ya da e-posta gibi kimlik bilgilerinizi reklam hedeflemesi için Meta'ya göndermiyoruz.</p>
+    <h2>Reklam ölçümü nasıl çalışır?</h2>
+    <p>Reklamlarımızın etkisini ölçmek için Meta ölçüm araçlarını yalnız “Tümünü kabul et” seçeneğini seçerseniz çalıştırırız. “Yalnız gerekli olanlar” seçeneğini seçerseniz bu araçlar çalışmaz. Ayrıntılar için <a href="gizlilik.html">Gizlilik, KVKK ve Çerez Bildirimi</a> sayfamıza bakın.</p>
+    <h2>Bir reklamı neden gördüğümü nasıl öğrenirim?</h2>
+    <p>Facebook ve Instagram'da reklamın üç nokta menüsünden “Bu reklamı neden görüyorum?” seçeneğini kullanabilirsiniz.</p>
+    <h2>Tercihlerimi nasıl değiştiririm?</h2>
+    <ul>
+      <li>Meta hesabınızdaki reklam tercihlerini <a href="https://www.facebook.com/adpreferences/ad_settings" target="_blank" rel="noopener">Meta reklam tercihleri</a> sayfasından değiştirebilirsiniz.</li>
+      <li>Sitemizdeki ölçüm tercihini <a href="#" data-cerez-ac>çerez tercihlerini yeniden açarak</a> değiştirebilirsiniz.</li>
+      <li>Sorularınız için <a href="iletisim.html">iletişim</a> sayfamızı kullanabilirsiniz.</li>
+    </ul>
+  </div>
+</section>`;
+  yaz('reklam-aydinlatmasi.html', sayfa({baslik:'Hedefli Reklam Aydınlatması | Ankara İş İlanı',
+    aciklama:'Ankara İş İlanı reklamlarının kimlere, hangi ölçütlerle gösterildiği ve reklam tercihlerinizi nasıl değiştirebileceğiniz.',
+    yol:'reklam-aydinlatmasi.html',ld:[yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Hedefli reklam aydınlatması',yol:'reklam-aydinlatmasi.html'}])],govde}));
 }
 
 /* ——— 8. KATEGORİ SAYFALARI (rehberler; altbilgiden erişilir) ——— */
@@ -740,7 +776,7 @@ yaz('404.html', sayfa({baslik:'Sayfa bulunamadı | Ankara İş İlanı',aciklama
 /* ——— 11. SITEMAP ——— */
 const sayfalar=[
   ['',1.0,'daily'],['guncel-ilanlar.html',0.95,'daily'],['genel-ilanlar.html',0.9,'daily'],['ilan-ver.html',0.9,'monthly'],
-  ['hakkimizda.html',0.6,'monthly'],['iletisim.html',0.6,'monthly'],['ek-is-ilanlari.html',0.8,'weekly'],['evde-paketleme-isi.html',0.8,'weekly'],['gizlilik.html',0.3,'yearly'],
+  ['hakkimizda.html',0.6,'monthly'],['iletisim.html',0.6,'monthly'],['ek-is-ilanlari.html',0.8,'weekly'],['evde-paketleme-isi.html',0.8,'weekly'],['gizlilik.html',0.3,'yearly'],['reklam-aydinlatmasi.html',0.3,'yearly'],
   ...yazi.map(y=>[yaziYol(y),0.7,'monthly']),
   ...ilanlar.map(i=>[ilanYol(i),0.7,'weekly'])];
 yaz('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>
