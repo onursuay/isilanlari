@@ -7,8 +7,13 @@
   var d = document, w = window;
   w.dataLayer = w.dataLayer || [];
   function gtag() { w.dataLayer.push(arguments); }
+  /* Her olaya benzersiz kimlik: tarayıcı (piksel) ve ileride sunucu (CAPI) aynı olayı tekilleştirebilsin */
+  function yeniId() {
+    try { if (w.crypto && w.crypto.randomUUID) return w.crypto.randomUUID(); } catch (e) {}
+    return String(Date.now()) + '-' + Math.random().toString(16).slice(2);
+  }
   function olay(ad, veri) {
-    var o = { event: ad };
+    var o = { event: ad, olay_id: yeniId() };
     for (var k in (veri || {})) o[k] = veri[k];
     w.dataLayer.push(o);
   }
