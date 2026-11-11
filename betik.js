@@ -1,4 +1,4 @@
-/* Ankara İş İlanları — site davranışı
+/* Ankara İş İlanı — site davranışı
    1) çerez onayı (Consent Mode v2: varsayılan ret, onayla güncelle)
    2) ölçüm olayları → dataLayer (GTM buradan okur)
    3) menü, sayaç, görünürlük, süzgeç, ilan formu */

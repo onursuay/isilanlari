@@ -1,11 +1,11 @@
-# Ankara İş İlanları
+# Ankara İş İlanı
 
 > Ankara'da iş arayanla eleman arayanı buluşturan ilan sitesi. İşverenler ilanlarını ücretsiz verir;
 > ilanlar ücret talebi kontrolünden geçirilerek yayınlanır. Aday hiçbir aşamada para ödemez.
 
 ## Doğrulanmış temel bilgiler
 
-- Ankara İş İlanları, adaydan ücret istemeyen iş ilanlarını yayınlar. Kapora, kargo, sigorta,
+- Ankara İş İlanı, adaydan ücret istemeyen iş ilanlarını yayınlar. Kapora, kargo, sigorta,
   üyelik veya eğitim ücreti isteyen ilanlar yayınlanmaz.
 - Evde paketleme işi adı altında yapılan tekliflerin büyük bölümü dolandırıcılıktır. Ayırt edici
   işaret nettir: işe başlamak için para isteniyorsa o teklif gerçek değildir.

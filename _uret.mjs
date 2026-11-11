@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Ankara İş İlanları — site üreteci (tek kaynak)
+/* Ankara İş İlanı — site üreteci (tek kaynak)
    veri/ilanlar.json  → Güncel İlanlar, Genel İlanlar, ilan sayfaları (JobPosting)
    veri/yazilar.json  → Ek İş İlanları ve Evde Paketleme İşi rehberleri (altbilgiden erişilir)
    Çalıştır: node _uret.mjs   |  Tasarım: stil.css + betik.js  |  Tasarım yönü: işveren önce (11.11.2026) */
@@ -90,7 +90,7 @@ const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,foll
 <link rel="canonical" href="${SITE}/${yol}">
 <meta name="robots" content="${robots}">
 <meta name="theme-color" content="#3B46F2">
-<meta property="og:site_name" content="Ankara İş İlanları">
+<meta property="og:site_name" content="Ankara İş İlanı">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${kac(baslik)}">
 <meta property="og:description" content="${kac(kisalt(aciklama,155))}">
@@ -137,7 +137,7 @@ ${alt(k)}
 const MENU = [['ana','index.html','Ana Sayfa'],['guncel','guncel-ilanlar.html','Güncel İlanlar'],['genel','genel-ilanlar.html','Genel İlanlar'],['hakkimizda','hakkimizda.html','Hakkımızda'],['iletisim','iletisim.html','İletişim']];
 const ust = (aktif,k='') => `<header class="ust">
   <div class="kap ust-ic">
-    <a class="marka" href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-128.png?v=${surum('medya/logo-128.png')}" width="56" height="56" alt=""></a>
+    <a class="marka" href="${k}index.html" aria-label="Ankara İş İlanı, ana sayfa"><img src="${k}medya/logo-128.png?v=${surum('medya/logo-128.png')}" width="56" height="56" alt=""></a>
     <nav class="menu" id="ana-menu" aria-label="Ana menü">
 ${MENU.map(([a,h,t])=>`      <a href="${k}${h}"${aktif===a?' aria-current="page"':''}>${t}</a>`).join('\n')}
     </nav>
@@ -152,7 +152,7 @@ const alt = (k='') => `<footer class="alt">
   <div class="kap">
     <div class="alt-izgara">
       <div class="alt-marka">
-        <a href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-192.png?v=${surum('medya/logo-192.png')}" width="72" height="72" alt=""></a>
+        <a href="${k}index.html" aria-label="Ankara İş İlanı, ana sayfa"><img src="${k}medya/logo-192.png?v=${surum('medya/logo-192.png')}" width="72" height="72" alt=""></a>
         <p>Ankara'da iş arayanla eleman arayanı buluşturan ilan platformu. İlanlar yayından önce okunur, adaydan ücret isteyen ilan yayınlanmaz.</p>
         <div class="alt-sosyal">
           <a href="${FB_SAYFA}" rel="me noopener" target="_blank" aria-label="Facebook sayfamız" data-sosyal="facebook_sayfa">${IK.fb}</a>
@@ -189,7 +189,7 @@ const alt = (k='') => `<footer class="alt">
       </div>
     </div>
     <div class="alt-kunye">
-      <span>© 2026 Ankara İş İlanları</span>
+      <span>© 2026 Ankara İş İlanı</span>
       <span>İş bulma vaadinde bulunmuyoruz, ilanları yayınlıyoruz.</span>
     </div>
   </div>
@@ -204,7 +204,7 @@ const alt = (k='') => `<footer class="alt">
 
 const yolIzi = (parcalar) => ({'@context':'https://schema.org','@type':'BreadcrumbList',
   itemListElement:parcalar.map((p,n)=>({'@type':'ListItem',position:n+1,name:p.ad,item:`${SITE}/${p.yol}`}))});
-const ORG = {'@context':'https://schema.org','@type':'Organization',name:'Ankara İş İlanları',url:SITE,
+const ORG = {'@context':'https://schema.org','@type':'Organization',name:'Ankara İş İlanı',url:SITE,
   logo:`${SITE}/medya/logo.png?v=${surum('medya/logo.png')}`,email:EPOSTA,areaServed:{'@type':'City',name:'Ankara'},
   sameAs:[FB_SAYFA,INSTAGRAM,LINKEDIN,FB_GRUP],
   description:"Ankara'da iş arayanla eleman arayanı buluşturan ilan platformu. Adaydan ücret istenmez."};
@@ -365,7 +365,7 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
 <section class="bolum">
   <div class="kap">
     <div class="bolum-bas bolum-bas-yan" data-goster>
-      <h2 class="baslik-ikon">Ankara İş İlanları Sıcak <span class="sicak${yeniVar?' sicak-yeni':''}" role="img" aria-label="${yeniVar?'Yeni ilan var':'Güncel ilanlar'}">${IK.alev}</span>${yeniVar?'<span class="yeni-isaret">Yeni</span>':''}</h2>
+      <h2 class="baslik-ikon">Ankara İş İlanı Sıcak <span class="sicak${yeniVar?' sicak-yeni':''}" role="img" aria-label="${yeniVar?'Yeni ilan var':'Güncel ilanlar'}">${IK.alev}</span>${yeniVar?'<span class="yeni-isaret">Yeni</span>':''}</h2>
       <a class="dugme dugme-hat" href="guncel-ilanlar.html">Tüm güncel ilanlar ${IK.ok}</a>
     </div>
     <div class="ilan-liste">
@@ -374,9 +374,9 @@ ${secilen.map(i=>satir(i)).join('\n')}
   </div>
 </section>
 ${cagri()}`;
-  yaz('index.html', sayfa({baslik:"Ankara İş İlanları | Ücretsiz İlan Verin, Eleman Bulun",
+  yaz('index.html', sayfa({baslik:"Ankara İş İlanı | Ücretsiz İlan Verin, Eleman Bulun",
     aciklama:"Ankara'da eleman arıyorsanız ilanınızı ücretsiz yayınlayalım. İlanınız sitemizde, Instagram'da ve Facebook sayfamızda yer alır. Üyelik gerekmez.",
-    yol:'',ld:[ORG,{'@context':'https://schema.org','@type':'WebSite',name:'Ankara İş İlanları',url:SITE,inLanguage:'tr-TR'}],aktif:'ana',govde}));
+    yol:'',ld:[ORG,{'@context':'https://schema.org','@type':'WebSite',name:'Ankara İş İlanı',url:SITE,inLanguage:'tr-TR'}],aktif:'ana',govde}));
 }
 
 /* ——— 2. GÜNCEL İLANLAR ——— */
@@ -410,7 +410,7 @@ ${ilanlar.map(i=>satir(i)).join('\n')}
   </div>
 </section>
 ${cagri()}`;
-  yaz('guncel-ilanlar.html', sayfa({baslik:`Güncel İş İlanları | Ankara İş İlanları`,
+  yaz('guncel-ilanlar.html', sayfa({baslik:`Güncel İş İlanları | Ankara İş İlanı`,
     aciklama:`Ankara'daki güncel iş ilanları: mağaza, depo, üretim, temizlik, kurye ve servis. İlanlar ücret talebi kontrolünden geçirilerek yayınlanır.`,
     yol:'guncel-ilanlar.html',ld,aktif:'guncel',govde}));
 }
@@ -435,7 +435,7 @@ ${ilanlar.map(i=>satir(i)).join('\n')}
   </div>
 </section>
 ${cagri()}`;
-  yaz('genel-ilanlar.html', sayfa({baslik:'Genel İş İlanları | Ankara İş İlanları',
+  yaz('genel-ilanlar.html', sayfa({baslik:'Genel İş İlanları | Ankara İş İlanı',
     aciklama:"Ankara iş ilanlarını sektöre ve ilçeye göre süzün: satış, üretim, temizlik, kurye, servis ve ön büro ilanları tek sayfada.",
     yol:'genel-ilanlar.html',ld:[yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Genel İlanlar',yol:'genel-ilanlar.html'}])],aktif:'genel',govde}));
 }
@@ -443,7 +443,7 @@ ${cagri()}`;
 /* ——— 4. HAKKIMIZDA ——— */
 {
   const govde=`${sayfaBas({yol:yolBas('', 'Hakkımızda'),baslik:"Ankara'da iş arayanla eleman arayan burada buluşuyor",
-    lead:"Ankara İş İlanları, Ankara'daki işverenlerle iş arayanları tek çatıda buluşturan bir ilan platformudur. Üç ayrı kanaldaki topluluğumuz, ilanların ulaşabileceği geniş bir kitle oluşturur."})}
+    lead:"Ankara İş İlanı, Ankara'daki işverenlerle iş arayanları tek çatıda buluşturan bir ilan platformudur. Üç ayrı kanaldaki topluluğumuz, ilanların ulaşabileceği geniş bir kitle oluşturur."})}
 <section class="bolum">
   <div class="kap">
     <div class="bolum-bas" data-goster>
@@ -489,8 +489,8 @@ ${cagri()}`;
   </div>
 </section>
 ${cagri()}`;
-  yaz('hakkimizda.html', sayfa({baslik:'Hakkımızda | Ankara İş İlanları',
-    aciklama:"Ankara İş İlanları: 41 binden fazla üyeli Facebook grubu, Facebook sayfası ve LinkedIn topluluğuyla Ankara'da işverenle iş arayanı buluşturan ilan platformu.",
+  yaz('hakkimizda.html', sayfa({baslik:'Hakkımızda | Ankara İş İlanı',
+    aciklama:"Ankara İş İlanı: 41 binden fazla üyeli Facebook grubu, Facebook sayfası ve LinkedIn topluluğuyla Ankara'da işverenle iş arayanı buluşturan ilan platformu.",
     yol:'hakkimizda.html',ld:[ORG,yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Hakkımızda',yol:'hakkimizda.html'}])],aktif:'hakkimizda',govde}));
 }
 
@@ -506,7 +506,7 @@ ${cagri()}`;
         <li><a href="${FB_GRUP}" target="_blank" rel="noopener" data-sosyal="facebook_grup"><span class="ik">${IK.grup}</span><span><b>Facebook grubu</b><small>41 binden fazla üyeli topluluğumuz</small></span></a></li>
         <li><a href="${FB_SAYFA}" target="_blank" rel="noopener" data-sosyal="facebook_sayfa"><span class="ik">${IK.fb.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>Facebook sayfası</b><small>@ankaraisilanicom</small></span></a></li>
         <li><a href="${INSTAGRAM}" target="_blank" rel="noopener" data-sosyal="instagram"><span class="ik">${IK.ig.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>Instagram</b><small>@ankaraisilanicom</small></span></a></li>
-        <li><a href="${LINKEDIN}" target="_blank" rel="noopener" data-sosyal="linkedin"><span class="ik">${IK.in.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>LinkedIn</b><small>Ankara İş İlanları</small></span></a></li>
+        <li><a href="${LINKEDIN}" target="_blank" rel="noopener" data-sosyal="linkedin"><span class="ik">${IK.in.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>LinkedIn</b><small>Ankara İş İlanı</small></span></a></li>
       </ul>
     </div>
     <div class="panel panel-yuzey">
@@ -520,8 +520,8 @@ ${cagri()}`;
     </div>
   </div>
 </section>`;
-  yaz('iletisim.html', sayfa({baslik:'İletişim | Ankara İş İlanları',
-    aciklama:`Ankara İş İlanları ile iletişime geçin: ilan vermek, sahte ilan bildirmek ya da soru sormak için ${EPOSTA} adresine yazın.`,
+  yaz('iletisim.html', sayfa({baslik:'İletişim | Ankara İş İlanı',
+    aciklama:`Ankara İş İlanı ile iletişime geçin: ilan vermek, sahte ilan bildirmek ya da soru sormak için ${EPOSTA} adresine yazın.`,
     yol:'iletisim.html',ld:[ORG,yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'İletişim',yol:'iletisim.html'}])],aktif:'iletisim',govde}));
 }
 
@@ -573,7 +573,7 @@ ${cagri()}`;
     </aside>
   </div>
 </section>`;
-  yaz('ilan-ver.html', sayfa({baslik:'Ücretsiz İlan Ver | Ankara İş İlanları',
+  yaz('ilan-ver.html', sayfa({baslik:'Ücretsiz İlan Ver | Ankara İş İlanı',
     aciklama:"Ankara'da eleman arıyorsanız ilanınızı ücretsiz verin. Formu doldurun, ilanınızı sitemizde, Instagram'da, Facebook'ta ve LinkedIn'de yayınlayalım.",
     yol:'ilan-ver.html',ld:[yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Ücretsiz İlan Ver',yol:'ilan-ver.html'}])],govde}));
 }
@@ -584,7 +584,7 @@ ${cagri()}`;
 <section class="bolum">
   <div class="kap yazi">
     <h2>Veri sorumlusu</h2>
-    <p>Bu sitenin veri sorumlusu Ankara İş İlanları'dır. Bize ${EPOSTA} adresinden ulaşabilirsiniz.</p>
+    <p>Bu sitenin veri sorumlusu Ankara İş İlanı'dır. Bize ${EPOSTA} adresinden ulaşabilirsiniz.</p>
     <h2>Hangi bilgileri işliyoruz?</h2>
     <p><strong>İlan formu:</strong> firma veya yetkili adı, telefon, e-posta ve ilanla ilgili bilgiler.</p>
     <p><strong>E-postalar:</strong> bize yazdığınız iletiler ve içindeki bilgiler.</p>
@@ -603,8 +603,8 @@ ${cagri()}`;
     <p>6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 11. maddesi kapsamındaki haklarınızı kullanmak için ${EPOSTA} adresine yazabilirsiniz.</p>
   </div>
 </section>`;
-  yaz('gizlilik.html', sayfa({baslik:'Gizlilik, KVKK ve Çerez Bildirimi | Ankara İş İlanları',
-    aciklama:'Ankara İş İlanları gizlilik, KVKK ve çerez bildirimi: hangi bilgileri neden işlediğimiz ve çerez tercihlerinizi nasıl değiştirebileceğiniz.',
+  yaz('gizlilik.html', sayfa({baslik:'Gizlilik, KVKK ve Çerez Bildirimi | Ankara İş İlanı',
+    aciklama:'Ankara İş İlanı gizlilik, KVKK ve çerez bildirimi: hangi bilgileri neden işlediğimiz ve çerez tercihlerinizi nasıl değiştirebileceğiniz.',
     yol:'gizlilik.html',ld:[yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Gizlilik ve KVKK',yol:'gizlilik.html'}])],govde}));
 }
 
@@ -638,7 +638,7 @@ for (const y of yazi) {
   const digerleri = yazi.filter(x=>x.slug!==y.slug && x.kategori===y.kategori).slice(0,2);
   const ld=[{'@context':'https://schema.org','@type':'Article',headline:y.baslik,description:y.ozet,
       datePublished:y.tarih,dateModified:y.tarih,inLanguage:'tr-TR',
-      author:{'@type':'Organization',name:'Ankara İş İlanları'},publisher:ORG,
+      author:{'@type':'Organization',name:'Ankara İş İlanı'},publisher:ORG,
       mainEntityOfPage:{'@type':'WebPage','@id':`${SITE}/${yaziYol(y)}`}},
     {'@context':'https://schema.org','@type':'FAQPage',inLanguage:'tr-TR',
       mainEntity:(y.sss||[]).map(q=>({'@type':'Question',name:q.s,acceptedAnswer:{'@type':'Answer',text:duz(q.c)}}))},
@@ -670,7 +670,7 @@ ${digerleri.map(d=>yaziKart(d,'../')).join('\n')}
   </div>
 </section>`:''}
 ${cagri('../')}`;
-  yaz(yaziYol(y), sayfa({baslik:(y.baslik.length+22<=60?`${y.baslik} | Ankara İş İlanları`:y.baslik),aciklama:y.ozet,yol:yaziYol(y),ld,k:'../',govde}));
+  yaz(yaziYol(y), sayfa({baslik:(y.baslik.length+22<=60?`${y.baslik} | Ankara İş İlanı`:y.baslik),aciklama:y.ozet,yol:yaziYol(y),ld,k:'../',govde}));
 }
 
 /* ——— 10. İLAN SAYFALARI ——— */
@@ -678,10 +678,10 @@ for (const i of ilanlar) {
   const benzer = ilanlar.filter(x=>x.kod!==i.kod && (x.ilce===i.ilce||x.kategori===i.kategori)).slice(0,3);
   const ld=[{'@context':'https://schema.org','@type':'JobPosting',title:i.baslik,description:i.aciklama,
       datePosted:i.tarih,employmentType:i.calisma==='Tam zamanlı'?'FULL_TIME':'PART_TIME',
-      hiringOrganization:{'@type':'Organization',name:'Ankara İş İlanları',sameAs:SITE},
+      hiringOrganization:{'@type':'Organization',name:'Ankara İş İlanı',sameAs:SITE},
       jobLocation:{'@type':'Place',address:{'@type':'PostalAddress',addressLocality:i.ilce,addressRegion:'Ankara',addressCountry:'TR',streetAddress:i.semt}},
       directApply:false,inLanguage:'tr-TR',
-      identifier:{'@type':'PropertyValue',name:'Ankara İş İlanları',value:i.kod}},
+      identifier:{'@type':'PropertyValue',name:'Ankara İş İlanı',value:i.kod}},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Güncel İlanlar',yol:'guncel-ilanlar.html'},{ad:i.baslik,yol:ilanYol(i)}])];
   const govde=`${sayfaBas({yol:yolBas('../', `<a href="../guncel-ilanlar.html">Güncel İlanlar</a>`),baslik:kac(i.baslik),lead:kac(i.aciklama),
     eylem:`<a class="dugme dugme-sari" href="mailto:${EPOSTA}?subject=${encodeURIComponent(i.kod+' – '+i.baslik)}" data-basvur="${kac(i.kod)}">Bu ilana başvurun ${IK.ok}</a><a class="dugme dugme-hat" href="../guncel-ilanlar.html">Diğer ilanlar</a>`})}
@@ -724,7 +724,7 @@ ${cagri('../')}`;
 }
 
 /* ——— 10b. 404 ——— */
-yaz('404.html', sayfa({baslik:'Sayfa bulunamadı | Ankara İş İlanları',aciklama:'Aradığınız sayfa bulunamadı. Ana sayfaya dönebilir ya da güncel ilanlara bakabilirsiniz.',yol:'404.html',k:'/',robots:'noindex,follow',
+yaz('404.html', sayfa({baslik:'Sayfa bulunamadı | Ankara İş İlanı',aciklama:'Aradığınız sayfa bulunamadı. Ana sayfaya dönebilir ya da güncel ilanlara bakabilirsiniz.',yol:'404.html',k:'/',robots:'noindex,follow',
   govde:`${sayfaBas({yol:'',baslik:'Bu sayfayı bulamadık',lead:'Adres değişmiş ya da yanlış yazılmış olabilir. Aşağıdaki sayfalardan devam edebilirsiniz.',eylem:'<a class="dugme dugme-sari" href="/index.html">Ana sayfa</a><a class="dugme dugme-hat" href="/guncel-ilanlar.html">Güncel ilanlar</a>'})}`}));
 
 /* ——— 11. SITEMAP ——— */
