@@ -102,8 +102,8 @@ const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,foll
 <meta name="twitter:card" content="summary_large_image">
 <meta name="geo.region" content="TR-06">
 <meta name="geo.placename" content="Ankara">
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/medya/favicon.png" type="image/png" sizes="256x256">
+<link rel="icon" href="/favicon.ico?v=${surum('favicon.ico')}" sizes="48x48">
+<link rel="icon" href="/medya/favicon.png?v=${surum('medya/favicon.png')}" type="image/png" sizes="256x256">
 <link rel="apple-touch-icon" href="/medya/apple-touch-icon.png?v=${surum('medya/apple-touch-icon.png')}">
 <link rel="preload" href="/medya/yazi/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/medya/yazi/poppins-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
