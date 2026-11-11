@@ -13,9 +13,9 @@ const KOK = path.dirname(fileURLToPath(import.meta.url));
 const SITE = process.env.SITE_URL || 'https://ankaraisilani.com';
 const GTM = 'GTM-KS8JNCLW';                 /* ankaraisilani.com kapsayıcısı (yalnız bu site) */
 const EPOSTA = 'info@ankaraisilani.com';
-const FB_SAYFA = 'https://www.facebook.com/ankaraisilanlaricomtr/';
+const FB_SAYFA = 'https://www.facebook.com/ankaraisilanicom/';
 const FB_GRUP = 'https://www.facebook.com/groups/ankaraisilanlari';
-const INSTAGRAM = 'https://www.instagram.com/ankaraisilanlaricomtr/';
+const INSTAGRAM = 'https://www.instagram.com/ankaraisilanicom/';
 const LINKEDIN = 'https://www.linkedin.com/company/85396970/';
 
 const oku = p => fs.readFileSync(path.join(KOK,p),'utf8');
@@ -504,8 +504,8 @@ ${cagri()}`;
       <ul class="iletisim-liste">
         <li><a href="mailto:${EPOSTA}" data-yer="iletisim"><span class="ik">${IK.posta}</span><span><b>E-posta</b><small>${EPOSTA}</small></span></a></li>
         <li><a href="${FB_GRUP}" target="_blank" rel="noopener" data-sosyal="facebook_grup"><span class="ik">${IK.grup}</span><span><b>Facebook grubu</b><small>41 binden fazla üyeli topluluğumuz</small></span></a></li>
-        <li><a href="${FB_SAYFA}" target="_blank" rel="noopener" data-sosyal="facebook_sayfa"><span class="ik">${IK.fb.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>Facebook sayfası</b><small>@ankaraisilanlaricomtr</small></span></a></li>
-        <li><a href="${INSTAGRAM}" target="_blank" rel="noopener" data-sosyal="instagram"><span class="ik">${IK.ig.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>Instagram</b><small>@ankaraisilanlaricomtr</small></span></a></li>
+        <li><a href="${FB_SAYFA}" target="_blank" rel="noopener" data-sosyal="facebook_sayfa"><span class="ik">${IK.fb.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>Facebook sayfası</b><small>@ankaraisilanicom</small></span></a></li>
+        <li><a href="${INSTAGRAM}" target="_blank" rel="noopener" data-sosyal="instagram"><span class="ik">${IK.ig.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>Instagram</b><small>@ankaraisilanicom</small></span></a></li>
         <li><a href="${LINKEDIN}" target="_blank" rel="noopener" data-sosyal="linkedin"><span class="ik">${IK.in.replace('<svg','<svg fill="#3B46F2"')}</span><span><b>LinkedIn</b><small>Ankara İş İlanları</small></span></a></li>
       </ul>
     </div>
