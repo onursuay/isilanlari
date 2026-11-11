@@ -96,7 +96,7 @@ const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,foll
 <meta property="og:description" content="${kac(kisalt(aciklama,155))}">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="${SITE}/${yol}">
-<meta property="og:image" content="${SITE}/medya/og.png">
+<meta property="og:image" content="${SITE}/medya/og.png?v=${surum('medya/og.png')}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -104,7 +104,7 @@ const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,foll
 <meta name="geo.placename" content="Ankara">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/medya/favicon.png" type="image/png" sizes="256x256">
-<link rel="apple-touch-icon" href="/medya/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/medya/apple-touch-icon.png?v=${surum('medya/apple-touch-icon.png')}">
 <link rel="preload" href="/medya/yazi/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/medya/yazi/poppins-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/medya/yazi/poppins-600-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -137,7 +137,7 @@ ${alt(k)}
 const MENU = [['ana','index.html','Ana Sayfa'],['guncel','guncel-ilanlar.html','Güncel İlanlar'],['genel','genel-ilanlar.html','Genel İlanlar'],['hakkimizda','hakkimizda.html','Hakkımızda'],['iletisim','iletisim.html','İletişim']];
 const ust = (aktif,k='') => `<header class="ust">
   <div class="kap ust-ic">
-    <a class="marka" href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-128.png" width="56" height="56" alt=""></a>
+    <a class="marka" href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-128.png?v=${surum('medya/logo-128.png')}" width="56" height="56" alt=""></a>
     <nav class="menu" id="ana-menu" aria-label="Ana menü">
 ${MENU.map(([a,h,t])=>`      <a href="${k}${h}"${aktif===a?' aria-current="page"':''}>${t}</a>`).join('\n')}
     </nav>
@@ -152,7 +152,7 @@ const alt = (k='') => `<footer class="alt">
   <div class="kap">
     <div class="alt-izgara">
       <div class="alt-marka">
-        <a href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-192.png" width="72" height="72" alt=""></a>
+        <a href="${k}index.html" aria-label="Ankara İş İlanları, ana sayfa"><img src="${k}medya/logo-192.png?v=${surum('medya/logo-192.png')}" width="72" height="72" alt=""></a>
         <p>Ankara'da iş arayanla eleman arayanı buluşturan ilan platformu. İlanlar yayından önce okunur, adaydan ücret isteyen ilan yayınlanmaz.</p>
         <div class="alt-sosyal">
           <a href="${FB_SAYFA}" rel="me noopener" target="_blank" aria-label="Facebook sayfamız" data-sosyal="facebook_sayfa">${IK.fb}</a>
@@ -205,16 +205,16 @@ const alt = (k='') => `<footer class="alt">
 const yolIzi = (parcalar) => ({'@context':'https://schema.org','@type':'BreadcrumbList',
   itemListElement:parcalar.map((p,n)=>({'@type':'ListItem',position:n+1,name:p.ad,item:`${SITE}/${p.yol}`}))});
 const ORG = {'@context':'https://schema.org','@type':'Organization',name:'Ankara İş İlanları',url:SITE,
-  logo:`${SITE}/medya/logo.png`,email:EPOSTA,areaServed:{'@type':'City',name:'Ankara'},
+  logo:`${SITE}/medya/logo.png?v=${surum('medya/logo.png')}`,email:EPOSTA,areaServed:{'@type':'City',name:'Ankara'},
   sameAs:[FB_SAYFA,INSTAGRAM,LINKEDIN,FB_GRUP],
   description:"Ankara'da iş arayanla eleman arayanı buluşturan ilan platformu. Adaydan ücret istenmez."};
 
 const yolBas = (k,...parca) => `<nav class="yol-izi" aria-label="Sayfa yolu"><a href="${k}index.html">Ana Sayfa</a>${parca.map(p=>`<span>${p}</span>`).join('')}</nav>`;
-const sayfaBas = ({yol,baslik,lead,eylem=''}) => `<section class="sayfa-bas">
+const sayfaBas = ({yol,baslik,lead,eylem='',leadSinif=''}) => `<section class="sayfa-bas">
   <div class="kap">
     ${yol}
     <h1>${baslik}</h1>
-    ${lead?`<p class="lead">${lead}</p>`:''}
+    ${lead?`<p class="lead${leadSinif?' '+leadSinif:''}">${lead}</p>`:''}
     ${eylem?`<div class="hero-eylem">${eylem}</div>`:''}
   </div>
 </section>`;
@@ -528,7 +528,7 @@ ${cagri()}`;
 /* ——— 6. İLAN VER (işveren formu) ——— */
 {
   const govde=`${sayfaBas({yol:yolBas('', 'Ücretsiz İlan Ver'),baslik:'İlanınızı ücretsiz yayınlayalım',
-    lead:"Formu doldurun, ilanınızı kontrol edip sitemizde, Instagram'da ve Facebook sayfamızda yayınlayalım."})}
+    lead:"Formu doldurun, ilanınızı kontrol edip sitemizde, Instagram'da, Facebook sayfamızda ve LinkedIn'de yayınlayalım.",leadSinif:'lead-tek'})}
 <section class="bolum">
   <div class="kap ikili ikili-dar ikili-form">
     <div class="panel panel-form">
@@ -574,7 +574,7 @@ ${cagri()}`;
   </div>
 </section>`;
   yaz('ilan-ver.html', sayfa({baslik:'Ücretsiz İlan Ver | Ankara İş İlanları',
-    aciklama:"Ankara'da eleman arıyorsanız ilanınızı ücretsiz verin. Formu doldurun, ilanınızı sitemizde, Instagram'da ve Facebook sayfamızda yayınlayalım.",
+    aciklama:"Ankara'da eleman arıyorsanız ilanınızı ücretsiz verin. Formu doldurun, ilanınızı sitemizde, Instagram'da, Facebook'ta ve LinkedIn'de yayınlayalım.",
     yol:'ilan-ver.html',ld:[yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Ücretsiz İlan Ver',yol:'ilan-ver.html'}])],govde}));
 }
 
