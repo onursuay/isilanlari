@@ -274,8 +274,8 @@ h3{font-size:1.15rem;font-weight:600;letter-spacing:-.015em}
 .sayfa-bas{background:var(--yuzey);padding-block:1.5rem 1.75rem;position:relative;overflow:hidden}
 .sayfa-bas::after{content:"";position:absolute;right:-60px;top:-80px;width:260px;height:260px;border-radius:50%;background:var(--mavi-acik)}
 .sayfa-bas .kap{position:relative;z-index:1}
-.sayfa-bas h1{font-size:clamp(2rem,4.4vw,3.1rem);max-width:20ch}
-.sayfa-bas .lead{margin-top:.9rem}
+.sayfa-bas h1{font-size:clamp(1.9rem,3.8vw,2.6rem);max-width:none}
+.sayfa-bas .lead{margin-top:.6rem;max-width:none}
 .yol-izi{display:flex;flex-wrap:wrap;gap:.4rem;font-size:.85rem;color:var(--ink-2);margin-bottom:1rem}
 .yol-izi a{color:var(--ink-2)}
 .yol-izi span::before{content:"/";margin-right:.4rem;color:var(--hat)}
@@ -451,6 +451,23 @@ h3{font-size:1.15rem;font-weight:600;letter-spacing:-.015em}
 .acilir-pill .acilir-dugme{min-height:46px;border-radius:999px;padding-left:1.1rem;background:#fff;border-width:2px;color:var(--ink);font-weight:600;font-family:"Poppins",sans-serif;font-size:.88rem}
 .acilir-pill .acilir-panel{left:auto;right:0;width:min(440px,92vw)}
 @media (min-width:700px){.acilir-pill{margin-left:auto}}
+
+@media (min-width:880px){.panel-yapisik{position:sticky;top:96px;align-self:start}}
+
+/* ——— sarı kutu listesi ——— */
+.sunu-liste{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;position:relative;z-index:1}
+.sunu-liste li{display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:center;font:600 1rem/1.35 "Poppins",sans-serif;color:var(--ink)}
+.sunu-liste i{width:26px;height:26px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.sunu-liste i svg{width:13px;height:13px}
+
+/* ——— pano başlığı: yanında düğme, yeni ilan simgesi ——— */
+.bolum-bas-yan{max-width:none;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:.75rem 1.5rem}
+.baslik-ikon{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.sicak{position:relative;display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sari);color:var(--ink)}
+.sicak svg{width:22px;height:22px}
+.sicak-yeni::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--sari);animation:sicakNabiz 1.8s ease-out infinite}
+@keyframes sicakNabiz{from{transform:scale(.85);opacity:.9}to{transform:scale(1.35);opacity:0}}
+.yeni-isaret{font:700 .75rem/1 "Poppins",sans-serif;padding:.4rem .65rem;border-radius:999px;background:var(--ink);color:#fff}
 
 /* ——— hareket tercihi: kapalıysa son hâl sabit gösterilir ——— */
 @media (prefers-reduced-motion:reduce){

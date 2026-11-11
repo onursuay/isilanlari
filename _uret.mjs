@@ -65,6 +65,7 @@ const KATEGORI = {
 const IK = {
   is:`<svg viewBox="0 0 24 24" fill="none" stroke="#8A5A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>`,
   kisi:`<svg viewBox="0 0 24 24" fill="none" stroke="#2630C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`,
+  alev:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
   tik:`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`,
   ok:`<svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`,
   para:`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2c-.5-.8-1.5-1.2-2.8-1.2-1.6 0-2.8.8-2.8 2s1.1 1.7 2.8 2 2.8.8 2.8 2-1.2 2-2.8 2c-1.3 0-2.3-.4-2.8-1.2M12 6.5V8m0 8v1.5"/></svg>`,
@@ -278,6 +279,7 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
 /* ——— 1. ANA SAYFA ——— */
 {
   const secilen = ilanlar.slice(0,3);
+  const yeniVar = ilanlar.some(i => (Date.now() - new Date(i.tarih+'T00:00:00+03:00').getTime())/86400000 <= 7); /* yalnız son 7 günde ilan varsa 'Yeni' gösterilir */
   const govde = `<section class="hero">
   <div class="kap hero-izgara">
     <div class="hero-metin">
@@ -336,8 +338,14 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
       <div class="sunu-kutu sunu-buyuk" data-goster="1">
         <div>
           <h3>İlan vermek ücretsiz</h3>
-          <p>İlanınızı yayınlamak için ödeme yapmazsınız.</p>
+          <p>İlanınızı yayınlamak için ödeme yapmazsınız. Dahil olanlar:</p>
         </div>
+        <ul class="sunu-liste">
+          <li><i>${IK.tik}</i>Sitemizde ilanınıza özel sayfa</li>
+          <li><i>${IK.tik}</i>Instagram'da görsel ilan kartı</li>
+          <li><i>${IK.tik}</i>Facebook sayfamızda gönderi</li>
+          <li><i>${IK.tik}</i>Başvuruların size iletilmesi</li>
+        </ul>
         <a class="dugme dugme-mavi" href="ilan-ver.html" data-ilan-ver="sunu">İlanımı göndereyim ${IK.ok}</a>
       </div>
       <div class="sunu-kutu" data-goster="2">
@@ -356,14 +364,16 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
 
 <section class="bolum">
   <div class="kap">
-    <div class="bolum-bas" data-goster>
-      <h2>Panoda şimdi</h2>
-      <p>İş arayanlar için son yayınlanan ilanlar.</p>
+    <div class="bolum-bas bolum-bas-yan" data-goster>
+      <div>
+        <h2 class="baslik-ikon">Ankara İş İlanları Sıcak <span class="sicak${yeniVar?' sicak-yeni':''}" role="img" aria-label="${yeniVar?'Yeni ilan var':'Güncel ilanlar'}">${IK.alev}</span>${yeniVar?'<span class="yeni-isaret">Yeni</span>':''}</h2>
+        <p>İş arayanlar için son yayınlanan ilanlar.</p>
+      </div>
+      <a class="dugme dugme-hat" href="guncel-ilanlar.html">Tüm güncel ilanlar ${IK.ok}</a>
     </div>
     <div class="ilan-liste">
 ${secilen.map(i=>satir(i)).join('\n')}
     </div>
-    <p style="margin-top:1.6rem"><a class="dugme dugme-hat" href="guncel-ilanlar.html">Tüm güncel ilanlar ${IK.ok}</a></p>
   </div>
 </section>
 ${cagri()}`;
@@ -552,7 +562,7 @@ ${cagri()}`;
         <div class="form-sonuc" id="form-sonuc" tabindex="-1" role="status"><strong>E-posta uygulamanız açıldı.</strong>Hazırlanan iletiyi göndermeniz yeterli. Uygulama açılmazsa aynı bilgileri ${EPOSTA} adresine yazabilirsiniz.</div>
       </form>
     </div>
-    <aside class="panel panel-yuzey">
+    <aside class="panel panel-yuzey panel-yapisik">
       <h2 style="font-size:1.35rem">Yayından önce neleri kontrol ediyoruz?</h2>
       <ul class="kontrol">
         <li><span class="im im-evet" aria-hidden="true">✓</span><span>İlanda adaydan ücret talebi olmaması</span></li>
