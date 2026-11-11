@@ -239,5 +239,12 @@
     form.addEventListener('input', function (e) {
       var alan = e.target.closest('.alan'); if (alan) alan.classList.remove('hatali');
     });
+    /* huni ölçümü: işveren forma ilk kez dokunduğunda bir kez "ilan_formu_basla" */
+    var formBasladi = false;
+    form.addEventListener('focusin', function () {
+      if (formBasladi) return;
+      formBasladi = true;
+      olay('ilan_formu_basla', {});
+    });
   }
 })();
