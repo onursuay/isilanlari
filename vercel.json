@@ -7,7 +7,7 @@
       { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
     ]},
     { "source": "/(stil.css|betik.js)", "headers": [
-      { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
     ]},
     { "source": "/medya/yazi/(.*)", "headers": [
       { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }

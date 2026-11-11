@@ -5,6 +5,7 @@
    Çalıştır: node _uret.mjs   |  Tasarım: stil.css + betik.js  |  Tasarım yönü: işveren önce (11.11.2026) */
 
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -18,6 +19,8 @@ const INSTAGRAM = 'https://www.instagram.com/ankaraisilanlaricomtr/';
 const LINKEDIN = 'https://www.linkedin.com/company/85396970/';
 
 const oku = p => fs.readFileSync(path.join(KOK,p),'utf8');
+/* CSS ve JS adreslerine içerik özeti eklenir: dosya değişince adres değişir, tarayıcı eski sürümü kullanamaz */
+const surum = d => crypto.createHash('md5').update(fs.readFileSync(path.join(KOK,d))).digest('hex').slice(0,8);
 /* Adres kuralı (Owner 11.11.2026): hiçbir adreste .html görünmez; ana sayfa "/" olur.
    Üreteç dosyaları .html olarak yazar, Vercel cleanUrls ile uzantısız sunar. Bağlantılar burada tek noktadan düzeltilir. */
 const temizAdres = s => s
@@ -107,7 +110,7 @@ const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,foll
 <link rel="preload" href="/medya/yazi/poppins-600-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/medya/yazi/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/medya/yazi/montserrat-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="${k}stil.css">
+<link rel="stylesheet" href="${k}stil.css?v=${surum('stil.css')}">
 <script>
 /* Çerez onayı (Consent Mode v2): her şey reddedilmiş başlar, onayla güncellenir. GTM'den ÖNCE çalışmalıdır. */
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
@@ -126,7 +129,7 @@ ${ust(aktif,k)}
 ${govde}
 </main>
 ${alt(k)}
-<script src="${k}betik.js" defer></script>
+<script src="${k}betik.js?v=${surum('betik.js')}" defer></script>
 </body>
 </html>`;
 
