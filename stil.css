@@ -552,7 +552,8 @@ html.menu-kilit{overflow:hidden}
 }
 
 /* ——— başlık vurgusu ve tek satır başlıklar (Owner 11.11.2026) ——— */
-.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba(255,184,28,.45)}
+/* sarımsı gölge: sitedeki tüm sayfa (h1) ve bölüm (h2) başlıkları */
+h1,h2,.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba(255,184,28,.45)}
 @media (min-width:900px){
   .sayfa-bas h1.h1-tek{white-space:nowrap;font-size:min(2.6rem,calc(100cqw / (var(--k) * .6)))}
 }
