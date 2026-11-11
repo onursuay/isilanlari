@@ -28,7 +28,17 @@ const temizAdres = s => s
   .replace(/href="(\/[^"#?]*?)\.html((?:[#?][^"]*)?)"/g,(m,r,q)=>`href="${r==='/index'?'/':r}${q}"`)
   .replace(/(https:\/\/ankaraisilani\.com\/[^"'\s<\\]*?)\.html/g,'$1')
   .replace(/https:\/\/ankaraisilani\.com\/index(?=["'\s<\\])/g,'https://ankaraisilani.com/');
-const yaz = (p,s) => { if(p.endsWith('.html')) s = temizAdres(s); fs.mkdirSync(path.dirname(path.join(KOK,p)),{recursive:true}); fs.writeFileSync(path.join(KOK,p),s); };
+/* Başlıklarda (h1-h3) her kelimenin baş harfi büyük (Owner 11.11.2026, tüm sayfalar); varlık adı ve kısaltmalar olduğu gibi kalır */
+const bas1 = w => w.startsWith('&') ? w : w.replace(/^([^\p{L}]*)(\p{L})/u,(m,p,l)=>p+l.toLocaleUpperCase('tr-TR'));
+const GOLGE = new Set(["Ankara'da Eleman Arıyorsanız İlanınızı Ücretsiz Yayınlayalım","İlanınız Üç Adımda Yayında","İşverenler İçin Ne Yapıyoruz"]);
+const baslikBuyuk = html => html.replace(/<h([1-3])((?:\s[^>]*)?)>([\s\S]*?)<\/h\1>/g,(m,n,attr,ic)=>{
+  const yeni = ic.replace(/(<[^>]+>)|([^<]+)/g,(x,tag,txt)=>tag?tag:txt.replace(/\S+/g,bas1));
+  const duzMetin = yeni.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+  let a = attr;
+  if (GOLGE.has(duzMetin)) a = /class="/.test(a) ? a.replace('class="','class="baslik-golge ') : a+' class="baslik-golge"';
+  return `<h${n}${a}>${yeni}</h${n}>`;
+});
+const yaz = (p,s) => { if(p.endsWith('.html')) s = baslikBuyuk(temizAdres(s)); fs.mkdirSync(path.dirname(path.join(KOK,p)),{recursive:true}); fs.writeFileSync(path.join(KOK,p),s); };
 const ldGuvenli = o => JSON.stringify(o).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
 const kac = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const duz = s => String(s).replace(/<[^>]+>/g,'');
@@ -213,7 +223,7 @@ const yolBas = (k,...parca) => `<nav class="yol-izi" aria-label="Sayfa yolu"><a 
 const sayfaBas = ({yol,baslik,lead,eylem='',leadSinif=''}) => `<section class="sayfa-bas">
   <div class="kap">
     ${yol}
-    <h1>${baslik}</h1>
+    <h1${duz(baslik).length<=58?` class="h1-tek" style="--k:${duz(baslik).length}"`:''}>${baslik}</h1>
     ${lead?`<p class="lead${leadSinif?' '+leadSinif:''}">${lead}</p>`:''}
     ${eylem?`<div class="hero-eylem">${eylem}</div>`:''}
   </div>
@@ -322,9 +332,9 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
       <p>Üyelik, ödeme ya da karmaşık bir panel yok. Bilgileri iletirsiniz, gerisini biz yürütürüz.</p>
     </div>
     <div class="adimlar">
-      <div class="adim" data-goster="1"><div class="adim-no">1</div><h3>İlanı bize iletin</h3><p>Pozisyonu, çalışma yerini ve şartları kısa bir formla yazın.</p></div>
-      <div class="adim" data-goster="2"><div class="adim-no">2</div><h3>Biz kontrol edip yayınlayalım</h3><p>Ücret talebi ve ayrımcı ifadeleri ayıklayıp ilanı yayınlarız.</p></div>
-      <div class="adim" data-goster="3"><div class="adim-no">3</div><h3>Adaylar size ulaşsın</h3><p>Adaylar ilan üzerinden başvurur, başvuruları size biz iletiriz.</p></div>
+      <div class="adim" data-goster="1"><div class="adim-no">1</div><h3>Bize İletin</h3><p>Pozisyonu, çalışma yerini ve şartları kısa bir formla yazın.</p></div>
+      <div class="adim" data-goster="2"><div class="adim-no">2</div><h3>Yayınlayalım</h3><p>Ücret talebi ve ayrımcı ifadeleri ayıklayıp ilanı yayınlarız.</p></div>
+      <div class="adim" data-goster="3"><div class="adim-no">3</div><h3>Uygun Adayı Bulun</h3><p>Adaylar ilan üzerinden başvurur, başvuruları size biz iletiriz.</p></div>
     </div>
   </div>
 </section>

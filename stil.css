@@ -246,10 +246,13 @@ html.menu-kilit{overflow:hidden}
 .adim:nth-child(2) .adim-no{background:var(--mavi);color:#fff}
 .adim:nth-child(3) .adim-no{background:var(--ink);color:#fff}
 .adim p{color:var(--ink-2);margin:0;max-width:34ch}
+.adim h3{white-space:nowrap}
 @media (max-width:859px){
+  /* başlıklar tek satırda kalsın diye sütunlar başlık uzunluğuna orantılı (11, 12, 17 harf) */
+  .adimlar{grid-template-columns:minmax(0,11fr) minmax(0,12fr) minmax(0,17fr)}
   .adim-no{width:42px;height:42px;font-size:1rem;margin-bottom:.7rem;box-shadow:0 0 0 4px #fff}
   .bolum-yuzey .adim-no{box-shadow:0 0 0 4px var(--yuzey)}
-  .adim h3{font-size:.98rem;line-height:1.25;margin-bottom:.35rem}
+  .adim h3{font-size:clamp(.66rem,3.35vw,1.05rem);line-height:1.25;margin-bottom:.35rem;letter-spacing:-.02em}
   .adim p{font-size:.82rem;line-height:1.5;max-width:none}
 }
 
@@ -261,7 +264,7 @@ html.menu-kilit{overflow:hidden}
 .sunu-kutu p{margin:0;color:var(--ink-2)}
 .sunu-buyuk{background:var(--sari);border-color:var(--sari);display:flex;flex-direction:column;justify-content:space-between;gap:2rem;min-height:320px;position:relative;overflow:hidden}
 .sunu-buyuk::after{content:"";position:absolute;right:-70px;bottom:-70px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.34)}
-.sunu-buyuk h3{font-size:clamp(1.9rem,3.6vw,2.7rem);letter-spacing:-.035em;line-height:1.05;margin-bottom:.8rem;position:relative;z-index:1}
+.sunu-buyuk h3{font-size:clamp(1.2rem,1rem + 1vw,1.7rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:.8rem;position:relative;z-index:1}
 .sunu-buyuk{container-type:inline-size}
 .sunu-buyuk p{color:var(--ink);font-size:1.05rem;position:relative;z-index:1}
 @media (min-width:900px){.sunu-buyuk p{white-space:nowrap;font-size:clamp(.78rem,3.1cqi,1.05rem)}}
@@ -546,6 +549,12 @@ html.menu-kilit{overflow:hidden}
   .kanal-kutu{padding:.85rem .6rem}
   .kanal-kutu .sayi{font-size:1.02rem}
   .kanal-kutu h3{font-size:.84rem}
+}
+
+/* ——— başlık vurgusu ve tek satır başlıklar (Owner 11.11.2026) ——— */
+.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba(255,184,28,.45)}
+@media (min-width:900px){
+  .sayfa-bas h1.h1-tek{white-space:nowrap;font-size:min(2.6rem,calc(100cqw / (var(--k) * .6)))}
 }
 
 /* ——— hareket tercihi: kapalıysa son hâl sabit gösterilir ——— */
