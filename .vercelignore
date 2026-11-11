@@ -1,0 +1,6 @@
+otomasyon/
+.github/
+_kontrol/
+_topla.py
+_uret.mjs
+veri/_*.json
