@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://isilanlari.vercel.app/sitemap.xml
+Sitemap: https://ankaraisilani.com/sitemap.xml
