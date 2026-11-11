@@ -459,7 +459,7 @@ ${cagri()}`;
 </section>
 
 <section class="bolum bolum-yuzey">
-  <div class="kap ikili ikili-dar ikili-form">
+  <div class="kap ikili ikili-dar">
     <div>
       <h2>Neden güvenilir bir platformuz?</h2>
       <p>Ankara'da iş arayan en çok iki soruyu soruyor: “Bu ilan gerçek mi?” ve “Para isterlerse ne olacak?” Yayın ilkelerimiz bu iki sorunun cevabı üzerine kurulu.</p>
@@ -530,7 +530,7 @@ ${cagri()}`;
   const govde=`${sayfaBas({yol:yolBas('', 'Ücretsiz İlan Ver'),baslik:'İlanınızı ücretsiz yayınlayalım',
     lead:"Formu doldurun, ilanınızı kontrol edip sitemizde, Instagram'da ve Facebook sayfamızda yayınlayalım."})}
 <section class="bolum">
-  <div class="kap ikili ikili-dar">
+  <div class="kap ikili ikili-dar ikili-form">
     <div class="panel panel-form">
       <form class="form" id="ilan-formu" novalidate>
         <div class="form-bolum">
