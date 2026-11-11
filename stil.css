@@ -236,7 +236,9 @@ h3{font-size:1.15rem;font-weight:600;letter-spacing:-.015em}
 .sunu-buyuk{background:var(--sari);border-color:var(--sari);display:flex;flex-direction:column;justify-content:space-between;gap:2rem;min-height:320px;position:relative;overflow:hidden}
 .sunu-buyuk::after{content:"";position:absolute;right:-70px;bottom:-70px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.34)}
 .sunu-buyuk h3{font-size:clamp(1.9rem,3.6vw,2.7rem);letter-spacing:-.035em;line-height:1.05;margin-bottom:.8rem;position:relative;z-index:1}
-.sunu-buyuk p{color:var(--ink);font-size:1.05rem;position:relative;z-index:1;max-width:30ch}
+.sunu-buyuk{container-type:inline-size}
+.sunu-buyuk p{color:var(--ink);font-size:1.05rem;position:relative;z-index:1}
+@media (min-width:900px){.sunu-buyuk p{white-space:nowrap;font-size:clamp(.78rem,3.1cqi,1.05rem)}}
 .sunu-buyuk .dugme{align-self:flex-start;position:relative;z-index:1}
 .sunu-ikon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--mavi);margin-bottom:1rem}
 .sunu-kutu:nth-of-type(3) .sunu-ikon{background:var(--ink)}
@@ -452,7 +454,13 @@ h3{font-size:1.15rem;font-weight:600;letter-spacing:-.015em}
 .acilir-pill .acilir-panel{left:auto;right:0;width:min(440px,92vw)}
 @media (min-width:700px){.acilir-pill{margin-left:auto}}
 
-@media (min-width:880px){.panel-yapisik{position:sticky;top:96px;align-self:start}}
+/* ilan-ver: dar ekranda tek sütun, geniş ekranda form + sabit kontrol paneli */
+@media (min-width:880px){.ikili-form{grid-template-columns:1fr}}
+@media (min-width:1100px){.ikili-form{grid-template-columns:1.1fr .9fr}.panel-yapisik{position:sticky;top:96px;align-self:start}}
+.kontrol-baslik{font-size:clamp(.98rem,1.4vw,1.15rem);margin-bottom:.9rem}
+.kontrol-tek li{align-items:center;font-size:.9rem}
+.kontrol-not{margin:1rem 0 0;font-size:.9rem;color:var(--ink-2)}
+@media (min-width:1100px){.kontrol-baslik,.kontrol-tek li>span:last-child,.kontrol-not{white-space:nowrap}}
 
 /* ——— sarı kutu listesi ——— */
 .sunu-liste{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;position:relative;z-index:1}
@@ -461,7 +469,7 @@ h3{font-size:1.15rem;font-weight:600;letter-spacing:-.015em}
 .sunu-liste i svg{width:13px;height:13px}
 
 /* ——— pano başlığı: yanında düğme, yeni ilan simgesi ——— */
-.bolum-bas-yan{max-width:none;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:.75rem 1.5rem}
+.bolum-bas-yan{max-width:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem 1.5rem}
 .baslik-ikon{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
 .sicak{position:relative;display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sari);color:var(--ink)}
 .sicak svg{width:22px;height:22px}

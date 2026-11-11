@@ -365,10 +365,7 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
 <section class="bolum">
   <div class="kap">
     <div class="bolum-bas bolum-bas-yan" data-goster>
-      <div>
-        <h2 class="baslik-ikon">Ankara İş İlanları Sıcak <span class="sicak${yeniVar?' sicak-yeni':''}" role="img" aria-label="${yeniVar?'Yeni ilan var':'Güncel ilanlar'}">${IK.alev}</span>${yeniVar?'<span class="yeni-isaret">Yeni</span>':''}</h2>
-        <p>İş arayanlar için son yayınlanan ilanlar.</p>
-      </div>
+      <h2 class="baslik-ikon">Ankara İş İlanları Sıcak <span class="sicak${yeniVar?' sicak-yeni':''}" role="img" aria-label="${yeniVar?'Yeni ilan var':'Güncel ilanlar'}">${IK.alev}</span>${yeniVar?'<span class="yeni-isaret">Yeni</span>':''}</h2>
       <a class="dugme dugme-hat" href="guncel-ilanlar.html">Tüm güncel ilanlar ${IK.ok}</a>
     </div>
     <div class="ilan-liste">
@@ -462,7 +459,7 @@ ${cagri()}`;
 </section>
 
 <section class="bolum bolum-yuzey">
-  <div class="kap ikili ikili-dar">
+  <div class="kap ikili ikili-dar ikili-form">
     <div>
       <h2>Neden güvenilir bir platformuz?</h2>
       <p>Ankara'da iş arayan en çok iki soruyu soruyor: “Bu ilan gerçek mi?” ve “Para isterlerse ne olacak?” Yayın ilkelerimiz bu iki sorunun cevabı üzerine kurulu.</p>
@@ -563,13 +560,16 @@ ${cagri()}`;
       </form>
     </div>
     <aside class="panel panel-yuzey panel-yapisik">
-      <h2 style="font-size:1.35rem">Yayından önce neleri kontrol ediyoruz?</h2>
-      <ul class="kontrol">
-        <li><span class="im im-evet" aria-hidden="true">✓</span><span>İlanda adaydan ücret talebi olmaması</span></li>
-        <li><span class="im im-evet" aria-hidden="true">✓</span><span>Cinsiyet ve yaş şartı gibi ayrımcı ifadelerin çıkarılması</span></li>
-        <li><span class="im im-evet" aria-hidden="true">✓</span><span>İş yerinin, saatin ve şartların açık yazılması</span></li>
+      <h2 class="kontrol-baslik">Yayından önce neleri kontrol ediyoruz?</h2>
+      <ul class="kontrol kontrol-tek">
+        <li><span class="im im-evet" aria-hidden="true">✓</span><span>Adaydan ücret talebi olmaması</span></li>
+        <li><span class="im im-evet" aria-hidden="true">✓</span><span>Cinsiyet ve yaş şartı ifadelerinin çıkarılması</span></li>
+        <li><span class="im im-evet" aria-hidden="true">✓</span><span>İş yeri, saat ve şartların açık yazılması</span></li>
+        <li><span class="im im-evet" aria-hidden="true">✓</span><span>Pozisyon, ilçe ve çalışma şeklinin belirtilmesi</span></li>
+        <li><span class="im im-evet" aria-hidden="true">✓</span><span>Aynı ilanın ikinci kez yayınlanmaması</span></li>
+        <li><span class="im im-evet" aria-hidden="true">✓</span><span>Telefon numaranızın ilanda yayınlanmaması</span></li>
       </ul>
-      <p style="margin-top:1.2rem;font-size:.92rem;color:var(--ink-2)">Telefon numaranız ilanda yayınlanmaz. Başvurular size bizim üzerimizden iletilir.</p>
+      <p class="kontrol-not">Başvurular size bizim üzerimizden iletilir.</p>
     </aside>
   </div>
 </section>`;
