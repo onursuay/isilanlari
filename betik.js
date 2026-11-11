@@ -59,13 +59,26 @@
   var ust = d.querySelector('.ust');
   var dugme = d.querySelector('.menu-dugme');
   if (ust && dugme) {
+    var menuKapat = function (odak) {
+      ust.classList.remove('menu-acik');
+      dugme.setAttribute('aria-expanded', 'false');
+      d.documentElement.classList.remove('menu-kilit');
+      if (odak) dugme.focus();
+    };
     dugme.addEventListener('click', function () {
       var acik = ust.classList.toggle('menu-acik');
       dugme.setAttribute('aria-expanded', acik ? 'true' : 'false');
+      d.documentElement.classList.toggle('menu-kilit', acik);
     });
     d.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && ust.classList.contains('menu-acik')) { ust.classList.remove('menu-acik'); dugme.setAttribute('aria-expanded', 'false'); dugme.focus(); }
+      if (e.key === 'Escape' && ust.classList.contains('menu-acik')) menuKapat(true);
     });
+    /* masaüstü genişliğine geçilirse perde kapanır, sayfa kaydırması geri gelir */
+    if (w.matchMedia) {
+      var genis = w.matchMedia('(min-width:980px)');
+      var genisDegisti = function (m) { if (m.matches) menuKapat(false); };
+      if (genis.addEventListener) genis.addEventListener('change', genisDegisti);
+    }
   }
 
   /* ——— sayaç + görünürlük ——— */

@@ -139,7 +139,7 @@ const ust = (aktif,k='') => `<header class="ust">
   <div class="kap ust-ic">
     <a class="marka" href="${k}index.html" aria-label="Ankara İş İlanı, ana sayfa"><img src="${k}medya/logo-128.png?v=${surum('medya/logo-128.png')}" width="56" height="56" alt=""></a>
     <nav class="menu" id="ana-menu" aria-label="Ana menü">
-${MENU.map(([a,h,t])=>`      <a href="${k}${h}"${aktif===a?' aria-current="page"':''}>${t}</a>`).join('\n')}
+${MENU.map(([a,h,t],n)=>`      <a href="${k}${h}" style="--i:${n}"${aktif===a?' aria-current="page"':''}>${t}</a>`).join('\n')}
     </nav>
     <div class="ust-sag">
       <a class="dugme dugme-sari dugme-kucuk" href="${k}ilan-ver.html" data-ilan-ver="ust">Ücretsiz ilan ver</a>
@@ -323,7 +323,7 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
     </div>
     <div class="adimlar">
       <div class="adim" data-goster="1"><div class="adim-no">1</div><h3>İlanı bize iletin</h3><p>Pozisyonu, çalışma yerini ve şartları kısa bir formla yazın.</p></div>
-      <div class="adim" data-goster="2"><div class="adim-no">2</div><h3>Biz kontrol edip yayınlayalım</h3><p>Ücret talebi ve ayrımcı ifade gibi sorunları ayıklar, ilanı sitemizde, Instagram'da ve Facebook sayfamızda yayınlarız.</p></div>
+      <div class="adim" data-goster="2"><div class="adim-no">2</div><h3>Biz kontrol edip yayınlayalım</h3><p>Ücret talebi ve ayrımcı ifadeleri ayıklayıp ilanı yayınlarız.</p></div>
       <div class="adim" data-goster="3"><div class="adim-no">3</div><h3>Adaylar size ulaşsın</h3><p>Adaylar ilan üzerinden başvurur, başvuruları size biz iletiriz.</p></div>
     </div>
   </div>
