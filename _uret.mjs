@@ -316,7 +316,7 @@ ${sss.map((q,n)=>`      <details${n===0?' open':''}>
       <div class="sunu-kutu" data-goster="3">
         <span class="sunu-ikon">${IK.kalkan}</span>
         <h3>Temiz bir ilan ortamı</h3>
-        <p>Adaydan para isteyen ilanları yayınlamıyoruz. İlan ortamımızı bu kurala göre koruyoruz.</p>
+        <p>Adaydan para isteyen ilanları yayınlamıyoruz. İlanınız bu kurala uyan bir panoda yer alır.</p>
       </div>
     </div>
   </div>
