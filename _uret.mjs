@@ -600,6 +600,7 @@ ${cagri()}`;
     <p>Bu sitenin veri sorumlusu Ankara İş İlanı'dır. Bize ${EPOSTA} adresinden ulaşabilirsiniz.</p>
     <h2>Hangi bilgileri işliyoruz?</h2>
     <p><strong>İlan formu:</strong> firma veya yetkili adı, telefon, e-posta ve ilanla ilgili bilgiler. Formu gönderdiğinizde bu bilgiler, ilanınızı değerlendirebilmemiz için Google E-Tablolar'daki (Google LLC) ilan listemize kaydedilir. Kaydın yanına reklamdan ya da başka bir siteden geldiyseniz o kaynağın adı da yazılır.</p>
+    <p><strong>İlana başvuru formu:</strong> ad soyad, telefon ve isteğe bağlı kısa not. Başvuruyu gönderdiğinizde bu bilgiler, başvurunuzu ilgili işverene iletebilmemiz için Google E-Tablolar'daki (Google LLC) başvuru listemize kaydedilir ve işverene iletilir. Kaydın yanına başvurduğunuz ilanın kodu ve geldiğiniz kaynağın adı da yazılır.</p>
     <p><strong>E-postalar:</strong> bize yazdığınız iletiler ve içindeki bilgiler.</p>
     <p><strong>Çerezler:</strong> sayfa görüntüleme, tıklama, cihaz ve tarayıcı bilgisi gibi kullanım verileri.</p>
     <h2>Neden işliyoruz?</h2>
@@ -610,7 +611,7 @@ ${cagri()}`;
         <p><strong>Sunucu taraflı Meta ölçümü:</strong> “Tümünü kabul et” seçeneğini seçtiyseniz sayfa görüntüleme, ilan formu gönderme ve başvuru tıklaması olayları sitemizin sunucusu üzerinden de Meta'nın Conversions API hizmetine iletilir. Bu iletide IP adresiniz, tarayıcı bilginiz, Meta çerezleriniz ve ziyaret ettiğiniz sayfanın adresi yer alır; ad, telefon ve e-posta yer almaz. “Yalnız gerekli olanlar” seçeneğini seçerseniz bu ileti gönderilmez.</p>
     <p>Tercihinizi istediğiniz zaman değiştirebilirsiniz: <a href="#" data-cerez-ac>çerez tercihlerini yeniden aç</a>.</p>
     <h2>Bilgiler yurt dışına aktarılır mı?</h2>
-    <p>Google ve Meta hizmetleri yurt dışındaki sunucularda çalışır. Ölçüm araçları yalnız çerez onayınız varsa çalışır; onay vermezseniz kullanım verileriniz bu şirketlere ulaşmaz. İlan formunu gönderdiğinizde ise formdaki bilgiler, çerez tercihinizden bağımsız olarak Google E-Tablolar'da saklanır; Google'ın sunucuları yurt dışında olabilir.</p>
+    <p>Google ve Meta hizmetleri yurt dışındaki sunucularda çalışır. Ölçüm araçları yalnız çerez onayınız varsa çalışır; onay vermezseniz kullanım verileriniz bu şirketlere ulaşmaz. İlan formunu ya da ilana başvuru formunu gönderdiğinizde ise formdaki bilgiler, çerez tercihinizden bağımsız olarak Google E-Tablolar'da saklanır; Google'ın sunucuları yurt dışında olabilir.</p>
     <h2>Ne kadar saklıyoruz?</h2>
     <p>İlan bilgilerini ilan yayında olduğu sürece ve amacın gerektirdiği süre kadar saklarız. Sonrasında siler ya da anonim hâle getiririz.</p>
     <h2>Reklamlar</h2>
@@ -733,7 +734,7 @@ for (const i of ilanlar) {
       identifier:{'@type':'PropertyValue',name:'Ankara İş İlanı',value:i.kod}},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Güncel İlanlar',yol:'guncel-ilanlar.html'},{ad:i.baslik,yol:ilanYol(i)}])];
   const govde=`${sayfaBas({yol:yolBas('../', `<a href="../guncel-ilanlar.html">Güncel İlanlar</a>`),baslik:kac(i.baslik),lead:kac(i.aciklama),
-    eylem:`<a class="dugme dugme-sari" href="mailto:${EPOSTA}?subject=${encodeURIComponent(i.kod+' – '+i.baslik)}" data-basvur="${kac(i.kod)}">Bu ilana başvurun ${IK.ok}</a><a class="dugme dugme-hat" href="../guncel-ilanlar.html">Diğer ilanlar</a>`})}
+    eylem:`<a class="dugme dugme-sari" href="#basvuru-formu" data-yer="basvuru_forma_git">Bu ilana başvurun ${IK.ok}</a><a class="dugme dugme-hat" href="../guncel-ilanlar.html">Diğer ilanlar</a>`})}
 <section class="bolum">
   <div class="kap ikili">
     <div class="panel">
@@ -755,6 +756,26 @@ ${i.ucret?`        <li style="grid-template-columns:1fr"><span><strong>Ücret:</
         <li><span class="im im-evet" aria-hidden="true">✓</span><span>Başvurunuz bizim üzerimizden işverene iletilir</span></li>
         <li><span class="im im-hayir" aria-hidden="true">✕</span><span>Para isteyen olursa başvurmayın, bize bildirin</span></li>
       </ul>
+    </div>
+  </div>
+</section>
+<section class="bolum" id="basvuru-formu">
+  <div class="kap">
+    <div class="panel panel-form basvuru-panel">
+      <form class="form" id="basvuru-form" data-ilan-kodu="${kac(i.kod)}" data-ilan-baslik="${kac(i.baslik)}" novalidate>
+        <div class="form-bolum">
+          <h2 class="form-baslik">Bu ilana başvurun</h2>
+          <div class="form-ikili">
+            <div class="alan"><label for="b-ad">Ad soyad</label><input id="b-ad" name="ad" type="text" autocomplete="name"><p class="hata">Adınızı ve soyadınızı yazın.</p></div>
+            <div class="alan"><label for="b-telefon">Telefon</label><input id="b-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel"><p class="hata">Size ulaşabileceğimiz bir telefon yazın.</p></div>
+          </div>
+          <div class="alan"><label for="b-not">Kısa not <span class="not">(isteğe bağlı)</span></label><textarea id="b-not" name="not" placeholder="Tecrübenizi ya da uygun olduğunuz saatleri yazabilirsiniz."></textarea></div>
+        </div>
+        <div class="alan"><label class="onay"><input type="checkbox" name="kvkk"><span><a href="/gizlilik" target="_blank">Gizlilik ve KVKK bildirimini</a> okudum. Bilgilerimin işverene iletilmesini kabul ediyorum.</span></label><p class="hata">Devam etmek için bildirimi okuduğunuzu onaylayın.</p></div>
+        <div class="tuzak" aria-hidden="true"><label for="b-web">Web siteniz</label><input id="b-web" name="web_sitesi" type="text" tabindex="-1" autocomplete="off"></div>
+        <button class="dugme dugme-sari dugme-tam" type="submit">Başvuruyu gönder ${IK.ok}</button>
+        <div class="form-sonuc" id="basvuru-sonuc" tabindex="-1" role="status"></div>
+      </form>
     </div>
   </div>
 </section>

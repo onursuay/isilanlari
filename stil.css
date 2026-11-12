@@ -572,3 +572,6 @@ h1,h2,.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba
   [data-goster]{opacity:1;transform:none}
   .adimlar::after{transform:scaleX(1)}
 }
+/* ilan sayfası başvuru formu (12.11.2026) */
+.basvuru-panel{max-width:760px;margin-inline:auto}
+#basvuru-formu{scroll-margin-top:96px}

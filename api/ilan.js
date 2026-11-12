@@ -5,6 +5,7 @@
 // Güvenlik: yalnız sitenin kendi kaynağından, POST, alan uzunluk sınırları, gizli tuzak alanı, IP başına hız sınırı.
 // Değerler RAW yazılır: formül çalışmaz (=, +, - ile başlayan metin düz metin kalır), telefonun baştaki 0'ı korunur.
 const crypto = require('crypto');
+const sheet = require('../lib/sheet.js');
 
 const KAYNAK = /^https:\/\/(www\.)?ankaraisilani\.com(\/|$)/;
 const SEKME = "'Ankara İş İlanı'!A:M";
@@ -24,33 +25,7 @@ function hizAsildi(ip) {
   return taze.length > 6;
 }
 
-const b64u = s => Buffer.from(s).toString('base64url');
-let onbellek = { jeton: null, bitis: 0 };
-
-async function erisimJetonu() {
-  const simdi = Math.floor(Date.now() / 1000);
-  if (onbellek.jeton && onbellek.bitis - 120 > simdi) return onbellek.jeton;
-  const anahtar = String(process.env.GOOGLE_SA_KEY || '').replace(/\\n/g, '\n');
-  const bas = b64u(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
-  const yuk = b64u(JSON.stringify({ iss: process.env.GOOGLE_SA_EMAIL, scope: 'https://www.googleapis.com/auth/spreadsheets',
-    aud: 'https://oauth2.googleapis.com/token', iat: simdi, exp: simdi + 3600 }));
-  const imza = crypto.sign('RSA-SHA256', Buffer.from(`${bas}.${yuk}`), anahtar).toString('base64url');
-  const r = await fetch('https://oauth2.googleapis.com/token', {
-    method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: `${bas}.${yuk}.${imza}` }),
-  });
-  const j = await r.json().catch(() => ({}));
-  if (!r.ok || !j.access_token) throw new Error('jeton ' + r.status + ' ' + (j.error || ''));
-  onbellek = { jeton: j.access_token, bitis: simdi + (j.expires_in || 3600) };
-  return onbellek.jeton;
-}
-
 const metin = (v, en) => (typeof v === 'string' ? v.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').trim().slice(0, en) : '');
-
-function trZaman() {
-  const t = new Date(Date.now() + 3 * 3600 * 1000);   // Türkiye UTC+3, yaz saati yok
-  return t.toISOString().slice(0, 19) + '+03:00';
-}
 
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store');
@@ -82,29 +57,13 @@ module.exports = async (req, res) => {
   if (!SIGORTA.includes(a.sigorta)) kotu.push('sigorta');
   if (kotu.length) return res.status(400).json({ ok: false, neden: 'alan', alanlar: kotu });
 
-  if (!process.env.GOOGLE_SA_EMAIL || !process.env.GOOGLE_SA_KEY || !process.env.ILAN_SHEET_ID)
+  if (!sheet.yapilandirmaTamam())
     return res.status(500).json({ ok: false, neden: 'yapilandirma' });
 
   const kayitNo = 'AII-' + Date.now().toString(36).toUpperCase() + '-' + crypto.randomBytes(2).toString('hex').toUpperCase();
-  const satir = [trZaman(), a.firma, a.telefon, a.eposta, a.pozisyon, a.ilce, a.calisma, a.sigorta, a.ucret || 'Belirtilmedi',
+  const satir = [sheet.trZaman(), a.firma, a.telefon, a.eposta, a.pozisyon, a.ilce, a.calisma, a.sigorta, a.ucret || 'Belirtilmedi',
     a.aciklama || '', a.kaynak || 'doğrudan', kayitNo, ''];
 
-  const kes = new AbortController();
-  const zaman = setTimeout(() => kes.abort(), 8000);
-  try {
-    const jeton = await erisimJetonu();
-    const adres = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.ILAN_SHEET_ID}/values/${encodeURIComponent(SEKME)}:append`
-      + '?valueInputOption=RAW&insertDataOption=INSERT_ROWS';
-    const r = await fetch(adres, { method: 'POST', signal: kes.signal,
-      headers: { Authorization: `Bearer ${jeton}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ values: [satir] }) });
-    const j = await r.json().catch(() => ({}));
-    if (!r.ok || !(j.updates && j.updates.updatedRows === 1)) {
-      console.error('Sheets hata', r.status, j.error && j.error.status);
-      return res.status(502).json({ ok: false, neden: 'kayit' });
-    }
-    return res.status(200).json({ ok: true, kayit: kayitNo });
-  } catch (e) {
-    console.error('İlan kayıt istisna', e && (e.name + ' ' + String(e.message).slice(0, 80)));
-    return res.status(504).json({ ok: false, neden: 'kayit' });
-  } finally { clearTimeout(zaman); }
+  const tamam = await sheet.ekle(SEKME, satir);
+  return tamam ? res.status(200).json({ ok: true, kayit: kayitNo }) : res.status(502).json({ ok: false, neden: 'kayit' });
 };

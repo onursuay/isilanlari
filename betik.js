@@ -63,9 +63,8 @@
     if (!a) return;
     var yer = a.getAttribute('data-yer') || '';
     if (a.hasAttribute('data-ilan-ver')) olay('ilan_ver_tikla', { tikla_yeri: a.getAttribute('data-ilan-ver') || yer });
-    if (a.hasAttribute('data-basvur')) olay('basvuru_tikla', { ilan_kodu: a.getAttribute('data-basvur') });
     var h = a.getAttribute('href') || '';
-    if (h.indexOf('mailto:') === 0 && !a.hasAttribute('data-basvur')) olay('eposta_tikla', { tikla_yeri: yer });
+    if (h.indexOf('mailto:') === 0) olay('eposta_tikla', { tikla_yeri: yer });
     if (a.hasAttribute('data-sosyal')) olay('sosyal_tikla', { ag: a.getAttribute('data-sosyal') });
   });
 
@@ -273,6 +272,71 @@
       if (formBasladi) return;
       formBasladi = true;
       olay('ilan_formu_basla', {});
+    });
+  }
+  /* ——— ilana başvuru formu (12.11.2026) ———
+     Başvuru sitenin sunucusuna gider ve e-tabloya yazılır (e-posta yok). basvuru_tikla ölçümü
+     (Meta "Contact" + GA4) YALNIZ kayıt başarılı olunca gönderilir; eski davranış (butona tıklayınca) kaldırıldı. */
+  var bform = d.getElementById('basvuru-form');
+  if (bform) {
+    var bsonuc = d.getElementById('basvuru-sonuc');
+    var bzorunlu = [['ad', 'Adınızı ve soyadınızı yazın.'], ['telefon', 'Size ulaşabileceğimiz bir telefon yazın.']];
+    var bisaret = function (ad, hata) {
+      var el = bform.querySelector('[name=' + ad + ']');
+      var alan = el.closest('.alan');
+      alan.classList.toggle('hatali', !!hata);
+      if (hata) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
+      var h = alan.querySelector('.hata'); if (h && hata) h.textContent = hata;
+    };
+    var bgonderiliyor = false;
+    bform.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var ilkHata = null;
+      bzorunlu.forEach(function (z) {
+        var v = (bform.elements[z[0]].value || '').trim();
+        var kotu = !v;
+        if (z[0] === 'ad' && v && v.length < 3) kotu = true;
+        if (z[0] === 'telefon' && v && v.replace(/\D/g, '').length < 10) kotu = true;
+        bisaret(z[0], kotu ? z[1] : '');
+        if (kotu && !ilkHata) ilkHata = bform.elements[z[0]];
+      });
+      var bonay = bform.elements.kvkk;
+      bonay.closest('.alan').classList.toggle('hatali', !bonay.checked);
+      if (!bonay.checked && !ilkHata) ilkHata = bonay;
+      if (ilkHata) { ilkHata.focus(); return; }
+      if (bgonderiliyor) return;
+      bgonderiliyor = true;
+      var bdugme = bform.querySelector('button[type=submit]');
+      var bdugmeMetni = bdugme.innerHTML;
+      bdugme.disabled = true; bdugme.textContent = 'Gönderiliyor…';
+      bsonuc.classList.remove('goster', 'hata-sonuc');
+      var bf = bform.elements;
+      var bveri = {
+        ilan_kodu: bform.getAttribute('data-ilan-kodu'), ilan_baslik: bform.getAttribute('data-ilan-baslik'),
+        ad: bf.ad.value.trim(), telefon: bf.telefon.value.trim(), not: bf.not.value.trim(), kvkk: bonay.checked,
+        web_sitesi: bf.web_sitesi ? bf.web_sitesi.value : '', kaynak: ilkKaynak()
+      };
+      var bbitir = function (tamam) {
+        bgonderiliyor = false;
+        bdugme.disabled = false; bdugme.innerHTML = bdugmeMetni;
+        bsonuc.innerHTML = tamam
+          ? '<strong>Başvurunuz bize ulaştı.</strong>Başvurunuzu işverene iletiyoruz. Uygun görülürse verdiğiniz telefondan sizinle iletişime geçilir.'
+          : '<strong>Başvurunuz gönderilemedi.</strong>Lütfen birkaç dakika sonra tekrar deneyin. Sorun sürerse Facebook sayfamızdan bize mesaj gönderin.';
+        bsonuc.classList.toggle('hata-sonuc', !tamam);
+        bsonuc.classList.add('goster');
+        bsonuc.focus();
+        if (tamam) bform.reset();
+      };
+      fetch('/api/basvuru', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(bveri) })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return r.ok && j.ok; }); })
+        .then(function (tamam) {
+          if (tamam) olay('basvuru_tikla', { ilan_kodu: bveri.ilan_kodu });
+          bbitir(tamam);
+        })
+        .catch(function () { bbitir(false); });
+    });
+    bform.addEventListener('input', function (e) {
+      var alan = e.target.closest('.alan'); if (alan) alan.classList.remove('hatali');
     });
   }
 })();
