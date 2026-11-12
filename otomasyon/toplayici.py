@@ -69,7 +69,10 @@ def durum_yaz(d):
 
 
 def iso(s):
-    return datetime.strptime(s.replace("+0000", "+00:00"), "%Y-%m-%dT%H:%M:%S%z")
+    """Graph (…+0000) ve kendi yazdığımız (…22:20:27.832835+03:00) zaman biçimlerini okur."""
+    s = s.strip().replace("Z", "+00:00")
+    s = re.sub(r"([+-]\d{2})(\d{2})$", r"\1:\2", s)
+    return datetime.fromisoformat(s)
 
 
 def yeni_mesajlar(jeton, baslangic):
