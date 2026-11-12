@@ -29,7 +29,7 @@
 <link rel="preload" href="/medya/yazi/poppins-600-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/medya/yazi/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/medya/yazi/montserrat-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/stil.css?v=4b3e7705">
+<link rel="stylesheet" href="/stil.css?v=3d88daa9">
 <script>
 /* Çerez onayı (Consent Mode v2): her şey reddedilmiş başlar, onayla güncellenir. GTM'den ÖNCE çalışmalıdır. */
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
@@ -136,8 +136,9 @@ try{if(localStorage.getItem('aii_cerez')==='hepsi'){gtag('consent','update',{ad_
           <div class="alan"><label for="aciklama">İş tanımı ve şartlar <span class="not">(isteğe bağlı)</span></label><textarea id="aciklama" name="aciklama" placeholder="Çalışma saatleri, yemek, servis gibi bilgileri yazabilirsiniz."></textarea></div>
         </div>
         <div class="alan"><label class="onay"><input type="checkbox" name="kvkk"><span><a href="/gizlilik" target="_blank">Gizlilik ve KVKK bildirimini</a> okudum.</span></label><p class="hata">Devam etmek için bildirimi okuduğunuzu onaylayın.</p></div>
-        <button class="dugme dugme-mavi dugme-tam" type="submit">İlanı e-posta ile gönder <svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        <div class="form-sonuc" id="form-sonuc" tabindex="-1" role="status"><strong>E-posta uygulamanız açıldı.</strong>Hazırlanan iletiyi göndermeniz yeterli. Uygulama açılmazsa aynı bilgileri info@ankaraisilani.com adresine yazabilirsiniz.</div>
+        <div class="tuzak" aria-hidden="true"><label for="web_sitesi">Web siteniz</label><input id="web_sitesi" name="web_sitesi" type="text" tabindex="-1" autocomplete="off"></div>
+        <button class="dugme dugme-mavi dugme-tam" type="submit">İlanı gönder <svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="form-sonuc" id="form-sonuc" tabindex="-1" role="status"></div>
       </form>
     </div>
     <aside class="panel panel-yuzey panel-yapisik">
@@ -209,6 +210,6 @@ try{if(localStorage.getItem('aii_cerez')==='hepsi'){gtag('consent','update',{ad_
     <button class="dugme dugme-hat-acik dugme-kucuk" type="button" data-cerez="gerekli">Yalnız gerekli olanlar</button>
   </div>
 </div>
-<script src="/betik.js?v=20081e8c" defer></script>
+<script src="/betik.js?v=60c6c3dc" defer></script>
 </body>
 </html>

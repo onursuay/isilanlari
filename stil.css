@@ -382,6 +382,8 @@ html.menu-kilit{overflow:hidden}
 .onay input{width:20px;height:20px;margin-top:.15rem;accent-color:var(--mavi)}
 .form-sonuc{display:none;padding:1.2rem 1.3rem;border-radius:18px;background:#E5F6EE;border:2px solid var(--yesil);color:#07503A;font-weight:500}
 .form-sonuc.goster{display:block}
+.form-sonuc.hata-sonuc{background:#FDECEC;border-color:#E20206;color:#7A0B0B}
+.tuzak{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form-sonuc strong{display:block;font:700 1.05rem/1.3 "Poppins",sans-serif;margin-bottom:.3rem}
 
 /* ——— iletişim kartları ——— */

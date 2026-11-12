@@ -21,6 +21,20 @@
   var azaltilmis = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var EPOSTA = 'info@ankaraisilani.com';
 
+  /* ilk giriş kaynağı (UTM + fbclid/gclid varlığı) oturum boyunca saklanır; ilan formu e-tabloya "Kaynak" olarak yazar */
+  (function () {
+    try {
+      var q = new URLSearchParams(w.location.search), p = [];
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) { if (q.get(k)) p.push(k.slice(4) + '=' + q.get(k).slice(0, 60)); });
+      if (q.get('fbclid')) p.push('fbclid');
+      if (q.get('gclid')) p.push('gclid');
+      if (p.length && !w.sessionStorage.getItem('aii_kaynak')) w.sessionStorage.setItem('aii_kaynak', p.join(' · '));
+      if (!w.sessionStorage.getItem('aii_kaynak') && d.referrer && d.referrer.indexOf(w.location.host) < 0)
+        w.sessionStorage.setItem('aii_kaynak', 'yönlendiren=' + d.referrer.split('/')[2]);
+    } catch (e) {}
+  })();
+  function ilkKaynak() { try { return w.sessionStorage.getItem('aii_kaynak') || 'doğrudan'; } catch (e) { return 'doğrudan'; } }
+
   /* ——— 1. çerez onayı ——— */
   var kutu = d.getElementById('cerez');
   function izinVer(hepsi) {
@@ -195,6 +209,7 @@
       if (hata) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
       var h = alan.querySelector('.hata'); if (h && hata) h.textContent = hata;
     };
+    var gonderiliyor = false;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var ilkHata = null;
@@ -216,25 +231,38 @@
       }
       var f = form.elements;
       var secili = function (ad) { var x = form.querySelector('[name=' + ad + ']:checked'); return x ? x.value : 'Belirtilmedi'; };
-      var satirlar = [
-        'Firma / yetkili: ' + f.firma.value.trim(),
-        'Telefon: ' + f.telefon.value.trim(),
-        'E-posta: ' + f.eposta.value.trim(),
-        '',
-        'Pozisyon: ' + f.pozisyon.value.trim(),
-        'İlçe: ' + f.ilce.value,
-        'Çalışma şekli: ' + secili('calisma'),
-        'Sigorta: ' + secili('sigorta'),
-        'Ücret: ' + (f.ucret.value.trim() || 'Belirtilmedi'),
-        '',
-        'Açıklama:',
-        (f.aciklama.value.trim() || '—')
-      ];
-      olay('ilan_ver_gonder', { pozisyon_ilce: f.ilce.value, calisma_sekli: secili('calisma') });
-      var adres = 'mailto:' + EPOSTA + '?subject=' + encodeURIComponent('İlan vermek istiyorum: ' + f.pozisyon.value.trim()) + '&body=' + encodeURIComponent(satirlar.join('\n'));
-      sonuc.classList.add('goster');
-      sonuc.focus();
-      w.location.href = adres;
+      /* İlan sitenin sunucusuna gider ve e-tabloya yazılır (12.11.2026: e-posta yolu kaldırıldı).
+         ilan_ver_gonder ölçümü YALNIZ kayıt başarılı olunca gönderilir. */
+      if (gonderiliyor) return;
+      gonderiliyor = true;
+      var dugme = form.querySelector('button[type=submit]');
+      var dugmeMetni = dugme.innerHTML;
+      dugme.disabled = true; dugme.textContent = 'Gönderiliyor…';
+      sonuc.classList.remove('goster', 'hata-sonuc');
+      var veri = {
+        firma: f.firma.value.trim(), telefon: f.telefon.value.trim(), eposta: f.eposta.value.trim(),
+        pozisyon: f.pozisyon.value.trim(), ilce: f.ilce.value, calisma: secili('calisma'), sigorta: secili('sigorta'),
+        ucret: f.ucret.value.trim(), aciklama: f.aciklama.value.trim(), kvkk: onay.checked,
+        web_sitesi: f.web_sitesi ? f.web_sitesi.value : '', kaynak: ilkKaynak()
+      };
+      var bitir = function (tamam) {
+        gonderiliyor = false;
+        dugme.disabled = false; dugme.innerHTML = dugmeMetni;
+        sonuc.innerHTML = tamam
+          ? '<strong>İlanınız bize ulaştı.</strong>Kontrol edip sitemizde ve sosyal medya hesaplarımızda yayınlayacağız. Gerekirse verdiğiniz telefondan size ulaşırız.'
+          : '<strong>İlanınız gönderilemedi.</strong>Lütfen birkaç dakika sonra tekrar deneyin. Sorun sürerse Facebook sayfamızdan bize mesaj gönderin.';
+        sonuc.classList.toggle('hata-sonuc', !tamam);
+        sonuc.classList.add('goster');
+        sonuc.focus();
+        if (tamam) form.reset();
+      };
+      fetch('/api/ilan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(veri) })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return r.ok && j.ok; }); })
+        .then(function (tamam) {
+          if (tamam) olay('ilan_ver_gonder', { pozisyon_ilce: veri.ilce, calisma_sekli: veri.calisma });
+          bitir(tamam);
+        })
+        .catch(function () { bitir(false); });
     });
     form.addEventListener('input', function (e) {
       var alan = e.target.closest('.alan'); if (alan) alan.classList.remove('hatali');
