@@ -95,6 +95,7 @@ const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,foll
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="facebook-domain-verification" content="ccf1vws8myjes894n4wv6keb534k4x">
 <title>${kac(baslik)}</title>
 <meta name="description" content="${kac(kisalt(aciklama,155))}">
 <link rel="canonical" href="${SITE}/${yol}">
