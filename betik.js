@@ -54,6 +54,8 @@
   function izinVer(hepsi) {
     var v = hepsi ? 'granted' : 'denied';
     gtag('consent', 'update', { ad_storage: v, ad_user_data: v, ad_personalization: v, analytics_storage: v });
+    /* AdSense: onay yoksa kişiselleştirilmemiş reklam (Google: support.google.com/adsense/answer/7670312) */
+    try { (w.adsbygoogle = w.adsbygoogle || []).requestNonPersonalizedAds = hepsi ? 0 : 1; } catch (e) {}
   }
   function kaydet(secim) {
     try { localStorage.setItem('aii_cerez', secim); } catch (e) {}
