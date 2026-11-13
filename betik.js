@@ -32,6 +32,14 @@
     } catch (e) {}
   })();
   d.documentElement.classList.remove('js-yok');
+  /* Çerezsiz ziyaret sayacı (Vercel Web Analytics, 13.11.2026): reklamdan gelişte kaynak ve kampanya özel olay olarak
+     kaydedilir (UTM kırılımı ücretli eklenti istediği için). Kişisel veri yok; yalnız bağlantıdaki etiket. */
+  (function () {
+    try {
+      var q = new URLSearchParams(w.location.search), k = q.get('utm_source'), c = q.get('utm_campaign');
+      if ((k || c || q.get('fbclid')) && w.va) w.va('event', { name: 'reklam_girisi', data: { kaynak: (k || (q.get('fbclid') ? 'facebook (fbclid)' : '')).slice(0, 60), kampanya: (c || '').slice(0, 60) } });
+    } catch (e) {}
+  })();
   var azaltilmis = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var EPOSTA = 'info@ankaraisilani.com';
 

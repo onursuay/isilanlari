@@ -615,8 +615,10 @@ h1,h2,.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba
 .yan-baslik{margin:0 0 .35rem;font:700 .95rem/1.2 "Poppins",system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
 .yan-liste{list-style:none;margin:0;padding:0}
 .yan-liste li+li{border-top:1px solid var(--hat)}
-.yan-oge{display:grid;grid-template-columns:104px minmax(0,1fr);gap:.75rem;align-items:start;padding:.8rem 0;text-decoration:none;color:var(--ink)}
-.yan-oge img{width:104px;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:10px;background:var(--mavi-acik)}
+/* görsel, yanındaki yazı bloğunun (başlık + özet) yüksekliğine uzar */
+.yan-oge{display:grid;grid-template-columns:112px minmax(0,1fr);gap:.8rem;align-items:stretch;padding:.8rem 0;text-decoration:none;color:var(--ink)}
+.yan-gorsel{display:block;position:relative;min-height:96px;border-radius:12px;overflow:hidden;background:var(--mavi-acik)}
+.yan-gorsel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .yan-metin{display:block;min-width:0}
 .yan-ad{display:block;font:600 .88rem/1.3 "Poppins",system-ui,sans-serif;letter-spacing:-.01em;color:var(--ink)}
 .yan-ozet{display:-webkit-box;margin-top:.25rem;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:.78rem;line-height:1.45;color:var(--ink-2)}
@@ -625,6 +627,10 @@ h1,h2,.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba
 @media (min-width:1020px){
   .yazi-iki{display:grid;grid-template-columns:minmax(0,1fr) 20rem;column-gap:2.5rem;align-items:start}
   .yazi-iki>.yazi-ana{max-width:46rem}
-  .yan{max-width:none;margin-top:0}
+  /* sayfa kaydırılırken sütun sabit kalır; ekran kısaysa sütunun içi kayar */
+  .yan{max-width:none;margin-top:0;position:sticky;top:88px}
+  .yan-kutu{max-height:calc(100vh - 104px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
 }
-@media (min-width:1020px) and (min-height:860px){.yan{position:sticky;top:88px}}
+.yazi-sss{margin-top:1.5rem}
+.yazi-sss h2{margin-top:0}
+.yazi-ana .kaynaklar{margin-top:1.5rem}

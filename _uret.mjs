@@ -149,6 +149,8 @@ try{if(localStorage.getItem('aii_cerez')==='hepsi'){gtag('consent','update',{ad_
 </script>
 ${ADSENSE}
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM}');</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
 ${ld.map(x=>`<script type="application/ld+json">${ldGuvenli(x)}</script>`).join('\n')}
 </head>
 <body>
@@ -296,6 +298,17 @@ ${sss.map((q,n)=>`      <details${n===0?' open':''}>
     </div>
   </div>
 </section>`;
+
+/* Makalelerde SSS ana sütunun içinde durur (yan sütun sayfa sonuna kadar sabit kalsın diye) */
+const sssIc = (sss) => !sss?.length ? '' : `    <div class="yazi-sss">
+    <h2 id="sik-sorulanlar">Sık sorulanlar</h2>
+    <div class="sc">
+${sss.map((q,n)=>`      <details${n===0?' open':''}>
+        <summary>${kac(q.s)}</summary>
+        <p>${q.c}</p>
+      </details>`).join('\n')}
+    </div>
+    </div>`;
 
 /* ——— form bileşenleri ——— */
 const PIN = `<svg class="acilir-ik" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
@@ -647,6 +660,7 @@ ${cagri()}`;
     <p>Google'ın reklamlarda çerezleri nasıl kullandığını <a href="https://policies.google.com/technologies/ads" rel="noopener" target="_blank">Google reklam politikaları</a> sayfasında okuyabilirsiniz.</p>
     <p>Tercihinizi istediğiniz zaman değiştirebilirsiniz: <a href="#" data-cerez-ac>çerez tercihlerini yeniden aç</a>.</p>
     <h2>Bilgiler yurt dışına aktarılır mı?</h2>
+    <p><strong>Çerezsiz ziyaret istatistiği:</strong> Sitenin barındığı Vercel'in Web Analytics hizmetiyle, çerez kullanılmadan ve kişisel bilgi saklanmadan ziyaret sayıları tutulur: açılan sayfa, ülke, cihaz ve tarayıcı türü, gelinen site ve reklam kaynağı (bağlantıdaki kampanya etiketi). Ziyaretçiler, isteğinden üretilen ve her gün sıfırlanan bir özetle ayırt edilir; bu kayıt 24 saat sonra silinir ve farklı günler ya da farklı siteler arasında eşleştirilemez. Bu sayım çerez tercihinizden bağımsız çalışır.</p>
     <p>Google ve Meta hizmetleri yurt dışındaki sunucularda çalışır. Analiz ve ölçüm araçları yalnız çerez onayınız varsa çalışır; onay vermezseniz bu araçlar kullanım verilerinizi bu şirketlere iletmez. Google AdSense kodu bunun dışındadır, yukarıda açıkladık. İlan formunu ya da ilana başvuru formunu gönderdiğinizde ise formdaki bilgiler, çerez tercihinizden bağımsız olarak Google E-Tablolar'da saklanır; Google'ın sunucuları yurt dışında olabilir.</p>
     <h2>Ne kadar saklıyoruz?</h2>
     <p>İlan bilgilerini ilan yayında olduğu sürece ve amacın gerektirdiği süre kadar saklarız. Sonrasında siler ya da anonim hâle getiririz.</p>
@@ -750,7 +764,7 @@ const sonGuncellenenler = y => {
       <div class="yan-kutu">
         <p class="yan-baslik" id="yan-baslik">Son güncellenenler</p>
         <ul class="yan-liste">
-${liste.map(x=>{const g=yaziGorsel(x); return `          <li><a class="yan-oge" href="${yaziYol(x)}">${g?`<img src="/${g.thumb}" width="104" height="55" alt="" loading="lazy" decoding="async">`:'<span></span>'}<span class="yan-metin"><b class="yan-ad">${kac(x.baslik).replace(/\S+/g,bas1)}</b><span class="yan-ozet">${kac(x.ozet)}</span></span></a></li>`;}).join('\n')}
+${liste.map(x=>{const g=yaziGorsel(x); return `          <li><a class="yan-oge" href="${yaziYol(x)}"><span class="yan-gorsel">${g?`<img src="/${g.thumb}" width="112" height="112" alt="" loading="lazy" decoding="async">`:''}</span><span class="yan-metin"><b class="yan-ad">${kac(x.baslik).replace(/\S+/g,bas1)}</b><span class="yan-ozet">${kac(x.ozet)}</span></span></a></li>`;}).join('\n')}
         </ul>
       </div>
     </aside>`;
@@ -783,8 +797,8 @@ for (const y of yazi) {
 <section class="bolum">
   <div class="kap yazi yazi-iki">
     <div class="yazi-ana">
-${ic.html}
     <p class="yazi-kunye">Hazırlayan: <a href="../hakkimizda.html">Ankara İş İlanı</a> · Yayın: <time datetime="${y.tarih}">${trTarih(y.tarih)}</time>${guncel!==y.tarih?` · Güncelleme: <time datetime="${guncel}">${trTarih(guncel)}</time>`:''} · ${y.okuma} dakikalık okuma</p>
+${ic.html}
 ${y.kisa?`    <div class="kisa-cevap"><strong>Kısa cevap:</strong> ${y.kisa}</div>`:''}
 ${y.bolumler.map((b,n)=>bolumHtml(b,ic.idler[n])).join('\n')}
 ${y.uyari?`    <p class="yazi-uyari">${y.uyari}</p>`:''}
@@ -797,21 +811,18 @@ ${y.uyari?`    <p class="yazi-uyari">${y.uyari}</p>`:''}
       </ul>
       <p style="margin:1.1rem 0 0"><a class="dugme dugme-mavi" href="../guncel-ilanlar.html">Güncel ilanlara bakın</a></p>
     </div>
-    </div>
-${sonGuncellenenler(y)}
-  </div>
-</section>
-${sssBlok(y.sss)}
-${y.kaynaklar?.length?`<section class="bolum">
-  <div class="kap yazi">
-    <div class="kaynaklar">
+${sssIc(y.sss)}
+${y.kaynaklar?.length?`    <div class="kaynaklar">
       <h2 id="kaynaklar">Kaynaklar</h2>
       <ul>
 ${y.kaynaklar.map(k=>`        <li><a href="${k.url}" rel="noopener" target="_blank">${kac(k.ad)}</a></li>`).join('\n')}
       </ul>
+    </div>`:''}
     </div>
+${sonGuncellenenler(y)}
   </div>
-</section>`:''}
+</section>
+
 ${digerleri.length?`<section class="bolum bolum-yuzey">
   <div class="kap">
     <div class="bolum-bas"><h2>Bu konudaki diğer yazılar</h2></div>
