@@ -90,7 +90,7 @@ const IK = {
 
 /* ——— ortak iskelet ——— */
 const GOM = {baslik:'', ld:[]};
-const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,follow,max-image-preview:large,max-snippet:-1'}) => `<!doctype html>
+const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,og=null,robots='index,follow,max-image-preview:large,max-snippet:-1'}) => `<!doctype html>
 <html lang="tr" class="js-yok">
 <head>
 <meta charset="utf-8">
@@ -102,15 +102,29 @@ const sayfa = ({baslik,aciklama,yol,ld=[],k='',aktif='',govde,robots='index,foll
 <meta name="robots" content="${robots}">
 <meta name="theme-color" content="#3B46F2">
 <meta property="og:site_name" content="Ankara İş İlanı">
-<meta property="og:type" content="website">
+<meta property="og:type" content="${og?'article':'website'}">
 <meta property="og:title" content="${kac(baslik)}">
 <meta property="og:description" content="${kac(kisalt(aciklama,155))}">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="${SITE}/${yol}">
-<meta property="og:image" content="${SITE}/medya/og.png?v=${surum('medya/og.png')}">
+${og?`<meta property="og:image" content="${SITE}/${og.jpg}">
+<meta property="og:image:secure_url" content="${SITE}/${og.jpg}">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${kac(og.alt)}">
+<meta property="article:published_time" content="${og.yayin}">
+<meta property="article:modified_time" content="${og.guncel}">
+<meta property="article:section" content="${kac(og.bolum)}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${kac(baslik)}">
+<meta name="twitter:description" content="${kac(kisalt(aciklama,155))}">
+<meta name="twitter:image" content="${SITE}/${og.jpg}">
+<meta name="twitter:image:alt" content="${kac(og.alt)}">
+<link rel="preload" as="image" href="/${og.webp}" imagesrcset="/${og.webp800} 800w, /${og.webp} 1200w" imagesizes="(min-width:1180px) 1116px, 100vw" fetchpriority="high">`:`<meta property="og:image" content="${SITE}/medya/og.png?v=${surum('medya/og.png')}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">`}
 <meta name="geo.region" content="TR-06">
 <meta name="geo.placename" content="Ankara">
 <link rel="icon" href="/favicon.ico?v=${surum('favicon.ico')}" sizes="48x48">
@@ -222,12 +236,13 @@ const ORG = {'@context':'https://schema.org','@type':'Organization',name:'Ankara
   description:"Ankara'da iş arayanla eleman arayanı buluşturan ilan platformu. Adaydan ücret istenmez."};
 
 const yolBas = (k,...parca) => `<nav class="yol-izi" aria-label="Sayfa yolu"><a href="${k}index.html">Ana Sayfa</a>${parca.map(p=>`<span>${p}</span>`).join('')}</nav>`;
-const sayfaBas = ({yol,baslik,lead,eylem='',leadSinif=''}) => `<section class="sayfa-bas">
+const sayfaBas = ({yol,baslik,lead,eylem='',leadSinif='',gorsel=''}) => `<section class="sayfa-bas${gorsel?' sayfa-bas-gorselli':''}">
   <div class="kap">
     ${yol}
     <h1${duz(baslik).length<=58?` class="h1-tek" style="--k:${duz(baslik).length}"`:''}>${baslik}</h1>
     ${lead?`<p class="lead${leadSinif?' '+leadSinif:''}">${lead}</p>`:''}
     ${eylem?`<div class="hero-eylem">${eylem}</div>`:''}
+    ${gorsel}
   </div>
 </section>`;
 
@@ -250,12 +265,22 @@ const satir = (i,k='') => { const sk = SEKTOR[i.kategori]||'İlan'; return `    
         <span class="ilan-rozet">✓ Ücret talebi yok</span>
       </a>`; };
 
-const yaziKart = (y,k='') => `      <a class="kart" href="${k}${yaziYol(y)}">
+/* Makale öne çıkan görselleri: medya/makale/<slug>.webp (1200x630), <slug>-800.webp, <slug>.jpg (paylaşım) */
+const yaziGorsel = y => { if(!y.gorsel) return null; const b=`medya/makale/${y.slug}`;
+  if(!fs.existsSync(path.join(KOK,b+'.webp'))) return null;
+  return {webp:`${b}.webp?v=${surum(b+'.webp')}`,webp800:`${b}-800.webp?v=${surum(b+'-800.webp')}`,jpg:`${b}.jpg?v=${surum(b+'.jpg')}`,alt:y.gorsel.alt,baslik:y.gorsel.baslik}; };
+const AI_NOT = 'Temsilî görsel, yapay zekâ ile üretilmiştir.';
+const oneCikan = g => `<figure class="one-cikan">
+      <img src="/${g.webp}" srcset="/${g.webp800} 800w, /${g.webp} 1200w" sizes="(min-width:1180px) 1116px, 100vw" width="1200" height="630" alt="${kac(g.alt)}" title="${kac(g.baslik)}" fetchpriority="high" decoding="async">
+      <figcaption>${AI_NOT}</figcaption>
+    </figure>`;
+const yaziKart = (y,k='') => { const g=yaziGorsel(y); return `      <a class="kart${g?' kart-gorselli':''}" href="${k}${yaziYol(y)}">${g?`
+        <img class="kart-gorsel" src="/${g.webp800}" width="800" height="420" alt="" loading="lazy" decoding="async">`:''}
         <span class="kart-ust">${KATEGORI[y.kategori].ad} · ${y.okuma} dakika</span>
         <h3>${kac(y.baslik)}</h3>
         <p>${kac(y.ozet)}</p>
         <span class="kart-ok">Yazıyı okuyun</span>
-      </a>`;
+      </a>`; };
 
 const sssBlok = (sss) => !sss?.length ? '' : `
 <section class="bolum">
@@ -683,22 +708,43 @@ ${cagri()}`;
 }
 
 /* ——— 9. MAKALELER ——— */
+/* Bölüm alanları: h (başlık), p (paragraflar), liste (madde işaretli), tablo {b: başlıklar, s: satırlar} */
+const tabloHtml = t => `    <div class="tablo-kap"><table>
+      <thead><tr>${t.b.map(x=>`<th scope="col">${kac(x)}</th>`).join('')}</tr></thead>
+      <tbody>
+${t.s.map(r=>`        <tr>${r.map((x,n)=>n===0?`<th scope="row">${x}</th>`:`<td>${x}</td>`).join('')}</tr>`).join('\n')}
+      </tbody>
+    </table></div>`;
+const bolumHtml = b => [`    <h2>${kac(b.h)}</h2>`,
+  ...(b.p||[]).map(p=>`    <p>${p}</p>`),
+  b.liste?`    <ul class="yazi-liste">\n${b.liste.map(l=>`      <li>${l}</li>`).join('\n')}\n    </ul>`:'',
+  b.tablo?tabloHtml(b.tablo):''].filter(Boolean).join('\n');
 for (const y of yazi) {
   const kat = KATEGORI[y.kategori];
-  const digerleri = yazi.filter(x=>x.slug!==y.slug && x.kategori===y.kategori).slice(0,2);
+  const g = yaziGorsel(y);
+  const guncel = y.guncelleme || y.tarih;
+  const secili = (y.ilgili||[]).map(sl=>yazi.find(x=>x.slug===sl)).filter(Boolean);
+  const digerleri = [...secili, ...yazi.filter(x=>x.slug!==y.slug && x.kategori===y.kategori && !secili.includes(x))].slice(0,3);
+  const resimLd = g ? {'@type':'ImageObject',url:`${SITE}/${g.jpg}`,contentUrl:`${SITE}/${g.jpg}`,width:1200,height:630,
+      caption:g.alt,creditText:AI_NOT,creator:{'@type':'Organization',name:'Ankara İş İlanı'},copyrightNotice:'© 2026 Ankara İş İlanı'} : undefined;
   const ld=[{'@context':'https://schema.org','@type':'Article',headline:y.baslik,description:y.ozet,
-      datePublished:y.tarih,dateModified:y.tarih,inLanguage:'tr-TR',
-      author:{'@type':'Organization',name:'Ankara İş İlanı'},publisher:ORG,
+      datePublished:y.tarih,dateModified:guncel,inLanguage:'tr-TR',
+      ...(resimLd?{image:resimLd,thumbnailUrl:`${SITE}/${g.webp800}`}:{}),
+      ...(y.anahtar?{keywords:y.anahtar.join(', ')}:{}),
+      ...(y.kaynaklar?{citation:y.kaynaklar.map(k=>({'@type':'CreativeWork',name:k.ad,url:k.url}))}:{}),
+      articleSection:kat.ad,
+      author:{'@type':'Organization',name:'Ankara İş İlanı',url:`${SITE}/hakkimizda`},publisher:ORG,
       mainEntityOfPage:{'@type':'WebPage','@id':`${SITE}/${yaziYol(y)}`}},
     {'@context':'https://schema.org','@type':'FAQPage',inLanguage:'tr-TR',
       mainEntity:(y.sss||[]).map(q=>({'@type':'Question',name:q.s,acceptedAnswer:{'@type':'Answer',text:duz(q.c)}}))},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:kat.ad,yol:kat.dosya},{ad:y.baslik,yol:yaziYol(y)}])];
-  const govde=`${sayfaBas({yol:yolBas('../', `<a href="../${kat.dosya}">${kac(kat.ad)}</a>`),baslik:kac(y.baslik),lead:`${kac(y.ozet)}`})}
+  const govde=`${sayfaBas({yol:yolBas('../', `<a href="../${kat.dosya}">${kac(kat.ad)}</a>`),baslik:kac(y.baslik),lead:`${kac(y.ozet)}`,gorsel:g?oneCikan(g):''})}
 <section class="bolum">
   <div class="kap yazi">
-    <p style="font-size:.88rem;color:var(--ink-2)">${trTarih(y.tarih)} · ${y.okuma} dakikalık okuma</p>
-${y.bolumler.map(b=>`    <h2>${kac(b.h)}</h2>
-${b.p.map(p=>`    <p>${p}</p>`).join('\n')}`).join('\n')}
+    <p class="yazi-kunye">Hazırlayan: <a href="../hakkimizda.html">Ankara İş İlanı</a> · Yayın: <time datetime="${y.tarih}">${trTarih(y.tarih)}</time>${guncel!==y.tarih?` · Güncelleme: <time datetime="${guncel}">${trTarih(guncel)}</time>`:''} · ${y.okuma} dakikalık okuma</p>
+${y.kisa?`    <div class="kisa-cevap"><strong>Kısa cevap:</strong> ${y.kisa}</div>`:''}
+${y.bolumler.map(bolumHtml).join('\n')}
+${y.uyari?`    <p class="yazi-uyari">${y.uyari}</p>`:''}
     <div class="panel panel-yuzey" style="margin-top:2rem">
       <h3>Kısaca</h3>
       <ul class="kontrol">
@@ -708,19 +754,26 @@ ${b.p.map(p=>`    <p>${p}</p>`).join('\n')}`).join('\n')}
       </ul>
       <p style="margin:1.1rem 0 0"><a class="dugme dugme-mavi" href="../guncel-ilanlar.html">Güncel ilanlara bakın</a></p>
     </div>
+${y.kaynaklar?.length?`    <div class="kaynaklar">
+      <h2>Kaynaklar</h2>
+      <ul>
+${y.kaynaklar.map(k=>`        <li><a href="${k.url}" rel="noopener" target="_blank">${kac(k.ad)}</a></li>`).join('\n')}
+      </ul>
+    </div>`:''}
   </div>
 </section>
 ${sssBlok(y.sss)}
 ${digerleri.length?`<section class="bolum bolum-yuzey">
   <div class="kap">
-    <div class="bolum-bas"><h2>Bu bölümdeki diğer yazılar</h2></div>
+    <div class="bolum-bas"><h2>Bu konudaki diğer yazılar</h2></div>
     <div class="izgara-3">
 ${digerleri.map(d=>yaziKart(d,'../')).join('\n')}
     </div>
   </div>
 </section>`:''}
 ${cagri('../')}`;
-  yaz(yaziYol(y), sayfa({baslik:(y.baslik.length+22<=60?`${y.baslik} | Ankara İş İlanı`:y.baslik),aciklama:y.ozet,yol:yaziYol(y),ld,k:'../',govde}));
+  yaz(yaziYol(y), sayfa({baslik:(y.baslik.length+22<=60?`${y.baslik} | Ankara İş İlanı`:y.baslik),aciklama:y.ozet,yol:yaziYol(y),ld,k:'../',govde,
+    og:g?{...g,yayin:y.tarih,guncel,bolum:kat.ad}:null}));
 }
 
 /* ——— 10. İLAN SAYFALARI ——— */
@@ -804,8 +857,9 @@ const sayfalar=[
   ...yazi.map(y=>[yaziYol(y),0.7,'monthly']),
   ...ilanlar.map(i=>[ilanYol(i),0.7,'weekly'])];
 yaz('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sayfalar.map(([s,p,f])=>`  <url><loc>${SITE}/${s.replace(/\.html$/,'')}</loc><lastmod>${bugun}</lastmod><changefreq>${f}</changefreq><priority>${p}</priority></url>`).join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${sayfalar.map(([s,p,f])=>{ const y=yazi.find(x=>yaziYol(x)===s); const g=y&&yaziGorsel(y);
+  return `  <url><loc>${SITE}/${s.replace(/\.html$/,'')}</loc><lastmod>${y?(y.guncelleme||y.tarih):bugun}</lastmod><changefreq>${f}</changefreq><priority>${p}</priority>${g?`<image:image><image:loc>${SITE}/${g.jpg.replace(/&/g,'&amp;')}</image:loc></image:image>`:''}</url>`; }).join('\n')}
 </urlset>`);
 
 console.log(`✓ üretildi: ana sayfa · güncel · genel · hakkımızda · iletişim · ilan ver · gizlilik · 2 rehber kategorisi · ${yazi.length} yazı · ${ilanlar.length} ilan sayfası · sitemap (${sayfalar.length} adres)`);

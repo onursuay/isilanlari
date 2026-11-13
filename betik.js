@@ -12,10 +12,22 @@
     try { if (w.crypto && w.crypto.randomUUID) return w.crypto.randomUUID(); } catch (e) {}
     return String(Date.now()) + '-' + Math.random().toString(16).slice(2);
   }
-  function olay(ad, veri) {
+  function olay(ad, veri, sonra) {
     var o = { event: ad, olay_id: yeniId() };
     for (var k in (veri || {})) o[k] = veri[k];
+    if (sonra) {
+      /* sayfa değiştiren tıklama: GTM etiketleri çalışınca (ya da en geç 1 sn sonra) devam et; aksi hâlde
+         yeni sayfaya geçiş isteği keser ve olay GA4'e hiç ulaşmaz (13.11.2026 canlı testle görüldü) */
+      var bitti = false, devam = function () { if (!bitti) { bitti = true; sonra(); } };
+      o.eventCallback = devam; o.eventTimeout = 1000;
+      setTimeout(devam, 1200);
+    }
     w.dataLayer.push(o);
+  }
+  function ayniSekmeGecis(e, a) {
+    var h = a.getAttribute('href') || '';
+    return h && h.charAt(0) !== '#' && h.indexOf('mailto:') !== 0 && h.indexOf('tel:') !== 0 && !a.target &&
+      e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.defaultPrevented;
   }
   d.documentElement.classList.remove('js-yok');
   var azaltilmis = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -62,7 +74,14 @@
     var a = e.target.closest('a,button');
     if (!a) return;
     var yer = a.getAttribute('data-yer') || '';
-    if (a.hasAttribute('data-ilan-ver')) olay('ilan_ver_tikla', { tikla_yeri: a.getAttribute('data-ilan-ver') || yer });
+    if (a.hasAttribute('data-ilan-ver')) {
+      var veri = { tikla_yeri: a.getAttribute('data-ilan-ver') || yer };
+      if (ayniSekmeGecis(e, a)) {
+        e.preventDefault();
+        var hedef = a.href;
+        olay('ilan_ver_tikla', veri, function () { w.location.href = hedef; });
+      } else olay('ilan_ver_tikla', veri);
+    }
     var h = a.getAttribute('href') || '';
     if (h.indexOf('mailto:') === 0) olay('eposta_tikla', { tikla_yeri: yer });
     if (a.hasAttribute('data-sosyal')) olay('sosyal_tikla', { ag: a.getAttribute('data-sosyal') });
