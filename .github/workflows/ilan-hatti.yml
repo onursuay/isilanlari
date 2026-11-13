@@ -1,6 +1,6 @@
 name: İlan hattı
 
-# Ankara İş İlanı: sayfa gelen kutusunu okur, süzer; YAYIN_ACIK=1 ise siteye ve sosyal medyaya alır.
+# Ankara İş İlanı: sayfa gelen kutusunu (Messenger + Instagram) ve site İlan Ver formunu (E-Tablo) okur, süzer; YAYIN_ACIK=1 ise siteye ve sosyal medyaya alır.
 # Zamanlanmış koşu: depo değişkeni YAYIN_ACIK=1 ise "yayinla", değilse "hazirlik" (hiçbir şey yayınlamaz).
 # 13.11.2026'ya kadar zamanlanmış koşu YAYIN_ACIK'tan bağımsız hep hazirlik'ti; değişken tek başına yayını açmıyordu.
 on:
@@ -25,6 +25,9 @@ jobs:
     timeout-minutes: 25
     env:
       META_SAYFA_TOKEN: ${{ secrets.META_SAYFA_TOKEN }}
+      GOOGLE_SA_EMAIL: ${{ secrets.GOOGLE_SA_EMAIL }}
+      GOOGLE_SA_KEY: ${{ secrets.GOOGLE_SA_KEY }}
+      ILAN_SHEET_ID: ${{ secrets.ILAN_SHEET_ID }}
       YAYIN_ACIK: ${{ vars.YAYIN_ACIK }}
     steps:
       - uses: actions/checkout@v4

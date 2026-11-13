@@ -16,7 +16,7 @@ import json, os, re, subprocess, sys
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import suzgec, toplayici  # noqa: E402
+import form_kaynagi, suzgec, toplayici  # noqa: E402
 
 KOK = toplayici.KOK
 ILANLAR = os.path.join(KOK, "veri", "ilanlar.json")
@@ -62,6 +62,17 @@ def yayinla():
         raise SystemExit("YAYIN_ACIK=1 değil: yayın kapalı (başvuru yolu hazır değilken hat yayınlamaz).")
     import yayinci
     durum, kararlar = toplayici.calistir(kuru=False)
+    # site "İlan Ver" formu (E-Tablo): aynı kurallar; beklet/reddet sonucu hemen Durum sütununa yazılır
+    if form_kaynagi.yapilandirildi():
+        form = form_kaynagi.yeni_kararlar(durum)
+        for k in form:
+            if k["karar"] != "yayinla":
+                etiket = "bekletildi, ekip kontrol etmeli" if k["karar"] == "beklet" else "reddedildi"
+                form_kaynagi.durum_yaz(k["satir"], f"Otomatik: {etiket} ({k['gerekce']})")
+                durum["form_islenen"][k["id"]] = {"karar": k["karar"], "gerekce": k["gerekce"], "iz": k["iz"]}
+        kararlar += form
+    else:
+        print("  ! site formu kaynağı yapılandırılmamış (GOOGLE_SA_* / ILAN_SHEET_ID yok), atlandı")
     adaylar = [k for k in kararlar if k["karar"] == "yayinla"]
     print(f"YAYIN: {len(adaylar)} yayına uygun ilan")
     for k in kararlar:
@@ -77,7 +88,8 @@ def yayinla():
     for k in adaylar:
         son += 1
         i = dict(k["ilan"])
-        i.update({"kod": f"A-{son}", "aciklama": suzgec.aciklama_kur(k["ilan"]), "kaynak": "hat", "tarih": bugun})
+        i.update({"kod": f"A-{son}", "aciklama": suzgec.aciklama_kur(k["ilan"]),
+                  "kaynak": "site-formu" if k["platform"] == "site-formu" else "hat", "tarih": bugun})
         yeni.append((k, i))
     veri["ilanlar"] = [i for _, i in yeni] + veri["ilanlar"]
     veri["guncelleme"] = bugun
@@ -98,6 +110,9 @@ def yayinla():
         ilan_adresi = f"{SITE}/ilan/{suzgec_slug(i['baslik'])}-{kod}"
         if not yayinci.url_bekle(gorsel) or not yayinci.url_bekle(ilan_adresi.replace("/ilan/", "/ilan/"), 40, 6):
             print(f"  ! {i['kod']}: site yayına çıkmadı, sosyal paylaşım ATLANDI")
+            if k["platform"] == "site-formu":
+                durum.setdefault("form_islenen", {})[k["id"]] = {"karar": "yayinla", "kod": i["kod"], "iz": k["iz"], "sosyal": "yok"}
+                form_kaynagi.durum_yaz(k["satir"], f"Otomatik: sitede {i['kod']} olarak eklendi, sosyal paylaşım YAPILAMADI (ekip kontrol etmeli)")
             continue
         metin = yayinci.paylasim_metni(i, ilan_adresi)
         fb = yayinci.fb_foto(gorsel, metin)
@@ -105,6 +120,10 @@ def yayinla():
         durum["yayinlanan"][i["kod"]] = {"facebook": fb.get("link"), "instagram": ig.get("link"), "site": ilan_adresi,
                                           "zaman": datetime.now(toplayici.TR).isoformat(timespec="seconds"), "mesaj": k["id"]}
         print(f"  ✓ {i['kod']} → facebook={'var' if fb.get('link') else 'YOK'} instagram={'var' if ig.get('link') else 'YOK'}")
+        if k["platform"] == "site-formu":
+            durum.setdefault("form_islenen", {})[k["id"]] = {"karar": "yayinla", "kod": i["kod"], "iz": k["iz"]}
+            form_kaynagi.durum_yaz(k["satir"], f"Otomatik: yayınlandı {i['kod']} · {ilan_adresi} · "
+                                   f"Facebook {'var' if fb.get('link') else 'YOK'} · Instagram {'var' if ig.get('link') else 'YOK'}")
         toplayici.durum_yaz(durum)
     git_yayinla("Hat: yayın kayıtları", ["veri/_hat_durumu.json"])
 
