@@ -12,23 +12,25 @@
     try { if (w.crypto && w.crypto.randomUUID) return w.crypto.randomUUID(); } catch (e) {}
     return String(Date.now()) + '-' + Math.random().toString(16).slice(2);
   }
-  function olay(ad, veri, sonra) {
+  function olay(ad, veri) {
     var o = { event: ad, olay_id: yeniId() };
     for (var k in (veri || {})) o[k] = veri[k];
-    if (sonra) {
-      /* sayfa değiştiren tıklama: GTM etiketleri çalışınca (ya da en geç 1 sn sonra) devam et; aksi hâlde
-         yeni sayfaya geçiş isteği keser ve olay GA4'e hiç ulaşmaz (13.11.2026 canlı testle görüldü) */
-      var bitti = false, devam = function () { if (!bitti) { bitti = true; sonra(); } };
-      o.eventCallback = devam; o.eventTimeout = 1000;
-      setTimeout(devam, 1200);
-    }
     w.dataLayer.push(o);
   }
+  /* Sayfa değiştiren tıklamada olay geçiş sırasında GA4'e ulaşmıyordu (13.11.2026 canlı test: dataLayer'da var,
+     GA4 isteği yok). Çözüm: tıklamada not al, olayı VARILAN sayfada gönder. */
+  function notAl(ad, veri) { try { sessionStorage.setItem('aii_bekleyen_olay', JSON.stringify({ ad: ad, veri: veri, z: Date.now() })); return true; } catch (e) { return false; } }
   function ayniSekmeGecis(e, a) {
     var h = a.getAttribute('href') || '';
-    return h && h.charAt(0) !== '#' && h.indexOf('mailto:') !== 0 && h.indexOf('tel:') !== 0 && !a.target &&
-      e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.defaultPrevented;
+    return h && h.charAt(0) !== '#' && !a.target && e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
   }
+  (function () {
+    try {
+      var b = JSON.parse(sessionStorage.getItem('aii_bekleyen_olay') || 'null');
+      sessionStorage.removeItem('aii_bekleyen_olay');
+      if (b && Date.now() - b.z < 60000) olay(b.ad, b.veri);
+    } catch (e) {}
+  })();
   d.documentElement.classList.remove('js-yok');
   var azaltilmis = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var EPOSTA = 'info@ankaraisilani.com';
@@ -76,11 +78,7 @@
     var yer = a.getAttribute('data-yer') || '';
     if (a.hasAttribute('data-ilan-ver')) {
       var veri = { tikla_yeri: a.getAttribute('data-ilan-ver') || yer };
-      if (ayniSekmeGecis(e, a)) {
-        e.preventDefault();
-        var hedef = a.href;
-        olay('ilan_ver_tikla', veri, function () { w.location.href = hedef; });
-      } else olay('ilan_ver_tikla', veri);
+      if (!(ayniSekmeGecis(e, a) && notAl('ilan_ver_tikla', veri))) olay('ilan_ver_tikla', veri);
     }
     var h = a.getAttribute('href') || '';
     if (h.indexOf('mailto:') === 0) olay('eposta_tikla', { tikla_yeri: yer });
@@ -219,7 +217,7 @@
   var form = d.getElementById('ilan-formu');
   if (form) {
     var sonuc = d.getElementById('form-sonuc');
-    var zorunlu = [['firma', 'Firma veya yetkili adını yazın.'], ['telefon', 'Size ulaşabileceğimiz bir telefon yazın.'], ['eposta', 'Geçerli bir e-posta adresi yazın.'], ['pozisyon', 'Aradığınız pozisyonu yazın.'], ['ilce', 'İlçeyi seçin.']];
+    var zorunlu = [['firma', 'Firma veya yetkili adını yazın.'], ['telefon', 'Size ulaşabileceğimiz bir telefon yazın.'], ['eposta', 'Geçerli bir e-posta adresi yazın.'], ['pozisyon', 'Aradığınız pozisyonu yazın.'], ['ilce', 'İlçeyi seçin.'], ['aciklama', 'İş tanımını ve şartları yazın (en az 20 karakter).']];
     var isaretle = function (ad, hata) {
       var alan = form.querySelector('[name=' + ad + ']').closest('.alan');
       alan.classList.toggle('hatali', !!hata);
@@ -236,6 +234,7 @@
         var kotu = !v;
         if (z[0] === 'eposta' && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) kotu = true;
         if (z[0] === 'telefon' && v && v.replace(/\D/g, '').length < 10) kotu = true;
+        if (z[0] === 'aciklama' && v && v.length < 20) kotu = true;
         isaretle(z[0], kotu ? z[1] : '');
         if (kotu && !ilkHata) ilkHata = form.elements[z[0]];
       });
@@ -277,7 +276,12 @@
       fetch('/api/ilan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(veri) })
         .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return r.ok && j.ok; }); })
         .then(function (tamam) {
-          if (tamam) olay('ilan_ver_gonder', { pozisyon_ilce: veri.ilce, calisma_sekli: veri.calisma });
+          if (tamam) {
+            var gv = { pozisyon_ilce: veri.ilce, calisma_sekli: veri.calisma };
+            /* başarılı gönderim → teşekkür sayfası; ilan_ver_gonder (GA4 + Meta Lead) orada gönderilir */
+            if (notAl('ilan_ver_gonder', gv)) { w.location.href = '/ilan-gonderildi'; return; }
+            olay('ilan_ver_gonder', gv);
+          }
           bitir(tamam);
         })
         .catch(function () { bitir(false); });

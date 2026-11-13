@@ -589,7 +589,7 @@ ${cagri()}`;
             ${segment({ad:'sigorta',baslik:'Sigortalı çalışma',secenekler:['Var','Yok'],renk:'sari'})}
           </div>
           <div class="alan"><label for="ucret">Ücret <span class="not">(isteğe bağlı)</span></label><input id="ucret" name="ucret" type="text" placeholder="Örnek: 33.000 TL"></div>
-          <div class="alan"><label for="aciklama">İş tanımı ve şartlar <span class="not">(isteğe bağlı)</span></label><textarea id="aciklama" name="aciklama" placeholder="Çalışma saatleri, yemek, servis gibi bilgileri yazabilirsiniz."></textarea></div>
+          <div class="alan"><label for="aciklama">İş tanımı ve şartlar</label><textarea id="aciklama" name="aciklama" placeholder="Çalışma saatleri, yemek, servis gibi bilgileri yazın."></textarea><p class="hata">İş tanımını ve şartları yazın (en az 20 karakter).</p></div>
         </div>
         <div class="alan"><label class="onay"><input type="checkbox" name="kvkk"><span><a href="gizlilik.html" target="_blank">Gizlilik ve KVKK bildirimini</a> okudum.</span></label><p class="hata">Devam etmek için bildirimi okuduğunuzu onaylayın.</p></div>
         <div class="tuzak" aria-hidden="true"><label for="web_sitesi">Web siteniz</label><input id="web_sitesi" name="web_sitesi" type="text" tabindex="-1" autocomplete="off"></div>
@@ -845,6 +845,10 @@ ${cagri('../')}`;
     aciklama:`${i.ilce} ${i.semt} bölgesinde ${i.calisma.toLowerCase()} ${i.baslik.toLowerCase()} ilanı. ${i.sigorta?'Sigortalı çalışma. ':''}Aday para ödemez.`,
     yol:ilanYol(i),ld,k:'../',govde}));
 }
+
+/* ——— 10a. İLAN GÖNDERİLDİ (teşekkür sayfası; Meta özel dönüşümü ve GA4 ilan_ver_gonder bu adreste) ——— */
+yaz('ilan-gonderildi.html', sayfa({baslik:'İlanınız bize ulaştı | Ankara İş İlanı',aciklama:'İlanınız Ankara İş İlanı ekibine ulaştı. Kontrol edildikten sonra sitemizde ve sosyal medya hesaplarımızda yayınlanır.',yol:'ilan-gonderildi.html',k:'/',robots:'noindex,nofollow',
+  govde:`${sayfaBas({yol:'',baslik:'İlanınız bize ulaştı',lead:'Kontrol edip sitemizde ve sosyal medya hesaplarımızda yayınlayacağız. Gerekirse verdiğiniz telefondan size ulaşırız.',eylem:'<a class="dugme dugme-sari" href="/guncel-ilanlar">Güncel ilanlar</a><a class="dugme dugme-hat" href="/ilan-ver">Yeni ilan ver</a>'})}`}));
 
 /* ——— 10b. 404 ——— */
 yaz('404.html', sayfa({baslik:'Sayfa bulunamadı | Ankara İş İlanı',aciklama:'Aradığınız sayfa bulunamadı. Ana sayfaya dönebilir ya da güncel ilanlara bakabilirsiniz.',yol:'404.html',k:'/',robots:'noindex,follow',

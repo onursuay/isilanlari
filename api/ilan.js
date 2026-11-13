@@ -52,6 +52,7 @@ module.exports = async (req, res) => {
   if (a.telefon.replace(/\D/g, '').length < 10) kotu.push('telefon');
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a.eposta)) kotu.push('eposta');
   if (!a.pozisyon) kotu.push('pozisyon');
+  if (a.aciklama.length < 20) kotu.push('aciklama');           // 13.11.2026 Owner: iş tanımı zorunlu
   if (!ILCELER.includes(a.ilce)) kotu.push('ilce');
   if (!CALISMA.includes(a.calisma)) kotu.push('calisma');
   if (!SIGORTA.includes(a.sigorta)) kotu.push('sigorta');
