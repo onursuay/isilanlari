@@ -40,7 +40,8 @@ const baslikBuyuk = html => html.replace(/<h([1-3])((?:\s[^>]*)?)>([\s\S]*?)<\/h
   if (GOLGE.has(duzMetin)) a = /class="/.test(a) ? a.replace('class="','class="baslik-golge ') : a+' class="baslik-golge"';
   return `<h${n}${a}>${yeni}</h${n}>`;
 });
-const yaz = (p,s) => { if(p.endsWith('.html')) s = baslikBuyuk(temizAdres(s)); fs.mkdirSync(path.dirname(path.join(KOK,p)),{recursive:true}); fs.writeFileSync(path.join(KOK,p),s); };
+const leadOlc = h => h.replace(/(<div class="bolum-bas"[^>]*>\s*<h2[^>]*>[\s\S]*?<\/h2>\s*)<p>([\s\S]*?)<\/p>/g,(m,a,t)=>`${a}<p style="--kl:${t.replace(/<[^>]+>/g,'').length}">${t}</p>`);
+const yaz = (p,s) => { if(p.endsWith('.html')) s = leadOlc(baslikBuyuk(temizAdres(s))); fs.mkdirSync(path.dirname(path.join(KOK,p)),{recursive:true}); fs.writeFileSync(path.join(KOK,p),s); };
 const ldGuvenli = o => JSON.stringify(o).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
 const kac = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const duz = s => String(s).replace(/<[^>]+>/g,'');
@@ -60,17 +61,22 @@ const kisalt = (t,n) => { t=String(t).trim(); if(t.length<=n) return t;
 const ILCELER = ['Akyurt','Altındağ','Ayaş','Bala','Beypazarı','Çamlıdere','Çankaya','Çubuk','Elmadağ','Etimesgut','Evren','Gölbaşı','Güdül','Haymana','Kahramankazan','Kalecik','Keçiören','Kızılcahamam','Mamak','Nallıhan','Polatlı','Pursaklar','Sincan','Şereflikoçhisar','Yenimahalle'];
 const SEKTOR = {satis:'Satış',uretim:'Üretim',temizlik:'Temizlik',kurye:'Kurye',servis:'Servis',buro:'Ön büro'};
 
+/* İlan açıklamasının ilk cümlesi başlık altına, kalanı İş tanımı olarak gövdeye */
+const ilanLead = t => { const m=t.match(/^(.+?[.!?])\s+(?=[A-ZÇĞİÖŞÜ])/); return m?{ilk:m[1],kalan:t.slice(m[0].length)}:{ilk:t,kalan:''}; };
+
 const KATEGORI = {
   'ek-is-ilanlari':   {dosya:'ek-is-ilanlari.html',  ad:'Ek İş İlanları',  anahtar:'ek iş ilanları',
     baslik:'Ek İş İlanları: Ankara\'da akşam ve hafta sonu ek iş',
     ozet:'Ankara\'da ek iş nerelerde çıkar, ne kadar kazandırır, nelere dikkat edilir? Düzenli yayınladığımız rehberler burada.',
     girisBaslik:'Mesai bitince başlayan işler',
-    giris:'Ek iş, mevcut işinizin ya da okulunuzun üzerine akşam veya hafta sonu yaptığınız iştir. Bu bölümde ek iş arayanlar için yazdığımız rehberler var: iş hangi alanlarda çıkıyor, kazanç nasıl hesaplanır, hangi teklife mesafe konur. Güncel ilanları görmek için <a href="guncel-ilanlar.html">Güncel İlanlar</a> sayfasına bakın.'},
+    lead:'Ek iş, mevcut işinizin ya da okulunuzun üzerine akşam veya hafta sonu yaptığınız iştir.',
+    girisNot:'Bu bölümde ek iş arayanlar için yazdığımız rehberler var: iş hangi alanlarda çıkıyor, kazanç nasıl hesaplanır, hangi teklife mesafe konur. Güncel ilanları görmek için <a href="guncel-ilanlar.html">Güncel İlanlar</a> sayfasına bakın.'},
   'evde-paketleme-isi':{dosya:'evde-paketleme-isi.html', ad:'Evde Paketleme İşi', anahtar:'evde paketleme işi',
     baslik:'Evde Paketleme İşi: güvenilir mi, ne kadar kazandırır?',
     ozet:'Evde paketleme işi güvenilir mi, ücret talebi nasıl anlaşılır, fason paketleme gerçekte nasıl yürür? Koruyucu bilgilendirme yazıları.',
     girisBaslik:'Evde paketleme işi güvenilir mi?',
-    giris:'Tek cümlelik cevap: <strong>işe başlamak için sizden ödeme isteniyorsa o süreç işe alım süreci değildir.</strong> Bu bölümde ücret talebine dayanan tekliflerin işaretlerini, fason paketleme işinin gerçekte nasıl yürüdüğünü ve mağdur olunca izlenecek yolu yazıyoruz. Bu sayfalar bilgilendirmedir, iş vaadi içermez.'}
+    lead:'Tek cümlelik cevap: <strong>işe başlamak için sizden ödeme isteniyorsa o süreç işe alım süreci değildir.</strong>',
+    girisNot:'Bu bölümde ücret talebine dayanan tekliflerin işaretlerini, fason paketleme işinin gerçekte nasıl yürüdüğünü ve mağdur olunca izlenecek yolu yazıyoruz. Bu sayfalar bilgilendirmedir, iş vaadi içermez.'}
 };
 
 /* ——— simgeler ——— */
@@ -246,7 +252,7 @@ const sayfaBas = ({yol,baslik,lead,eylem='',leadSinif='',gorsel=''}) => `<sectio
   <div class="kap">
     ${yol}
     <h1${duz(baslik).length<=58?` class="h1-tek" style="--k:${duz(baslik).length}"`:''}>${baslik}</h1>
-    ${lead?`<p class="lead${leadSinif?' '+leadSinif:''}">${lead}</p>`:''}
+    ${lead?`<p class="lead${leadSinif?' '+leadSinif:''}" style="--kl:${duz(lead).length}">${lead}</p>`:''}
     ${eylem?`<div class="hero-eylem">${eylem}</div>`:''}
     ${gorsel}
   </div>
@@ -254,7 +260,7 @@ const sayfaBas = ({yol,baslik,lead,eylem='',leadSinif='',gorsel=''}) => `<sectio
 
 const cagri = (k='',baslik='Ekibinize yeni biri mi lazım?',metin='İlanınızı bugün gönderin, kontrol edip yayınlayalım. İlan vermek ücretsizdir.') => `<section class="cagri">
   <div class="kap cagri-ic">
-    <div>
+    <div class="cagri-metin" style="--k:${duz(metin).length}">
       <h2>${baslik}</h2>
       <p>${metin}</p>
     </div>
@@ -336,7 +342,7 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
   <div class="kap hero-izgara">
     <div class="hero-metin">
       <h1>Ankara'da eleman arıyorsanız ilanınızı ücretsiz yayınlayalım</h1>
-      <p class="lead">İlanınız sitemizde, Instagram'da ve Facebook sayfamızda yayınlanır. Topluluğumuzda 41 binden fazla üyeli bir Facebook grubu var.</p>
+      <p class="lead" style="--kl:63">İlanınız sitemizde, Instagram'da ve Facebook sayfamızda yayınlanır.</p>
       <div class="hero-eylem">
         <a class="dugme dugme-sari" href="ilan-ver.html" data-ilan-ver="hero">Ücretsiz ilan verin ${IK.ok}</a>
         <a class="dugme dugme-hat" href="guncel-ilanlar.html">İş mi arıyorsunuz?</a>
@@ -437,7 +443,7 @@ ${cagri()}`;
     itemListElement:ilanlar.map((i,n)=>({'@type':'ListItem',position:n+1,url:`${SITE}/${ilanYol(i)}`,name:i.baslik}))},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Güncel İlanlar',yol:'guncel-ilanlar.html'}])];
   const govde=`${sayfaBas({yol:yolBas('', 'Güncel İlanlar'),baslik:"Ankara'da güncel iş ilanları",
-    lead:`Bu sayfadaki ilanlar işverenlerden bize ulaşan taleplerden derleniyor. Aday hiçbir aşamada para ödemez. Son güncelleme: ${trTarih(bugun)}.`})}
+    lead:`İlanlar işverenlerden gelir, aday para ödemez. Son güncelleme: ${trTarih(bugun)}.`})}
 <section class="bolum">
   <div class="kap">
     <div class="ilan-liste">
@@ -495,12 +501,12 @@ ${cagri()}`;
 /* ——— 4. HAKKIMIZDA ——— */
 {
   const govde=`${sayfaBas({yol:yolBas('', 'Hakkımızda'),baslik:"Ankara'da iş arayanla eleman arayan burada buluşuyor",
-    lead:"Ankara İş İlanı, Ankara'daki işverenlerle iş arayanları tek çatıda buluşturan bir ilan platformudur. Üç ayrı kanaldaki topluluğumuz, ilanların ulaşabileceği geniş bir kitle oluşturur."})}
+    lead:"Ankara İş İlanı, Ankara'daki işverenlerle iş arayanları tek çatıda buluşturan bir ilan platformudur."})}
 <section class="bolum">
   <div class="kap">
     <div class="bolum-bas" data-goster>
       <h2>Topluluğumuz</h2>
-      <p>İlanlar tek bir yerde kalmıyor. Platformun arkasında etkileşimde olan, birbirini tanıyan bir topluluk var.</p>
+      <p>İlanlar tek yerde kalmıyor: arkasında birbirini tanıyan, etkileşimde olan bir topluluk var.</p>
     </div>
     <div class="kanal">
       <div class="kanal-kutu" data-goster="1"><div class="sayi">41 bin+</div><h3>Facebook grubu</h3><p>Ankara'daki iş arayanların ve işverenlerin bir arada bulunduğu, 41 binden fazla üyeli grubumuz.</p></div>
@@ -633,7 +639,7 @@ ${cagri()}`;
 
 /* ——— 7. GİZLİLİK VE KVKK ——— */
 {
-  const govde=`${sayfaBas({yol:yolBas('', 'Gizlilik ve KVKK'),baslik:'Gizlilik, KVKK ve çerez bildirimi',lead:'Hangi bilgileri neden işlediğimizi ve tercihlerinizi nasıl değiştirebileceğinizi burada açıkça yazıyoruz. Son güncelleme: 11 Kasım 2026.'})}
+  const govde=`${sayfaBas({yol:yolBas('', 'Gizlilik ve KVKK'),baslik:'Gizlilik, KVKK ve çerez bildirimi',lead:'Hangi bilgileri neden işlediğimizi açıkça yazıyoruz. Son güncelleme: 13 Kasım 2026.'})}
 <section class="bolum">
   <div class="kap yazi">
     <h2>Veri sorumlusu</h2>
@@ -677,7 +683,7 @@ ${cagri()}`;
 
 /* ——— 7b. HEDEFLİ REKLAM AYDINLATMASI (Ticari Reklam Yönetmeliği md.25/A) ——— */
 {
-  const govde=`${sayfaBas({yol:yolBas('', 'Hedefli reklam aydınlatması'),baslik:'Hedefli reklam aydınlatması',lead:'Reklamlarımızın kimlere, hangi ölçütlerle gösterildiğini ve tercihlerinizi nasıl değiştirebileceğinizi burada açıkça yazıyoruz. Son güncelleme: 11 Kasım 2026.'})}
+  const govde=`${sayfaBas({yol:yolBas('', 'Hedefli reklam aydınlatması'),baslik:'Hedefli reklam aydınlatması',lead:'Reklamlarımızın kimlere, hangi ölçütlerle gösterildiğini yazıyoruz. Son güncelleme: 11 Kasım 2026.'})}
 <section class="bolum">
   <div class="kap yazi">
     <h2>Reklamlarımızı kim yayınlıyor?</h2>
@@ -718,10 +724,11 @@ for (const [anahtar,kat] of Object.entries(KATEGORI)) {
     {'@context':'https://schema.org','@type':'FAQPage',inLanguage:'tr-TR',
       mainEntity:sss.map(q=>({'@type':'Question',name:q.s,acceptedAnswer:{'@type':'Answer',text:duz(q.c)}}))},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:kat.ad,yol:kat.dosya}])];
-  const govde=`${sayfaBas({yol:yolBas('', kat.ad),baslik:kat.girisBaslik,lead:kat.giris})}
+  const govde=`${sayfaBas({yol:yolBas('', kat.ad),baslik:kat.girisBaslik,lead:kat.lead})}
 <section class="bolum">
   <div class="kap">
-    <div class="bolum-bas"><h2>Rehberler</h2><p>Bu bölüme düzenli olarak yeni yazı ekliyoruz.</p></div>
+${kat.girisNot?`    <p class="kat-not">${kat.girisNot}</p>
+`:''}    <div class="bolum-bas"><h2>Rehberler</h2><p>Bu bölüme düzenli olarak yeni yazı ekliyoruz.</p></div>
     <div class="izgara-3">
 ${kendi.map(y=>yaziKart(y)).join('\n')}
     </div>
@@ -793,7 +800,7 @@ for (const y of yazi) {
       mainEntity:(y.sss||[]).map(q=>({'@type':'Question',name:q.s,acceptedAnswer:{'@type':'Answer',text:duz(q.c)}}))},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:kat.ad,yol:kat.dosya},{ad:y.baslik,yol:yaziYol(y)}])];
   const ic = icindekiler(y);
-  const govde=`${sayfaBas({yol:yolBas('../', `<a href="../${kat.dosya}">${kac(kat.ad)}</a>`),baslik:kac(y.baslik),lead:`${kac(y.ozet)}`,gorsel:g?oneCikan(g):''})}
+  const govde=`${sayfaBas({yol:yolBas('../', `<a href="../${kat.dosya}">${kac(kat.ad)}</a>`),baslik:kac(y.baslik),lead:kac(y.lead||y.ozet),gorsel:g?oneCikan(g):''})}
 <section class="bolum">
   <div class="kap yazi yazi-iki">
     <div class="yazi-ana">
@@ -846,13 +853,14 @@ for (const i of ilanlar) {
       directApply:false,inLanguage:'tr-TR',
       identifier:{'@type':'PropertyValue',name:'Ankara İş İlanı',value:i.kod}},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Güncel İlanlar',yol:'guncel-ilanlar.html'},{ad:i.baslik,yol:ilanYol(i)}])];
-  const govde=`${sayfaBas({yol:yolBas('../', `<a href="../guncel-ilanlar.html">Güncel İlanlar</a>`),baslik:kac(i.baslik),lead:kac(i.aciklama),
+  const govde=`${sayfaBas({yol:yolBas('../', `<a href="../guncel-ilanlar.html">Güncel İlanlar</a>`),baslik:kac(i.baslik),lead:kac(ilanLead(i.aciklama).ilk),
     eylem:`<a class="dugme dugme-sari" href="#basvuru-formu" data-yer="basvuru_forma_git">Bu ilana başvurun ${IK.ok}</a><a class="dugme dugme-hat" href="../guncel-ilanlar.html">Diğer ilanlar</a>`})}
 <section class="bolum">
   <div class="kap ikili">
     <div class="panel">
       <h2 style="font-size:1.35rem">İlan bilgileri</h2>
-      <ul class="kontrol" style="gap:.7rem;grid-template-columns:1fr">
+${ilanLead(i.aciklama).kalan?`      <p>${kac(ilanLead(i.aciklama).kalan)}</p>
+`:''}      <ul class="kontrol" style="gap:.7rem;grid-template-columns:1fr">
         <li style="grid-template-columns:1fr"><span><strong>Konum:</strong> ${kac(i.semt)}, ${kac(i.ilce)} / Ankara</span></li>
         <li style="grid-template-columns:1fr"><span><strong>Çalışma şekli:</strong> ${kac(i.calisma)}</span></li>
 ${i.vardiya?`        <li style="grid-template-columns:1fr"><span><strong>Vardiya:</strong> ${kac(i.vardiya)}</span></li>`:''}

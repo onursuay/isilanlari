@@ -299,7 +299,9 @@ html.menu-kilit{overflow:hidden}
 @media (max-width:859px){.cagri-ic{padding-bottom:6.5rem}}
 @media (min-width:860px){.cagri-ic{grid-template-columns:1fr auto;align-items:center}.cagri-ic .dugme{justify-self:end}.cagri::after{width:340px;height:340px;right:-110px;bottom:-170px}}
 .cagri h2{color:#fff;margin:0 0 .5rem}
-.cagri p{margin:0;color:#E3E6FF;max-width:46ch}
+.cagri p{margin:0;color:#E3E6FF}
+/* Owner kuralı: cümle mümkünse tek satır. ≥860px'te sütun genişliğine göre punto küçülür (alt sınır 13px), telefonda doğal sarma */
+@media (min-width:860px){.cagri-ic{grid-template-columns:minmax(0,1fr) auto}.cagri-metin{container-type:inline-size}.cagri-metin p{white-space:nowrap;font-size:max(.82rem,min(1rem,calc(100cqw / (var(--k) * .57))))}}
 
 /* ——— sayfa başı (iç sayfalar) ——— */
 .sayfa-bas{background:var(--yuzey);padding-block:1.5rem 1.75rem;position:relative;overflow:hidden}
@@ -308,7 +310,11 @@ html.menu-kilit{overflow:hidden}
 .sayfa-bas h1{font-size:clamp(1.9rem,3.8vw,2.6rem);max-width:none}
 .sayfa-bas .lead{margin-top:.6rem;max-width:none}
 /* İlan ver başlık cümlesi: ≥1000px'te tek satır; yazı boyutu kapsayıcıya göre (cümle 56,44 em genişliğinde), en çok 1,2rem */
-@media (min-width:1000px){.sayfa-bas .lead-tek{white-space:nowrap;font-size:min(1.2rem,calc(100cqw / 57.5))}}
+/* Owner kuralı (13.11.2026, site geneli): başlık altı cümle tek satır. ≥860px'te kapsayıcı genişliğine göre punto ayarlanır (13,6px - 19,2px), telefonda doğal sarma */
+@media (min-width:860px){.sayfa-bas .lead{white-space:nowrap;font-size:clamp(.85rem,calc(100cqw / (var(--kl,60) * .57)),1.2rem)}}
+.kat-not{margin:0 0 1.25rem;max-width:56rem;color:var(--ink-2)}
+/* ana sayfa hero cümlesi ve bölüm başlığı altı cümleler: aynı kural (13.11.2026), ≥860px tek satır */
+@media (min-width:860px){.hero-metin{container-type:inline-size}.hero-metin .lead{white-space:nowrap;max-width:none;font-size:clamp(.85rem,calc(100cqw / (var(--kl,60) * .57)),1.2rem)}.bolum-bas:not(.bolum-bas-yan){max-width:none;container-type:inline-size}.bolum-bas:not(.bolum-bas-yan) p{white-space:nowrap;font-size:clamp(.85rem,calc(100cqw / (var(--kl,60) * .57)),1rem)}}
 .yol-izi{display:flex;flex-wrap:wrap;gap:.4rem;font-size:.85rem;color:var(--ink-2);margin-bottom:1rem}
 .yol-izi a{color:var(--ink-2)}
 .yol-izi span::before{content:"/";margin-right:.4rem;color:var(--hat)}

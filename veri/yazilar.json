@@ -149,7 +149,8 @@
     "ek-is-yapmak-istiyorum",
     "aksam-8den-sonra-ek-is",
     "evde-ek-is"
-   ]
+   ],
+   "lead": "Mesai dışında yapılabilecek 12 ek iş; saati, sermayesi ve kime uygun olduğu tek tabloda."
   },
   {
    "slug": "evde-ek-is",
@@ -250,7 +251,8 @@
     "online-ek-is",
     "evde-ek-is-ilanlari",
     "ev-hanimlarina-evde-is-imkani"
-   ]
+   ],
+   "lead": "Evden yapılabilecek gerçek ek işler ve ücret isteyen tekliflerden korunma yolları."
   },
   {
    "slug": "evde-ek-is-ilanlari",
@@ -330,7 +332,8 @@
     "evde-ek-is",
     "evde-paketleme-dolandiriciligi-nasil-anlasilir",
     "ek-is-ilanlari-nereden-bulunur"
-   ]
+   ],
+   "lead": "Bir evde ek iş ilanının gerçek olup olmadığını anlamak için yedi bilgi ve uyarı işaretleri."
   },
   {
    "slug": "aksam-8den-sonra-ek-is",
@@ -416,7 +419,8 @@
     "gece-ek-is-ilanlari",
     "aksam-ve-hafta-sonu-ek-is",
     "hafta-sonu-ek-is"
-   ]
+   ],
+   "lead": "Saat 20.00'den sonra çalışılabilecek ek işler ve gece çalışmasının yasal sınırı."
   },
   {
    "slug": "hafta-sonu-ek-is",
@@ -510,7 +514,8 @@
     "aksam-ve-hafta-sonu-ek-is",
     "gunluk-ek-is",
     "ogrenciye-uygun-ek-isler"
-   ]
+   ],
+   "lead": "Cumartesi ve pazar çalışılabilecek ek işler, sözleşme türü ve hafta içi işinizle denge."
   },
   {
    "slug": "gece-ek-is-ilanlari",
@@ -616,7 +621,8 @@
     "aksam-8den-sonra-ek-is",
     "meslege-gore-ek-is",
     "ankarada-ek-is-nerelerde-cikiyor"
-   ]
+   ],
+   "lead": "Gece vardiyası açan ek işler, yasal gece çalışması sınırları ve sorulacak sorular."
   },
   {
    "slug": "gunluk-ek-is",
@@ -713,7 +719,8 @@
     "sigortasiz-ek-is",
     "hafta-sonu-ek-is",
     "ek-is-ne-kadar-kazandirir"
-   ]
+   ],
+   "lead": "Günlük ödemeli ve kısa süreli ek işler, çağrı üzerine çalışma ve sigorta kuralları."
   },
   {
    "slug": "online-ek-is",
@@ -829,7 +836,8 @@
     "evde-ek-is",
     "evde-ek-is-ilanlari",
     "meslege-gore-ek-is"
-   ]
+   ],
+   "lead": "İnternetten ve telefondan yapılan gerçek ek işler ile \"görev yap, para kazan\" tuzağı."
   },
   {
    "slug": "memurlar-ek-is-yapabilir-mi",
@@ -902,7 +910,8 @@
     "ek-is-yapmak-istiyorum",
     "meslege-gore-ek-is",
     "ek-is-fikirleri"
-   ]
+   ],
+   "lead": "657 sayılı Kanun'un 28. maddesine göre memurların yapamayacağı işler ve istisnalar."
   },
   {
    "slug": "sigortasiz-ek-is",
@@ -1002,7 +1011,8 @@
     "gunluk-ek-is",
     "ek-is-ne-kadar-kazandirir",
     "ek-is-yapmak-istiyorum"
-   ]
+   ],
+   "lead": "Sigortasız çalışmanın riskleri, iki işte sigorta ve hizmet tespit davası."
   },
   {
    "slug": "ek-is-ilanlari-nereden-bulunur",
@@ -1107,7 +1117,8 @@
     "ankara-part-time-is-ilanlari-rehberi",
     "evde-ek-is-ilanlari",
     "iskur-evde-ek-is-veriyor-mu"
-   ]
+   ],
+   "lead": "Ek iş ilanı aramanın başlıca kanalları, güçlü ve zayıf yanları ve dikkat edilecekler."
   },
   {
    "slug": "ek-is-yapmak-istiyorum",
@@ -1197,7 +1208,8 @@
     "ek-is-fikirleri",
     "ek-is-ilanlari-nereden-bulunur",
     "sigortasiz-ek-is"
-   ]
+   ],
+   "lead": "Ek işe başlamadan önce sözleşmeden ilk görüşmeye atılacak yedi adım."
   },
   {
    "slug": "meslege-gore-ek-is",
@@ -1305,7 +1317,8 @@
     "memurlar-ek-is-yapabilir-mi",
     "online-ek-is",
     "ek-is-fikirleri"
-   ]
+   ],
+   "lead": "Muhasebe, mühendislik, güvenlik ve servis alanında mesleğe uygun ek işler ve yasal şartlar."
   },
   {
    "slug": "evde-ek-is-paketleme",
@@ -1405,7 +1418,8 @@
     "evde-paketleme-urunleri",
     "iskur-evde-ek-is-veriyor-mu",
     "evde-paketleme-isi-guvenilir-mi"
-   ]
+   ],
+   "lead": "Evde ek iş paketleme ilanlarının vaatleri, gerçek paketleme işi ve resmî kurum uyarıları."
   },
   {
    "slug": "evde-paketleme-urunleri",
@@ -1504,7 +1518,8 @@
     "evde-ek-is-paketleme",
     "evde-paketleme-isi-ne-kadar-kazandirir",
     "ev-hanimlarina-evde-is-imkani"
-   ]
+   ],
+   "lead": "Evde paketleme ilanlarında sık geçen ürünler ve ürün adına bakmadan teklifi değerlendirme."
   },
   {
    "slug": "iskur-evde-ek-is-veriyor-mu",
@@ -1579,7 +1594,8 @@
     "evde-ek-is-paketleme",
     "evde-paketleme-acentesi-nedir",
     "ek-is-ilanlari-nereden-bulunur"
-   ]
+   ],
+   "lead": "İŞKUR adıyla dolaşan evde ek iş ilanları, kurumun uyarısı ve doğrulama yolu."
   },
   {
    "slug": "evde-paketleme-isi-guvenilir-mi",
@@ -1639,7 +1655,8 @@
    "gorsel": {
     "alt": "Evde paketleme işi güvenilir mi: markasız karton kutuyu büyüteçle inceleyen bir el",
     "baslik": "Evde paketleme işi güvenilir mi?"
-   }
+   },
+   "lead": "İşe başlamak için sizden ödeme isteniyorsa o teklif işe alım değildir; dört işaret ve gerçek süreç."
   },
   {
    "slug": "evde-paketleme-isi-ne-kadar-kazandirir",
@@ -1685,7 +1702,8 @@
    "gorsel": {
     "alt": "Evde paketleme işi ne kadar kazandırır: hesap makinesiyle kazanç hesabı yapan el ve karton kutu",
     "baslik": "Evde paketleme işi ne kadar kazandırır?"
-   }
+   },
+   "lead": "Vaat edilen rakamlarla gerçek paketleme işinin kazancı arasındaki fark ve doğrulama yolu."
   },
   {
    "slug": "evde-paketleme-dolandiriciligi-nasil-anlasilir",
@@ -1734,7 +1752,8 @@
    "gorsel": {
     "alt": "Evde paketleme işinde mağduriyet: masada telefon, ödeme fişi ve banka kartı",
     "baslik": "Evde paketleme işinde mağduriyet nasıl anlaşılır?"
-   }
+   },
+   "lead": "Ücret talebine dayanan sürecin işleyişi, uyarı işareti cümleler ve mağdur olunca izlenecek yol."
   },
   {
    "slug": "ankarada-ek-is-nerelerde-cikiyor",
@@ -1783,7 +1802,8 @@
    "gorsel": {
     "alt": "Ankara'da ek iş nerelerde çıkıyor: akşam ışıklarında konut ve sanayi bölgeleri olan büyük bir şehir manzarası",
     "baslik": "Ankara'da ek iş nerelerde çıkıyor?"
-   }
+   },
+   "lead": "Akşam ve hafta sonu iş çıkan altı alan, yoğunlaştığı semtler ve kime uygun olduğu."
   },
   {
    "slug": "ek-is-ne-kadar-kazandirir",
@@ -1830,7 +1850,8 @@
    "gorsel": {
     "alt": "Ek iş ne kadar kazandırır: masada hesap makinesi, cüzdan, ulaşım kartı ve araba anahtarı",
     "baslik": "Ek iş ne kadar kazandırır?"
-   }
+   },
+   "lead": "Ek işte kazancı belirleyen üç kalem, gizli giderler ve bir teklifin gerçek getirisini hesaplama."
   },
   {
    "slug": "ogrenciye-uygun-ek-isler",
@@ -1871,7 +1892,8 @@
    "gorsel": {
     "alt": "Öğrenciye uygun ek işler: sırt çantasını sandalyeye asıp kafede önlük bağlayan öğrenci",
     "baslik": "Öğrenciye uygun ek işler"
-   }
+   },
+   "lead": "Ders programını bozmayan işler, çıktıkları semtler ve öğrencinin bilmesi gereken haklar."
   },
   {
    "slug": "evde-paketleme-isi-veren-firmalar",
@@ -1924,7 +1946,8 @@
    "gorsel": {
     "alt": "Evde paketleme işi veren firmalar: paketleme tesisinde koli dolduran çalışanlar",
     "baslik": "Evde paketleme işi veren firmalar gerçek mi?"
-   }
+   },
+   "lead": "Firmanın gerçek olup olmadığını beş adımda doğrulama ve Ankara'da gerçek paketleme işinin yeri."
   },
   {
    "slug": "evde-paketleme-acentesi-nedir",
@@ -1970,7 +1993,8 @@
    "gorsel": {
     "alt": "Evde paketleme acentesi nedir: masada kayıt formu uzatan ve kalem tutan eller",
     "baslik": "Evde paketleme acentesi nedir, güvenilir mi?"
-   }
+   },
+   "lead": "\"Acente\" adıyla çıkan tekliflerin işleyişi, klasik paketleme mağduriyetinden farkı ve korunma."
   },
   {
    "slug": "ev-hanimlarina-evde-is-imkani",
@@ -2018,7 +2042,8 @@
    "gorsel": {
     "alt": "Ev hanımlarına evde iş imkânı: mutfak masasında örgü ören eller ve ev yapımı reçel kavanozları",
     "baslik": "Ev hanımlarına evde iş imkânı: gerçekte ne var?"
-   }
+   },
+   "lead": "Evden gelir elde etmenin gerçek yolları, ücret isteyen teklifler ve devlet destekli kanallar."
   },
   {
    "slug": "aksam-ve-hafta-sonu-ek-is",
@@ -2067,7 +2092,8 @@
    "gorsel": {
     "alt": "Akşam ve hafta sonu ek iş: ışıklarla aydınlanan kafe terasında çay servisi yapan garson",
     "baslik": "Akşam ve hafta sonu yapılabilecek ek işler"
-   }
+   },
+   "lead": "Mesai sonrası ve hafta sonu çalışılabilecek işler, çıktıkları semtler ve vardiya seçimi."
   },
   {
    "slug": "aracla-yapilabilecek-ek-isler",
@@ -2115,7 +2141,8 @@
    "gorsel": {
     "alt": "Araçla yapılabilecek ek işler: gece ıslak yolda koli taşıyan motokurye",
     "baslik": "Aracı olanlar için ek iş yolları"
-   }
+   },
+   "lead": "Aracı olanların yapabileceği ek işler, gerçek kazancın hesabı ve gözden kaçan giderler."
   },
   {
    "slug": "ankara-part-time-is-ilanlari-rehberi",
@@ -2164,7 +2191,8 @@
    "gorsel": {
     "alt": "Part time iş ilanları: alışveriş merkezindeki mağazada kazak katlayan çalışan",
     "baslik": "Ankara'da part time iş nasıl bulunur?"
-   }
+   },
+   "lead": "Part time iş aramanın işleyen yolları, ilçelere göre iş profili ve başvuruda öne geçme."
   }
  ]
 }
