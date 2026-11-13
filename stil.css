@@ -314,7 +314,7 @@ html.menu-kilit{overflow:hidden}
 @media (min-width:860px){.sayfa-bas .lead{white-space:nowrap;font-size:clamp(.85rem,calc(100cqw / (var(--kl,60) * .57)),1.2rem)}}
 .kat-not{margin:0 0 1.25rem;max-width:56rem;color:var(--ink-2)}
 /* ana sayfa hero cümlesi ve bölüm başlığı altı cümleler: aynı kural (13.11.2026), ≥860px tek satır */
-@media (min-width:860px){.hero-metin{container-type:inline-size}.hero-metin .lead{white-space:nowrap;max-width:none;font-size:clamp(.85rem,calc(100cqw / (var(--kl,60) * .57)),1.2rem)}.bolum-bas:not(.bolum-bas-yan){max-width:none;container-type:inline-size}.bolum-bas:not(.bolum-bas-yan) p{white-space:nowrap;font-size:clamp(.85rem,calc(100cqw / (var(--kl,60) * .57)),1rem)}}
+@media (min-width:860px){.hero-metin{container-type:inline-size}.hero-metin .lead{max-width:none;text-wrap:balance;font-size:clamp(.9rem,calc(100cqw * 2 / (var(--kl,60) * .6)),1.2rem)}.bolum-bas:not(.bolum-bas-yan){max-width:none;container-type:inline-size}.bolum-bas:not(.bolum-bas-yan) p{white-space:nowrap;font-size:clamp(.85rem,calc(100cqw / (var(--kl,60) * .57)),1rem)}}
 .yol-izi{display:flex;flex-wrap:wrap;gap:.4rem;font-size:.85rem;color:var(--ink-2);margin-bottom:1rem}
 .yol-izi a{color:var(--ink-2)}
 .yol-izi span::before{content:"/";margin-right:.4rem;color:var(--hat)}

@@ -64,6 +64,9 @@ const SEKTOR = {satis:'Satış',uretim:'Üretim',temizlik:'Temizlik',kurye:'Kury
 /* İlan açıklamasının ilk cümlesi başlık altına, kalanı İş tanımı olarak gövdeye */
 const ilanLead = t => { const m=t.match(/^(.+?[.!?])\s+(?=[A-ZÇĞİÖŞÜ])/); return m?{ilk:m[1],kalan:t.slice(m[0].length)}:{ilk:t,kalan:''}; };
 
+/* Ana sayfa hero cümlesi (Owner 13.11.2026): iki satır */
+const HERO_LEAD = "İlanınız sitemizde, Instagram'da ve Facebook sayfamızda yayınlanır. Sadece burada değil, LinkedIn'de de yayınlanıyor.";
+
 const KATEGORI = {
   'ek-is-ilanlari':   {dosya:'ek-is-ilanlari.html',  ad:'Ek İş İlanları',  anahtar:'ek iş ilanları',
     baslik:'Ek İş İlanları: Ankara\'da akşam ve hafta sonu ek iş',
@@ -342,7 +345,7 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
   <div class="kap hero-izgara">
     <div class="hero-metin">
       <h1>Ankara'da eleman arıyorsanız ilanınızı ücretsiz yayınlayalım</h1>
-      <p class="lead" style="--kl:63">İlanınız sitemizde, Instagram'da ve Facebook sayfamızda yayınlanır.</p>
+      <p class="lead" style="--kl:${HERO_LEAD.length}">${HERO_LEAD}</p>
       <div class="hero-eylem">
         <a class="dugme dugme-sari" href="ilan-ver.html" data-ilan-ver="hero">Ücretsiz ilan verin ${IK.ok}</a>
         <a class="dugme dugme-hat" href="guncel-ilanlar.html">İş mi arıyorsunuz?</a>
