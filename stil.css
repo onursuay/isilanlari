@@ -304,11 +304,11 @@ html.menu-kilit{overflow:hidden}
 @media (min-width:860px){.cagri-ic{grid-template-columns:minmax(0,1fr) auto}.cagri-metin{container-type:inline-size}.cagri-metin p{white-space:nowrap;font-size:max(.82rem,min(1rem,calc(100cqw / (var(--k) * .57))))}}
 
 /* ——— sayfa başı (iç sayfalar) ——— */
-.sayfa-bas{background:var(--yuzey);padding-block:1.5rem 1.75rem;position:relative;overflow:hidden}
+.sayfa-bas{background:var(--yuzey);padding-block:1.5rem .875rem;position:relative;overflow:hidden}
 .sayfa-bas::after{content:"";position:absolute;right:-60px;top:-80px;width:260px;height:260px;border-radius:50%;background:var(--mavi-acik)}
 .sayfa-bas .kap{position:relative;z-index:1;container-type:inline-size}
 .sayfa-bas h1{font-size:clamp(1.9rem,3.8vw,2.6rem);max-width:none}
-.sayfa-bas .lead{margin-top:.6rem;max-width:none}
+.sayfa-bas .lead{margin:.6rem 0 0;max-width:none}
 /* İlan ver başlık cümlesi: ≥1000px'te tek satır; yazı boyutu kapsayıcıya göre (cümle 56,44 em genişliğinde), en çok 1,2rem */
 /* Owner kuralı (13.11.2026, site geneli): başlık altı cümle tek satır. ≥860px'te kapsayıcı genişliğine göre punto ayarlanır (13,6px - 19,2px), telefonda doğal sarma */
 @media (min-width:860px){.sayfa-bas .lead{white-space:nowrap;font-size:clamp(.85rem,calc(100cqw / (var(--kl,60) * .57)),1.2rem)}}
@@ -583,7 +583,7 @@ h1,h2,.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba
 #basvuru-formu{scroll-margin-top:96px}
 
 /* ——— Makale öne çıkan görsel, kısa cevap, tablo, kaynaklar (13.11.2026) ——— */
-.sayfa-bas-gorselli{padding-bottom:1.5rem}
+.sayfa-bas-gorselli{padding-bottom:1rem}
 .one-cikan{margin:1.25rem 0 0;position:relative}
 .one-cikan img{width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:22px;background:var(--mavi-acik);box-shadow:var(--golge-yuksek)}
 .yazi-kunye{font-size:.88rem;color:var(--ink-2)}
@@ -664,3 +664,7 @@ h1,h2,.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba
 .vurgu::after{content:"";position:absolute;left:.02em;right:.02em;bottom:-.06em;height:.1em;border-radius:99px;background:linear-gradient(90deg,var(--sari),#FFD56B 55%,var(--sari));transform-origin:left center;transform:scaleX(0);animation:vurgu-ciz 3.4s cubic-bezier(.22,.8,.25,1) infinite;pointer-events:none}
 @keyframes vurgu-ciz{0%{transform:scaleX(0);opacity:1}38%{transform:scaleX(1);opacity:1}78%{transform:scaleX(1);opacity:1}92%{transform:scaleX(1);opacity:0}100%{transform:scaleX(0);opacity:0}}
 @media (prefers-reduced-motion:reduce){.vurgu::after{animation:none;transform:scaleX(1)}}
+
+/* Başlık bandı altı boşluk (Owner 13.11.2026: "padding fazla azalt"): cümleden bant sonuna 14px, banttan içeriğe 12px; düğmeli bantlarda biraz daha rahat */
+.sayfa-bas + .bolum{padding-top:.75rem}
+.sayfa-bas:has(.hero-eylem){padding-bottom:1.25rem}
