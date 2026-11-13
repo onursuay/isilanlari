@@ -1,7 +1,8 @@
 name: İlan hattı
 
 # Ankara İş İlanı: sayfa gelen kutusunu okur, süzer; YAYIN_ACIK=1 ise siteye ve sosyal medyaya alır.
-# Varsayılan mod "hazirlik": hiçbir şey yayınlamaz, yalnız sayıları günlüğe yazar.
+# Zamanlanmış koşu: depo değişkeni YAYIN_ACIK=1 ise "yayinla", değilse "hazirlik" (hiçbir şey yayınlamaz).
+# 13.11.2026'ya kadar zamanlanmış koşu YAYIN_ACIK'tan bağımsız hep hazirlik'ti; değişken tek başına yayını açmıyordu.
 on:
   schedule:
     - cron: '17 5,8,11,14,17,20 * * *'   # UTC; Türkiye saatiyle 08:17 - 23:17, 3 saatte bir
@@ -31,15 +32,15 @@ jobs:
         with:
           node-version: '20'
       - name: Playwright (yalnız kart üretimi için)
-        if: ${{ (github.event.inputs.mod || 'hazirlik') == 'yayinla' }}
+        if: ${{ (github.event.inputs.mod || (vars.YAYIN_ACIK == '1' && 'yayinla' || 'hazirlik')) == 'yayinla' }}
         run: |
           npm install --no-save playwright@1.49.0
       - name: Hattı çalıştır
         run: |
-          MOD="${{ github.event.inputs.mod || 'hazirlik' }}"
+          MOD="${{ github.event.inputs.mod || (vars.YAYIN_ACIK == '1' && 'yayinla' || 'hazirlik') }}"
           python3 otomasyon/hat.py "$MOD"
       - name: Durumu kaydet (yalnız kimlik, karar ve gerekçe)
-        if: ${{ (github.event.inputs.mod || 'hazirlik') == 'hazirlik' }}
+        if: ${{ (github.event.inputs.mod || (vars.YAYIN_ACIK == '1' && 'yayinla' || 'hazirlik')) == 'hazirlik' }}
         run: |
           git config user.name "ankara-is-ilani-hat"
           git config user.email "hat@ankaraisilani.com"

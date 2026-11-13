@@ -64,7 +64,10 @@ def yayinla():
     durum, kararlar = toplayici.calistir(kuru=False)
     adaylar = [k for k in kararlar if k["karar"] == "yayinla"]
     print(f"YAYIN: {len(adaylar)} yayına uygun ilan")
+    for k in kararlar:
+        print(f"  {k['zaman'][:10]} {k['platform']:9} {k['karar']:8} {k['gerekce']}")
     if not adaylar:
+        git_yayinla("Hat: gelen kutusu kararları", ["veri/_hat_durumu.json"])  # beklet/reddet kararları kaybolmasın
         return
     veri = json.load(open(ILANLAR, encoding="utf-8"))
     son = max([int(re.sub(r"\D", "", i["kod"])) for i in veri["ilanlar"]] + [int(durum.get("son_kod", 0))])
