@@ -41,7 +41,7 @@
 <link rel="preload" href="/medya/yazi/poppins-600-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/medya/yazi/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/medya/yazi/montserrat-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/stil.css?v=e8887ad0">
+<link rel="stylesheet" href="/stil.css?v=971c1c48">
 <script>
 /* Çerez onayı (Consent Mode v2): her şey reddedilmiş başlar, onayla güncellenir. GTM'den ÖNCE çalışmalıdır. */
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
@@ -89,22 +89,33 @@ try{if(localStorage.getItem('aii_cerez')==='hepsi'){gtag('consent','update',{ad_
   </div>
 </section>
 <section class="bolum">
-  <div class="kap yazi">
+  <div class="kap yazi yazi-iki">
+    <div class="yazi-ana">
+    <nav class="icindekiler" aria-labelledby="icindekiler-baslik">
+      <p class="ic-baslik" id="icindekiler-baslik">İçindekiler</p>
+      <ol>
+        <li><a href="#kisa-cevap">Kısa Cevap</a></li>
+        <li><a href="#dikkat-edilmesi-gereken-dort-isaret">Dikkat Edilmesi Gereken Dört İşaret</a></li>
+        <li><a href="#gercek-paketleme-isi-nasil-yurur">Gerçek Paketleme İşi Nasıl Yürür?</a></li>
+        <li><a href="#para-odediyseniz-ne-yapmalisiniz">Para Ödediyseniz Ne Yapmalısınız?</a></li>
+        <li><a href="#sik-sorulanlar">Sık Sorulanlar</a></li>
+      </ol>
+    </nav>
     <p class="yazi-kunye">Hazırlayan: <a href="/hakkimizda">Ankara İş İlanı</a> · Yayın: <time datetime="2026-08-19">19 Ağustos 2026</time> · 6 dakikalık okuma</p>
 
-    <h2>Kısa Cevap</h2>
+    <h2 id="kisa-cevap">Kısa Cevap</h2>
     <p>Evde paketleme adı altında yapılan tekliflerin büyük bölümü işe alım süreci değildir. Ayırt etmek için tek bir ölçüt yeter: <strong>işe girmek için sizden para isteniyorsa o teklif işe alım teklifi değildir.</strong> Gerçek bir işveren, işe alacağı kişiden kapora, kargo, sigorta ya da üyelik ücreti istemez.</p>
     <p>Bu sayfa bir iş vaadi içermez. Amacı, karar vermeden önce neye baktığınızı bilmenizi sağlamaktır.</p>
-    <h2>Dikkat Edilmesi Gereken Dört İşaret</h2>
+    <h2 id="dikkat-edilmesi-gereken-dort-isaret">Dikkat Edilmesi Gereken Dört İşaret</h2>
     <p><strong>1. Para isteniyor.</strong> Kapora, depozito, kargo, sigorta, üyelik ya da eğitim ücreti. Adı değişir, sonuç aynıdır: önce ödeme, sonra sessizlik.</p>
     <p><strong>2. Her şey tek bir cep numarasından yürüyor.</strong> Şirketin sabit hattı, ofis adresi ve kurumsal e-postası yoktur; görüşme yalnız mesajlaşma uygulaması üzerinden ilerler.</p>
     <p><strong>3. Şirketin açık kimliği verilmiyor.</strong> Ticaret unvanı, vergi numarası ve adres sorulduğunda konu değiştirilir.</p>
     <p><strong>4. Sözleşme yerine kimlik ve IBAN isteniyor.</strong> Bu bilgilerle sizin adınıza hesap açılabilir; sonrasında ödeme aklama işlemlerine karışabilirsiniz.</p>
-    <h2>Gerçek Paketleme İşi Nasıl Yürür?</h2>
+    <h2 id="gercek-paketleme-isi-nasil-yurur">Gerçek Paketleme İşi Nasıl Yürür?</h2>
     <p>Paketleme gerçek bir iş koludur. Gıda, kozmetik, tekstil ve kargo firmaları düzenli olarak paketleme elemanı arar. Ancak bu iş neredeyse her zaman <strong>iş yerinde</strong> yapılır: fabrikada, atölyede ya da depoda, vardiyalı ve sigortalı olarak.</p>
     <p>Sebebi basit. Firma ürünün hijyenini, sayımını ve teslim süresini denetlemek zorundadır. Ürünü tanımadığı kişilerin evine dağıtmak hem maliyetli hem risklidir. Bu yüzden “eve iş veriyoruz” diyen tekliflerin karşılığı çoğunlukla yoktur.</p>
     <p>Ankara'da gerçek paketleme ilanları en çok Ostim, İvedik, Sincan ve Kazan çevresindeki üretim tesislerinden çıkar.</p>
-    <h2>Para Ödediyseniz Ne Yapmalısınız?</h2>
+    <h2 id="para-odediyseniz-ne-yapmalisiniz">Para Ödediyseniz Ne Yapmalısınız?</h2>
     <p>Önce bankanıza başvurup işlemin iadesini talep edin; erken davranmak sonucu değiştirebilir.</p>
     <p>Dekontları, yazışmaları, numarayı ve hesap bilgilerini saklayın. Bunlar savcılığa yapacağınız şikâyetin dayanağıdır.</p>
     <p>Kimlik bilgilerinizi paylaştıysanız e-Devlet üzerinden adınıza kayıtlı hesapları ve şirket kayıtlarını kontrol edin.</p>
@@ -118,13 +129,25 @@ try{if(localStorage.getItem('aii_cerez')==='hepsi'){gtag('consent','update',{ad_
       </ul>
       <p style="margin:1.1rem 0 0"><a class="dugme dugme-mavi" href="/guncel-ilanlar">Güncel ilanlara bakın</a></p>
     </div>
-
+    </div>
+    <aside class="yan" aria-labelledby="yan-baslik">
+      <div class="yan-kutu">
+        <p class="yan-baslik" id="yan-baslik">Son güncellenenler</p>
+        <ul class="yan-liste">
+          <li><a class="yan-oge" href="/yazi/ek-is-fikirleri"><img src="/medya/makale/ek-is-fikirleri-thumb.webp?v=0c6189de" width="104" height="55" alt="" loading="lazy" decoding="async"><span class="yan-metin"><b class="yan-ad">Ek İş Fikirleri: Çalışanlar İçin 12 Gerçekçi Seçenek</b><span class="yan-ozet">Mesai dışında yapılabilecek 12 ek iş, her birinin saati, sermaye gerektirip gerektirmediği ve kime uygun olduğu tek tabloda.</span></span></a></li>
+          <li><a class="yan-oge" href="/yazi/evde-ek-is"><img src="/medya/makale/evde-ek-is-thumb.webp?v=c5a1498e" width="104" height="55" alt="" loading="lazy" decoding="async"><span class="yan-metin"><b class="yan-ad">Evde Ek İş: Evden Yapılabilecek İşler Ve Güvenli Başlangıç</b><span class="yan-ozet">Evden yapılabilecek gerçek ek işler, bu işlerin yazılı sözleşmede nasıl tanımlandığı ve ücret talep eden tekliflerden nasıl korunacağınız.</span></span></a></li>
+          <li><a class="yan-oge" href="/yazi/evde-ek-is-ilanlari"><img src="/medya/makale/evde-ek-is-ilanlari-thumb.webp?v=bf4e3ec5" width="104" height="55" alt="" loading="lazy" decoding="async"><span class="yan-metin"><b class="yan-ad">Evde Ek İş İlanları: Gerçek İlanı Nasıl Ayırt Edersiniz?</b><span class="yan-ozet">Bir evde ek iş ilanının gerçek olup olmadığını anlamak için ilanda bulunması gereken yedi bilgi ve sosyal medyada sık görülen uyarı işaretleri.</span></span></a></li>
+          <li><a class="yan-oge" href="/yazi/aksam-8den-sonra-ek-is"><img src="/medya/makale/aksam-8den-sonra-ek-is-thumb.webp?v=2997acbe" width="104" height="55" alt="" loading="lazy" decoding="async"><span class="yan-metin"><b class="yan-ad">Akşam Saat 8'den Sonra Ek İş: Bu Saatte Çalışan İşler</b><span class="yan-ozet">Saat 20.00'den sonra çalışılabilecek ek işler, bu saatlerin kanunda &quot;gece&quot; sayılmasının anlamı ve vardiya seçerken dikkat edilecekler.</span></span></a></li>
+          <li><a class="yan-oge" href="/yazi/hafta-sonu-ek-is"><img src="/medya/makale/hafta-sonu-ek-is-thumb.webp?v=18570ae6" width="104" height="55" alt="" loading="lazy" decoding="async"><span class="yan-metin"><b class="yan-ad">Hafta Sonu Ek İş: Cumartesi Ve Pazar Çalışılan İşler</b><span class="yan-ozet">Yalnız cumartesi ve pazar günleri çalışılabilecek ek işler, bu işlerin hangi sözleşmeyle yapıldığı ve hafta içi işinizle nasıl dengelenir.</span></span></a></li>
+        </ul>
+      </div>
+    </aside>
   </div>
 </section>
 
 <section class="bolum">
   <div class="kap sss">
-    <h2>Sık Sorulanlar</h2>
+    <h2 id="sik-sorulanlar">Sık Sorulanlar</h2>
     <div class="sc">
       <details open>
         <summary>Evde paketleme işi ne kadar kazandırır?</summary>
@@ -141,6 +164,7 @@ try{if(localStorage.getItem('aii_cerez')==='hepsi'){gtag('consent','update',{ad_
     </div>
   </div>
 </section>
+
 <section class="bolum bolum-yuzey">
   <div class="kap">
     <div class="bolum-bas"><h2>Bu Konudaki Diğer Yazılar</h2></div>

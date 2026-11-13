@@ -272,7 +272,7 @@ const satir = (i,k='') => { const sk = SEKTOR[i.kategori]||'İlan'; return `    
 /* Makale öne çıkan görselleri: medya/makale/<slug>.webp (1200x630), <slug>-800.webp, <slug>.jpg (paylaşım) */
 const yaziGorsel = y => { if(!y.gorsel) return null; const b=`medya/makale/${y.slug}`;
   if(!fs.existsSync(path.join(KOK,b+'.webp'))) return null;
-  return {webp:`${b}.webp?v=${surum(b+'.webp')}`,webp800:`${b}-800.webp?v=${surum(b+'-800.webp')}`,jpg:`${b}.jpg?v=${surum(b+'.jpg')}`,alt:y.gorsel.alt,baslik:y.gorsel.baslik}; };
+  return {thumb:`${b}-thumb.webp?v=${surum(b+'-thumb.webp')}`,webp:`${b}.webp?v=${surum(b+'.webp')}`,webp800:`${b}-800.webp?v=${surum(b+'-800.webp')}`,jpg:`${b}.jpg?v=${surum(b+'.jpg')}`,alt:y.gorsel.alt,baslik:y.gorsel.baslik}; };
 const oneCikan = g => `<figure class="one-cikan">
       <img src="/${g.webp}" srcset="/${g.webp800} 800w, /${g.webp} 1200w" sizes="(min-width:1180px) 1116px, 100vw" width="1200" height="630" alt="${kac(g.alt)}" title="${kac(g.baslik)}" fetchpriority="high" decoding="async">
     </figure>`;
@@ -287,7 +287,7 @@ const yaziKart = (y,k='') => { const g=yaziGorsel(y); return `      <a class="ka
 const sssBlok = (sss) => !sss?.length ? '' : `
 <section class="bolum">
   <div class="kap sss">
-    <h2>Sık sorulanlar</h2>
+    <h2 id="sik-sorulanlar">Sık sorulanlar</h2>
     <div class="sc">
 ${sss.map((q,n)=>`      <details${n===0?' open':''}>
         <summary>${kac(q.s)}</summary>
@@ -726,7 +726,36 @@ const tabloHtml = t => `    <div class="tablo-kap"><table>
 ${t.s.map(r=>`        <tr>${r.map((x,n)=>n===0?`<th scope="row">${x}</th>`:`<td>${x}</td>`).join('')}</tr>`).join('\n')}
       </tbody>
     </table></div>`;
-const bolumHtml = b => [`    <h2>${kac(b.h)}</h2>`,
+/* İçindekiler (Owner 13.11.2026): öne çıkan görselin altında, her başlığa sayfa içi bağlantı; sıra sayfadaki sıradır */
+const icindekiler = y => {
+  const kul=new Set(['kaynaklar','sik-sorulanlar']);
+  const idYap=t=>{const b=slug(duz(t))||'bolum'; let i=b,n=2; while(kul.has(i)) i=b+'-'+(n++); kul.add(i); return i;};
+  const maddeler=y.bolumler.map(b=>({id:idYap(b.h),h:b.h}));
+  const tum=[...maddeler,...(y.sss?.length?[{id:'sik-sorulanlar',h:'Sık sorulanlar'}]:[]),...(y.kaynaklar?.length?[{id:'kaynaklar',h:'Kaynaklar'}]:[])];
+  const html=`    <nav class="icindekiler" aria-labelledby="icindekiler-baslik">
+      <p class="ic-baslik" id="icindekiler-baslik">İçindekiler</p>
+      <ol>
+${tum.map(m=>`        <li><a href="#${m.id}">${kac(m.h).replace(/\S+/g,bas1)}</a></li>`).join('\n')}
+      </ol>
+    </nav>`;
+  return {html,idler:maddeler.map(m=>m.id)};
+};
+/* Sağ sütun "Son güncellenenler" (Owner 13.11.2026): en yeni tarihli 5 diğer makale; aynı tarihlilerde sayfanın ardından gelenler önce (bağlantı dağılımı) */
+const sonGuncellenenler = y => {
+  const n=yazi.length, idx=yazi.indexOf(y);
+  const liste=yazi.map((x,i)=>({x,i})).filter(o=>o.x.slug!==y.slug).sort((a,b)=>{
+    const d=(b.x.guncelleme||b.x.tarih).localeCompare(a.x.guncelleme||a.x.tarih); if(d) return d;
+    return ((a.i-idx+n)%n)-((b.i-idx+n)%n); }).slice(0,5).map(o=>o.x);
+  return `    <aside class="yan" aria-labelledby="yan-baslik">
+      <div class="yan-kutu">
+        <p class="yan-baslik" id="yan-baslik">Son güncellenenler</p>
+        <ul class="yan-liste">
+${liste.map(x=>{const g=yaziGorsel(x); return `          <li><a class="yan-oge" href="${yaziYol(x)}">${g?`<img src="/${g.thumb}" width="104" height="55" alt="" loading="lazy" decoding="async">`:'<span></span>'}<span class="yan-metin"><b class="yan-ad">${kac(x.baslik).replace(/\S+/g,bas1)}</b><span class="yan-ozet">${kac(x.ozet)}</span></span></a></li>`;}).join('\n')}
+        </ul>
+      </div>
+    </aside>`;
+};
+const bolumHtml = (b,id) => [`    <h2 id="${id}">${kac(b.h)}</h2>`,
   ...(b.p||[]).map(p=>`    <p>${p}</p>`),
   b.liste?`    <ul class="yazi-liste">\n${b.liste.map(l=>`      <li>${l}</li>`).join('\n')}\n    </ul>`:'',
   b.tablo?tabloHtml(b.tablo):''].filter(Boolean).join('\n');
@@ -749,12 +778,15 @@ for (const y of yazi) {
     {'@context':'https://schema.org','@type':'FAQPage',inLanguage:'tr-TR',
       mainEntity:(y.sss||[]).map(q=>({'@type':'Question',name:q.s,acceptedAnswer:{'@type':'Answer',text:duz(q.c)}}))},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:kat.ad,yol:kat.dosya},{ad:y.baslik,yol:yaziYol(y)}])];
+  const ic = icindekiler(y);
   const govde=`${sayfaBas({yol:yolBas('../', `<a href="../${kat.dosya}">${kac(kat.ad)}</a>`),baslik:kac(y.baslik),lead:`${kac(y.ozet)}`,gorsel:g?oneCikan(g):''})}
 <section class="bolum">
-  <div class="kap yazi">
+  <div class="kap yazi yazi-iki">
+    <div class="yazi-ana">
+${ic.html}
     <p class="yazi-kunye">Hazırlayan: <a href="../hakkimizda.html">Ankara İş İlanı</a> · Yayın: <time datetime="${y.tarih}">${trTarih(y.tarih)}</time>${guncel!==y.tarih?` · Güncelleme: <time datetime="${guncel}">${trTarih(guncel)}</time>`:''} · ${y.okuma} dakikalık okuma</p>
 ${y.kisa?`    <div class="kisa-cevap"><strong>Kısa cevap:</strong> ${y.kisa}</div>`:''}
-${y.bolumler.map(bolumHtml).join('\n')}
+${y.bolumler.map((b,n)=>bolumHtml(b,ic.idler[n])).join('\n')}
 ${y.uyari?`    <p class="yazi-uyari">${y.uyari}</p>`:''}
     <div class="panel panel-yuzey" style="margin-top:2rem">
       <h3>Kısaca</h3>
@@ -765,15 +797,21 @@ ${y.uyari?`    <p class="yazi-uyari">${y.uyari}</p>`:''}
       </ul>
       <p style="margin:1.1rem 0 0"><a class="dugme dugme-mavi" href="../guncel-ilanlar.html">Güncel ilanlara bakın</a></p>
     </div>
-${y.kaynaklar?.length?`    <div class="kaynaklar">
-      <h2>Kaynaklar</h2>
-      <ul>
-${y.kaynaklar.map(k=>`        <li><a href="${k.url}" rel="noopener" target="_blank">${kac(k.ad)}</a></li>`).join('\n')}
-      </ul>
-    </div>`:''}
+    </div>
+${sonGuncellenenler(y)}
   </div>
 </section>
 ${sssBlok(y.sss)}
+${y.kaynaklar?.length?`<section class="bolum">
+  <div class="kap yazi">
+    <div class="kaynaklar">
+      <h2 id="kaynaklar">Kaynaklar</h2>
+      <ul>
+${y.kaynaklar.map(k=>`        <li><a href="${k.url}" rel="noopener" target="_blank">${kac(k.ad)}</a></li>`).join('\n')}
+      </ul>
+    </div>
+  </div>
+</section>`:''}
 ${digerleri.length?`<section class="bolum bolum-yuzey">
   <div class="kap">
     <div class="bolum-bas"><h2>Bu konudaki diğer yazılar</h2></div>
