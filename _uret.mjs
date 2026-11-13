@@ -29,7 +29,7 @@ const temizAdres = s => s
   .replace(/(https:\/\/ankaraisilani\.com\/[^"'\s<\\]*?)\.html/g,'$1')
   .replace(/https:\/\/ankaraisilani\.com\/index(?=["'\s<\\])/g,'https://ankaraisilani.com/');
 /* Başlıklarda (h1-h3) her kelimenin baş harfi büyük (Owner 11.11.2026, tüm sayfalar); varlık adı ve kısaltmalar olduğu gibi kalır */
-const bas1 = w => w.startsWith('&') ? w : w.replace(/^([^\p{L}]*)(\p{L})/u,(m,p,l)=>p+l.toLocaleUpperCase('tr-TR'));
+const bas1 = w => (w.startsWith('&') || /^\d+['’]/.test(w)) ? w : w.replace(/^([^\p{L}]*)(\p{L})/u,(m,p,l)=>p+l.toLocaleUpperCase('tr-TR'));
 const GOLGE = new Set(["Ankara'da Eleman Arıyorsanız İlanınızı Ücretsiz Yayınlayalım","İlanınız Üç Adımda Yayında","İşverenler İçin Ne Yapıyoruz"]);
 const baslikBuyuk = html => html.replace(/<h([1-3])((?:\s[^>]*)?)>([\s\S]*?)<\/h\1>/g,(m,n,attr,ic)=>{
   const yeni = ic.replace(/(<[^>]+>)|([^<]+)/g,(x,tag,txt)=>tag?tag:txt.replace(/\S+/g,bas1));

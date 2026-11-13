@@ -1,6 +1,1587 @@
 {
  "yazilar": [
   {
+   "slug": "ek-is-fikirleri",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Ek iş fikirleri: çalışanlar için 12 gerçekçi seçenek",
+   "ozet": "Mesai dışında yapılabilecek 12 ek iş, her birinin saati, sermaye gerektirip gerektirmediği ve kime uygun olduğu tek tabloda.",
+   "tarih": "2026-11-13",
+   "okuma": 7,
+   "kisa": "En gerçekçi ek iş fikirleri, ana işinizin bittiği saatte ihtiyaç duyulan işlerdir: akşam vardiyalı depo ve market işleri, hafta sonu servis, kurye, çağrı merkezi, özel ders ve bilgisayar başında yapılan destek işleri. Sermaye gerektirmeyen bir iş seçin ve işe başlamak için sizden para isteyen her teklife mesafe koyun.",
+   "gorsel": {
+    "alt": "Akşam ışığında masada açık bir defter, ek iş fikirlerini gösteren küçük çizimler, bir bardak çay ve masa lambası",
+    "baslik": "Ek iş fikirleri üzerine çalışan biri"
+   },
+   "bolumler": [
+    {
+     "h": "Ek iş seçerken üç soru",
+     "p": [
+      "Fikir listesine geçmeden önce kendinize üç soru sorun. <strong>Hangi saatlerde boşum?</strong> Akşam 18.00 sonrası mı, yalnız hafta sonu mu? <strong>Ne kadar yorgunluk kaldırırım?</strong> Gündüz ayakta çalışıyorsanız akşam oturarak yapılan bir iş daha uzun sürdürülebilir. <strong>Yol ne kadar sürüyor?</strong> Ek işe gidip gelmek bir saat alıyorsa, kazancınızı hesaplarken bu saati de çalışma sürenize katın.",
+      "Bu üç sorunun cevabı aşağıdaki tablodan hangi satıra bakacağınızı belirler."
+     ]
+    },
+    {
+     "h": "12 ek iş fikri tek tabloda",
+     "tablo": {
+      "b": [
+       "Ek iş",
+       "Ne zaman?",
+       "Sermaye",
+       "Kime uygun?"
+      ],
+      "s": [
+       [
+        "Depo ve sipariş hazırlama",
+        "Akşam vardiyası",
+        "Gerekmez",
+        "Ayakta çalışabilen, tecrübesi olmayan"
+       ],
+       [
+        "Market ve reyon düzenleme",
+        "Akşam, hafta sonu",
+        "Gerekmez",
+        "Evine yakın iş arayan"
+       ],
+       [
+        "Kafe ve restoran servisi",
+        "Akşam, hafta sonu",
+        "Gerekmez",
+        "Öğrenci, genç çalışan"
+       ],
+       [
+        "Motokurye",
+        "Akşam",
+        "Kendi motosikleti",
+        "Ehliyeti ve aracı olan"
+       ],
+       [
+        "Çağrı merkezi",
+        "Vardiyalı",
+        "Gerekmez",
+        "Konuşmayı seven, oturarak çalışmak isteyen"
+       ],
+       [
+        "Etkinlik ve fuar görevliliği",
+        "Hafta sonu, dönemsel",
+        "Gerekmez",
+        "Kısa süreli iş arayan"
+       ],
+       [
+        "Özel ders",
+        "Akşam, hafta sonu",
+        "Gerekmez",
+        "Bir alanda uzman olan"
+       ],
+       [
+        "Veri girişi ve ofis desteği",
+        "Esnek",
+        "Bilgisayar",
+        "Bilgisayar kullanmayı bilen"
+       ],
+       [
+        "Grafik, çeviri, metin yazarlığı",
+        "Esnek",
+        "Bilgisayar",
+        "Bu alanda becerisi olan"
+       ],
+       [
+        "Muhasebe ve ön muhasebe desteği",
+        "Akşam, ay sonu",
+        "Bilgisayar",
+        "Muhasebe bilgisi olan"
+       ],
+       [
+        "Güvenlik görevliliği",
+        "Gece, hafta sonu",
+        "Gerekmez",
+        "Özel güvenlik kimlik kartı olan"
+       ],
+       [
+        "El emeği ürün üretip satmak",
+        "Esnek",
+        "Malzeme",
+        "Kendi işini kurmak isteyen"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Sermaye gerektirmeyen ek işler hangileri?",
+     "p": [
+      "Tablonun sermaye sütununda \"Gerekmez\" yazan işlerde işe başlamak için para harcamazsınız: işveren sizi iş yerinde çalıştırır, ekipmanı o sağlar ve ücreti size o öder. Kurye işinde kendi aracınızı kullandığınız için yakıt ve bakım giderini kazancınızdan düşmeyi unutmayın.",
+      "El emeği ürün satmak ise bir iş bulmak değil, kendi işinizi kurmaktır. Malzeme parası sizden çıkar ve satış garantisi yoktur. Bu yolu seçecekseniz önce küçük bir deneme üretimi yapın."
+     ]
+    },
+    {
+     "h": "Ankara'da ek iş en çok nerede çıkar?",
+     "p": [
+      "Üretim ve lojistik işleri Ostim, İvedik, Sincan ve Kazan çevresindeki sanayi bölgelerinde toplanır. Kafe, mağaza ve hizmet işleri ise Kızılay, Çankaya ve büyük alışveriş merkezlerinin çevresinde çıkar. Semt semt ayrıntı için <a href=\"../yazi/ankarada-ek-is-nerelerde-cikiyor.html\">Ankara'da ek iş nerelerde çıkıyor</a> yazımıza bakabilirsiniz."
+     ]
+    },
+    {
+     "h": "Hangi ek iş teklifine mesafe koymalı?",
+     "p": [
+      "Kolay ve hızlı kazanç vaadiyle gelen, işe başlamadan önce kayıt, kargo, numune ya da üyelik ücreti isteyen teklif, ek iş değildir. Gerçek işveren, işe alacağı kişiden para istemez. Evde paketleme adıyla gelen teklifler için <a href=\"../yazi/evde-paketleme-isi-guvenilir-mi.html\">evde paketleme işi güvenilir mi</a> yazımızı okuyun."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "En kolay ek iş hangisi?",
+     "c": "Tecrübe aranmayan ve hemen başlanabilen işler genellikle depo, market ve servis işleridir. Ancak \"kolay\" iş, sizin saatinize ve yorgunluğunuza uyan iştir. Önce boş saatlerinizi belirleyin, sonra bu saatlerde çalışan işlere bakın."
+    },
+    {
+     "s": "Ek iş için sermaye gerekir mi?",
+     "c": "İşverene bağlı çalışılan ek işlerde sermaye gerekmez. Sermaye yalnız kendi ürününüzü üretip satacaksanız ya da kendi aracınızla çalışacaksanız gerekir."
+    },
+    {
+     "s": "Ana işim ek iş yapmama izin vermezse ne olur?",
+     "c": "Bazı iş sözleşmelerinde ek iş ya da rakip firmada çalışma kısıtı bulunur. Başlamadan önce sözleşmenizi okuyun, emin değilseniz insan kaynakları biriminize yazılı olarak sorun."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "4857 sayılı İş Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4857&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "ek-is-yapmak-istiyorum",
+    "aksam-8den-sonra-ek-is",
+    "evde-ek-is"
+   ]
+  },
+  {
+   "slug": "evde-ek-is",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Evde ek iş: evden yapılabilecek işler ve güvenli başlangıç",
+   "ozet": "Evden yapılabilecek gerçek ek işler, bu işlerin yazılı sözleşmede nasıl tanımlandığı ve ücret talep eden tekliflerden nasıl korunacağınız.",
+   "tarih": "2026-11-13",
+   "okuma": 7,
+   "kisa": "Evden yapılabilecek gerçek ek işler çoğunlukla bilgisayar ya da telefon başında yürüyen işlerdir: müşteri desteği, çağrı merkezi, veri girişi, çeviri, tasarım, yazılım ve muhasebe desteği. İş Kanunu, evden yapılan işi \"uzaktan çalışma\" olarak tanımlar ve yazılı sözleşme ister. Sizden para isteyen evde iş teklifi ise iş değildir.",
+   "gorsel": {
+    "alt": "Pencere kenarında küçük bir masada açık dizüstü bilgisayar, kulaklık ve bir bardak çay; evden çalışan birinin elleri klavyede",
+    "baslik": "Evden ek iş yapan biri"
+   },
+   "bolumler": [
+    {
+     "h": "Evden yapılabilecek işler",
+     "p": [
+      "<strong>Müşteri desteği ve çağrı merkezi.</strong> Bazı firmalar müşteri temsilcilerini evden çalıştırır; bilgisayar, kulaklık ve sessiz bir ortam istenir.",
+      "<strong>Veri girişi ve ofis desteği.</strong> Belge tarama, sistem kaydı ve tablo düzenleme gibi işler uzaktan yürüyebilir.",
+      "<strong>Çeviri, metin yazarlığı ve tasarım.</strong> Becerinize göre iş başına ücretle çalışılır; örnek çalışmalarınız en güçlü referansınızdır.",
+      "<strong>Özel ders.</strong> Bir alanda iyiyseniz görüntülü görüşmeyle ders verebilirsiniz.",
+      "<strong>Muhasebe ve ön muhasebe desteği.</strong> Fatura girişi ve cari takip gibi işler evden yapılabilir. Defter tutma ve beyanname düzenleme ise meslek ruhsatı gerektirir; ayrıntısı <a href=\"../yazi/meslege-gore-ek-is.html\">mesleğe göre ek iş</a> yazımızda."
+     ]
+    },
+    {
+     "h": "Kanun evden çalışmayı nasıl tanımlıyor?",
+     "p": [
+      "İş Kanunu'nun 14. maddesine göre uzaktan çalışma, işçinin işini işverenin kurduğu iş düzeni içinde evinde ya da teknolojik iletişim araçlarıyla iş yeri dışında yaptığı, <strong>yazılı olarak kurulan</strong> iş ilişkisidir.",
+      "Aynı maddeye göre bu sözleşmede işin tanımı, yapılma şekli, süresi ve yeri, ücret ve ödeme şekli, işverenin sağladığı ekipman, işverenin sizinle nasıl iletişim kuracağı ve çalışma şartları yer alır. Size gelen teklifte bu bilgilerin hiçbiri yoksa, karşınızdaki bir iş ilişkisi değildir."
+     ]
+    },
+    {
+     "h": "Gerçek teklif ile ücret talep eden teklif",
+     "tablo": {
+      "b": [
+       "Ölçü",
+       "Gerçek evden çalışma",
+       "Ücret talep eden teklif"
+      ],
+      "s": [
+       [
+        "Para akışı",
+        "Ücreti işveren size öder",
+        "Önce siz ödeme yaparsınız"
+       ],
+       [
+        "Sözleşme",
+        "Yazılı, işin tanımı ve ücreti belli",
+        "Yok ya da yalnız mesajla anlatılır"
+       ],
+       [
+        "Ekipman",
+        "İşveren sağlar ya da sözleşmede yazar",
+        "\"Malzeme seti\" size satılır"
+       ],
+       [
+        "Firma kimliği",
+        "Ticaret unvanı ve adres verilir",
+        "Yalnız bir cep numarası vardır"
+       ],
+       [
+        "Kazanç anlatımı",
+        "Saat ya da iş başına ücret",
+        "Saatten bağımsız büyük rakamlar"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Başlarken üç güvenlik kuralı",
+     "p": [
+      "İşe girmek için hiçbir ad altında ödeme yapmayın. Kimlik fotoğrafınızı ve IBAN bilginizi, firmanın kimliğini doğrulamadan paylaşmayın. Ücretin nasıl ve ne zaman ödeneceğini yazılı hâle getirin.",
+      "Evde paketleme adıyla gelen teklifler ayrı bir başlıktır; ayrıntısı için <a href=\"../yazi/evde-ek-is-paketleme.html\">evde ek iş paketleme</a> yazımızı okuyun."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Evden çalışana sigorta yapılır mı?",
+     "c": "İşverene bağlı uzaktan çalışan da işçidir ve sigortalı olarak bildirilmesi gerekir. İş Kanunu, uzaktan çalışan işçiye esaslı bir neden olmadıkça emsal işçiden farklı işlem yapılamayacağını söyler."
+    },
+    {
+     "s": "Evde yapılacak ek işler için bilgisayar şart mı?",
+     "c": "Çoğu gerçek evden çalışma işi bilgisayar ve internet bağlantısı ister. Telefonla yapılan işler de vardır, ancak bunlar genellikle çağrı merkezi ya da satış işleridir."
+    },
+    {
+     "s": "Evde ek iş imkânı veren firmalara nasıl ulaşırım?",
+     "c": "Kariyer sitelerinde ve İŞKUR'da çalışma şeklini \"uzaktan\" ya da \"evden\" olarak arayın, ardından firmanın ticaret unvanını ve adresini doğrulayın."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "4857 sayılı İş Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4857&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "online-ek-is",
+    "evde-ek-is-ilanlari",
+    "ev-hanimlarina-evde-is-imkani"
+   ]
+  },
+  {
+   "slug": "evde-ek-is-ilanlari",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Evde ek iş ilanları: gerçek ilanı nasıl ayırt edersiniz?",
+   "ozet": "Bir evde ek iş ilanının gerçek olup olmadığını anlamak için ilanda bulunması gereken yedi bilgi ve sosyal medyada sık görülen uyarı işaretleri.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "Gerçek bir evde ek iş ilanında firmanın açık adı, işin tanımı, çalışma saati, ücret ve başvuru yolu yazar. Ücret, kargo ya da kayıt bedeli isteyen, yalnız bir cep numarası veren ve \"günde birkaç saatle yüksek kazanç\" vaat eden ilan gerçek bir iş ilanı değildir.",
+   "gorsel": {
+    "alt": "Akşam koltukta telefonunda iş ilanlarına bakan birinin elleri, ekranda bulanık ilan kartları",
+    "baslik": "Telefondan evde ek iş ilanlarına bakan biri"
+   },
+   "bolumler": [
+    {
+     "h": "Gerçek ilanda bulunan yedi bilgi",
+     "p": [
+      "Bir ilanı değerlendirirken şu bilgileri arayın. Eksik olan her madde, sorulması gereken bir sorudur."
+     ],
+     "liste": [
+      "<strong>Firmanın ticaret unvanı:</strong> yalnız marka adı değil, resmî adı.",
+      "<strong>İşin tanımı:</strong> ne yapacağınız açıkça yazmalı.",
+      "<strong>Çalışma saati ve günleri.</strong>",
+      "<strong>Ücret ya da ücretin nasıl hesaplanacağı:</strong> saat, gün ya da iş başına.",
+      "<strong>Sigorta bilgisi.</strong>",
+      "<strong>Ekipmanı kimin sağlayacağı.</strong>",
+      "<strong>Başvuru yolu:</strong> kurumsal e-posta, kariyer sayfası ya da form."
+     ]
+    },
+    {
+     "h": "Sosyal medyada sık görülen uyarı işaretleri",
+     "p": [
+      "Facebook gruplarında ve Instagram hesaplarında paylaşılan evde iş ilanlarında aynı kalıplar tekrar eder: \"evden çıkmadan haftalık ödeme\", \"tecrübe gerekmez, malzeme bizden\", \"kontenjan sınırlı\". İletişim yalnız mesajlaşma uygulamasından yürür ve görüşmenin bir aşamasında ödeme istenir.",
+      "Kişisel Verileri Koruma Kurumu 2022'de yaptığı kamuoyu duyurusunda, \"evde paketleme\" gibi ilanlara başvuranlardan kimlik kartı fotoğrafı ve IBAN istendiğini, ardından bu hesaplara para gönderilip iade talep edildiğini bildirdi. Bu, hesabınızın başkasının parasını taşımak için kullanılması anlamına gelebilir."
+     ]
+    },
+    {
+     "h": "İlanı doğrulamanın üç adımı",
+     "p": [
+      "<strong>1. Firmanın adını arayın.</strong> Ticaret unvanını ve vergi numarasını isteyin; gerçek firma bunu vermekten çekinmez.",
+      "<strong>2. Aynı ilanın başka yerde yayımlanıp yayımlanmadığına bakın.</strong> Firmanın kendi kariyer sayfasında ya da İŞKUR'da aynı ilan var mı?",
+      "<strong>3. Ödemeyi sorun.</strong> \"İşe başlamak için bir ödeme yapmam gerekiyor mu?\" sorusunun cevabı \"evet\" ise süreci orada bitirin."
+     ]
+    },
+    {
+     "h": "Ankara İş İlanı ilanları nasıl kontrol ediyor?",
+     "p": [
+      "Sitemizde yayımladığımız ilanları yayımlamadan önce kontrol ediyoruz ve adaydan ücret isteyen ilanı yayımlamıyoruz. Güncel ilanlar için <a href=\"../guncel-ilanlar.html\">Güncel İlanlar</a> sayfasına bakabilirsiniz."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Facebook'taki evde ek iş ilanları güvenilir mi?",
+     "c": "Platform tek başına bir ölçü değildir. Hangi kanalda yayımlanırsa yayımlansın, ilanda firmanın açık kimliği, işin tanımı ve ücret yoksa ya da sizden ödeme isteniyorsa ilana güvenmeyin."
+    },
+    {
+     "s": "\"Sahibinden\" evde ek iş ilanlarında nelere dikkat etmeliyim?",
+     "c": "İlanı veren kişinin bireysel mi kurumsal mı olduğuna bakın, işverenin adını ve adresini isteyin. Genel ilan sitelerinde de aynı kural geçerlidir: işe başlamak için para isteniyorsa ilan gerçek değildir."
+    },
+    {
+     "s": "Kimlik fotoğrafımı gönderdim, ne yapmalıyım?",
+     "c": "e-Devlet üzerinden adınıza açılmış hat, hesap ve şirket kaydı olup olmadığını kontrol edin. Hesabınıza tanımadığınız biri para gönderirse geri göndermeden önce bankanızla konuşun."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "Ekonomist, 27.10.2022: KVKK \"İş Vaadi Konulu TCK Kapsamındaki Kişisel Veri İhlallerine İlişkin Kamuoyu Duyurusu\"",
+     "url": "https://www.ekonomist.com.tr/haberler/kvkk-uyardi-bu-is-ilanlarina-kanmayin-27443"
+    },
+    {
+     "ad": "Türkiye İş Kurumu (İŞKUR) resmî sitesi",
+     "url": "https://www.iskur.gov.tr/"
+    }
+   ],
+   "ilgili": [
+    "evde-ek-is",
+    "evde-paketleme-dolandiriciligi-nasil-anlasilir",
+    "ek-is-ilanlari-nereden-bulunur"
+   ]
+  },
+  {
+   "slug": "aksam-8den-sonra-ek-is",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Akşam saat 8'den sonra ek iş: bu saatte çalışan işler",
+   "ozet": "Saat 20.00'den sonra çalışılabilecek ek işler, bu saatlerin kanunda \"gece\" sayılmasının anlamı ve vardiya seçerken dikkat edilecekler.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "Akşam saat 8'den sonra en çok iş çıkan alanlar; kargo depoları, kurye, market, kafe ve restoranlar, çağrı merkezleri ve güvenlik işleridir. İş Kanunu'na göre \"gece\" en geç saat 20.00'de başlar ve işçilerin gece çalışması kural olarak yedi buçuk saati geçemez.",
+   "gorsel": {
+    "alt": "Rakamsız duvar saatinin akşam sekizi gösterdiği bir kafe tezgâhı, önlüğünü bağlayan bir çalışan arkadan görünüyor",
+    "baslik": "Akşam saat sekizde başlayan ek iş vardiyası"
+   },
+   "bolumler": [
+    {
+     "h": "Saat dilimine göre ek işler",
+     "tablo": {
+      "b": [
+       "Saat",
+       "Sık çıkan işler",
+       "Not"
+      ],
+      "s": [
+       [
+        "17.00 – 20.00",
+        "Market, mağaza, kafe, özel ders",
+        "Mesaiden hemen sonraki dilim"
+       ],
+       [
+        "20.00 – 24.00",
+        "Kargo deposu, kurye, restoran, çağrı merkezi",
+        "Kanunda gece çalışması sayılır"
+       ],
+       [
+        "24.00 sonrası",
+        "Lojistik, güvenlik, sağlık destek hizmetleri",
+        "Ertesi günkü ana işinizi etkiler"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Saat 20.00'den sonrası neden önemli?",
+     "p": [
+      "İş Kanunu'nun 69. maddesine göre çalışma hayatında \"gece\", en geç saat 20.00'de başlayıp en erken saat 06.00'ya kadar süren ve en fazla on bir saat olan dönemdir. Yani saat 8'den sonra başlayan bir vardiya, kanun açısından gece çalışmasıdır.",
+      "Aynı madde, işçilerin gece çalışmasının yedi buçuk saati geçemeyeceğini söyler. Turizm, özel güvenlik ve sağlık hizmeti gibi bazı işlerde işçinin yazılı onayıyla bu süre aşılabilir. Bu yüzden \"20.00 – 06.00 arası on saat\" yazan bir ilanı, hangi işte olduğuna bakarak değerlendirin."
+     ]
+    },
+    {
+     "h": "Akşam ek işinde kazancı ne belirler?",
+     "p": [
+      "Saat ücreti, haftalık vardiya sayısı ve yol gideri. Gece biten işlerde toplu taşıma seçenekleri azalır; servis yoksa taksi ya da yakıt gideri kazancınızdan düşer. İşverene servis olup olmadığını baştan sorun. Hesaplama yöntemi için <a href=\"../yazi/ek-is-ne-kadar-kazandirir.html\">ek iş ne kadar kazandırır</a> yazımıza bakabilirsiniz."
+     ]
+    },
+    {
+     "h": "Vardiya seçerken dikkat edin",
+     "p": [
+      "Sabah erken başlayan bir ana işiniz varsa gece yarısını geçen vardiyalar uzun vadede uyku düzeninizi bozar. Haftada iki ya da üç akşamla başlayın, yorgunluğu ölçün, sonra artırın. Ana işinizin sözleşmesinde ek iş kısıtı olup olmadığını da kontrol edin."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Akşam 6'dan sonra yapılabilecek ek işler nelerdir?",
+     "c": "Saat 18.00 – 20.00 arasında en çok market, mağaza, kafe ve özel ders işleri çıkar. Bu saatlerde başlayıp 20.00'yi geçen vardiyaların bir kısmı gece çalışması sayılır."
+    },
+    {
+     "s": "Akşam ek işi sigortalı olur mu?",
+     "c": "Kaç saat çalışırsanız çalışın, bir işverene bağlı çalışıyorsanız işveren sizi SGK'ya bildirmek zorundadır. Kısmi süreli çalışma sigortasız çalışma anlamına gelmez."
+    },
+    {
+     "s": "Gece çalışana fazla ücret ödenir mi?",
+     "c": "Kanun, gece çalışmasına belirli bir oranda zam ödenmesini her iş için zorunlu tutmaz; bu konu iş sözleşmesine, toplu sözleşmeye ya da yönetmeliklere bağlıdır. İlanda gece zammı yazmıyorsa görüşmede sorun."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "4857 sayılı İş Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4857&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "gece-ek-is-ilanlari",
+    "aksam-ve-hafta-sonu-ek-is",
+    "hafta-sonu-ek-is"
+   ]
+  },
+  {
+   "slug": "hafta-sonu-ek-is",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Hafta sonu ek iş: cumartesi ve pazar çalışılan işler",
+   "ozet": "Yalnız cumartesi ve pazar günleri çalışılabilecek ek işler, bu işlerin hangi sözleşmeyle yapıldığı ve hafta içi işinizle nasıl dengelenir.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "Hafta sonu ek iş en çok kafe, restoran, pastane, alışveriş merkezi mağazaları, etkinlik ve fuar organizasyonları ile market ve depo işlerinde çıkar. Bu işler çoğunlukla kısmi süreli iş sözleşmesiyle yapılır; kısmi süreli çalışan, salt bu nedenle tam süreli emsal işçiden farklı işleme tabi tutulamaz.",
+   "gorsel": {
+    "alt": "Cumartesi sabahı bir pastane-kafede tezgâha simit ve hamur işleri dizen, arkadan görünen bir çalışan",
+    "baslik": "Hafta sonu kafede çalışan biri"
+   },
+   "bolumler": [
+    {
+     "h": "Hafta sonu en çok iş çıkan alanlar",
+     "p": [
+      "<strong>Kafe, restoran ve pastaneler.</strong> Cumartesi ve pazar en yoğun günlerdir; servis, kasa ve mutfak yardımı için yarı zamanlı eleman aranır.",
+      "<strong>Alışveriş merkezi mağazaları.</strong> Hafta sonu kalabalığı için satış danışmanı ve kasiyer alınır.",
+      "<strong>Etkinlik, fuar ve kongre.</strong> Karşılama, kayıt ve kurulum görevleri dönemseldir; birkaç günlük işlerdir.",
+      "<strong>Market ve depo.</strong> Hafta sonu sipariş ve stok yoğunluğu için vardiya açılır.",
+      "<strong>Özel ders.</strong> Hafta sonu öğrencilerin en çok ders aldığı zamandır."
+     ]
+    },
+    {
+     "h": "Cumartesi mi, pazar mı, ikisi birden mi?",
+     "tablo": {
+      "b": [
+       "Seçenek",
+       "Artısı",
+       "Dikkat"
+      ],
+      "s": [
+       [
+        "Yalnız cumartesi",
+        "Pazar dinlenme günü olarak kalır",
+        "İş seçeneği daha azdır"
+       ],
+       [
+        "Yalnız pazar",
+        "Cumartesiyi ailenize ayırırsınız",
+        "Pazartesi ana işinize yorgun başlayabilirsiniz"
+       ],
+       [
+        "İki gün birden",
+        "Kazanç ikiye katlanır",
+        "Hafta boyunca hiç tam dinlenme günü kalmaz"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Hafta sonu işi hangi sözleşmeyle yapılır?",
+     "p": [
+      "Haftanın yalnız iki gününde çalışmak, İş Kanunu'nun 13. maddesindeki kısmi süreli çalışmaya girer. Kanuna göre kısmi süreli çalışan, ayrımı haklı kılan bir neden olmadıkça, salt sözleşmesi kısmi süreli olduğu için tam süreli emsal işçiden farklı işleme tabi tutulamaz. Ücret ve paraya ilişkin bölünebilir haklar çalıştığınız süreyle orantılı ödenir.",
+      "İşveren, belli olmayan günlerde ihtiyaç duyduğunda sizi çağıracaksa bu, 14. maddedeki çağrı üzerine çalışmadır. Ayrıntısı <a href=\"../yazi/gunluk-ek-is.html\">günlük ek iş</a> yazımızda."
+     ]
+    },
+    {
+     "h": "Hafta sonu ek işinde ilk görüşmede sorulacaklar",
+     "liste": [
+      "Vardiya kaçta başlıyor, kaçta bitiyor?",
+      "Ücret saatlik mi, günlük mü, aylık mı ödeniyor?",
+      "Sigorta girişi işe başladığım gün mü yapılacak?",
+      "Bayram ve özel günlerde de çalışmam bekleniyor mu?",
+      "Yemek ve servis var mı?"
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Hafta sonu ek iş için ayrı sözleşme gerekir mi?",
+     "c": "Evet. Hafta sonu çalışacağınız işveren ana işvereninizden farklıysa onunla ayrı bir iş sözleşmesi yaparsınız ve o işveren de sizi SGK'ya kendi iş yerinden bildirir."
+    },
+    {
+     "s": "Pazar günleri ek iş bulmak zor mu?",
+     "c": "Pazar günü açık olan işletmeler daha azdır; bu yüzden ilan sayısı cumartesiye göre azdır. Kafe, restoran, alışveriş merkezi ve etkinlik işleri pazar günü de çalışan başlıca alanlardır."
+    },
+    {
+     "s": "Hafta sonu ek işim hafta içi işimi etkiler mi?",
+     "c": "Hukuken ana işinizin sözleşmesinde bir kısıt yoksa etkilemez. Pratikte ise dinlenme gününüz azalır; bu yüzden önce tek günle başlamanızı öneririz."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "4857 sayılı İş Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4857&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "aksam-ve-hafta-sonu-ek-is",
+    "gunluk-ek-is",
+    "ogrenciye-uygun-ek-isler"
+   ]
+  },
+  {
+   "slug": "gece-ek-is-ilanlari",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Gece ek iş ilanları: gece vardiyası ve yasal sınırlar",
+   "ozet": "Gece vardiyası açan ek işler, İş Kanunu'ndaki gece çalışması sınırları ve gece ilanını değerlendirirken sorulacak sorular.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "Gece ek işleri en çok lojistik depoları, kargo ayrıştırma merkezleri, güvenlik, sağlık destek hizmetleri ve 24 saat açık işletmelerde çıkar. İş Kanunu'na göre gece çalışması kural olarak yedi buçuk saati geçemez; sanayiye ait işlerde 18 yaşını doldurmamış kişilerin gece çalıştırılması yasaktır.",
+   "gorsel": {
+    "alt": "Gece bir lojistik deposunda markasız kolilerin ilerlediği uzun bir bant ve reflektörlü yelek giymiş, arkadan görünen bir çalışan",
+    "baslik": "Gece vardiyasında depo çalışanı"
+   },
+   "bolumler": [
+    {
+     "h": "Gece vardiyası açan işler",
+     "p": [
+      "<strong>Lojistik ve kargo ayrıştırma.</strong> Gün içinde toplanan gönderiler gece ayrıştırılıp ertesi sabaha hazırlanır. Ankara'da üretim ve lojistik tesisleri ağırlıklı olarak Ostim, İvedik, Sincan ve Kazan çevresindeki sanayi bölgelerindedir.",
+      "<strong>Güvenlik.</strong> Özel güvenlik görevliliği gece en sık çalışılan işlerdendir; görevliler valilikçe verilen özel güvenlik kimlik kartıyla çalışır.",
+      "<strong>Sağlık destek hizmetleri.</strong> Hastanelerde temizlik, hasta taşıma ve refakat destek işleri vardiyalıdır.",
+      "<strong>24 saat açık işletmeler.</strong> Akaryakıt istasyonları, bazı marketler ve restoranlar gece personeli arar."
+     ]
+    },
+    {
+     "h": "Kanun gece çalışmasını nasıl sınırlar?",
+     "tablo": {
+      "b": [
+       "Kural",
+       "Ne diyor?",
+       "Kaynak"
+      ],
+      "s": [
+       [
+        "Gecenin tanımı",
+        "En geç 20.00'de başlar, en erken 06.00'da biter, en fazla 11 saat sürer",
+        "İş Kanunu md. 69"
+       ],
+       [
+        "Süre sınırı",
+        "İşçinin gece çalışması 7,5 saati geçemez",
+        "İş Kanunu md. 69"
+       ],
+       [
+        "İstisna",
+        "Turizm, özel güvenlik ve sağlık hizmetinde işçinin yazılı onayıyla aşılabilir",
+        "İş Kanunu md. 69"
+       ],
+       [
+        "Posta değişimi",
+        "Postası değişen işçi en az 11 saat kesintisiz dinlenmeden diğer postada çalıştırılamaz",
+        "İş Kanunu md. 69"
+       ],
+       [
+        "Yaş",
+        "Sanayiye ait işlerde 18 yaşını doldurmamış kişilerin gece çalıştırılması yasaktır",
+        "İş Kanunu md. 73"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Gece ek işi ana işinizle nasıl dengelenir?",
+     "p": [
+      "Gündüz tam zamanlı çalışan biri için her gece vardiyası, uykudan kesilen bir gecedir. Haftada bir ya da iki gece ile sınırlı tutun ve ertesi sabah ana işinize yetişebileceğiniz bir bitiş saati seçin. Gece biten işlerde servis olup olmadığını mutlaka sorun."
+     ]
+    },
+    {
+     "h": "Gece ilanında sorulacak sorular",
+     "liste": [
+      "Vardiya kaç saat, mola süresi ne kadar?",
+      "Gece zammı ya da farklı bir ücret uygulanıyor mu?",
+      "Servis hangi güzergâhtan geçiyor?",
+      "Vardiyalar dönüşümlü mü, hep gece mi?",
+      "Sigorta girişi işe başladığım gün yapılacak mı?"
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Gece çalışmasının süresi sınırlı mı?",
+     "c": "Evet. İş Kanunu'nun 69. maddesine göre işçilerin gece çalışması kural olarak yedi buçuk saati geçemez. Turizm, özel güvenlik ve sağlık hizmeti gibi bazı işlerde işçinin yazılı onayıyla daha uzun çalışılabilir."
+    },
+    {
+     "s": "18 yaşından küçükler gece çalışabilir mi?",
+     "c": "Sanayiye ait işlerde 18 yaşını doldurmamış çocuk ve genç işçilerin gece çalıştırılması İş Kanunu'nun 73. maddesiyle yasaktır."
+    },
+    {
+     "s": "Gece ek iş ilanlarını nerede bulurum?",
+     "c": "Lojistik ve güvenlik firmalarının kariyer sayfaları, kariyer siteleri ve İŞKUR en sık kaynaklardır. Sitemizdeki ilanlar için <a href=\"../guncel-ilanlar.html\">Güncel İlanlar</a> sayfasına bakabilirsiniz."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "4857 sayılı İş Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4857&MevzuatTur=1&MevzuatTertip=5"
+    },
+    {
+     "ad": "5188 sayılı Özel Güvenlik Hizmetlerine Dair Kanun (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5188&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "aksam-8den-sonra-ek-is",
+    "meslege-gore-ek-is",
+    "ankarada-ek-is-nerelerde-cikiyor"
+   ]
+  },
+  {
+   "slug": "gunluk-ek-is",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Günlük ek iş: yevmiyeli ve kısa süreli işler",
+   "ozet": "Günlük ödemeli ve kısa süreli ek işlerin hangi alanlarda çıktığı, çağrı üzerine çalışmanın kuralları ve günlük işte sigortanın nasıl işlediği.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "Günlük ek iş en çok etkinlik ve fuar kurulumu, depo ve taşıma, tanıtım ve broşür dağıtımı, temizlik ve inşaat yardımcılığında çıkar. Bir gün bile çalışsanız işverenin sizi işe başlamadan önce SGK'ya bildirmesi gerekir. İşverenin ihtiyaç duydukça sizi çağırdığı düzen, İş Kanunu'nda \"çağrı üzerine çalışma\" olarak tanımlanır.",
+   "gorsel": {
+    "alt": "Sabah kurulumu yapılan bir fuar salonunda katlanır sandalye taşıyan, arkadan görünen iki çalışan",
+    "baslik": "Günlük işte fuar kurulumu"
+   },
+   "bolumler": [
+    {
+     "h": "Günlük iş çıkan alanlar",
+     "p": [
+      "<strong>Etkinlik ve fuar kurulumu.</strong> Stant kurulumu, sandalye ve masa düzeni, karşılama görevleri.",
+      "<strong>Depo ve taşıma.</strong> Yoğun dönemlerde yükleme, boşaltma ve sayım işleri.",
+      "<strong>Tanıtım ve broşür dağıtımı.</strong> Mağaza açılışları ve kampanya dönemlerinde kısa süreli eleman aranır.",
+      "<strong>Temizlik.</strong> İnşaat sonrası temizlik ve etkinlik sonrası toplama işleri.",
+      "<strong>İnşaat yardımcılığı.</strong> Malzeme taşıma ve şantiye yardım işleri; iş güvenliği ekipmanı işverence sağlanmalıdır."
+     ]
+    },
+    {
+     "h": "Çağrı üzerine çalışma nedir?",
+     "p": [
+      "İş Kanunu'nun 14. maddesine göre, işçinin işine ihtiyaç duyuldukça çağrılacağının yazılı sözleşmeyle kararlaştırıldığı iş ilişkisi, çağrı üzerine çalışmaya dayalı kısmi süreli iş sözleşmesidir. Günlük işlerin önemli bir kısmı bu kapsamdadır."
+     ],
+     "tablo": {
+      "b": [
+       "Kural",
+       "Ne diyor?"
+      ],
+      "s": [
+       [
+        "Süre belirlenmemişse",
+        "Haftalık çalışma süresi 20 saat kararlaştırılmış sayılır"
+       ],
+       [
+        "Çalıştırılmasanız da",
+        "Belirlenen sürede çalıştırılsanız da çalıştırılmasanız da ücrete hak kazanırsınız"
+       ],
+       [
+        "Çağrı zamanı",
+        "Aksi kararlaştırılmadıkça işveren en az dört gün önce çağırmak zorundadır"
+       ],
+       [
+        "Günlük süre",
+        "Günlük süre kararlaştırılmamışsa her çağrıda en az dört saat üst üste çalıştırılmanız gerekir"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Günlük işte sigorta nasıl olur?",
+     "p": [
+      "5510 sayılı Kanun'un 8. maddesine göre işveren, çalıştıracağı kişiyi sigortalılık başlangıcından önce, yani işe başlamadan önce SGK'ya bildirmek zorundadır; inşaat gibi bazı işlerde bu bildirim en geç çalışmaya başlanılan gün yapılabilir. Tek günlük işte de bu kural geçerlidir.",
+      "İşe başladığınız gün e-Devlet'teki \"SGK Tescil ve Hizmet Dökümü\" ekranından girişinizin yapılıp yapılmadığını kontrol edebilirsiniz. Sigortasız çalışmanın riskleri için <a href=\"../yazi/sigortasiz-ek-is.html\">sigortasız ek iş</a> yazımıza bakın."
+     ]
+    },
+    {
+     "h": "Günlük ödemede dikkat edilecekler",
+     "p": [
+      "Ücretin gün sonunda mı, hafta sonunda mı ödeneceğini işe başlamadan netleştirin. Elden ödeme kayıt dışı çalışma riskini artırır; banka yoluyla ödeme isteyin. Aracı bir kişi sizi iş yerine götürüp ücretinizden pay alıyorsa, bu kişinin kim olduğunu ve iş yeriyle ilişkisini sorun."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Bir günlük iş için sigorta yapılır mı?",
+     "c": "Evet. İşverene bağlı çalışan herkes, çalışma süresi ne olursa olsun sigortalı olarak bildirilmelidir. Girişinizi e-Devlet'ten kontrol edebilirsiniz."
+    },
+    {
+     "s": "Acil ek iş arıyorum, en hızlı nereden bulurum?",
+     "c": "Etkinlik ve lojistik firmaları ile depo ilanları en hızlı sonuç veren alanlardır. Ücret talep etmeyen, firmanın adını ve iş yerinin adresini açıkça veren ilanlara başvurun."
+    },
+    {
+     "s": "Saatlik ek iş ile günlük iş farklı mı?",
+     "c": "Ödeme biçimi farklıdır, hukuki durum aynıdır. Saatlik ücretle de günlük ücretle de çalışsanız işverene bağlı işçisiniz ve sigortalı olmanız gerekir."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "4857 sayılı İş Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4857&MevzuatTur=1&MevzuatTertip=5"
+    },
+    {
+     "ad": "5510 sayılı Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5510&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "sigortasiz-ek-is",
+    "hafta-sonu-ek-is",
+    "ek-is-ne-kadar-kazandirir"
+   ]
+  },
+  {
+   "slug": "online-ek-is",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Online ek iş: internetten ve telefondan yapılan işler",
+   "ozet": "İnternetten ve telefondan yapılabilecek gerçek ek işler, uzaktan çalışma sözleşmesinde olması gerekenler ve \"görev yap, para kazan\" düzenlerinin işaretleri.",
+   "tarih": "2026-11-13",
+   "okuma": 7,
+   "kisa": "İnternetten yapılan gerçek ek işler; müşteri desteği, veri girişi, çeviri, metin yazarlığı, tasarım, yazılım, sosyal medya yönetimi ve online özel derstir. Bu işlerde ücreti işveren ya da müşteri size öder. Beğeni, yorum ya da \"görev\" karşılığı para vaat edip bir aşamada sizden para yatırmanızı isteyen düzenler iş değildir.",
+   "gorsel": {
+    "alt": "Gece mutfak masasında açık dizüstü bilgisayar, yanında akıllı telefon ve kulaklık, klavyede yazan iki el",
+    "baslik": "İnternetten ek iş yapan biri"
+   },
+   "bolumler": [
+    {
+     "h": "İnternetten yapılabilecek işler",
+     "tablo": {
+      "b": [
+       "İş",
+       "Gereken",
+       "Nasıl ücretlendirilir?"
+      ],
+      "s": [
+       [
+        "Müşteri desteği (yazılı ya da sesli)",
+        "Bilgisayar, kulaklık, sessiz ortam",
+        "Saat ya da aylık ücret"
+       ],
+       [
+        "Veri girişi",
+        "Bilgisayar, dikkat",
+        "Saat ya da iş başına"
+       ],
+       [
+        "Çeviri",
+        "İyi derecede yabancı dil",
+        "Kelime ya da sayfa başına"
+       ],
+       [
+        "Metin yazarlığı",
+        "Yazım becerisi, örnek yazılar",
+        "Yazı başına"
+       ],
+       [
+        "Grafik tasarım",
+        "Tasarım programı, portfolyo",
+        "Proje başına"
+       ],
+       [
+        "Yazılım ve web",
+        "Teknik bilgi",
+        "Proje ya da saat başına"
+       ],
+       [
+        "Sosyal medya yönetimi",
+        "Platform bilgisi",
+        "Aylık sabit ücret"
+       ],
+       [
+        "Online özel ders",
+        "Alan bilgisi, kamera",
+        "Ders saati başına"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Telefondan ek iş yapılabilir mi?",
+     "p": [
+      "Yalnız telefonla yürüyen gerçek işlerin çoğu çağrı merkezi, satış ve randevu yönetimidir. Mesajlaşma uygulamasından müşteri sorularını yanıtlamak da bir iştir; ancak bu işlerde de işveren bellidir ve ücret size ödenir.",
+      "Telefon uygulamasıyla \"reklam izleyerek\", \"beğeni yaparak\" ya da \"uygulama indirerek\" para kazanma vaadine temkinli yaklaşın. Bu tür uygulamalar ödeme yapsa bile bir iş ilişkisi kurmaz: ortada işveren, sözleşme ve sigorta yoktur."
+     ]
+    },
+    {
+     "h": "\"Görev yap, para kazan\" düzeni nasıl işler?",
+     "p": [
+      "Bu düzende önce size beğeni, yorum ya da ürün değerlendirme gibi basit \"görevler\" verilir ve küçük bir ödeme yapılır. Güven kazanıldıktan sonra daha yüksek kazançlı görevlerin \"kilidini açmak\" için sizden para yatırmanız istenir. Yatırılan para geri gelmez.",
+      "Ölçü değişmez: <strong>işe ya da göreve devam etmek için sizden para isteniyorsa karşınızdaki bir iş değildir.</strong> Kişisel Verileri Koruma Kurumu da iş vaadiyle kimlik ve IBAN toplanmasına karşı uyarıda bulunmuştur."
+     ]
+    },
+    {
+     "h": "Uzaktan çalışma sözleşmesinde neler yazmalı?",
+     "p": [
+      "İş Kanunu'nun 14. maddesi, uzaktan çalışmanın yazılı olarak kurulmasını ve sözleşmede işin tanımı, yapılma şekli, süresi ve yeri, ücret ve ödeme şekli, işverenin sağladığı ekipman, iletişim biçimi ve çalışma şartlarının yer almasını ister. Size bu bilgileri yazılı veremeyen bir işverenle çalışmaya başlamayın."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Online ek işlerde sigorta yapılır mı?",
+     "c": "Bir işverene bağlı uzaktan çalışıyorsanız işçisiniz ve sigortalı olmanız gerekir. Kendi adınıza serbest çalışıp birden fazla müşteriye iş yapıyorsanız vergi ve sigorta yükümlülüğünüz farklıdır; bir mali müşavire danışın."
+    },
+    {
+     "s": "Telegram'daki ek iş grupları güvenilir mi?",
+     "c": "Kanalın kendisi bir ölçü değildir. Grupta paylaşılan iş için firmanın açık adı, yazılı sözleşme ve size yapılan ödeme yoksa ya da sizden para yatırmanız isteniyorsa güvenmeyin."
+    },
+    {
+     "s": "Bilgisayar başında yapılabilecek ek işler için deneyim gerekir mi?",
+     "c": "Veri girişi ve müşteri desteği gibi işlerde deneyim şartı düşüktür. Çeviri, tasarım ve yazılımda ise örnek çalışmalarınız işe alınmanızda belirleyici olur."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "4857 sayılı İş Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4857&MevzuatTur=1&MevzuatTertip=5"
+    },
+    {
+     "ad": "Ekonomist, 27.10.2022: KVKK \"İş Vaadi Konulu TCK Kapsamındaki Kişisel Veri İhlallerine İlişkin Kamuoyu Duyurusu\"",
+     "url": "https://www.ekonomist.com.tr/haberler/kvkk-uyardi-bu-is-ilanlarina-kanmayin-27443"
+    }
+   ],
+   "ilgili": [
+    "evde-ek-is",
+    "evde-ek-is-ilanlari",
+    "meslege-gore-ek-is"
+   ]
+  },
+  {
+   "slug": "memurlar-ek-is-yapabilir-mi",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Memurlar ek iş yapabilir mi? 657 sayılı Kanun ne diyor",
+   "ozet": "657 sayılı Devlet Memurları Kanunu'nun 28. maddesine göre memurların hangi işleri yapamayacağı, hangi görevlerin yasak dışında kaldığı ve emin değilseniz kime sormanız gerektiği.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "657 sayılı Kanun'un 28. maddesi, memurların tacir ya da esnaf sayılmalarını gerektirecek faaliyette bulunmasını, özel bir iş yerinde çalışmasını ve serbest meslek için büro açmasını yasaklar. Bu nedenle memurlar özel sektörde ek iş yapamaz. Özel kanunlarda belirtilen görevler ve bazı kooperatif ve meslek kuruluşu üyelikleri yasak dışındadır.",
+   "gorsel": {
+    "alt": "Mesai sonrası bir ofis masasında açık kalın bir kanun kitabı, üzerinde okuma gözlüğü ve yanında dosyalar",
+    "baslik": "Memurların ek iş yasağını anlatan kanun kitabı"
+   },
+   "bolumler": [
+    {
+     "h": "28. madde neleri yasaklıyor?",
+     "p": [
+      "657 sayılı Devlet Memurları Kanunu'nun 28. maddesine göre memurlar:"
+     ],
+     "liste": [
+      "Türk Ticaret Kanunu'na göre tacir ya da esnaf sayılmalarını gerektirecek bir faaliyette bulunamaz.",
+      "Ticaret ve sanayi müesseselerinde görev alamaz.",
+      "Ticari mümessil ya da ticari vekil, kollektif şirkette ortak ya da komandit şirkette komandite ortak olamaz.",
+      "Mesleki faaliyet ya da serbest meslek için ofis, büro, muayenehane ve benzeri yer açamaz.",
+      "Gerçek kişilere, özel hukuk tüzel kişilerine ya da kamu kurumu niteliğindeki meslek kuruluşlarına ait herhangi bir iş yerinde ya da vakıf yükseköğretim kurumlarında çalışamaz."
+     ]
+    },
+    {
+     "h": "Yasak dışında kalanlar",
+     "p": [
+      "Aynı maddeye göre memurların üyesi oldukları yapı, kalkınma ve tüketim kooperatifleri, kamu kurumu niteliğindeki meslek kuruluşları ve kanunla ya da Cumhurbaşkanlığı kararnamesiyle kurulmuş yardım sandıklarının yönetim, denetim ve disiplin kurulu üyelikleri ile <strong>özel kanunlarda belirtilen görevler</strong> bu yasağın dışındadır.",
+      "Özel kanunlardaki istisnalar mesleğe göre değişir. Örneğin öğretmenlik ve sağlık meslekleri için ayrı düzenlemeler bulunabilir. Kendi durumunuz için genelleme yapmak yerine kurumunuzun personel birimine yazılı olarak sorun."
+     ]
+    },
+    {
+     "h": "Eşinizin işi sizi etkiler mi?",
+     "p": [
+      "Madde, eşleri ya da reşit olmayan veya kısıtlı çocukları yasaklanan faaliyetlerde bulunan memurların bu durumu <strong>15 gün içinde</strong> bağlı oldukları kuruma bildirmesini ister. Yani eşinizin ticaret yapması yasak değildir, ancak bildirim yükümlülüğünüz vardır."
+     ]
+    },
+    {
+     "h": "Memur ek iş ilanlarına nasıl bakmalı?",
+     "p": [
+      "\"Memurlara özel ek iş\" ya da \"memur olarak evden ek gelir\" başlıklı ilanlar, 28. maddeyi dikkate almaz. Bu tür bir teklifi kabul etmeden önce yasağın kapsamına girip girmediğini kurumunuza sorun. Sözleşmeli personel, işçi kadrosu ve memur statüsü farklı kurallara bağlı olabilir; statünüzü bilerek hareket edin."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Memurlar hafta sonu ek iş yapabilir mi?",
+     "c": "28. madde gün ya da saat ayrımı yapmaz. Özel bir iş yerinde çalışmak hafta sonu da yasaktır; özel kanunlarda belirtilen istisnalar dışında kalır."
+    },
+    {
+     "s": "Öğretmenler ek iş yapabilir mi?",
+     "c": "Öğretmenler de 657 sayılı Kanun'a tabidir. Öğretmenlik mesleğine ilişkin özel düzenlemeler bulunabilir; hangi işin bu kapsamda olduğunu okul müdürlüğünüze ya da il millî eğitim müdürlüğüne yazılı olarak sorun."
+    },
+    {
+     "s": "Yasağı ihlal etmenin sonucu nedir?",
+     "c": "Yasağa aykırı davranış disiplin hükümlerine göre değerlendirilir. Uygulanacak yaptırım olayın niteliğine göre değişir; bu yüzden işe başlamadan önce sormak en güvenli yoldur."
+    }
+   ],
+   "uyari": "Bu yazı genel bilgilendirmedir, hukuki görüş yerine geçmez. Kendi durumunuz için kurumunuzun insan kaynakları birimine, SGK'ya ya da bir avukata danışın.",
+   "kaynaklar": [
+    {
+     "ad": "657 sayılı Devlet Memurları Kanunu, madde 28 (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=657&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "ek-is-yapmak-istiyorum",
+    "meslege-gore-ek-is",
+    "ek-is-fikirleri"
+   ]
+  },
+  {
+   "slug": "sigortasiz-ek-is",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Sigortasız ek iş: riskleri ve iki işte sigorta",
+   "ozet": "Sigortasız çalışmanın size getirdiği riskler, iki ayrı işte çalışırken sigortanın nasıl işlediği ve sigortasız geçen çalışmanın sonradan nasıl ispat edilebileceği.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "İşverene bağlı çalışan herkesin sigortalı bildirilmesi zorunludur; ek işte de bu kural değişmez. Sigortasız çalışırsanız prim günleriniz emeklilik hesabınıza girmez, ücret ve iş kazası anlaşmazlıklarında çalıştığınızı ispat etmek size kalır. İki ayrı işverende çalışıyorsanız iki işveren de sizi kendi iş yerinden bildirmek zorundadır.",
+   "gorsel": {
+    "alt": "Masada yazısız bir iş sözleşmesinin imza satırı üzerinde duraksayan bir el, yanında hesap makinesi",
+    "baslik": "Ek iş sözleşmesini imzalamadan önce düşünen biri"
+   },
+   "bolumler": [
+    {
+     "h": "Sigortasız çalışmak size neye mal olur?",
+     "tablo": {
+      "b": [
+       "Konu",
+       "Sigortalıysanız",
+       "Sigortasızsanız"
+      ],
+      "s": [
+       [
+        "Prim günü ve emeklilik",
+        "Çalıştığınız günler hesabınıza eklenir",
+        "Siz ispat edene kadar eklenmez"
+       ],
+       [
+        "Ücret",
+        "Bordroyla, kayıtlı ödenir",
+        "Ödenmezse ispatı zorlaşır"
+       ],
+       [
+        "İş kazası",
+        "Kayıt baştan hazırdır",
+        "Önce o gün çalıştığınızın tespit edilmesi gerekir"
+       ],
+       [
+        "İşsizlik sigortası",
+        "Şartları sağlarsanız yararlanırsınız",
+        "Bildirilmeyen süre hesaba girmez"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Bildirilmeden iş kazası geçirirseniz",
+     "p": [
+      "5510 sayılı Kanun'un 23. maddesine göre sigortalı süresi içinde bildirilmemişse, bildirimin sonradan yapıldığı ya da çalıştırıldığının SGK tarafından tespit edildiği tarihten önce meydana gelen iş kazasında ilgililerin gelir ve ödenekleri SGK tarafından ödenir; SGK yaptığı masrafları işverene ödettirir. Yani kanun sizi korur, ancak o gün o iş yerinde çalıştığınızın ortaya konması gerekir. Bu yüzden kayıtlı çalışmak, kazadan sonra uğraşmamanın en kısa yoludur."
+     ]
+    },
+    {
+     "h": "Ek işte sigorta zorunlu mu?",
+     "p": [
+      "5510 sayılı Kanun'un 8. maddesi, işverenin çalıştıracağı kişiyi sigortalılık başlangıcından önce SGK'ya bildirmesini zorunlu tutar. Çalışma süresinin kısa olması, haftada birkaç gün çalışmanız ya da işin \"ek iş\" olması bu yükümlülüğü kaldırmaz.",
+      "\"Zaten ana işinde sigortan var, burada gerek yok\" sözü doğru değildir. Her işveren, kendi iş yerinde çalıştırdığı kişiyi bildirmekle yükümlüdür."
+     ]
+    },
+    {
+     "h": "İki işte birden sigortalı olunur mu?",
+     "p": [
+      "Evet. İki ayrı işverende çalışıyorsanız iki işveren de sizi kendi iş yerinden bildirir ve iki iş yerindeki kazancınız ayrı ayrı görünür. Bu durumu e-Devlet'teki \"SGK Tescil ve Hizmet Dökümü\" ekranından kontrol edebilirsiniz.",
+      "Sigortalı olarak iki işte çalışmanın gelir vergisi ve prim tavanı gibi sonuçları olabilir. Kazancınız yüksekse bir mali müşavire danışın."
+     ]
+    },
+    {
+     "h": "Sigortasız çalıştıysanız ne yapabilirsiniz?",
+     "p": [
+      "5510 sayılı Kanun'un 86. maddesine göre, işvereni tarafından bildirilmeyen ya da çalıştığı SGK tarafından tespit edilemeyen sigortalılar, çalıştıklarını <strong>hizmetlerinin geçtiği yılın sonundan başlayarak beş yıl içinde</strong> iş mahkemesine başvurarak ispat edebilir. Bu davaya uygulamada hizmet tespit davası denir.",
+      "İspat için banka dekontları, yazışmalar, iş yerinde çekilmiş fotoğraflar ve tanıklar önemlidir. Çalışırken bu belgeleri saklayın."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Sigortasız ek iş ilanlarına başvurmalı mıyım?",
+     "c": "İlanda \"sigortasız\" yazması, işverenin yasal yükümlülüğünü yerine getirmeyeceğini baştan söylemesidir. Risk sizin üzerinizde kalır; sigortalı bir alternatif arayın."
+    },
+    {
+     "s": "Sigortamın yapılıp yapılmadığını nasıl anlarım?",
+     "c": "e-Devlet'te \"SGK Tescil ve Hizmet Dökümü\" ekranından işe giriş kaydınızı görebilirsiniz."
+    },
+    {
+     "s": "Kısmi süreli çalışanın sigortası nasıl yapılır?",
+     "c": "Kısmi süreli çalışan da sigortalı bildirilir; prim günü çalıştığı süreye göre hesaplanır. Ayrıntı için SGK'ya ya da işverenizin muhasebe birimine danışın."
+    }
+   ],
+   "uyari": "Bu yazı genel bilgilendirmedir, hukuki görüş yerine geçmez. Kendi durumunuz için kurumunuzun insan kaynakları birimine, SGK'ya ya da bir avukata danışın.",
+   "kaynaklar": [
+    {
+     "ad": "5510 sayılı Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5510&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "gunluk-ek-is",
+    "ek-is-ne-kadar-kazandirir",
+    "ek-is-yapmak-istiyorum"
+   ]
+  },
+  {
+   "slug": "ek-is-ilanlari-nereden-bulunur",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Ek iş ilanları nereden bulunur? Siteler, İŞKUR ve gruplar",
+   "ozet": "Ek iş ilanı aramanın başlıca kanalları, her kanalın güçlü ve zayıf yanı ve hangi kanalda nelere dikkat edilmesi gerektiği.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "Ek iş ilanları en çok kariyer sitelerinde, İŞKUR'da, firmaların kendi kariyer sayfalarında, yerel iş ilanı sayfalarında ve sosyal medya gruplarında çıkar. Hangi kanalı kullanırsanız kullanın, ilanda firmanın açık adı, işin tanımı ve ücret bilgisi yoksa ya da sizden para isteniyorsa başvurmayın.",
+   "gorsel": {
+    "alt": "Bir bina girişindeki mantar panoya boş bir ilan kâğıdı iğneleyen el, panoda çok sayıda kâğıt ilan",
+    "baslik": "Ek iş ilanlarının asıldığı ilan panosu"
+   },
+   "bolumler": [
+    {
+     "h": "Kanallar ve özellikleri",
+     "tablo": {
+      "b": [
+       "Kanal",
+       "Güçlü yanı",
+       "Dikkat"
+      ],
+      "s": [
+       [
+        "Kariyer siteleri (Kariyer.net, Yenibiris, Indeed vb.)",
+        "Çok sayıda ilan, çalışma şekline göre arama",
+        "Aynı ilan farklı sitelerde tekrar edebilir"
+       ],
+       [
+        "İŞKUR",
+        "Resmî kurum, işveren kaydı var",
+        "Başka sitelerde \"İŞKUR\" adıyla dolaşan ilanlara dikkat"
+       ],
+       [
+        "Firmaların kariyer sayfaları",
+        "İlanın kaynağı doğrudan firmadır",
+        "Yalnız büyük firmalarda bulunur"
+       ],
+       [
+        "Yerel iş ilanı sayfaları",
+        "Küçük işletmelerin ilanları buraya düşer",
+        "İlanı yayımlayanın kontrol yapıp yapmadığına bakın"
+       ],
+       [
+        "Sosyal medya grupları",
+        "Hızlı, mahalle ölçeğinde ilan",
+        "Ücret talep eden sahte ilanlar en çok burada görülür"
+       ],
+       [
+        "Doğrudan başvuru",
+        "İlan verilmeden eleman arayan yerlere ulaşırsınız",
+        "Zaman alır; önce telefonla sorun"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "İŞKUR'da ek iş nasıl aranır?",
+     "p": [
+      "İŞKUR'un resmî adresi <a href=\"https://www.iskur.gov.tr/\" rel=\"noopener\" target=\"_blank\">iskur.gov.tr</a>'dir. İŞKUR, 2022'de kurumun adı ve logosu kullanılarak yayımlanan evde paketleme ilanlarına karşı vatandaşları uyarmış ve bu resmî adres dışında yayımlanan, kaynağı belirsiz ilanlara itibar edilmemesini istemişti.",
+      "Ayrıntısı için <a href=\"../yazi/iskur-evde-ek-is-veriyor-mu.html\">İŞKUR evde ek iş veriyor mu</a> yazımıza bakabilirsiniz."
+     ]
+    },
+    {
+     "h": "\"Sahibinden\" ilan arayanlar için",
+     "p": [
+      "\"Sahibinden ek iş\" diye arama yapan kişilerin çoğu, aracı olmadan doğrudan işverenin verdiği ilanı arar. Bu iyi bir yaklaşımdır, çünkü işverenle doğrudan konuşursunuz. Ancak ilanı veren bir kişi olduğunda firma kimliğini doğrulamak size kalır: ticaret unvanını, adresi ve iş yerinde görüşme imkânını isteyin."
+     ]
+    },
+    {
+     "h": "Ankara İş İlanı'nda ilanlar nasıl yayımlanıyor?",
+     "p": [
+      "İşverenler ilanlarını <a href=\"../ilan-ver.html\">İlan Ver</a> formuyla bize iletir. İlanı yayımlamadan önce kontrol ediyor, ardından sitemizde ve sosyal medya hesaplarımızda paylaşıyoruz. Adaydan ücret isteyen ilanı yayımlamıyoruz. İlanlar için <a href=\"../guncel-ilanlar.html\">Güncel İlanlar</a> sayfasına bakın."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "İŞKUR'da ek iş ilanı var mı?",
+     "c": "İŞKUR'un açık iş ilanlarına kurumun resmî sitesinden bakabilirsiniz; ek iş için ilandaki çalışma şeklini ve saatleri kontrol edin. Resmî adres iskur.gov.tr'dir; başka bir adreste \"İŞKUR ilanı\" olarak sunulan içeriği kurumun kendi sitesinden doğrulayın."
+    },
+    {
+     "s": "Online ek iş ilanları hangi sitelerde çıkar?",
+     "c": "Kariyer sitelerinde çalışma şekli olarak \"uzaktan\" ya da \"evden\" seçeneğiyle arama yapabilirsiniz. Ayrıntısı <a href=\"../yazi/online-ek-is.html\">online ek iş</a> yazımızda."
+    },
+    {
+     "s": "Ek iş ilanına başvururken ne yazmalıyım?",
+     "c": "Hangi gün ve saatlerde çalışabileceğinizi mesajın başında yazın. İşveren en çok bunu arar. Ardından ulaşım durumunuzu ve ne zaman başlayabileceğinizi ekleyin."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "Türkiye İş Kurumu (İŞKUR) resmî sitesi",
+     "url": "https://www.iskur.gov.tr/"
+    },
+    {
+     "ad": "Türkiye Gazetesi, 24.07.2022: İŞKUR adını ve logosunu kullanan ilanlara karşı kurum uyarısı",
+     "url": "https://www.turkiyegazetesi.com.tr/turkiye/dikkat-dolandiricilarin-yeni-yontemi-ortaya-cikti-simdi-de-iskur-adini-ve-logosunu-kullaniyorlar-887961"
+    }
+   ],
+   "ilgili": [
+    "ankara-part-time-is-ilanlari-rehberi",
+    "evde-ek-is-ilanlari",
+    "iskur-evde-ek-is-veriyor-mu"
+   ]
+  },
+  {
+   "slug": "ek-is-yapmak-istiyorum",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Ek iş yapmak istiyorum: başlamadan önce 7 adım",
+   "ozet": "Ek işe başlamadan önce sözleşmenizden boş saatlerinize, sigortadan ilk görüşmeye kadar atmanız gereken yedi adım.",
+   "tarih": "2026-11-13",
+   "okuma": 5,
+   "kisa": "Ek işe başlamadan önce ana işinizin sözleşmesini kontrol edin, haftada kaç saat ayırabileceğinizi belirleyin, yol ve yemek giderini hesaplayın, size uygun iş türünü seçin, ilanları doğrulayın, ilk görüşmede ücret ve sigortayı netleştirin ve işe başladığınız gün sigorta girişinizi kontrol edin.",
+   "gorsel": {
+    "alt": "Sabah kapı önündeki rafta tik işaretli bir defter, telefon, anahtar, ulaşım kartı ve termos",
+    "baslik": "Ek işe başlamak için hazırlık"
+   },
+   "bolumler": [
+    {
+     "h": "1. Ana işinizin sözleşmesini okuyun",
+     "p": [
+      "Bazı iş sözleşmelerinde ek iş ya da rakip firmada çalışma kısıtı bulunur. Memursanız 657 sayılı Kanun'un 28. maddesi geçerlidir; ayrıntısı <a href=\"../yazi/memurlar-ek-is-yapabilir-mi.html\">memurlar ek iş yapabilir mi</a> yazımızda."
+     ]
+    },
+    {
+     "h": "2. Haftada kaç saat ayırabileceğinizi yazın",
+     "p": [
+      "Takvime bakın ve gerçekçi olun. İlk ay için haftada 8-12 saatle başlamak, yorgunluğu ölçmenizi sağlar."
+     ]
+    },
+    {
+     "h": "3. Gideri baştan hesaplayın",
+     "p": [
+      "Yol, yemek ve varsa yakıt gideri kazancınızın içinden çıkar. Eve yakın bir iş, saat ücreti biraz düşük olsa bile daha çok kazandırabilir. Hesap yöntemi için <a href=\"../yazi/ek-is-ne-kadar-kazandirir.html\">ek iş ne kadar kazandırır</a> yazımıza bakın."
+     ]
+    },
+    {
+     "h": "4. Size uygun iş türünü seçin",
+     "p": [
+      "Akşam mı, hafta sonu mu, evden mi? Seçenekler için <a href=\"../yazi/ek-is-fikirleri.html\">ek iş fikirleri</a> yazımızdaki tabloya bakın."
+     ]
+    },
+    {
+     "h": "5. İlanı doğrulayın",
+     "p": [
+      "Firmanın ticaret unvanını ve adresini isteyin. İşe başlamak için sizden para isteniyorsa süreci bitirin."
+     ]
+    },
+    {
+     "h": "6. İlk görüşmede netleştirin",
+     "liste": [
+      "Ücret ve ödeme günü",
+      "Çalışma saatleri ve günleri",
+      "Sigorta girişinin tarihi",
+      "Servis ve yemek",
+      "Deneme süresi"
+     ]
+    },
+    {
+     "h": "7. İşe başladığınız gün sigortanızı kontrol edin",
+     "p": [
+      "e-Devlet'teki \"SGK Tescil ve Hizmet Dökümü\" ekranında yeni işvereninizi görmelisiniz. Görmüyorsanız işvereninize sorun. Ayrıntı: <a href=\"../yazi/sigortasiz-ek-is.html\">sigortasız ek iş</a>."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Ek iş arıyorum, nereden başlamalıyım?",
+     "c": "Önce boş saatlerinizi belirleyin, ardından bu saatlerde çalışan işlere bakın. İlan kanalları için <a href=\"../yazi/ek-is-ilanlari-nereden-bulunur.html\">ek iş ilanları nereden bulunur</a> yazımızı okuyun."
+    },
+    {
+     "s": "Ek iş yapınca ana işimden izin almam gerekir mi?",
+     "c": "Kanunda her işçi için genel bir izin şartı yoktur, ancak iş sözleşmenizde ya da iş yeri yönetmeliğinizde bu konuda hüküm olabilir. Memurlar ise 657 sayılı Kanun'a tabidir."
+    },
+    {
+     "s": "Ek işten elde ettiğim gelir vergilendirilir mi?",
+     "c": "İşverene bağlı çalışıyorsanız vergi ücretinizden kesilir. Birden fazla işverenden ücret aldığınızda beyanname yükümlülüğü doğabilir; kendi durumunuz için bir mali müşavire danışın."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "657 sayılı Devlet Memurları Kanunu, madde 28 (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=657&MevzuatTur=1&MevzuatTertip=5"
+    },
+    {
+     "ad": "5510 sayılı Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5510&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "ek-is-fikirleri",
+    "ek-is-ilanlari-nereden-bulunur",
+    "sigortasiz-ek-is"
+   ]
+  },
+  {
+   "slug": "meslege-gore-ek-is",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "Mesleğe göre ek iş: muhasebeci, mühendis, güvenlik ve garson",
+   "ozet": "Muhasebe, mühendislik, güvenlik, servis ve yazılım alanında çalışanların mesleki bilgisiyle yapabileceği ek işler ve her meslekte dikkat edilecek yasal şartlar.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "Mesleğinizle ilgili bir ek iş, deneyiminizi kullandığınız için genellikle daha iyi ücretlendirilir. Muhasebe bilgisi olanlar ön muhasebe desteği, mühendisler proje çizimi ve danışmanlık, yazılımcılar proje bazlı iş, servis deneyimi olanlar hafta sonu restoran işi yapabilir. Özel güvenlikte valilikçe verilen kimlik kartı, defter tutma ve beyanname işlerinde meslek ruhsatı gerekir.",
+   "gorsel": {
+    "alt": "Koyu mavi masada düzenlenmiş meslek araçları: hesap makinesi ve defter, mühendis cetveli ve proje çizimi, telsiz ve şapka, garson sipariş bloğu ve tepsi",
+    "baslik": "Farklı mesleklerin ek iş araçları"
+   },
+   "bolumler": [
+    {
+     "h": "Mesleğe göre ek iş seçenekleri",
+     "tablo": {
+      "b": [
+       "Meslek",
+       "Ek iş seçeneği",
+       "Dikkat edilecek şart"
+      ],
+      "s": [
+       [
+        "Muhasebe bilgisi olanlar",
+        "Fatura girişi, cari takip, ön muhasebe desteği",
+        "Defter tutma ve beyanname düzenleme meslek mensubunun işidir"
+       ],
+       [
+        "Mühendis ve teknik ressam",
+        "Proje çizimi, metraj, teknik danışmanlık",
+        "İmza yetkisi gereken işlerde meslek odası şartları"
+       ],
+       [
+        "Yazılımcı",
+        "Web sitesi, uygulama, bakım işleri",
+        "Ana işvereninizle rekabet ve gizlilik maddeleri"
+       ],
+       [
+        "Özel güvenlik görevlisi",
+        "Hafta sonu ve gece vardiyaları",
+        "Valilikçe verilen özel güvenlik kimlik kartı"
+       ],
+       [
+        "Garson ve servis çalışanı",
+        "Hafta sonu restoran, etkinlik ve davet servisi",
+        "Gece çalışması sınırları"
+       ],
+       [
+        "Öğretmen ve eğitimci",
+        "Özel ders, kurs",
+        "Memur statüsündeyseniz 657 sayılı Kanun"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Muhasebe ek işinde sınır nerede?",
+     "p": [
+      "3568 sayılı Kanun'un 2. maddesi; işletmelerin defterlerini tutmayı, bilanço, kâr-zarar tablosu ve beyannamelerini düzenlemeyi serbest muhasebeci mali müşavirlik mesleğinin konusu olarak tanımlar. Ruhsatınız yoksa bağımsız olarak defter tutma işi üstlenmek yerine bir muhasebe bürosunda ya da bir işletmenin ön muhasebesinde yardımcı olarak çalışmayı tercih edin."
+     ]
+    },
+    {
+     "h": "Güvenlik ek işinde kimlik kartı şartı",
+     "p": [
+      "5188 sayılı Özel Güvenlik Hizmetlerine Dair Kanun'un 12. maddesine göre özel güvenlik görevlilerine valilikçe kimlik kartı verilir ve bu kart görev süresince yakaya takılır. Üzerinde kimlik kartı olmayan görevli, Kanun'un 7. maddesinde sayılan yetkileri kullanamaz; bu yüzden işverenler kartı olan adayları arar. Gece vardiyalarının kuralları için <a href=\"../yazi/gece-ek-is-ilanlari.html\">gece ek iş ilanları</a> yazımıza bakın."
+     ]
+    },
+    {
+     "h": "Mühendis ve yazılımcılar için",
+     "p": [
+      "Proje bazlı işlerde iş tanımını, teslim tarihini, ücreti ve revizyon sayısını yazılı hâle getirin. Ana işvereninizin müşterilerine ya da rakiplerine iş yapmak, iş sözleşmenizdeki rekabet ve gizlilik maddelerine aykırı olabilir; sözleşmenizi okuyun."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Muhasebeciler ek iş yapabilir mi?",
+     "c": "Muhasebe bilgisi olan bir işçi, iş sözleşmesinde kısıt yoksa ek iş yapabilir. Ancak defter tutma ve beyanname düzenleme gibi işler 3568 sayılı Kanun'a göre meslek mensuplarının işidir."
+    },
+    {
+     "s": "Özel güvenlik ek iş ilanlarına kimler başvurabilir?",
+     "c": "Özel güvenlik görevlisine kimlik kartını valilik verir ve görevli yetkilerini bu kartla kullanır. Bu yüzden işverenler bu kartı olan adayları arar."
+    },
+    {
+     "s": "Hemşire ve doktorlar ek iş yapabilir mi?",
+     "c": "Kamu kurumunda memur statüsünde çalışan sağlık personeli 657 sayılı Kanun'a ve sağlık mesleklerine ilişkin özel düzenlemelere tabidir. Kendi statünüze göre kurumunuzun personel birimine danışın."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "3568 sayılı Serbest Muhasebeci Mali Müşavirlik ve Yeminli Mali Müşavirlik Kanunu (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=3568&MevzuatTur=1&MevzuatTertip=5"
+    },
+    {
+     "ad": "5188 sayılı Özel Güvenlik Hizmetlerine Dair Kanun (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5188&MevzuatTur=1&MevzuatTertip=5"
+    },
+    {
+     "ad": "657 sayılı Devlet Memurları Kanunu, madde 28 (Mevzuat Bilgi Sistemi)",
+     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=657&MevzuatTur=1&MevzuatTertip=5"
+    }
+   ],
+   "ilgili": [
+    "memurlar-ek-is-yapabilir-mi",
+    "online-ek-is",
+    "ek-is-fikirleri"
+   ]
+  },
+  {
+   "slug": "evde-ek-is-paketleme",
+   "kategori": "evde-paketleme-isi",
+   "baslik": "Evde ek iş paketleme: ilan ne vaat ediyor, gerçekte ne var?",
+   "ozet": "Evde ek iş paketleme ilanlarının vaat ettikleriyle gerçek paketleme işinin nasıl yürüdüğünü karşılaştırdık; resmî kurumların bu konudaki uyarılarını derledik.",
+   "tarih": "2026-11-13",
+   "okuma": 6,
+   "kisa": "Evde ek iş paketleme ilanları genellikle kolay iş ve haftalık ödeme vaat eder, ardından kargo, malzeme ya da teminat adıyla ödeme ister. Gerçek paketleme işi ise çoğunlukla fabrika, atölye ve depolarda, iş yerinde ve sigortalı olarak yapılır. İşe başlamak için sizden para isteniyorsa o teklif iş değildir.",
+   "gorsel": {
+    "alt": "Akşam mutfak masasında markasız karton kutular, koli bandı ve küçük poşetler; bir kutuyu bantlayan iki el",
+    "baslik": "Evde paketleme teklifiyle gelen kutular"
+   },
+   "bolumler": [
+    {
+     "h": "İlan ne vaat ediyor, gerçekte ne oluyor?",
+     "tablo": {
+      "b": [
+       "İlandaki vaat",
+       "Gerçekte"
+      ],
+      "s": [
+       [
+        "\"Evden çıkmadan haftalık ödeme\"",
+        "Önce sizden kargo ya da malzeme bedeli istenir"
+       ],
+       [
+        "\"Tecrübe gerekmez, malzeme bizden\"",
+        "Malzeme \"set\" olarak size satılır"
+       ],
+       [
+        "\"Günde 2-3 saatle yüksek kazanç\"",
+        "Kazanç saat ve iş miktarıyla bağlantısız anlatılır"
+       ],
+       [
+        "\"Kontenjan sınırlı, hemen başvurun\"",
+        "Acele ettirerek düşünme süresi kısaltılır"
+       ],
+       [
+        "\"Teslimattan sonra ödeme\"",
+        "Teslim edilen iş \"kalitesiz\" denerek ödenmez"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Resmî kurumlar ne dedi?",
+     "p": [
+      "<strong>Kişisel Verileri Koruma Kurumu</strong> 2022'de yaptığı kamuoyu duyurusunda, \"evde paketleme\" gibi ilanlara başvuranlardan kimlik kartı fotoğrafı ve IBAN istendiğini, ardından bu hesaplara para gönderilip iade talep edildiğini, sonra ilan verenlere ulaşılamadığını bildirdi.",
+      "<strong>İzmir Cumhuriyet Başsavcılığı</strong> yürütmesinde yapılan \"Paket\" operasyonu Temmuz 2024'te kamuoyuna duyuruldu. Habere göre evde paketleme ilanlarıyla Türkiye genelinde yaklaşık 1.000 kişinin dolandırıldığı iddia edildi, 64 kişi gözaltına alındı ve 32 kişi tutuklandı.",
+      "Şikâyet platformu Şikayetvar, Nisan 2025'te evde paketleme vaadiyle yapılan dolandırıcılık şikâyetlerinin 33 bini aştığını duyurdu."
+     ]
+    },
+    {
+     "h": "Gerçek paketleme işi nerede yapılır?",
+     "p": [
+      "Gıda, kozmetik, tekstil ve e-ticaret firmaları paketleme elemanını genellikle kendi tesisinde çalıştırır. Firma ürünün hijyenini, sayımını ve teslim süresini denetlemek zorundadır. Ankara'da bu ilanlar ağırlıklı olarak Ostim, İvedik, Sincan ve Kazan çevresindeki üretim ve lojistik bölgelerinden çıkar; çoğu vardiyalı ve sigortalıdır.",
+      "Firmayı doğrulamanın adımları için <a href=\"../yazi/evde-paketleme-isi-veren-firmalar.html\">evde paketleme işi veren firmalar</a> yazımıza bakın."
+     ]
+    },
+    {
+     "h": "Para ödediyseniz",
+     "p": [
+      "Bankanıza hemen başvurun, dekontları ve yazışmaları saklayın, Cumhuriyet Başsavcılığına şikâyette bulunun. Hesabınıza tanımadığınız biri para gönderdiyse, iade etmeden önce bankanızla konuşun. Ayrıntı: <a href=\"../yazi/evde-paketleme-dolandiriciligi-nasil-anlasilir.html\">evde paketleme işinde mağduriyet nasıl anlaşılır</a>."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Evde ek iş paketleme yapan güvenilir firmalar var mı?",
+     "c": "Kamuya açık, doğrulanmış bir liste yoktur. Bir firmanın güvenilirliğini ticaret unvanı, vergi numarası, gerçek bir üretim adresi ve yazılı sözleşmeyle siz doğrularsınız. Sizden para isteyen firma bu doğrulamadan geçmez."
+    },
+    {
+     "s": "Ek iş ilanlarında evde paketleme neden bu kadar çok görülüyor?",
+     "c": "Evden çalışmak isteyen çok, gerçek evde paketleme işi az. Bu boşluk, ücret talebine dayanan tekliflerle dolduruluyor."
+    },
+    {
+     "s": "Paketleme işi için kimlik ve IBAN istenmesi normal mi?",
+     "c": "İşe alındıktan sonra işveren bordro için bu bilgileri ister. Ancak firmanın kimliğini doğrulamadan, yalnız mesajla yürüyen bir görüşmede kimlik fotoğrafı ve IBAN göndermeyin."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "Ekonomist, 27.10.2022: KVKK \"İş Vaadi Konulu TCK Kapsamındaki Kişisel Veri İhlallerine İlişkin Kamuoyu Duyurusu\"",
+     "url": "https://www.ekonomist.com.tr/haberler/kvkk-uyardi-bu-is-ilanlarina-kanmayin-27443"
+    },
+    {
+     "ad": "Hürriyet, 08.07.2024: \"Evde ek iş, evde paketleme\" ilanıyla dolandırıcılık operasyonu",
+     "url": "https://www.hurriyet.com.tr/gundem/12-ilde-evde-ek-is-evde-paketleme-ilaniyla-dolandiricilik-suphelilerine-operasyon-32-tutuklama-42486830"
+    },
+    {
+     "ad": "DHA, 28.04.2025: Evde paketleme vaadiyle dolandırıcılık şikâyetleri 33 binin üzerine çıktı",
+     "url": "https://www.dha.com.tr/gundem/sikayetvar-evde-paketleme-vaadiyle-dolandiricilik-sikayetleri-33-binin-uzerine-cikti-2628342"
+    }
+   ],
+   "ilgili": [
+    "evde-paketleme-urunleri",
+    "iskur-evde-ek-is-veriyor-mu",
+    "evde-paketleme-isi-guvenilir-mi"
+   ]
+  },
+  {
+   "slug": "evde-paketleme-urunleri",
+   "kategori": "evde-paketleme-isi",
+   "baslik": "Sabun, toka, mum, mandal: evde paketleme ilanlarındaki ürünler",
+   "ozet": "Evde paketleme ilanlarında en sık geçen ürünler, bu ürünlerin ilanlarda neden seçildiği ve ürün adına bakmadan bir teklifi nasıl değerlendireceğiniz.",
+   "tarih": "2026-11-13",
+   "okuma": 5,
+   "kisa": "Evde paketleme ilanlarında sabun, toka, anahtarlık, çorap, mum, mandal, maske, kına ve galoş gibi küçük ve ucuz ürünler sık geçer. Ürünün adı ilanın gerçek olup olmadığını göstermez. Belirleyici ölçü her üründe aynıdır: işe başlamak için sizden para isteniyorsa teklif iş değildir.",
+   "gorsel": {
+    "alt": "Koyu mavi zeminde düzenli sıralar hâlinde sabun kalıpları, saç tokaları, küçük mumlar, tahta mandallar, katlanmış çoraplar ve galoşlar",
+    "baslik": "Evde paketleme ilanlarında geçen ürünler"
+   },
+   "bolumler": [
+    {
+     "h": "İlanlarda en sık geçen ürünler",
+     "p": [
+      "Şikayetvar'ın Nisan 2025'te duyurduğu verilere göre şikâyetler en çok \"evde sabun paketleme\" ve \"evde toka dizme\" gibi ilanlarla başlıyor; anahtarlık ve çorap da bu ilanlarda geçen ürünler arasında. Arama verilerinde ise mandal, maske, mum, kına, galoş, poşet katlama ve davetiye katlama gibi ürün adları da görülüyor."
+     ]
+    },
+    {
+     "h": "Bu ürünler neden seçiliyor?",
+     "p": [
+      "Bu ürünlerin ortak noktası küçük, ucuz ve herkesin tanıdığı ürünler olmasıdır. \"Bunu ben de yaparım\" duygusu güven yaratır. Ürün küçük olduğu için \"malzeme seti\", \"numune\" ya da \"kargo\" bedeli de inandırıcı görünür. Oysa bir firmanın bu ürünleri tanımadığı kişilerin evine dağıtıp toplaması; sayım, hijyen ve kalite kontrolü açısından pahalı ve risklidir."
+     ]
+    },
+    {
+     "h": "Ürüne göre değil, sürece göre değerlendirin",
+     "tablo": {
+      "b": [
+       "Soru",
+       "Gerçek işte cevap",
+       "Ücret talep eden teklifte cevap"
+      ],
+      "s": [
+       [
+        "Malzemenin parasını kim ödüyor?",
+        "İşveren",
+        "Siz"
+       ],
+       [
+        "Kargo bedelini kim ödüyor?",
+        "İşveren",
+        "Siz"
+       ],
+       [
+        "Firmanın açık adı ve adresi var mı?",
+        "Var",
+        "Yok ya da doğrulanamıyor"
+       ],
+       [
+        "Yazılı sözleşme var mı?",
+        "Var",
+        "Yok"
+       ],
+       [
+        "Teslim edilen iş nasıl ödeniyor?",
+        "Belirlenen günde, banka yoluyla",
+        "Bahane gösterilerek ödenmiyor"
+       ]
+      ]
+     }
+    },
+    {
+     "h": "Gerçek el emeği gelir için",
+     "p": [
+      "Sabun, mum ya da takı gibi ürünleri gerçekten evde üretmek istiyorsanız bu bir iş bulmak değil, kendi işinizi kurmaktır. Malzemeyi siz alır, ürünü siz satarsınız. Belediyelerin ve halk eğitim merkezlerinin kursları bu yolda başlangıç noktası olabilir. Ayrıntı için <a href=\"../yazi/ev-hanimlarina-evde-is-imkani.html\">ev hanımlarına evde iş imkânı</a> yazımıza bakın."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "Evde sabun paketleme işi gerçek mi?",
+     "c": "Ürünün sabun olması tek başına bir şey söylemez. Size ücret ödenmeden önce sizden kargo, malzeme ya da teminat parası isteniyorsa teklif gerçek bir iş değildir."
+    },
+    {
+     "s": "Evde mandal ya da mum paketleme işi veren firmalar var mı?",
+     "c": "Kamuya açık, doğrulanmış bir liste yoktur. Firma iddiasını ticaret unvanı, vergi numarası ve gerçek bir üretim adresiyle doğrulayın."
+    },
+    {
+     "s": "Evde çorap paketleme işi nasıl yapılır?",
+     "c": "Tekstil firmaları çorap paketlemeyi genellikle kendi atölyelerinde yapar. Evinize ürün gönderilmesi için sizden ödeme isteniyorsa teklife güvenmeyin."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "DHA, 28.04.2025: Evde paketleme vaadiyle dolandırıcılık şikâyetleri 33 binin üzerine çıktı",
+     "url": "https://www.dha.com.tr/gundem/sikayetvar-evde-paketleme-vaadiyle-dolandiricilik-sikayetleri-33-binin-uzerine-cikti-2628342"
+    },
+    {
+     "ad": "Ekonomist, 27.10.2022: KVKK \"İş Vaadi Konulu TCK Kapsamındaki Kişisel Veri İhlallerine İlişkin Kamuoyu Duyurusu\"",
+     "url": "https://www.ekonomist.com.tr/haberler/kvkk-uyardi-bu-is-ilanlarina-kanmayin-27443"
+    }
+   ],
+   "ilgili": [
+    "evde-ek-is-paketleme",
+    "evde-paketleme-isi-ne-kadar-kazandirir",
+    "ev-hanimlarina-evde-is-imkani"
+   ]
+  },
+  {
+   "slug": "iskur-evde-ek-is-veriyor-mu",
+   "kategori": "evde-paketleme-isi",
+   "baslik": "İŞKUR evde ek iş veya paketleme işi veriyor mu?",
+   "ozet": "İŞKUR adı ve logosuyla dolaşan evde ek iş ve paketleme ilanları, kurumun bu konudaki uyarısı ve büyük marka adıyla gelen teklifleri doğrulamanın yolu.",
+   "tarih": "2026-11-13",
+   "okuma": 5,
+   "kisa": "İŞKUR, 2022'de kurum adı ve logosu kullanılarak yayımlanan evde paketleme ilanlarına karşı vatandaşları uyardı ve resmî adresi iskur.gov.tr dışında yayımlanan, kaynağı belirsiz iş ilanlarına itibar edilmemesini istedi. İŞKUR adıyla gelen bir teklifte sizden kapora ya da kargo bedeli isteniyorsa o teklif İŞKUR'un değildir.",
+   "gorsel": {
+    "alt": "Mutfak masasında bulanık bir sohbet ekranı gösteren telefon, yanında ters çevrilmiş kimlik kartı ve banka kartı, üzerinde tereddüt eden bir el",
+    "baslik": "İŞKUR adıyla gelen evde iş teklifi"
+   },
+   "bolumler": [
+    {
+     "h": "İŞKUR ne açıkladı?",
+     "p": [
+      "Türkiye Gazetesi'nin 24 Temmuz 2022 tarihli haberine göre dolandırıcılar İŞKUR'un adını ve logosunu kullanarak evde paketleme işiyle ek gelir vaat etti ve kapora istedi. İŞKUR, bu ilanları yayımlayan hesapların kapatılmasını talep etti ve vatandaşları \"www.iskur.gov.tr\" adresi dışında yayımlanan, kaynağı belirsiz iş ilanlarına itibar etmemeleri konusunda uyardı."
+     ]
+    },
+    {
+     "h": "İŞKUR adıyla gelen bir teklifi nasıl doğrularsınız?",
+     "liste": [
+      "İlanı <a href=\"https://www.iskur.gov.tr/\" rel=\"noopener\" target=\"_blank\">iskur.gov.tr</a> üzerinden arayın; orada yoksa ilan İŞKUR ilanı değildir.",
+      "İlçenizdeki İŞKUR hizmet merkezini arayıp sorun.",
+      "Sizden kayıt, kargo, kapora ya da teminat parası isteniyorsa görüşmeyi bitirin.",
+      "Kimlik fotoğrafı ve IBAN bilgisini mesajla göndermeyin."
+     ]
+    },
+    {
+     "h": "Büyük marka adıyla gelen evde ek iş teklifleri",
+     "p": [
+      "\"Evde ek iş\" aramalarında tanınmış giyim, perakende ve e-ticaret markalarının adları da sık geçiyor. Bir teklif büyük bir marka adına yapılıyorsa doğrulamanın yolu basittir: markanın kendi resmî kariyer sayfasına gidin ve aynı ilanın orada yayımlanıp yayımlanmadığına bakın. Sosyal medyada bir kişinin cep telefonundan \"marka adına\" iş vermesi, ilanın o markaya ait olduğunu göstermez."
+     ]
+    },
+    {
+     "h": "İŞKUR'un gerçekten sunduğu hizmetler",
+     "p": [
+      "İŞKUR iş arayanları açık işlere yönlendirir, iş ve meslek danışmanlığı yapar ve meslek edindirme kursları ile programlar düzenler. Programların güncel listesi ve başvuru şartları kurumun resmî sitesinde yayımlanır."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "İŞKUR ev hanımlarına evde iş veriyor mu?",
+     "c": "Güncel programları yalnız İŞKUR'un resmî sitesinden ve hizmet merkezlerinden öğrenebilirsiniz. Başka bir kanaldan \"İŞKUR evde iş\" adıyla gelen ve ücret isteyen teklif, kurumun kendi uyarısına göre itibar edilmemesi gereken bir ilandır."
+    },
+    {
+     "s": "İŞKUR evde paketleme başvurusu nasıl yapılır?",
+     "c": "İŞKUR'un resmî sitesinde böyle bir ilan ya da program yoksa başvurulacak bir şey de yoktur. Size bir başvuru bağlantısı gönderildiyse adres çubuğunda iskur.gov.tr yazıp yazmadığını kontrol edin."
+    },
+    {
+     "s": "İŞKUR adını kullanan bir ilan görürsem ne yapmalıyım?",
+     "c": "İlana para göndermeyin ve kişisel bilgi paylaşmayın. İlanı yayımlandığı platforma şikâyet edin, para ödediyseniz bankanıza ve Cumhuriyet Başsavcılığına başvurun."
+    }
+   ],
+   "kaynaklar": [
+    {
+     "ad": "Türkiye Gazetesi, 24.07.2022: İŞKUR adını ve logosunu kullanan ilanlara karşı kurum uyarısı",
+     "url": "https://www.turkiyegazetesi.com.tr/turkiye/dikkat-dolandiricilarin-yeni-yontemi-ortaya-cikti-simdi-de-iskur-adini-ve-logosunu-kullaniyorlar-887961"
+    },
+    {
+     "ad": "Türkiye İş Kurumu (İŞKUR) resmî sitesi",
+     "url": "https://www.iskur.gov.tr/"
+    },
+    {
+     "ad": "Ekonomist, 27.10.2022: KVKK \"İş Vaadi Konulu TCK Kapsamındaki Kişisel Veri İhlallerine İlişkin Kamuoyu Duyurusu\"",
+     "url": "https://www.ekonomist.com.tr/haberler/kvkk-uyardi-bu-is-ilanlarina-kanmayin-27443"
+    }
+   ],
+   "ilgili": [
+    "evde-ek-is-paketleme",
+    "evde-paketleme-acentesi-nedir",
+    "ek-is-ilanlari-nereden-bulunur"
+   ]
+  },
+  {
    "slug": "evde-paketleme-isi-guvenilir-mi",
    "kategori": "evde-paketleme-isi",
    "baslik": "Evde paketleme işi güvenilir mi?",
@@ -54,7 +1635,11 @@
      "s": "Hiç mi gerçek evde paketleme işi yok?",
      "c": "İstisnai olarak fason el işi verilebilir, ancak bu genellikle tanıdık üzerinden ve ücret talebi olmadan yürür. İnternette ilan olarak dolaşan tekliflerin neredeyse tamamı ücret talebine dayanır."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Markasız bir karton kutuyu büyüteçle inceleyen bir el, yanında koli bandı ve telefon",
+    "baslik": "Evde paketleme teklifini inceleyen biri"
+   }
   },
   {
    "slug": "evde-paketleme-isi-ne-kadar-kazandirir",
@@ -96,7 +1681,11 @@
      "s": "Eve iş veren firma bulursam ne yapmalıyım?",
      "c": "Firmanın ticaret unvanını ve adresini doğrulayın, yazılı sözleşme isteyin ve hiçbir gerekçeyle ön ödeme yapmayın."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Masada hesap makinesine basan bir el, yanında ters duran banknotlar ve karton kutu",
+    "baslik": "Evde paketleme kazancını hesaplayan biri"
+   }
   },
   {
    "slug": "evde-paketleme-dolandiriciligi-nasil-anlasilir",
@@ -141,7 +1730,11 @@
      "s": "Küçük tutar için uğraşmaya değer mi?",
      "c": "Değer. Şikâyetler birleştiğinde aynı hesap ve numaralar tespit edilir; bildirim yapmadığınızda düzen sürer."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Bulanık sohbet ekranı gösteren telefonu eliyle kapatan biri, masada yazısız bir dekont ve banka kartı",
+    "baslik": "Evde paketleme mağduriyetinin işaretleri"
+   }
   },
   {
    "slug": "ankarada-ek-is-nerelerde-cikiyor",
@@ -186,7 +1779,11 @@
      "s": "Öğrenciler ek iş yapabilir mi?",
      "c": "Yapabilir. Kafe, mağaza, çağrı merkezi ve hafta sonu etkinlik işleri ders programına en kolay uyan alanlardır."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Mavi saatte apartman ve sanayi bölgeleriyle uzanan büyük bir şehir manzarası, pencerelerde yanan ışıklar",
+    "baslik": "Şehirde ek iş çıkan bölgeler"
+   }
   },
   {
    "slug": "ek-is-ne-kadar-kazandirir",
@@ -229,7 +1826,11 @@
      "s": "İki işte birden sigortalı olunur mu?",
      "c": "Olunur. Aynı anda birden fazla işverende çalışmak mümkündür; bildirimleri işverenler ayrı ayrı yapar."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Akşam masasında hesap makinesi, cüzdan, ulaşım kartı, yemek kabı ve araba anahtarı; hesap makinesine uzanan bir el",
+    "baslik": "Ek işin gerçek kazancını hesaplamak"
+   }
   },
   {
    "slug": "ogrenciye-uygun-ek-isler",
@@ -266,7 +1867,11 @@
      "s": "Kaç saat çalışabilirim?",
      "c": "Yarı zamanlı çalışmada haftalık süre iş sözleşmesiyle belirlenir. Ders programınızı bozmayacak vardiyayı baştan yazılı hale getirin."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Sırt çantası sandalyeye asılı bir öğrencinin kafe tezgâhında önlüğünü bağlaması, arkadan görünüyor",
+    "baslik": "Öğrenci ek işte kafede çalışıyor"
+   }
   },
   {
    "slug": "evde-paketleme-isi-veren-firmalar",
@@ -315,7 +1920,11 @@
      "s": "Sözleşme imzalarsam güvende olur muyum?",
      "c": "Sözleşme tek başına yeterli değildir. İmzalayan tarafın ticaret unvanı, adresi ve vergi kaydı doğrulanmadan imzalanan belge işe yaramaz."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Aydınlık bir paketleme tesisinde uzun bir hat başında markasız kolileri dolduran, arkadan görünen çalışanlar",
+    "baslik": "Paketleme işinin yapıldığı tesis"
+   }
   },
   {
    "slug": "evde-paketleme-acentesi-nedir",
@@ -357,7 +1966,11 @@
      "s": "Acente üyeliği iptal edilebilir mi?",
      "c": "Ödemeyi kartla yaptıysanız bankanız üzerinden itiraz başvurusu yapabilirsiniz. Havale veya kripto ile yapılan ödemelerin iadesi çok daha zordur."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Ofis masasında yazısız bir kayıt formunu karşıdaki kalemli ele doğru iten bir el, köşede makbuz defteri",
+    "baslik": "Aracının kayıt formu uzattığı an"
+   }
   },
   {
    "slug": "ev-hanimlarina-evde-is-imkani",
@@ -401,7 +2014,11 @@
      "s": "Evden çalışmak için sigorta yapılır mı?",
      "c": "Uzaktan çalışma bir iş sözleşmesi türüdür; işveren sigorta bildirimi yapar. Kendi işini kuranlar ise vergi ve sigorta kaydını kendileri yaptırır."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Mutfak masasında örgü ören eller, yanında etiketsiz ev yapımı reçel kavanozları ve kâğıda sarılı el yapımı sabunlar",
+    "baslik": "Evde el emeği ürün hazırlayan biri"
+   }
   },
   {
    "slug": "aksam-ve-hafta-sonu-ek-is",
@@ -446,7 +2063,11 @@
      "s": "Gece çalışmasının süresi sınırlı mı?",
      "c": "İş Kanunu gece çalışmasını düzenler ve süre sınırı getirir. Vardiya planını işverenle yazılı olarak netleştirin."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Akşam ışıklarıyla aydınlanan bir kafe terasında çay bardaklı tepsi taşıyan, arkadan görünen bir garson",
+    "baslik": "Akşam ek işte çalışan garson"
+   }
   },
   {
    "slug": "aracla-yapilabilecek-ek-isler",
@@ -490,7 +2111,11 @@
      "s": "Yakıtı kim karşılar?",
      "c": "Bu işten işe değişir. Yakıtın kime ait olduğu yazılı olarak belirlenmezse kazancınız beklediğinizin altına iner."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Gece ıslak şehir sokağında arkasında markasız teslimat kutusu olan motosikletli kurye, arkadan görünüyor",
+    "baslik": "Gece çalışan motokurye"
+   }
   },
   {
    "slug": "ankara-part-time-is-ilanlari-rehberi",
@@ -535,7 +2160,11 @@
      "s": "Öğrenciyken part time çalışabilir miyim?",
      "c": "Çalışabilirsiniz. Vardiyayı ders programınıza göre seçin ve sınav dönemlerindeki esnekliği işe başlarken konuşun."
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Alışveriş merkezindeki bir giyim mağazasında ahşap masada kazak katlayan, arkadan görünen bir çalışan",
+    "baslik": "Part time mağaza çalışanı"
+   }
   }
  ]
 }
