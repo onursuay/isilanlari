@@ -3,6 +3,7 @@
 // POST: kaynak kontrolü, alan doğrulama, bağlantı yasağı, gizli tuzak, süre ve IP hız sınırı, RAW yazım (formül çalışmaz).
 const crypto = require('crypto');
 const sheet = require('../lib/sheet.js');
+const posta = require('../lib/posta.js');
 const BASLIKLAR = new Map(require('../veri/yazilar.json').yazilar.map(y => [y.slug, y.baslik]));
 
 const KAYNAK = /^https:\/\/(www\.)?ankaraisilani\.com(\/|$)/;
@@ -67,5 +68,9 @@ module.exports = async (req, res) => {
 
   const kayitNo = 'YRM-' + Date.now().toString(36).toUpperCase() + '-' + crypto.randomBytes(2).toString('hex').toUpperCase();
   const tamam = await sheet.ekle(SEKME_YAZ, [sheet.trZaman(), slug, BASLIKLAR.get(slug), a.ad, a.yorum, kayitNo, '', '']);
-  return tamam ? res.status(200).json({ ok: true, kayit: kayitNo }) : res.status(502).json({ ok: false, neden: 'kayit' });
+  if (!tamam) return res.status(502).json({ ok: false, neden: 'kayit' });
+  // Owner'a e-posta bildirimi (13.11.2026): yorum kaydedildikten sonra gönderilir, başarısız olsa da yorum kaybolmaz
+  const satir = (String(tamam).match(/![A-Z]+(\d+)(?::|$)/) || [])[1] || '';
+  await posta.bildir({ slug, baslik: BASLIKLAR.get(slug), ad: a.ad, yorum: a.yorum, kayit: kayitNo, satir });
+  return res.status(200).json({ ok: true, kayit: kayitNo });
 };

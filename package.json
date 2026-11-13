@@ -1,0 +1,8 @@
+{
+  "name": "ankaraisilani-com",
+  "private": true,
+  "description": "Ankara İş İlanı sitesi: statik sayfalar + Vercel işlevleri (api/)",
+  "dependencies": {
+    "nodemailer": "10.3.1"
+  }
+}
