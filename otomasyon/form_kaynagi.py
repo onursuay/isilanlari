@@ -9,7 +9,9 @@ o sekmedeki yeni satırları okur ve gelen kutusu ilanlarıyla AYNI kurallardan 
 - firma adı, telefon ve e-posta hiçbir yayına girmez;
 - emin olunamayan (birden fazla pozisyon, okunamayan pozisyon) "beklet"e düşer.
 
-Sonuç E-Tablo'daki "Durum" sütununa (M) yazılır; ekip bu sütunu dolu gördüğü satıra hat dokunmaz.
+Sonuç E-Tablo'daki "Durum" sütununa (M) yazılır; ekibin doldurduğu satıra hat dokunmaz. Tek istisna: ekip
+bekletilen satırın Durum hücresine "ONAY" yazarsa satır bir sonraki turda yeniden değerlendirilir ve
+sözlükte olmayan pozisyon da başlık olarak kabul edilir.
 Kimlik bilgisi yalnız ortam değişkenlerinde: GOOGLE_SA_EMAIL, GOOGLE_SA_KEY, ILAN_SHEET_ID.
 Depoya (herkese açık) yalnız kayıt numarası, karar ve gerekçe yazılır.
 """
@@ -74,7 +76,7 @@ def durum_yaz(satir_no, metin):
     """Durum hücresine yazar ve geri okur; ekip hücreyi bu arada doldurduysa ÜZERİNE YAZMAZ."""
     hucre = urllib.parse.quote(f"'{SEKME}'!M{satir_no}")
     mevcut = _sheets(f"values/{hucre}").get("values", [[""]])[0]
-    if mevcut and mevcut[0].strip():
+    if mevcut and mevcut[0].strip() and mevcut[0].strip().upper() != "ONAY":
         return False
     _sheets(f"values/{hucre}?valueInputOption=RAW", {"values": [[metin]]}, "PUT")
     return _sheets(f"values/{hucre}").get("values", [[""]])[0][0] == metin
@@ -85,8 +87,10 @@ def _basliga_cevir(metin):
     return (m[:1].replace("i", "İ").upper() + m[1:]) if m else ""
 
 
-def degerlendir(s):
-    """Form satırını gelen kutusu kararıyla aynı biçimde döndürür."""
+def degerlendir(s, ekip_onayi=False):
+    """Form satırını gelen kutusu kararıyla aynı biçimde döndürür.
+    Sözlükte olmayan pozisyon (serbest metin) yalnız ekip Durum hücresine ONAY yazdıysa başlık olur;
+    herkese açık formdan gelen metin onaysız yayına çıkmaz."""
     firma, pozisyon, ilce, calisma, sigorta, ucret, tanim = s[1], s[4], s[5], s[6], s[7], s[8], s[9]
     ham = suzgec.temizle(" ".join([pozisyon, ucret, tanim]))
     d = suzgec.kucuk(ham)
@@ -114,6 +118,9 @@ def degerlendir(s):
         temiz = re.sub(r"\s{2,}", " ", suzgec.AYRIMCI.sub(" ", p)).strip(" -,/.")
         if not (2 <= len(temiz) <= 50) or re.search(r"\d|@|https?:|www\.", temiz):
             sonuc.update(karar="beklet", gerekce="pozisyon okunamadı, ekip kontrol etmeli")
+            return sonuc
+        if not ekip_onayi:
+            sonuc.update(karar="beklet", gerekce="pozisyon sözlükte yok; uygunsa Durum hücresine ONAY yazın")
             return sonuc
         baslik, kategori = _basliga_cevir(temiz), "diger"
     if ilce not in suzgec.ILCELER and ilce not in ("Altındağ", "Ayaş", "Bala", "Çamlıdere", "Evren", "Güdül", "Haymana",
@@ -146,9 +153,12 @@ def yeni_kararlar(durum):
     kararlar = []
     for satir_no, s in satirlar():
         kayit = s[11].strip()
-        if not kayit.startswith("AII-") or s[12].strip() or kayit in islenen:
+        onay = s[12].strip().upper() == "ONAY"
+        if not kayit.startswith("AII-") or (s[12].strip() and not onay):
             continue
-        k = degerlendir(s)
+        if kayit in islenen and not (onay and islenen[kayit].get("karar") == "beklet"):
+            continue
+        k = degerlendir(s, ekip_onayi=onay)
         if k["karar"] == "yayinla" and k["iz"] in gorulen:
             k.update(karar="reddet", gerekce="aynı ilan daha önce işlendi (mükerrer)")
         gorulen.add(k["iz"])
