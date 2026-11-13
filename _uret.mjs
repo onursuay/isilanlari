@@ -11,6 +11,8 @@ import {fileURLToPath} from 'node:url';
 
 const KOK = path.dirname(fileURLToPath(import.meta.url));
 const SITE = process.env.SITE_URL || 'https://ankaraisilani.com';
+const ADSENSE = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455796317251834"
+     crossorigin="anonymous"></script>`;
 const GTM = 'GTM-KS8JNCLW';                 /* ankaraisilani.com kapsayıcısı (yalnız bu site) */
 const EPOSTA = 'info@ankaraisilani.com';
 const FB_SAYFA = 'https://www.facebook.com/ankaraisilanicom/';
@@ -144,7 +146,7 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
 gtag('set','ads_data_redaction',true);
 try{if(localStorage.getItem('aii_cerez')==='hepsi'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'})}}catch(e){}
 </script>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM}');</script>
+${robots.startsWith('noindex')?'':ADSENSE+'\n'}<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM}');</script>
 ${ld.map(x=>`<script type="application/ld+json">${ldGuvenli(x)}</script>`).join('\n')}
 </head>
 <body>
@@ -632,9 +634,10 @@ ${cagri()}`;
     <p><strong>Gerekli çerez bilgisi:</strong> çerez tercihinizi tarayıcınızda saklarız. Bunun için onayınız aranmaz.</p>
     <p><strong>Analiz ve reklam ölçümü:</strong> Google Analytics ve Meta (Facebook, Instagram) ölçüm araçlarını yalnız “Tümünü kabul et” seçeneğini seçerseniz çalıştırırız. “Yalnız gerekli olanlar” seçeneğinde bu araçlar çerez bırakmaz.</p>
         <p><strong>Sunucu taraflı Meta ölçümü:</strong> “Tümünü kabul et” seçeneğini seçtiyseniz sayfa görüntüleme, ilan formu gönderme ve başvuru tıklaması olayları sitemizin sunucusu üzerinden de Meta'nın Conversions API hizmetine iletilir. Bu iletide IP adresiniz, tarayıcı bilginiz, Meta çerezleriniz ve ziyaret ettiğiniz sayfanın adresi yer alır; ad, telefon ve e-posta yer almaz. “Yalnız gerekli olanlar” seçeneğini seçerseniz bu ileti gönderilmez.</p>
+    <p><strong>Site reklamları (Google AdSense):</strong> Sitemizde Google AdSense reklam kodu bulunur. Kod, sayfa açıldığında Google'ın sunucusundan yüklenir; bu nedenle IP adresiniz ve tarayıcı bilginiz çerez tercihinizden bağımsız olarak Google'a ulaşır. Google'ın reklamlar için çerez ve benzeri teknolojileri nasıl kullandığını <a href="https://policies.google.com/technologies/ads" rel="noopener" target="_blank">Google reklam politikaları</a> sayfasında okuyabilir, kişiselleştirilmiş reklam tercihlerinizi <a href="https://adssettings.google.com/" rel="noopener" target="_blank">Google reklam ayarları</a> sayfasından yönetebilirsiniz.</p>
     <p>Tercihinizi istediğiniz zaman değiştirebilirsiniz: <a href="#" data-cerez-ac>çerez tercihlerini yeniden aç</a>.</p>
     <h2>Bilgiler yurt dışına aktarılır mı?</h2>
-    <p>Google ve Meta hizmetleri yurt dışındaki sunucularda çalışır. Ölçüm araçları yalnız çerez onayınız varsa çalışır; onay vermezseniz kullanım verileriniz bu şirketlere ulaşmaz. İlan formunu ya da ilana başvuru formunu gönderdiğinizde ise formdaki bilgiler, çerez tercihinizden bağımsız olarak Google E-Tablolar'da saklanır; Google'ın sunucuları yurt dışında olabilir.</p>
+    <p>Google ve Meta hizmetleri yurt dışındaki sunucularda çalışır. Analiz ve ölçüm araçları yalnız çerez onayınız varsa çalışır; onay vermezseniz bu araçlar kullanım verilerinizi bu şirketlere iletmez. Google AdSense kodu bunun dışındadır, yukarıda açıkladık. İlan formunu ya da ilana başvuru formunu gönderdiğinizde ise formdaki bilgiler, çerez tercihinizden bağımsız olarak Google E-Tablolar'da saklanır; Google'ın sunucuları yurt dışında olabilir.</p>
     <h2>Ne kadar saklıyoruz?</h2>
     <p>İlan bilgilerini ilan yayında olduğu sürece ve amacın gerektirdiği süre kadar saklarız. Sonrasında siler ya da anonim hâle getiririz.</p>
     <h2>Reklamlar</h2>
