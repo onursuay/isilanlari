@@ -658,3 +658,9 @@ h1,h2,.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba
 .yorum-form .form-baslik{margin:0 0 .2rem;border-bottom:0;padding-bottom:0}
 .yorum-sayac{margin:.3rem 0 0;text-align:right;font-size:.78rem;color:var(--ink-2)}
 .yazi .yorum-kural{margin:0;font-size:.85rem;color:var(--ink-2)}
+
+/* "Ücretsiz" vurgusu (13.11.2026): altında çizgi soldan sağa çizilir, bir süre durur, silinir ve yeniden çizilir; yalnız transform ve opacity */
+.vurgu{position:relative;display:inline-block}
+.vurgu::after{content:"";position:absolute;left:.02em;right:.02em;bottom:-.06em;height:.1em;border-radius:99px;background:linear-gradient(90deg,var(--sari),#FFD56B 55%,var(--sari));transform-origin:left center;transform:scaleX(0);animation:vurgu-ciz 3.4s cubic-bezier(.22,.8,.25,1) infinite;pointer-events:none}
+@keyframes vurgu-ciz{0%{transform:scaleX(0);opacity:1}38%{transform:scaleX(1);opacity:1}78%{transform:scaleX(1);opacity:1}92%{transform:scaleX(1);opacity:0}100%{transform:scaleX(0);opacity:0}}
+@media (prefers-reduced-motion:reduce){.vurgu::after{animation:none;transform:scaleX(1)}}

@@ -65,7 +65,7 @@ const SEKTOR = {satis:'Satış',uretim:'Üretim',temizlik:'Temizlik',kurye:'Kury
 const ilanLead = t => { const m=t.match(/^(.+?[.!?])\s+(?=[A-ZÇĞİÖŞÜ])/); return m?{ilk:m[1],kalan:t.slice(m[0].length)}:{ilk:t,kalan:''}; };
 
 /* Ana sayfa hero cümlesi (Owner 13.11.2026): iki satır */
-const HERO_LEAD = "İlanınız sitemizde, Instagram'da ve Facebook sayfamızda yayınlanır. Sadece burada değil, LinkedIn'de de yayınlanıyor.";
+const HERO_LEAD = "İlanınızın tüm sosyal medya kanallarında yayınlanarak yüksek etkileşimli kitlelere ulaşması sağlanır.";
 
 const KATEGORI = {
   'ek-is-ilanlari':   {dosya:'ek-is-ilanlari.html',  ad:'Ek İş İlanları',  anahtar:'ek iş ilanları',
@@ -361,7 +361,7 @@ ${secenekler.map((s,n)=>`    <label><input type="radio" name="${ad}" value="${ka
   const govde = `<section class="hero">
   <div class="kap hero-izgara">
     <div class="hero-metin">
-      <h1>Ankara'da eleman arıyorsanız ilanınızı ücretsiz yayınlayalım</h1>
+      <h1>Ankara'da eleman arıyorsanız ilanınızı <span class="vurgu">ücretsiz</span> yayınlayalım</h1>
       <p class="lead" style="--kl:${HERO_LEAD.length}">${HERO_LEAD}</p>
       <div class="hero-eylem">
         <a class="dugme dugme-sari" href="ilan-ver.html" data-ilan-ver="hero">Ücretsiz ilan verin ${IK.ok}</a>
