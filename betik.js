@@ -372,4 +372,74 @@
       var alan = e.target.closest('.alan'); if (alan) alan.classList.remove('hatali');
     });
   }
+  /* ——— makale yorumları (13.11.2026) ———
+     Liste /api/yorum'dan gelir (yalnız ekibin onayladığı yorumlar), metinler textContent ile yazılır. yorum_gonder ölçümü yalnız kayıt başarılıysa. */
+  var ybolum = d.getElementById('yorum-alani');
+  if (ybolum) {
+    var yslug = ybolum.getAttribute('data-slug');
+    var yliste = d.getElementById('yorum-liste');
+    var yform = d.getElementById('yorum-form');
+    var ysonuc = d.getElementById('yorum-sonuc');
+    var ysayac = d.getElementById('yorum-sayac');
+    var yAcilis = Date.now();
+    var AYLAR = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+    var ytarih = function (t) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(t || ''); return m ? (+m[3]) + ' ' + AYLAR[+m[2] - 1] + ' ' + m[1] : ''; };
+    var ymetin = function (etiket, sinif, metin) { var e = d.createElement(etiket); if (sinif) e.className = sinif; e.textContent = metin; return e; };
+    var yciz = function (liste) {
+      yliste.textContent = '';
+      if (!liste.length) { yliste.appendChild(ymetin('p', 'yorum-bos', 'Henüz yorum yok. İlk yorumu siz yazın.')); return; }
+      liste.forEach(function (y) {
+        var a = d.createElement('article'); a.className = 'yorum';
+        var ust = d.createElement('p'); ust.className = 'yorum-ust';
+        ust.appendChild(ymetin('strong', '', y.ad));
+        var t = ytarih(y.tarih); if (t) ust.appendChild(ymetin('span', 'yorum-tarih', t));
+        a.appendChild(ust); a.appendChild(ymetin('p', 'yorum-metin', y.yorum));
+        if (y.yanit) { var yy = d.createElement('div'); yy.className = 'yorum-yanit'; yy.appendChild(ymetin('strong', '', 'Ankara İş İlanı ekibi')); yy.appendChild(ymetin('p', '', y.yanit)); a.appendChild(yy); }
+        yliste.appendChild(a);
+      });
+    };
+    fetch('/api/yorum?slug=' + encodeURIComponent(yslug))
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (j && j.ok) yciz(j.yorumlar || []); else yliste.textContent = ''; })
+      .catch(function () { yliste.textContent = ''; });
+    var yisaret = function (ad, hata) {
+      var el = yform.querySelector('[name=' + ad + ']'); var alan = el.closest('.alan');
+      alan.classList.toggle('hatali', !!hata);
+      if (hata) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
+    };
+    yform.elements.yorum.addEventListener('input', function () { ysayac.textContent = yform.elements.yorum.value.length + ' / 1000'; });
+    yform.addEventListener('input', function (e) { var alan = e.target.closest('.alan'); if (alan) alan.classList.remove('hatali'); });
+    var ygonderiliyor = false;
+    yform.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = yform.elements, ilkHata = null;
+      var adKotu = f.ad.value.trim().length < 2, yorumKotu = f.yorum.value.trim().length < 10;
+      yisaret('ad', adKotu ? 'x' : ''); yisaret('yorum', yorumKotu ? 'x' : '');
+      f.kvkk.closest('.alan').classList.toggle('hatali', !f.kvkk.checked);
+      ilkHata = adKotu ? f.ad : (yorumKotu ? f.yorum : (!f.kvkk.checked ? f.kvkk : null));
+      if (ilkHata) { ilkHata.focus(); return; }
+      if (ygonderiliyor) return;
+      ygonderiliyor = true;
+      var dugme = yform.querySelector('button[type=submit]'), dugmeMetni = dugme.innerHTML;
+      dugme.disabled = true; dugme.textContent = 'Gönderiliyor…';
+      ysonuc.classList.remove('goster', 'hata-sonuc');
+      var bitir = function (tamam, neden) {
+        ygonderiliyor = false; dugme.disabled = false; dugme.innerHTML = dugmeMetni;
+        var baslik = tamam ? 'Yorumunuz alındı.' : 'Yorumunuz gönderilemedi.';
+        var ayrinti = tamam ? 'Ekibimiz kontrol ettikten sonra bu sayfada yayınlanır.'
+          : (neden === 'baglanti' ? 'Yorumda bağlantı yer alamaz. Bağlantıyı kaldırıp tekrar gönderin.'
+          : (neden === 'hiz' ? 'Kısa sürede çok fazla yorum gönderdiniz. Lütfen biraz sonra tekrar deneyin.'
+          : 'Lütfen birkaç dakika sonra tekrar deneyin.'));
+        ysonuc.textContent = ''; ysonuc.appendChild(ymetin('strong', '', baslik)); ysonuc.appendChild(d.createTextNode(ayrinti));
+        ysonuc.classList.toggle('hata-sonuc', !tamam); ysonuc.classList.add('goster'); ysonuc.focus();
+        if (tamam) { yform.reset(); ysayac.textContent = '0 / 1000'; }
+      };
+      fetch('/api/yorum', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+        slug: yslug, ad: f.ad.value.trim(), yorum: f.yorum.value.trim(), kvkk: f.kvkk.checked,
+        web_sitesi: f.web_sitesi ? f.web_sitesi.value : '', sure: Date.now() - yAcilis }) })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { tamam: r.ok && j.ok, neden: j.neden }; }); })
+        .then(function (s) { if (s.tamam) olay('yorum_gonder', { makale: yslug }); bitir(s.tamam, s.neden); })
+        .catch(function () { bitir(false); });
+    });
+  }
 })();

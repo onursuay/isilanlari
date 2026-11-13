@@ -640,3 +640,21 @@ h1,h2,.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba
 .yazi-sss{margin-top:1.5rem}
 .yazi-sss h2{margin-top:0}
 .yazi-ana .kaynaklar{margin-top:1.5rem}
+
+/* ——— Makale yorumları (13.11.2026) ——— */
+.yorumlar{margin-top:1.5rem}
+.yorumlar h2{margin-top:0}
+.yorum-liste{margin:0 0 1.25rem}
+.yorum{padding:1rem 0;border-top:1px solid var(--hat)}
+.yorum:first-child{border-top:0;padding-top:.25rem}
+.yazi .yorum p{margin:0}
+.yorum-ust{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .6rem;font:600 .95rem/1.3 "Poppins",system-ui,sans-serif;color:var(--ink)}
+.yorum-tarih{font:500 .8rem/1.3 "Montserrat",system-ui,sans-serif;color:var(--ink-2)}
+.yorum-metin{margin-top:.35rem!important;white-space:pre-line;color:#2B2D47;overflow-wrap:anywhere}
+.yorum-yanit{margin-top:.7rem;padding:.7rem .9rem;border-radius:14px;background:var(--mavi-acik);border-left:3px solid var(--mavi);font-size:.93rem}
+.yorum-yanit strong{display:block;font:600 .85rem/1.3 "Poppins",system-ui,sans-serif;color:var(--mavi-koyu);margin-bottom:.15rem}
+.yorum-bos{color:var(--ink-2);margin:0 0 .5rem}
+.yorum-form{padding:1.25rem;border:1px solid var(--hat);border-radius:22px;background:var(--yuzey)}
+.yorum-form .form-baslik{margin:0 0 .2rem;border-bottom:0;padding-bottom:0}
+.yorum-sayac{margin:.3rem 0 0;text-align:right;font-size:.78rem;color:var(--ink-2)}
+.yazi .yorum-kural{margin:0;font-size:.85rem;color:var(--ink-2)}

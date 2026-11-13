@@ -319,6 +319,23 @@ ${sss.map((q,n)=>`      <details${n===0?' open':''}>
     </div>
     </div>`;
 
+/* Makale yorumları (Owner 13.11.2026): onay sonrası görünür, liste /api/yorum'dan yüklenir */
+const yorumBolumu = y => `    <section class="yorumlar" id="yorum-alani" data-slug="${y.slug}">
+      <h2 id="yorumlar">Yorumlar</h2>
+      <div class="yorum-liste" id="yorum-liste" aria-live="polite"><p class="yorum-bos">Yorumlar yükleniyor…</p></div>
+      <noscript><p class="yorum-bos">Yorumları görmek ve yorum yazmak için tarayıcınızda JavaScript açık olmalıdır.</p></noscript>
+      <form class="form yorum-form" id="yorum-form" novalidate>
+        <h3 class="form-baslik">Yorum yazın</h3>
+        <div class="alan"><label for="y-ad">Adınız <span class="not">(sayfada görünür, takma ad yazabilirsiniz)</span></label><input id="y-ad" name="ad" type="text" maxlength="40" autocomplete="nickname"><p class="hata">Adınızı yazın.</p></div>
+        <div class="alan"><label for="y-yorum">Yorumunuz</label><textarea id="y-yorum" name="yorum" maxlength="1000" placeholder="Bu yazıyla ilgili düşüncenizi ya da sorunuzu yazın."></textarea><p class="yorum-sayac" id="yorum-sayac" aria-hidden="true">0 / 1000</p><p class="hata">Yorumunuz en az 10 karakter olmalı.</p></div>
+        <div class="alan"><label class="onay"><input type="checkbox" name="kvkk"><span>Adımın ve yorumumun, ekip onayından sonra bu sayfada herkese açık gösterilmesini kabul ediyorum. <a href="/gizlilik" target="_blank">Gizlilik ve KVKK bildirimi</a></span></label><p class="hata">Devam etmek için onay verin.</p></div>
+        <p class="yorum-kural">Yorumlar kontrol edildikten sonra yayınlanır. Hakaret, reklam ve bağlantı kabul edilmez.</p>
+        <div class="tuzak" aria-hidden="true"><label for="y-web">Web siteniz</label><input id="y-web" name="web_sitesi" type="text" tabindex="-1" autocomplete="off"></div>
+        <button class="dugme dugme-sari" type="submit">Yorumu gönder ${IK.ok}</button>
+        <div class="form-sonuc" id="yorum-sonuc" tabindex="-1" role="status"></div>
+      </form>
+    </section>`;
+
 /* ——— form bileşenleri ——— */
 const PIN = `<svg class="acilir-ik" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
 const OK2 = `<svg viewBox="0 0 24 24" fill="none" stroke="#0A2A66" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>`;
@@ -650,6 +667,7 @@ ${cagri()}`;
     <h2>Hangi bilgileri işliyoruz?</h2>
     <p><strong>İlan formu:</strong> firma veya yetkili adı, telefon, e-posta ve ilanla ilgili bilgiler. Formu gönderdiğinizde bu bilgiler, ilanınızı değerlendirebilmemiz için Google E-Tablolar'daki (Google LLC) ilan listemize kaydedilir. Kaydın yanına reklamdan ya da başka bir siteden geldiyseniz o kaynağın adı da yazılır.</p>
     <p><strong>İlana başvuru formu:</strong> ad soyad, telefon ve isteğe bağlı kısa not. Başvuruyu gönderdiğinizde bu bilgiler, başvurunuzu ilgili işverene iletebilmemiz için Google E-Tablolar'daki (Google LLC) başvuru listemize kaydedilir ve işverene iletilir. Kaydın yanına başvurduğunuz ilanın kodu ve geldiğiniz kaynağın adı da yazılır.</p>
+    <p><strong>Makale yorumları:</strong> yorum formuna yazdığınız ad (ya da takma ad) ve yorum metni. E-posta ve telefon istemiyoruz. Yorumunuz Google E-Tablolar'daki (Google LLC) yorum listemize kaydedilir; ekip onaylarsa makale sayfasında adınızla birlikte herkese açık gösterilir, onaylanmazsa yayınlanmaz.</p>
     <p><strong>E-postalar:</strong> bize yazdığınız iletiler ve içindeki bilgiler.</p>
     <p><strong>Çerezler:</strong> sayfa görüntüleme, tıklama, cihaz ve tarayıcı bilgisi gibi kullanım verileri.</p>
     <h2>Neden işliyoruz?</h2>
@@ -672,7 +690,7 @@ ${cagri()}`;
     <p><strong>Çerezsiz ziyaret istatistiği:</strong> Sitenin barındığı Vercel'in Web Analytics hizmetiyle, çerez kullanılmadan ve kişisel bilgi saklanmadan ziyaret sayıları tutulur: açılan sayfa, ülke, cihaz ve tarayıcı türü, gelinen site ve reklam kaynağı (bağlantıdaki kampanya etiketi). Ziyaretçiler, isteğinden üretilen ve her gün sıfırlanan bir özetle ayırt edilir; bu kayıt 24 saat sonra silinir ve farklı günler ya da farklı siteler arasında eşleştirilemez. Bu sayım çerez tercihinizden bağımsız çalışır.</p>
     <p>Google ve Meta hizmetleri yurt dışındaki sunucularda çalışır. Analiz ve ölçüm araçları yalnız çerez onayınız varsa çalışır; onay vermezseniz bu araçlar kullanım verilerinizi bu şirketlere iletmez. Google AdSense kodu bunun dışındadır, yukarıda açıkladık. İlan formunu ya da ilana başvuru formunu gönderdiğinizde ise formdaki bilgiler, çerez tercihinizden bağımsız olarak Google E-Tablolar'da saklanır; Google'ın sunucuları yurt dışında olabilir.</p>
     <h2>Ne kadar saklıyoruz?</h2>
-    <p>İlan bilgilerini ilan yayında olduğu sürece ve amacın gerektirdiği süre kadar saklarız. Sonrasında siler ya da anonim hâle getiririz.</p>
+    <p>İlan bilgilerini ilan yayında olduğu sürece ve amacın gerektirdiği süre kadar saklarız. Sonrasında siler ya da anonim hâle getiririz. Makale yorumlarını yayında kaldıkları sürece saklarız; yorumunuzun kaldırılmasını <a href="iletisim.html">iletişim</a> sayfamızdan bize yazarak isteyebilirsiniz.</p>
     <h2>Reklamlar</h2>
     <p>Reklamlarımızın kimlere, hangi ölçütlerle gösterildiğini <a href="reklam-aydinlatmasi.html">hedefli reklam aydınlatması</a> sayfasında açıkladık.</p>
     <h2>Haklarınız</h2>
@@ -752,10 +770,10 @@ ${t.s.map(r=>`        <tr>${r.map((x,n)=>n===0?`<th scope="row">${x}</th>`:`<td>
     </table></div>`;
 /* İçindekiler (Owner 13.11.2026): öne çıkan görselin altında, her başlığa sayfa içi bağlantı; sıra sayfadaki sıradır */
 const icindekiler = y => {
-  const kul=new Set(['kaynaklar','sik-sorulanlar']);
+  const kul=new Set(['kaynaklar','sik-sorulanlar','yorumlar']);
   const idYap=t=>{const b=slug(duz(t))||'bolum'; let i=b,n=2; while(kul.has(i)) i=b+'-'+(n++); kul.add(i); return i;};
   const maddeler=y.bolumler.map(b=>({id:idYap(b.h),h:b.h}));
-  const tum=[...maddeler,...(y.sss?.length?[{id:'sik-sorulanlar',h:'Sık sorulanlar'}]:[]),...(y.kaynaklar?.length?[{id:'kaynaklar',h:'Kaynaklar'}]:[])];
+  const tum=[...maddeler,...(y.sss?.length?[{id:'sik-sorulanlar',h:'Sık sorulanlar'}]:[]),...(y.kaynaklar?.length?[{id:'kaynaklar',h:'Kaynaklar'}]:[]),{id:'yorumlar',h:'Yorumlar'}];
   const html=`    <nav class="icindekiler" aria-labelledby="icindekiler-baslik">
       <p class="ic-baslik" id="icindekiler-baslik">İçindekiler</p>
       <ol>
@@ -828,6 +846,7 @@ ${y.kaynaklar?.length?`    <div class="kaynaklar">
 ${y.kaynaklar.map(k=>`        <li><a href="${k.url}" rel="noopener" target="_blank">${kac(k.ad)}</a></li>`).join('\n')}
       </ul>
     </div>`:''}
+${yorumBolumu(y)}
     </div>
 ${sonGuncellenenler(y)}
   </div>
