@@ -580,7 +580,6 @@ h1,h2,.baslik-golge{text-shadow:0 .06em 0 rgba(255,184,28,.65),0 .15em .3em rgba
 .sayfa-bas-gorselli{padding-bottom:1.5rem}
 .one-cikan{margin:1.25rem 0 0;position:relative}
 .one-cikan img{width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:22px;background:var(--mavi-acik);box-shadow:var(--golge-yuksek)}
-.one-cikan figcaption{margin-top:.5rem;font-size:.78rem;color:var(--ink-2)}
 .yazi-kunye{font-size:.88rem;color:var(--ink-2)}
 .yazi-kunye a{color:var(--ink-2)}
 .kisa-cevap{margin:0 0 1.25rem;padding:1.1rem 1.25rem;border-radius:18px;background:var(--mavi-acik);border-left:4px solid var(--mavi);color:#2B2D47}

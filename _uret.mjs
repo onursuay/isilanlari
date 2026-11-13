@@ -269,10 +269,8 @@ const satir = (i,k='') => { const sk = SEKTOR[i.kategori]||'İlan'; return `    
 const yaziGorsel = y => { if(!y.gorsel) return null; const b=`medya/makale/${y.slug}`;
   if(!fs.existsSync(path.join(KOK,b+'.webp'))) return null;
   return {webp:`${b}.webp?v=${surum(b+'.webp')}`,webp800:`${b}-800.webp?v=${surum(b+'-800.webp')}`,jpg:`${b}.jpg?v=${surum(b+'.jpg')}`,alt:y.gorsel.alt,baslik:y.gorsel.baslik}; };
-const AI_NOT = 'Temsilî görsel, yapay zekâ ile üretilmiştir.';
 const oneCikan = g => `<figure class="one-cikan">
       <img src="/${g.webp}" srcset="/${g.webp800} 800w, /${g.webp} 1200w" sizes="(min-width:1180px) 1116px, 100vw" width="1200" height="630" alt="${kac(g.alt)}" title="${kac(g.baslik)}" fetchpriority="high" decoding="async">
-      <figcaption>${AI_NOT}</figcaption>
     </figure>`;
 const yaziKart = (y,k='') => { const g=yaziGorsel(y); return `      <a class="kart${g?' kart-gorselli':''}" href="${k}${yaziYol(y)}">${g?`
         <img class="kart-gorsel" src="/${g.webp800}" width="800" height="420" alt="" loading="lazy" decoding="async">`:''}
@@ -726,7 +724,7 @@ for (const y of yazi) {
   const secili = (y.ilgili||[]).map(sl=>yazi.find(x=>x.slug===sl)).filter(Boolean);
   const digerleri = [...secili, ...yazi.filter(x=>x.slug!==y.slug && x.kategori===y.kategori && !secili.includes(x))].slice(0,3);
   const resimLd = g ? {'@type':'ImageObject',url:`${SITE}/${g.jpg}`,contentUrl:`${SITE}/${g.jpg}`,width:1200,height:630,
-      caption:g.alt,creditText:AI_NOT,creator:{'@type':'Organization',name:'Ankara İş İlanı'},copyrightNotice:'© 2026 Ankara İş İlanı'} : undefined;
+      name:y.baslik,caption:g.alt,creator:{'@type':'Organization',name:'Ankara İş İlanı'},copyrightNotice:'© 2026 Ankara İş İlanı'} : undefined;
   const ld=[{'@context':'https://schema.org','@type':'Article',headline:y.baslik,description:y.ozet,
       datePublished:y.tarih,dateModified:guncel,inLanguage:'tr-TR',
       ...(resimLd?{image:resimLd,thumbnailUrl:`${SITE}/${g.webp800}`}:{}),

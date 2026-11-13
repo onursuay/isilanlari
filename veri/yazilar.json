@@ -9,8 +9,8 @@
    "okuma": 7,
    "kisa": "En gerçekçi ek iş fikirleri, ana işinizin bittiği saatte ihtiyaç duyulan işlerdir: akşam vardiyalı depo ve market işleri, hafta sonu servis, kurye, çağrı merkezi, özel ders ve bilgisayar başında yapılan destek işleri. Sermaye gerektirmeyen bir iş seçin ve işe başlamak için sizden para isteyen her teklife mesafe koyun.",
    "gorsel": {
-    "alt": "Akşam ışığında masada açık bir defter, ek iş fikirlerini gösteren küçük çizimler, bir bardak çay ve masa lambası",
-    "baslik": "Ek iş fikirleri üzerine çalışan biri"
+    "alt": "Ek iş fikirleri: akşam masasında defterine ek iş seçeneklerini çizen bir çalışan",
+    "baslik": "Ek iş fikirleri: çalışanlar için 12 gerçekçi seçenek"
    },
    "bolumler": [
     {
@@ -160,8 +160,8 @@
    "okuma": 7,
    "kisa": "Evden yapılabilecek gerçek ek işler çoğunlukla bilgisayar ya da telefon başında yürüyen işlerdir: müşteri desteği, çağrı merkezi, veri girişi, çeviri, tasarım, yazılım ve muhasebe desteği. İş Kanunu, evden yapılan işi \"uzaktan çalışma\" olarak tanımlar ve yazılı sözleşme ister. Sizden para isteyen evde iş teklifi ise iş değildir.",
    "gorsel": {
-    "alt": "Pencere kenarında küçük bir masada açık dizüstü bilgisayar, kulaklık ve bir bardak çay; evden çalışan birinin elleri klavyede",
-    "baslik": "Evden ek iş yapan biri"
+    "alt": "Evde ek iş: pencere kenarındaki masada dizüstü bilgisayarla evden çalışan biri",
+    "baslik": "Evde ek iş: evden yapılabilecek işler ve güvenli başlangıç"
    },
    "bolumler": [
     {
@@ -261,8 +261,8 @@
    "okuma": 6,
    "kisa": "Gerçek bir evde ek iş ilanında firmanın açık adı, işin tanımı, çalışma saati, ücret ve başvuru yolu yazar. Ücret, kargo ya da kayıt bedeli isteyen, yalnız bir cep numarası veren ve \"günde birkaç saatle yüksek kazanç\" vaat eden ilan gerçek bir iş ilanı değildir.",
    "gorsel": {
-    "alt": "Akşam koltukta telefonunda iş ilanlarına bakan birinin elleri, ekranda bulanık ilan kartları",
-    "baslik": "Telefondan evde ek iş ilanlarına bakan biri"
+    "alt": "Evde ek iş ilanları: akşam koltukta telefonundan ilanlara bakan biri",
+    "baslik": "Evde ek iş ilanları: gerçek ilanı nasıl ayırt edersiniz?"
    },
    "bolumler": [
     {
@@ -341,8 +341,8 @@
    "okuma": 6,
    "kisa": "Akşam saat 8'den sonra en çok iş çıkan alanlar; kargo depoları, kurye, market, kafe ve restoranlar, çağrı merkezleri ve güvenlik işleridir. İş Kanunu'na göre \"gece\" en geç saat 20.00'de başlar ve işçilerin gece çalışması kural olarak yedi buçuk saati geçemez.",
    "gorsel": {
-    "alt": "Rakamsız duvar saatinin akşam sekizi gösterdiği bir kafe tezgâhı, önlüğünü bağlayan bir çalışan arkadan görünüyor",
-    "baslik": "Akşam saat sekizde başlayan ek iş vardiyası"
+    "alt": "Akşam saat 8'den sonra ek iş: saat sekizde kafe tezgâhında önlüğünü bağlayıp vardiyaya hazırlanan çalışan",
+    "baslik": "Akşam saat 8'den sonra ek iş: bu saatte çalışan işler"
    },
    "bolumler": [
     {
@@ -427,8 +427,8 @@
    "okuma": 6,
    "kisa": "Hafta sonu ek iş en çok kafe, restoran, pastane, alışveriş merkezi mağazaları, etkinlik ve fuar organizasyonları ile market ve depo işlerinde çıkar. Bu işler çoğunlukla kısmi süreli iş sözleşmesiyle yapılır; kısmi süreli çalışan, salt bu nedenle tam süreli emsal işçiden farklı işleme tabi tutulamaz.",
    "gorsel": {
-    "alt": "Cumartesi sabahı bir pastane-kafede tezgâha simit ve hamur işleri dizen, arkadan görünen bir çalışan",
-    "baslik": "Hafta sonu kafede çalışan biri"
+    "alt": "Hafta sonu ek iş: cumartesi sabahı pastane-kafede tezgâha simit ve hamur işi dizen çalışan",
+    "baslik": "Hafta sonu ek iş: cumartesi ve pazar çalışılan işler"
    },
    "bolumler": [
     {
@@ -521,8 +521,8 @@
    "okuma": 6,
    "kisa": "Gece ek işleri en çok lojistik depoları, kargo ayrıştırma merkezleri, güvenlik, sağlık destek hizmetleri ve 24 saat açık işletmelerde çıkar. İş Kanunu'na göre gece çalışması kural olarak yedi buçuk saati geçemez; sanayiye ait işlerde 18 yaşını doldurmamış kişilerin gece çalıştırılması yasaktır.",
    "gorsel": {
-    "alt": "Gece bir lojistik deposunda markasız kolilerin ilerlediği uzun bir bant ve reflektörlü yelek giymiş, arkadan görünen bir çalışan",
-    "baslik": "Gece vardiyasında depo çalışanı"
+    "alt": "Gece ek iş ilanları: gece vardiyasında depo bandında koli ayıran çalışan",
+    "baslik": "Gece ek iş ilanları: gece vardiyası ve yasal sınırlar"
    },
    "bolumler": [
     {
@@ -627,8 +627,8 @@
    "okuma": 6,
    "kisa": "Günlük ek iş en çok etkinlik ve fuar kurulumu, depo ve taşıma, tanıtım ve broşür dağıtımı, temizlik ve inşaat yardımcılığında çıkar. Bir gün bile çalışsanız işverenin sizi işe başlamadan önce SGK'ya bildirmesi gerekir. İşverenin ihtiyaç duydukça sizi çağırdığı düzen, İş Kanunu'nda \"çağrı üzerine çalışma\" olarak tanımlanır.",
    "gorsel": {
-    "alt": "Sabah kurulumu yapılan bir fuar salonunda katlanır sandalye taşıyan, arkadan görünen iki çalışan",
-    "baslik": "Günlük işte fuar kurulumu"
+    "alt": "Günlük ek iş: fuar salonunda sandalye taşıyarak kurulum yapan iki çalışan",
+    "baslik": "Günlük ek iş: yevmiyeli ve kısa süreli işler"
    },
    "bolumler": [
     {
@@ -724,8 +724,8 @@
    "okuma": 7,
    "kisa": "İnternetten yapılan gerçek ek işler; müşteri desteği, veri girişi, çeviri, metin yazarlığı, tasarım, yazılım, sosyal medya yönetimi ve online özel derstir. Bu işlerde ücreti işveren ya da müşteri size öder. Beğeni, yorum ya da \"görev\" karşılığı para vaat edip bir aşamada sizden para yatırmanızı isteyen düzenler iş değildir.",
    "gorsel": {
-    "alt": "Gece mutfak masasında açık dizüstü bilgisayar, yanında akıllı telefon ve kulaklık, klavyede yazan iki el",
-    "baslik": "İnternetten ek iş yapan biri"
+    "alt": "Online ek iş: gece mutfak masasında dizüstü bilgisayarla internetten çalışan biri",
+    "baslik": "Online ek iş: internetten ve telefondan yapılan işler"
    },
    "bolumler": [
     {
@@ -840,8 +840,8 @@
    "okuma": 6,
    "kisa": "657 sayılı Kanun'un 28. maddesi, memurların tacir ya da esnaf sayılmalarını gerektirecek faaliyette bulunmasını, özel bir iş yerinde çalışmasını ve serbest meslek için büro açmasını yasaklar. Bu nedenle memurlar özel sektörde ek iş yapamaz. Özel kanunlarda belirtilen görevler ve bazı kooperatif ve meslek kuruluşu üyelikleri yasak dışındadır.",
    "gorsel": {
-    "alt": "Mesai sonrası bir ofis masasında açık kalın bir kanun kitabı, üzerinde okuma gözlüğü ve yanında dosyalar",
-    "baslik": "Memurların ek iş yasağını anlatan kanun kitabı"
+    "alt": "Memurlar ek iş yapabilir mi: ofis masasında açık kanun kitabı, okuma gözlüğü ve dosyalar",
+    "baslik": "Memurlar ek iş yapabilir mi? 657 sayılı Kanun ne diyor"
    },
    "bolumler": [
     {
@@ -913,8 +913,8 @@
    "okuma": 6,
    "kisa": "İşverene bağlı çalışan herkesin sigortalı bildirilmesi zorunludur; ek işte de bu kural değişmez. Sigortasız çalışırsanız prim günleriniz emeklilik hesabınıza girmez, ücret ve iş kazası anlaşmazlıklarında çalıştığınızı ispat etmek size kalır. İki ayrı işverende çalışıyorsanız iki işveren de sizi kendi iş yerinden bildirmek zorundadır.",
    "gorsel": {
-    "alt": "Masada yazısız bir iş sözleşmesinin imza satırı üzerinde duraksayan bir el, yanında hesap makinesi",
-    "baslik": "Ek iş sözleşmesini imzalamadan önce düşünen biri"
+    "alt": "Sigortasız ek iş: masada iş sözleşmesi formu ve hesap makinesi, forma yazan bir el",
+    "baslik": "Sigortasız ek iş: riskleri ve iki işte sigorta"
    },
    "bolumler": [
     {
@@ -1013,8 +1013,8 @@
    "okuma": 6,
    "kisa": "Ek iş ilanları en çok kariyer sitelerinde, İŞKUR'da, firmaların kendi kariyer sayfalarında, yerel iş ilanı sayfalarında ve sosyal medya gruplarında çıkar. Hangi kanalı kullanırsanız kullanın, ilanda firmanın açık adı, işin tanımı ve ücret bilgisi yoksa ya da sizden para isteniyorsa başvurmayın.",
    "gorsel": {
-    "alt": "Bir bina girişindeki mantar panoya boş bir ilan kâğıdı iğneleyen el, panoda çok sayıda kâğıt ilan",
-    "baslik": "Ek iş ilanlarının asıldığı ilan panosu"
+    "alt": "Ek iş ilanları nereden bulunur: ilan panosuna not iğneleyen ve elinde telefon tutan biri",
+    "baslik": "Ek iş ilanları nereden bulunur? Siteler, İŞKUR ve gruplar"
    },
    "bolumler": [
     {
@@ -1118,8 +1118,8 @@
    "okuma": 5,
    "kisa": "Ek işe başlamadan önce ana işinizin sözleşmesini kontrol edin, haftada kaç saat ayırabileceğinizi belirleyin, yol ve yemek giderini hesaplayın, size uygun iş türünü seçin, ilanları doğrulayın, ilk görüşmede ücret ve sigortayı netleştirin ve işe başladığınız gün sigorta girişinizi kontrol edin.",
    "gorsel": {
-    "alt": "Sabah kapı önündeki rafta tik işaretli bir defter, telefon, anahtar, ulaşım kartı ve termos",
-    "baslik": "Ek işe başlamak için hazırlık"
+    "alt": "Ek iş yapmak istiyorum: kapı girişindeki rafta kontrol listesi defteri, telefon ve anahtarlar",
+    "baslik": "Ek iş yapmak istiyorum: başlamadan önce 7 adım"
    },
    "bolumler": [
     {
@@ -1208,8 +1208,8 @@
    "okuma": 6,
    "kisa": "Mesleğinizle ilgili bir ek iş, deneyiminizi kullandığınız için genellikle daha iyi ücretlendirilir. Muhasebe bilgisi olanlar ön muhasebe desteği, mühendisler proje çizimi ve danışmanlık, yazılımcılar proje bazlı iş, servis deneyimi olanlar hafta sonu restoran işi yapabilir. Özel güvenlikte valilikçe verilen kimlik kartı, defter tutma ve beyanname işlerinde meslek ruhsatı gerekir.",
    "gorsel": {
-    "alt": "Koyu mavi masada düzenlenmiş meslek araçları: hesap makinesi ve defter, mühendis cetveli ve proje çizimi, telsiz ve şapka, garson sipariş bloğu ve tepsi",
-    "baslik": "Farklı mesleklerin ek iş araçları"
+    "alt": "Mesleğe göre ek iş: hesap makinesi, cetvel, telsiz ve servis tepsisi masada bir arada",
+    "baslik": "Mesleğe göre ek iş: muhasebeci, mühendis, güvenlik ve garson"
    },
    "bolumler": [
     {
@@ -1316,8 +1316,8 @@
    "okuma": 6,
    "kisa": "Evde ek iş paketleme ilanları genellikle kolay iş ve haftalık ödeme vaat eder, ardından kargo, malzeme ya da teminat adıyla ödeme ister. Gerçek paketleme işi ise çoğunlukla fabrika, atölye ve depolarda, iş yerinde ve sigortalı olarak yapılır. İşe başlamak için sizden para isteniyorsa o teklif iş değildir.",
    "gorsel": {
-    "alt": "Akşam mutfak masasında markasız karton kutular, koli bandı ve küçük poşetler; bir kutuyu bantlayan iki el",
-    "baslik": "Evde paketleme teklifiyle gelen kutular"
+    "alt": "Evde ek iş paketleme: mutfak masasında markasız koliyi bantlayan eller",
+    "baslik": "Evde ek iş paketleme: ilan ne vaat ediyor, gerçekte ne var?"
    },
    "bolumler": [
     {
@@ -1416,8 +1416,8 @@
    "okuma": 5,
    "kisa": "Evde paketleme ilanlarında sabun, toka, anahtarlık, çorap, mum, mandal, maske, kına ve galoş gibi küçük ve ucuz ürünler sık geçer. Ürünün adı ilanın gerçek olup olmadığını göstermez. Belirleyici ölçü her üründe aynıdır: işe başlamak için sizden para isteniyorsa teklif iş değildir.",
    "gorsel": {
-    "alt": "Koyu mavi zeminde düzenli sıralar hâlinde sabun kalıpları, saç tokaları, küçük mumlar, tahta mandallar, katlanmış çoraplar ve galoşlar",
-    "baslik": "Evde paketleme ilanlarında geçen ürünler"
+    "alt": "Evde paketleme ürünleri: sabun, toka, mum, mandal, çorap ve galoş düzenli sıralanmış",
+    "baslik": "Sabun, toka, mum, mandal: evde paketleme ilanlarındaki ürünler"
    },
    "bolumler": [
     {
@@ -1515,8 +1515,8 @@
    "okuma": 5,
    "kisa": "İŞKUR, 2022'de kurum adı ve logosu kullanılarak yayımlanan evde paketleme ilanlarına karşı vatandaşları uyardı ve resmî adresi iskur.gov.tr dışında yayımlanan, kaynağı belirsiz iş ilanlarına itibar edilmemesini istedi. İŞKUR adıyla gelen bir teklifte sizden kapora ya da kargo bedeli isteniyorsa o teklif İŞKUR'un değildir.",
    "gorsel": {
-    "alt": "Mutfak masasında bulanık bir sohbet ekranı gösteren telefon, yanında ters çevrilmiş kimlik kartı ve banka kartı, üzerinde tereddüt eden bir el",
-    "baslik": "İŞKUR adıyla gelen evde iş teklifi"
+    "alt": "İŞKUR evde ek iş: masadaki telefonda sohbet ekranı, yanında banka kartı",
+    "baslik": "İŞKUR evde ek iş veya paketleme işi veriyor mu?"
    },
    "bolumler": [
     {
@@ -1637,8 +1637,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Markasız bir karton kutuyu büyüteçle inceleyen bir el, yanında koli bandı ve telefon",
-    "baslik": "Evde paketleme teklifini inceleyen biri"
+    "alt": "Evde paketleme işi güvenilir mi: markasız karton kutuyu büyüteçle inceleyen bir el",
+    "baslik": "Evde paketleme işi güvenilir mi?"
    }
   },
   {
@@ -1683,8 +1683,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Masada hesap makinesine basan bir el, yanında ters duran banknotlar ve karton kutu",
-    "baslik": "Evde paketleme kazancını hesaplayan biri"
+    "alt": "Evde paketleme işi ne kadar kazandırır: hesap makinesiyle kazanç hesabı yapan el ve karton kutu",
+    "baslik": "Evde paketleme işi ne kadar kazandırır?"
    }
   },
   {
@@ -1732,8 +1732,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Bulanık sohbet ekranı gösteren telefonu eliyle kapatan biri, masada yazısız bir dekont ve banka kartı",
-    "baslik": "Evde paketleme mağduriyetinin işaretleri"
+    "alt": "Evde paketleme işinde mağduriyet: masada telefon, ödeme fişi ve banka kartı",
+    "baslik": "Evde paketleme işinde mağduriyet nasıl anlaşılır?"
    }
   },
   {
@@ -1781,8 +1781,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Mavi saatte apartman ve sanayi bölgeleriyle uzanan büyük bir şehir manzarası, pencerelerde yanan ışıklar",
-    "baslik": "Şehirde ek iş çıkan bölgeler"
+    "alt": "Ankara'da ek iş nerelerde çıkıyor: akşam ışıklarında konut ve sanayi bölgeleri olan büyük bir şehir manzarası",
+    "baslik": "Ankara'da ek iş nerelerde çıkıyor?"
    }
   },
   {
@@ -1828,8 +1828,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Akşam masasında hesap makinesi, cüzdan, ulaşım kartı, yemek kabı ve araba anahtarı; hesap makinesine uzanan bir el",
-    "baslik": "Ek işin gerçek kazancını hesaplamak"
+    "alt": "Ek iş ne kadar kazandırır: masada hesap makinesi, cüzdan, ulaşım kartı ve araba anahtarı",
+    "baslik": "Ek iş ne kadar kazandırır?"
    }
   },
   {
@@ -1869,8 +1869,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Sırt çantası sandalyeye asılı bir öğrencinin kafe tezgâhında önlüğünü bağlaması, arkadan görünüyor",
-    "baslik": "Öğrenci ek işte kafede çalışıyor"
+    "alt": "Öğrenciye uygun ek işler: sırt çantasını sandalyeye asıp kafede önlük bağlayan öğrenci",
+    "baslik": "Öğrenciye uygun ek işler"
    }
   },
   {
@@ -1922,8 +1922,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Aydınlık bir paketleme tesisinde uzun bir hat başında markasız kolileri dolduran, arkadan görünen çalışanlar",
-    "baslik": "Paketleme işinin yapıldığı tesis"
+    "alt": "Evde paketleme işi veren firmalar: paketleme tesisinde koli dolduran çalışanlar",
+    "baslik": "Evde paketleme işi veren firmalar gerçek mi?"
    }
   },
   {
@@ -1968,8 +1968,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Ofis masasında yazısız bir kayıt formunu karşıdaki kalemli ele doğru iten bir el, köşede makbuz defteri",
-    "baslik": "Aracının kayıt formu uzattığı an"
+    "alt": "Evde paketleme acentesi nedir: masada kayıt formu uzatan ve kalem tutan eller",
+    "baslik": "Evde paketleme acentesi nedir, güvenilir mi?"
    }
   },
   {
@@ -2016,8 +2016,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Mutfak masasında örgü ören eller, yanında etiketsiz ev yapımı reçel kavanozları ve kâğıda sarılı el yapımı sabunlar",
-    "baslik": "Evde el emeği ürün hazırlayan biri"
+    "alt": "Ev hanımlarına evde iş imkânı: mutfak masasında örgü ören eller ve ev yapımı reçel kavanozları",
+    "baslik": "Ev hanımlarına evde iş imkânı: gerçekte ne var?"
    }
   },
   {
@@ -2065,8 +2065,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Akşam ışıklarıyla aydınlanan bir kafe terasında çay bardaklı tepsi taşıyan, arkadan görünen bir garson",
-    "baslik": "Akşam ek işte çalışan garson"
+    "alt": "Akşam ve hafta sonu ek iş: ışıklarla aydınlanan kafe terasında çay servisi yapan garson",
+    "baslik": "Akşam ve hafta sonu yapılabilecek ek işler"
    }
   },
   {
@@ -2113,8 +2113,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Gece ıslak şehir sokağında arkasında markasız teslimat kutusu olan motosikletli kurye, arkadan görünüyor",
-    "baslik": "Gece çalışan motokurye"
+    "alt": "Araçla yapılabilecek ek işler: gece ıslak yolda koli taşıyan motokurye",
+    "baslik": "Aracı olanlar için ek iş yolları"
    }
   },
   {
@@ -2162,8 +2162,8 @@
     }
    ],
    "gorsel": {
-    "alt": "Alışveriş merkezindeki bir giyim mağazasında ahşap masada kazak katlayan, arkadan görünen bir çalışan",
-    "baslik": "Part time mağaza çalışanı"
+    "alt": "Part time iş ilanları: alışveriş merkezindeki mağazada kazak katlayan çalışan",
+    "baslik": "Ankara'da part time iş nasıl bulunur?"
    }
   }
  ]
