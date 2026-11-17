@@ -3313,11 +3313,7 @@
      "ad": "İŞKUR: Ankara iletişim bilgileri",
      "url": "https://www.iskur.gov.tr/iletisim?q=101&il=ankara"
     }
-   ],
-   "gorsel": {
-    "alt": "İş arayan kişinin dizüstü bilgisayarda İŞKUR kayıt formunu doldurduğu çalışma masası",
-    "baslik": "İŞKUR kaydı internet şubesinden birkaç adımda tamamlanır."
-   }
+   ]
   },
   {
    "slug": "typ-basvuru-ankara",
