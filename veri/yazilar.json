@@ -3211,6 +3211,109 @@
     "baslik": "Ankara'da part time iş nasıl bulunur?"
    },
    "lead": "Part time iş aramanın işleyen yolları, ilçelere göre iş profili ve başvuruda öne geçme."
+  },
+  {
+   "slug": "iskur-kayit-ankara",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "İŞKUR'a Kayıt Nasıl Yapılır? Ankara Hizmet Merkezleri Ve Adımlar",
+   "ozet": "İŞKUR iş arayan kaydı nasıl yapılır? İnternet şubesi ve şahsen başvuru adımları, kaydın geçerlilik süresi ve Ankara'daki İŞKUR hizmet merkezlerinin adresleri.",
+   "lead": "İŞKUR kaydı internet şubesinden ya da Ankara'daki bir birimde şahsen yapılır; kayıt on iki ay aktif kalır.",
+   "tarih": "2026-11-17",
+   "okuma": 5,
+   "bolumler": [
+    {
+     "h": "Kayıt Şartları",
+     "p": [
+      "İŞKUR'un iş arayan kayıt sayfasına göre kayıt için <strong>en az 14 yaşını doldurmuş olmak</strong> gerekir. Kayıt, kişinin beyanına dayanır; beyanların gerçek dışı çıkması hâlinde sorumluluğu Kurum üstlenmez.",
+      "Kaydınız <strong>son işlem tarihinden itibaren on iki ay</strong> aktif kalır. Süre dolmadan kayıtlı olduğunuz hesapta bir işlem yapmanız, kaydın aktif kalmasına yardımcı olur."
+     ]
+    },
+    {
+     "h": "Adım Adım Kayıt",
+     "p": [
+      "<strong>1. Kaydı başlatın.</strong> İŞKUR internet şubesine (esube.iskur.gov.tr) girerek kaydı başlatabilirsiniz. İsterseniz Ankara'daki İl Müdürlüğüne ya da bir hizmet merkezine gidip Kurum personeline şahsen de başvurabilirsiniz.",
+      "<strong>2. Bilgileri eksiksiz girin.</strong> Kişisel, iletişim, eğitim ve meslek bilgilerinizi doğru yazın. İŞKUR sayfası, özgeçmişte eğitim ve meslek bilgisi girilmeden kaydın aktife alınmadığını belirtir.",
+      "<strong>3. Belgeli durumunuz varsa onaylatın.</strong> Engelli, eski hükümlü ya da öncelikli gönderme hakkı gibi bir durumunuz varsa ilgili belgeyi İl Müdürlüğüne veya Hizmet Merkezine götürüp onaylatmanız gerekir. Onaylatmazsanız normal statüde işlem görürsünüz.",
+      "<strong>4. Danışmanınızı bekleyin.</strong> İŞKUR, her iş arayana bir iş ve meslek danışmanı atadığını duyurur. Danışmanla görüşmeden önce hangi işte, hangi saatlerde çalışabileceğinizi netleştirmeniz işinizi kolaylaştırır."
+     ]
+    },
+    {
+     "h": "Ankara'daki İŞKUR Birimleri",
+     "p": [
+      "Aşağıdaki adres ve telefonlar İŞKUR'un Ankara iletişim sayfasında yazdığı gibi aktarılmıştır (17 Kasım 2026'da okundu). Adres ve telefonlar değişebileceği için gitmeden önce arayın ya da İŞKUR iletişim sayfasından teyit edin."
+     ],
+     "liste": [
+      "<strong>Ankara İl Müdürlüğü:</strong> Ayrancı Mah. Uçarlı Cad. No:29, Çankaya. Telefon: (0 312) 435 15 65.",
+      "<strong>Çankaya Hizmet Merkezi:</strong> Sağlık Sok. No:1, Sıhhiye. Telefon: (0 312) 431 03 28.",
+      "<strong>Altındağ Hizmet Merkezi:</strong> Altındağ Cad. No:47, Dışkapı. Telefon: (0 312) 317 03 62.",
+      "<strong>Ostim Hizmet Merkezi:</strong> Ahi Evran Cad. Balkaya İş Merkezi 19/B, Ostim, Yenimahalle. Telefon: (0 312) 354 80 57.",
+      "<strong>Sincan Hizmet Merkezi:</strong> Ahi Evran Mah. Dahi Sok. No:3, Sincan. Telefon: (0 312) 269 40 10.",
+      "<strong>Polatlı Hizmet Merkezi:</strong> Battalgazi Cad. Perpa İş Merkezi 2. Kat No:59-60, Polatlı. Telefon: (0 312) 623 54 55."
+     ]
+    },
+    {
+     "h": "Hangi Kanalı Seçmeli?",
+     "liste": [
+      "<strong>İnternet şubesi:</strong> evden, kendi saatinizde kayıt yapmak isteyenler için. Bilgilerinizi hazır tutun.",
+      "<strong>Şahsen başvuru:</strong> belge onaylatmanız gerekiyorsa ya da internet şubesinde takıldıysanız en kısa yol; size en yakın birimi yukarıdaki listeden seçin.",
+      "<strong>İletişim hattı:</strong> İŞKUR'un 444 75 87 numaralı hattı, sayfalarında iletişim kanalı olarak yazılıdır; kayıt adımında takılırsanız arayabilirsiniz."
+     ]
+    },
+    {
+     "h": "Kayıttan Sonra Ne Yapmalı?",
+     "p": [
+      "İŞKUR kaydı iş garantisi vermez; açık iş ve program duyurularına ulaşmanın bir yoludur. İlan arayışınızı tek kanala bağlamayın: yerel ilan sayfalarına ve doğrudan başvurulara da bakın. Ankara'daki ilanlar için <a href=\"/guncel-ilanlar\">güncel ilanlar</a> sayfasını, yöntemler için <a href=\"/yazi/ankarada-ek-is-bulma-rehberi\">Ankara'da ek iş bulma rehberini</a> kullanabilirsiniz.",
+      "Kayıtlı olduğunuz için sizi arayan her teklifi de doğrulayın: gerçek bir işveren ya da program, işe girmeniz için sizden para istemez. Ayrıntı için <a href=\"/yazi/iskur-evde-ek-is-veriyor-mu\">İŞKUR evde ek iş veriyor mu?</a> yazısına bakın."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "İŞKUR'a kaç yaşında kayıt olunur?",
+     "c": "İŞKUR'un kayıt sayfasına göre en az 14 yaşını doldurmuş olmak gerekir."
+    },
+    {
+     "s": "İŞKUR kaydı ne kadar süre geçerli kalır?",
+     "c": "Kayıt, son işlem tarihinden itibaren on iki ay boyunca aktif kalır."
+    },
+    {
+     "s": "İŞKUR'a internetten mi, şahsen mi kayıt olunur?",
+     "c": "İkisi de olur. İnternet şubesinden (esube.iskur.gov.tr) ya da Ankara'daki İl Müdürlüğü ve hizmet merkezlerinde Kurum personeline şahsen başvurarak kayıt yapılabilir."
+    },
+    {
+     "s": "Eğitim ve meslek bilgisi girmezsem ne olur?",
+     "c": "İŞKUR sayfasına göre özgeçmişte eğitim ve meslek bilgisi girilmeden kayıt aktife alınmaz."
+    }
+   ],
+   "kisa": "İŞKUR iş arayan kaydı için en az 14 yaşında olmanız gerekir. Kayıt, internet şubesinden (esube.iskur.gov.tr) ya da Kurum personeline şahsen başvurarak yapılır. Eğitim ve meslek bilgisi girilmeden kayıt aktif olmaz. Kayıt, son işlem tarihinden itibaren on iki ay aktif kalır.",
+   "uyari": "Bu yazı İŞKUR'un resmî sayfalarından 17 Kasım 2026'da derlenmiştir. Şartlar ve adresler değişebilir; işlem yapmadan önce İŞKUR'un güncel sayfasını kontrol edin.",
+   "anahtar": [
+    "işkur kayıt",
+    "işkur kayıt ol",
+    "işkur ankara",
+    "işkur iş arayan kaydı",
+    "işkur hizmet merkezi ankara"
+   ],
+   "ilgili": [
+    "iskur-evde-ek-is-veriyor-mu",
+    "ankarada-ek-is-bulma-rehberi",
+    "ek-is-ilanlari-nereden-bulunur",
+    "ankara-part-time-is-ilanlari-rehberi"
+   ],
+   "kaynaklar": [
+    {
+     "ad": "İŞKUR: Kayıt (iş arayan)",
+     "url": "https://www.iskur.gov.tr/is-arayan/kayit/"
+    },
+    {
+     "ad": "İŞKUR: İş ve Meslek Danışmanlığı",
+     "url": "https://www.iskur.gov.tr/is-arayan/is-ve-meslek-danismanligi/"
+    },
+    {
+     "ad": "İŞKUR: Ankara iletişim bilgileri",
+     "url": "https://www.iskur.gov.tr/iletisim?q=101&il=ankara"
+    }
+   ]
   }
  ]
 }
