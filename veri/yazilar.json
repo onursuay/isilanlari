@@ -3411,7 +3411,11 @@
      "ad": "İŞKUR: Toplum Yararına Programlar (TYP)",
      "url": "https://www.iskur.gov.tr/is-arayan/aktif-isgucu-programlari/toplum-yararina-programlar-typ/"
     }
-   ]
+   ],
+   "gorsel": {
+    "alt": "Toplum yararına programda çalışan bir kişinin sabah saatlerinde Ankara'da bir park yolunda yürüdüğü an",
+    "baslik": "TYP kapsamındaki işler çoğunlukla parklar gibi kamu alanlarında yürütülür."
+   }
   }
  ]
 }
