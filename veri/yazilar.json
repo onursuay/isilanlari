@@ -3314,6 +3314,104 @@
      "url": "https://www.iskur.gov.tr/iletisim?q=101&il=ankara"
     }
    ]
+  },
+  {
+   "slug": "typ-basvuru-ankara",
+   "kategori": "ek-is-ilanlari",
+   "baslik": "TYP Başvurusu Nasıl Yapılır? Şartlar, Süre Ve Ankara'da Takip",
+   "ozet": "İŞKUR Toplum Yararına Program (TYP) nedir, kimler katılabilir? Katılım şartları, azami süre, haftalık çalışma, ödeme ve başvuru öncesi kontrol listesi.",
+   "lead": "TYP, İŞKUR'un kamu kurumlarıyla yürüttüğü geçici çalışma programıdır; her programın şartını il müdürlüğünün ilanından kontrol edin.",
+   "tarih": "2026-11-17",
+   "okuma": 6,
+   "bolumler": [
+    {
+     "h": "TYP Nedir?",
+     "p": [
+      "İŞKUR'un resmî sayfasına göre Toplum Yararına Programlar, kamu kurumlarıyla birlikte yürütülür. Afet, salgın, acil durum ve benzeri mücbir sebep dönemlerinde kamu hizmetlerini desteklemeyi, öncelikli gruplar başta olmak üzere işsizlere geçici gelir sağlamayı amaçlar.",
+      "TYP bir <strong>kalıcı iş</strong> değildir; süresi belli bir programdır. Kalıcı iş arıyorsanız programa başvururken ilan aramaya devam etmeniz gerekir."
+     ]
+    },
+    {
+     "h": "Kimler Katılabilir?",
+     "p": [
+      "İŞKUR sayfasında yazılı şartların özeti şöyledir. Kesin şartlar programın ilanında da yer aldığı için başvurmadan önce o ilanı okuyun."
+     ],
+     "liste": [
+      "Türkiye Cumhuriyeti vatandaşı, İŞKUR'a kayıtlı ve en az 18 yaşında olmak.",
+      "Kanunda belirtilen sigortalılık hâllerinde bildirilmemiş olmak; emekli ya da malulen aylık alan olmamak. Gönüllü sigorta bu şartın kapsamı dışındadır.",
+      "Öğrenci olmamak. Açık öğretim öğrencileri bu şartın dışındadır.",
+      "Aynı adreste yaşayanların iş geliri toplamı, net asgari ücretin bir buçuk katını aşmamalıdır; aşarsa o adreste yaşayanlar katılamaz."
+     ]
+    },
+    {
+     "h": "Süre, Çalışma Saati Ve Ödeme",
+     "liste": [
+      "<strong>Program süresi:</strong> her program için en fazla 6 ay.",
+      "<strong>Ömür boyu sınır:</strong> bir kişi, 27.09.2017 sonrasındaki katılımlar dahil toplam 9 aya kadar yararlanabilir.",
+      "<strong>Haftalık süre:</strong> 45 saat.",
+      "<strong>Ödeme:</strong> İŞKUR sayfasına göre katılımcıya, Kanunda belirlenen günlük asgari ücret ile katıldığı gün sayısının çarpımı kadar ödeme yapılır.",
+      "<strong>İzin:</strong> Kuruma ve yükleniciye bilgi verip onay almak şartıyla süre boyunca 5 gün ücretsiz izin kullanılabilir."
+     ]
+    },
+    {
+     "h": "Başvuru Öncesi Kontrol Listesi",
+     "p": [
+      "TYP duyuruları il müdürlüklerinin ilanıyla yapılır; Ankara için güncel ilanı İŞKUR'un il sayfasından ve il müdürlüğünden takip edin. Kayıt yaptırmadıysanız önce <a href=\"/yazi/iskur-kayit-ankara\">İŞKUR kaydı ve Ankara hizmet merkezleri</a> yazısındaki adımları izleyin."
+     ],
+     "liste": [
+      "İŞKUR kaydınız aktif mi? Kayıt, son işlemden itibaren on iki ay aktif kalır.",
+      "Hane gelir şartını (net asgari ücretin bir buçuk katı) aynı adreste yaşayanlarla birlikte hesapladınız mı?",
+      "Başvuracağınız programın ilanında yazan görev yerini, başvuru tarihlerini ve seçim yöntemini okudunuz mu?",
+      "Yalnızca İŞKUR'un resmî kanallarından başvuru yapıyorsunuz, bir aracıya para ödemiyorsunuz."
+     ]
+    },
+    {
+     "h": "Seçim Nasıl Yapılır?",
+     "p": [
+      "İŞKUR sayfasına göre katılımcılar noter kurası, liste ya da yüzde 80 kura ile yüzde 20 liste yöntemlerinden biriyle belirlenir; hangisinin uygulanacağına il müdürlüğü karar verir. Kadınlar, 35 yaş üstü bireyler, engelliler ve eski hükümlüler gibi gruplar öncelikli sayılır.",
+      "Haklı bir mazeret olmadan programdan ayrılan ya da katılımı kendi kusuruyla sona eren kişi, son katılım tarihinden itibaren 24 ay yeni TYP'ye başvuramaz. Aynı kural, uygun üç iş teklifini mazeretsiz reddedenler için de geçerlidir."
+     ]
+    }
+   ],
+   "sss": [
+    {
+     "s": "TYP başvurusu nereden yapılır?",
+     "c": "TYP duyuruları İŞKUR il müdürlüklerince yapılır; başvuru, ilanda belirtilen İŞKUR kanalı üzerinden alınır. Önce İŞKUR'a kayıtlı olmanız gerekir."
+    },
+    {
+     "s": "TYP kaç ay sürer?",
+     "c": "İŞKUR sayfasına göre her program en fazla 6 aydır; bir kişi ömür boyu toplam 9 aya kadar yararlanabilir."
+    },
+    {
+     "s": "Öğrenciyken TYP'ye katılabilir miyim?",
+     "c": "İŞKUR sayfasına göre öğrenci olmamak şarttır; açık öğretim öğrencileri bunun dışındadır. Kendi durumunuz için programın ilanına bakın."
+    },
+    {
+     "s": "TYP'de haftalık çalışma süresi kaç saattir?",
+     "c": "İŞKUR sayfasına göre haftalık katılım süresi 45 saattir."
+    }
+   ],
+   "kisa": "TYP (Toplum Yararına Program), İŞKUR'un kamu kurumlarıyla yürüttüğü ve işsizlere geçici gelir sağlayan programdır. Katılım için Türkiye Cumhuriyeti vatandaşı, İŞKUR'a kayıtlı ve en az 18 yaşında olmak gerekir. Her program en fazla 6 ay sürer, haftalık katılım süresi 45 saattir.",
+   "uyari": "Bu yazı İŞKUR'un resmî TYP sayfasından 17 Kasım 2026'da derlenmiştir. Şartlar program ilanına göre değişebilir; başvurudan önce güncel ilanı kontrol edin.",
+   "anahtar": [
+    "typ başvuru",
+    "toplum yararına program",
+    "işkur typ",
+    "typ şartları",
+    "typ ankara"
+   ],
+   "ilgili": [
+    "iskur-kayit-ankara",
+    "iskur-evde-ek-is-veriyor-mu",
+    "sigortasiz-ek-is",
+    "ankarada-ek-is-bulma-rehberi"
+   ],
+   "kaynaklar": [
+    {
+     "ad": "İŞKUR: Toplum Yararına Programlar (TYP)",
+     "url": "https://www.iskur.gov.tr/is-arayan/aktif-isgucu-programlari/toplum-yararina-programlar-typ/"
+    }
+   ]
   }
  ]
 }
