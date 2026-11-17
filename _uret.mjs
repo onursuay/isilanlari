@@ -283,9 +283,10 @@ const satir = (i,k='') => { const sk = SEKTOR[i.kategori]||'İlan'; return `    
 /* Makale öne çıkan görselleri: medya/makale/<slug>.webp (1200x630), <slug>-800.webp, <slug>.jpg (paylaşım) */
 const yaziGorsel = y => { if(!y.gorsel) return null; const b=`medya/makale/${y.slug}`;
   if(!fs.existsSync(path.join(KOK,b+'.webp'))) return null;
-  return {thumb:`${b}-thumb.webp?v=${surum(b+'-thumb.webp')}`,webp:`${b}.webp?v=${surum(b+'.webp')}`,webp800:`${b}-800.webp?v=${surum(b+'-800.webp')}`,jpg:`${b}.jpg?v=${surum(b+'.jpg')}`,alt:y.gorsel.alt,baslik:y.gorsel.baslik}; };
+  return {thumb:`${b}-thumb.webp?v=${surum(b+'-thumb.webp')}`,webp:`${b}.webp?v=${surum(b+'.webp')}`,webp800:`${b}-800.webp?v=${surum(b+'-800.webp')}`,jpg:`${b}.jpg?v=${surum(b+'.jpg')}`,alt:y.gorsel.alt,baslik:y.gorsel.baslik,aciklama:(y.gorsel.baslik&&y.gorsel.baslik!==y.baslik)?y.gorsel.baslik:''}; };
 const oneCikan = g => `<figure class="one-cikan">
-      <img src="/${g.webp}" srcset="/${g.webp800} 800w, /${g.webp} 1200w" sizes="(min-width:1180px) 1116px, 100vw" width="1200" height="630" alt="${kac(g.alt)}" title="${kac(g.baslik)}" fetchpriority="high" decoding="async">
+      <img src="/${g.webp}" srcset="/${g.webp800} 800w, /${g.webp} 1200w" sizes="(min-width:1180px) 1116px, 100vw" width="1200" height="630" alt="${kac(g.alt)}" title="${kac(g.baslik)}" fetchpriority="high" decoding="async">${g.aciklama?`
+      <figcaption>${kac(g.aciklama)}</figcaption>`:''}
     </figure>`;
 const yaziKart = (y,k='') => { const g=yaziGorsel(y); return `      <a class="kart${g?' kart-gorselli':''}" href="${k}${yaziYol(y)}">${g?`
         <img class="kart-gorsel" src="/${g.webp800}" width="800" height="420" alt="" loading="lazy" decoding="async">`:''}
