@@ -52,8 +52,11 @@ const veri  = JSON.parse(oku('veri/ilanlar.json'));
 const yazi  = JSON.parse(oku('veri/yazilar.json')).yazilar;
 const ilanlar = [...veri.ilanlar].sort((a,b)=>b.tarih.localeCompare(a.tarih));
 const bugun = veri.guncelleme;
-const trTarih = t => new Date(t+'T00:00:00+03:00').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
-const ilanYol = i => `ilan/${slug(i.baslik)}-${i.kod.toLowerCase()}.html`;
+// saat dilimi sabit: bulut (UTC) üretimi 13 Kasım'ı 12 Kasım yazıyor, her koşuda 38 makale değişiyordu (24.11.2026)
+const trTarih = t => new Date(t+'T00:00:00+03:00').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Istanbul'});
+// şapkalı harfler (Tezgâhtar) adreste düşmesin; hat.py suzgec_slug ile aynı kural
+const ilanSlug = s => slug(s.replace(/[âÂ]/g,'a').replace(/[îÎ]/g,'i').replace(/[ûÛ]/g,'u'));
+const ilanYol = i => `ilan/${ilanSlug(i.baslik)}-${i.kod.toLowerCase()}.html`;
 const yaziYol = y => `yazi/${y.slug}.html`;
 const kisalt = (t,n) => { t=String(t).trim(); if(t.length<=n) return t;
   const kes=t.slice(0,n); const bos=kes.lastIndexOf(' '); return (bos>n*0.6?kes.slice(0,bos):kes).replace(/[.,;:]$/,'')+'…'; };

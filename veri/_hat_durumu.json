@@ -3,9 +3,9 @@
  "form_islenen": {},
  "islenen": {
   "m_Of-2DEFQMZ1VdqezbTI1DsFsh8HrkP1gt5DIGHmYjFOo2SeVCVPIjE6ltEvE-79VkLgk69w0-0OYiSACxnBiVA": {
-   "gerekce": "süzgeçten geçti; 1 ayrımcı ifade metne alınmadı",
+   "gerekce": "aynı ilan zaten yayında (A-1485)",
    "iz": "aed8b5e586a1e297",
-   "karar": "yayinla",
+   "karar": "reddet",
    "konusma": "t_1671014034686247",
    "zaman": "2026-11-19T16:44:34+0000"
   },
@@ -18,5 +18,14 @@
   }
  },
  "son_kod": 1486,
+ "sosyal_bekleyen": {
+  "A-1485": {
+   "deneme": 1,
+   "iz": "5e46a8732f921165",
+   "mesaj": "m_qfcYm8Hxg7_ivCfjV3phUcFsh8HrkP1gt5DIGHmYjFMwmjOJ6nQXCrggHUjz5YWQeahHUONHSLJgLsLMdZ0FMQ",
+   "platform": "messenger",
+   "satir": null
+  }
+ },
  "yayinlanan": {}
 }

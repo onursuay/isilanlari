@@ -39,12 +39,13 @@ def _graph(yol, alanlar=None, yontem="GET"):
             raise RuntimeError(f"Graph {yontem} {yol}: HTTP {e.code}")
 
 
-def url_bekle(adres, deneme=40, aralik=6):
-    """Görselin sitede yayında (HTTP 200, jpeg) olmasını bekler."""
+def url_bekle(adres, deneme=40, aralik=6, tur="image"):
+    """Adresin sitede yayında olmasını bekler (HTTP 200 + beklenen tür: görsel için 'image', sayfa için 'text/html').
+    24.11.2026: ilan SAYFASI da 'image' türüyle denetleniyordu, HTML hiç geçemediği için sosyal paylaşım hep atlanıyordu."""
     for _ in range(deneme):
         try:
             r = urllib.request.urlopen(adres)
-            if r.status == 200 and "image" in (r.headers.get("Content-Type") or ""):
+            if r.status == 200 and tur in (r.headers.get("Content-Type") or ""):
                 return True
         except Exception:
             pass

@@ -85,13 +85,31 @@ def yayinla():
     print(f"YAYIN: {len(adaylar)} yayına uygun ilan")
     for k in kararlar:
         print(f"  {k['zaman'][:10]} {k['platform']:9} {k['karar']:8} {k['gerekce']}")
+    durum.setdefault("yayinlanan", {})
+    veri = json.load(open(ILANLAR, encoding="utf-8"))
+    bekleyen_paylasim(yayinci, durum, veri)  # önceki koşuda sitesi geç açıldığı için paylaşılamayanlar
+    # aynı ilan (aynı kişi aynı metni yeniden gönderdi) ikinci kez yayınlanmaz: 24.11.2026 A-1485/A-1486 vakası
+    bugun = datetime.now(toplayici.TR).strftime("%Y-%m-%d")
+    gorulen = {_imza(i): i["kod"] for i in veri["ilanlar"] if _gun_farki(i.get("tarih"), bugun) <= TEKRAR_GUN}
+    tekil = []
+    for k in adaylar:
+        onceki = gorulen.get(_imza(k["ilan"]))
+        if onceki:
+            gerekce = f"aynı ilan zaten yayında ({onceki})"
+            print(f"  = {k['zaman'][:10]} {k['platform']:9} tekrar ilan, yayınlanmadı: {gerekce}")
+            if k["platform"] == "site-formu":
+                form_kaynagi.durum_yaz(k["satir"], f"Otomatik: {gerekce}")
+                durum["form_islenen"][k["id"]] = {"karar": "reddet", "gerekce": gerekce, "iz": k["iz"]}
+            elif k["id"] in durum.get("islenen", {}):
+                durum["islenen"][k["id"]].update({"karar": "reddet", "gerekce": gerekce})
+            continue
+        gorulen[_imza(k["ilan"])] = "bu koşu"
+        tekil.append(k)
+    adaylar = tekil
     if not adaylar:
         git_yayinla("Hat: gelen kutusu kararları", ["veri/_hat_durumu.json"])  # beklet/reddet kararları kaybolmasın
         return
-    veri = json.load(open(ILANLAR, encoding="utf-8"))
     son = max([int(re.sub(r"\D", "", i["kod"])) for i in veri["ilanlar"]] + [int(durum.get("son_kod", 0))])
-    durum.setdefault("yayinlanan", {})
-    bugun = datetime.now(toplayici.TR).strftime("%Y-%m-%d")
     yeni = []
     for k in adaylar:
         son += 1
@@ -113,31 +131,76 @@ def yayinla():
     yollar = ["veri/ilanlar.json", "veri/_hat_durumu.json", "medya", "ilan", "guncel-ilanlar.html", "index.html", "genel-ilanlar.html", "sitemap.xml"]
     git_yayinla("Hat: " + ", ".join(i["kod"] for _, i in yeni) + " yayına alındı", yollar, izlenenler_de=True)
     for k, i in yeni:
-        kod = i["kod"].lower()
-        gorsel = f"{SITE}/medya/ilan-{kod}.jpg"
-        ilan_adresi = f"{SITE}/ilan/{suzgec_slug(i['baslik'])}-{kod}"
-        if not yayinci.url_bekle(gorsel) or not yayinci.url_bekle(ilan_adresi.replace("/ilan/", "/ilan/"), 40, 6):
-            print(f"  ! {i['kod']}: site yayına çıkmadı, sosyal paylaşım ATLANDI")
-            if k["platform"] == "site-formu":
-                durum.setdefault("form_islenen", {})[k["id"]] = {"karar": "yayinla", "kod": i["kod"], "iz": k["iz"], "sosyal": "yok"}
-                form_kaynagi.durum_yaz(k["satir"], f"Otomatik: sitede {i['kod']} olarak eklendi, sosyal paylaşım YAPILAMADI (ekip kontrol etmeli)")
-            continue
-        metin = yayinci.paylasim_metni(i, ilan_adresi)
-        fb = yayinci.fb_foto(gorsel, metin)
-        ig = yayinci.ig_yayinla(yayinci.ig_hazirla(gorsel, metin))
-        durum["yayinlanan"][i["kod"]] = {"facebook": fb.get("link"), "instagram": ig.get("link"), "site": ilan_adresi,
-                                          "zaman": datetime.now(toplayici.TR).isoformat(timespec="seconds"), "mesaj": k["id"]}
-        print(f"  ✓ {i['kod']} → facebook={'var' if fb.get('link') else 'YOK'} instagram={'var' if ig.get('link') else 'YOK'}")
-        if k["platform"] == "site-formu":
-            durum.setdefault("form_islenen", {})[k["id"]] = {"karar": "yayinla", "kod": i["kod"], "iz": k["iz"]}
-            form_kaynagi.durum_yaz(k["satir"], f"Otomatik: yayınlandı {i['kod']} · {ilan_adresi} · "
-                                   f"Facebook {'var' if fb.get('link') else 'YOK'} · Instagram {'var' if ig.get('link') else 'YOK'}")
+        bilgi = {"mesaj": k["id"], "platform": k["platform"], "satir": k.get("satir"), "iz": k.get("iz"), "deneme": 0}
+        sosyal_paylas(yayinci, durum, i, bilgi, deneme=40)
         toplayici.durum_yaz(durum)
     git_yayinla("Hat: yayın kayıtları", ["veri/_hat_durumu.json"])
 
 
+TEKRAR_GUN = 30
+TEKRAR_ALANLARI = ("baslik", "ilce", "semt", "kategori", "ucret", "calisma", "vardiya", "servis", "yemek", "sigorta", "tecrube")
+
+
+def _imza(i):
+    return tuple(re.sub(r"\s+", " ", str(i.get(a) or "")).strip().casefold() for a in TEKRAR_ALANLARI)
+
+
+def _gun_farki(tarih, bugun):
+    try:
+        return (datetime.strptime(bugun, "%Y-%m-%d") - datetime.strptime(tarih, "%Y-%m-%d")).days
+    except (TypeError, ValueError):
+        return 10 ** 6
+
+
+def sosyal_paylas(yayinci, durum, i, bilgi, deneme=40):
+    """Site yayındaysa Facebook + Instagram'da paylaşır; değilse ilanı bekleyen listesine koyar (sonraki koşu yeniden dener).
+    Aynı ilan iki kez paylaşılmaz: 'yayinlanan' kaydı varsa hiçbir şey yapılmaz."""
+    kod = i["kod"]
+    bekleyen = durum.setdefault("sosyal_bekleyen", {})
+    if kod in durum["yayinlanan"]:
+        bekleyen.pop(kod, None)
+        return True
+    gorsel = f"{SITE}/medya/ilan-{kod.lower()}.jpg"
+    ilan_adresi = f"{SITE}/ilan/{suzgec_slug(i['baslik'])}-{kod.lower()}"
+    if not yayinci.url_bekle(gorsel, deneme, 6) or not yayinci.url_bekle(ilan_adresi, deneme, 6, tur="text/html"):
+        bilgi["deneme"] = bilgi.get("deneme", 0) + 1
+        bekleyen[kod] = bilgi
+        print(f"  ! {kod}: site henüz yayında değil, sosyal paylaşım sonraki koşuya kaldı (deneme {bilgi['deneme']})")
+        if bilgi.get("platform") == "site-formu" and bilgi["deneme"] == 1:
+            durum.setdefault("form_islenen", {})[bilgi["mesaj"]] = {"karar": "yayinla", "kod": kod, "iz": bilgi.get("iz"), "sosyal": "bekliyor"}
+            form_kaynagi.durum_yaz(bilgi["satir"], f"Otomatik: sitede {kod} olarak eklendi, sosyal paylaşım sonraki koşuda denenecek")
+        return False
+    metin = yayinci.paylasim_metni(i, ilan_adresi)
+    fb = yayinci.fb_foto(gorsel, metin)
+    ig = yayinci.ig_yayinla(yayinci.ig_hazirla(gorsel, metin))
+    durum["yayinlanan"][kod] = {"facebook": fb.get("link"), "instagram": ig.get("link"), "site": ilan_adresi,
+                                "zaman": datetime.now(toplayici.TR).isoformat(timespec="seconds"), "mesaj": bilgi["mesaj"]}
+    bekleyen.pop(kod, None)
+    print(f"  ✓ {kod} → facebook={'var' if fb.get('link') else 'YOK'} instagram={'var' if ig.get('link') else 'YOK'}")
+    if bilgi.get("platform") == "site-formu":
+        durum.setdefault("form_islenen", {})[bilgi["mesaj"]] = {"karar": "yayinla", "kod": kod, "iz": bilgi.get("iz")}
+        form_kaynagi.durum_yaz(bilgi["satir"], f"Otomatik: yayınlandı {kod} · {ilan_adresi} · "
+                               f"Facebook {'var' if fb.get('link') else 'YOK'} · Instagram {'var' if ig.get('link') else 'YOK'}")
+    return True
+
+
+def bekleyen_paylasim(yayinci, durum, veri):
+    bekleyen = durum.get("sosyal_bekleyen") or {}
+    if not bekleyen:
+        return
+    ilanlar = {i["kod"]: i for i in veri["ilanlar"]}
+    for kod, bilgi in list(bekleyen.items()):
+        if kod not in ilanlar:  # ilan siteden kaldırıldıysa paylaşılmaz
+            print(f"  - {kod}: sitede yok, bekleyen paylaşım kaldırıldı")
+            bekleyen.pop(kod)
+            continue
+        sosyal_paylas(yayinci, durum, ilanlar[kod], bilgi, deneme=5)
+    toplayici.durum_yaz(durum)
+
+
 def suzgec_slug(s):
-    tr = {"ç": "c", "Ç": "c", "ğ": "g", "Ğ": "g", "ı": "i", "İ": "i", "I": "i", "ö": "o", "Ö": "o", "ş": "s", "Ş": "s", "ü": "u", "Ü": "u"}
+    tr = {"ç": "c", "Ç": "c", "ğ": "g", "Ğ": "g", "ı": "i", "İ": "i", "I": "i", "ö": "o", "Ö": "o", "ş": "s", "Ş": "s", "ü": "u", "Ü": "u",
+          "â": "a", "Â": "a", "î": "i", "Î": "i", "û": "u", "Û": "u"}  # _uret.mjs ilanSlug ile aynı
     s = "".join(tr.get(c, c) for c in s).lower()
     return re.sub(r"^-|-$", "", re.sub(r"[^a-z0-9]+", "-", s))
 
