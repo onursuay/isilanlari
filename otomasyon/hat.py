@@ -27,15 +27,23 @@ def calistir(cmd, **kw):
     return subprocess.run(cmd, cwd=KOK, check=True, **kw)
 
 
-def git_yayinla(mesaj, yollar):
+def git_yayinla(mesaj, yollar, izlenenler_de=False):
     calistir(["git", "config", "user.name", "ankara-is-ilani-hat"])
     calistir(["git", "config", "user.email", "hat@ankaraisilani.com"])
     calistir(["git", "add", "--"] + yollar)
+    if izlenenler_de:
+        # _uret.mjs yeni ilanla listede olmayan sayfaları da yeniden yazabiliyor; hepsi aynı committe gider
+        calistir(["git", "add", "-u"])
     sonuc = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=KOK)
     if sonuc.returncode == 0:
         return False
     calistir(["git", "commit", "-q", "-m", mesaj])
-    calistir(["git", "pull", "-q", "--rebase", "origin", "main"])
+    kalan = subprocess.run(["git", "status", "--porcelain", "--untracked-files=no"], cwd=KOK,
+                           capture_output=True, text=True).stdout.strip()
+    if kalan:
+        print("  ! commit dışı kalan değişiklik:", kalan.replace("\n", " | "))
+    # 19-24.11.2026: commit dışı değişiklik 'pull --rebase'i düşürüyordu; autostash ile hat durmaz
+    calistir(["git", "pull", "-q", "--rebase", "--autostash", "origin", "main"])
     calistir(["git", "push", "-q", "origin", "main"])
     return True
 
@@ -103,7 +111,7 @@ def yayinla():
     calistir(["node", "_uret.mjs"])
     toplayici.durum_yaz(durum)
     yollar = ["veri/ilanlar.json", "veri/_hat_durumu.json", "medya", "ilan", "guncel-ilanlar.html", "index.html", "genel-ilanlar.html", "sitemap.xml"]
-    git_yayinla("Hat: " + ", ".join(i["kod"] for _, i in yeni) + " yayına alındı", yollar)
+    git_yayinla("Hat: " + ", ".join(i["kod"] for _, i in yeni) + " yayına alındı", yollar, izlenenler_de=True)
     for k, i in yeni:
         kod = i["kod"].lower()
         gorsel = f"{SITE}/medya/ilan-{kod}.jpg"
