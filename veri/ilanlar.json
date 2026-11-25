@@ -1,6 +1,23 @@
 {
-  "guncelleme": "2026-11-24",
+  "guncelleme": "2026-11-25",
   "ilanlar": [
+    {
+      "baslik": "Barista",
+      "ilce": "Çankaya",
+      "semt": "Çankaya",
+      "calisma": "Tam zamanlı",
+      "vardiya": "",
+      "kategori": "yeme-icme",
+      "sigorta": true,
+      "yemek": false,
+      "servis": false,
+      "tecrube": false,
+      "ucret": "",
+      "kod": "A-1487",
+      "aciklama": "Çankaya bölgesindeki bir işletmede görev alacak barista aranıyor. İşveren; sigorta imkânı sunduğunu belirtiyor. Tecrübe şartı yok.",
+      "kaynak": "site-formu",
+      "tarih": "2026-11-25"
+    },
     {
       "baslik": "Tezgâhtar",
       "ilce": "Keçiören",
