@@ -1,6 +1,12 @@
 {
  "baslangic": "2026-11-11T22:20:27.832835+03:00",
- "form_islenen": {},
+ "form_islenen": {
+  "AII-MWV0IMER-9F9A": {
+   "iz": "f0717daf0dcf011e",
+   "karar": "yayinla",
+   "kod": "A-1487"
+  }
+ },
  "islenen": {
   "m_Of-2DEFQMZ1VdqezbTI1DsFsh8HrkP1gt5DIGHmYjFOo2SeVCVPIjE6ltEvE-79VkLgk69w0-0OYiSACxnBiVA": {
    "gerekce": "aynı ilan zaten yayında (A-1485)",
@@ -26,6 +32,13 @@
    "mesaj": "m_qfcYm8Hxg7_ivCfjV3phUcFsh8HrkP1gt5DIGHmYjFMwmjOJ6nQXCrggHUjz5YWQeahHUONHSLJgLsLMdZ0FMQ",
    "site": "https://ankaraisilani.com/ilan/tezgahtar-a-1485",
    "zaman": "2026-11-24T07:35:01+03:00"
+  },
+  "A-1487": {
+   "facebook": "https://www.facebook.com/photo.php?fbid=1603850615122733&set=a.469380725236400&type=3",
+   "instagram": "https://www.instagram.com/p/DgJWZ9MD1qI/",
+   "mesaj": "AII-MWV0IMER-9F9A",
+   "site": "https://ankaraisilani.com/ilan/barista-a-1487",
+   "zaman": "2026-11-25T04:28:25+03:00"
   }
  }
 }
