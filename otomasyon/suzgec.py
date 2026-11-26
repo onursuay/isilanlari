@@ -9,7 +9,10 @@ Siteye söz verilenler burada uygulanır (hakkimizda sayfası):
 - Aday para ödemez: para isteyen ilan reddedilir.
 - Cinsiyet ve yaş şartı gibi ayrımcı ifadeler çıkarılır: yayın metni ham metinden KOPYALANMAZ,
   ayıklanan alanlardan şablonla yeniden kurulur.
-- Telefon numaraları sitede yer almaz: telefon/e-posta/bağlantı hiçbir çıktıya girmez.
+- İletişim (26.11.2026 Owner kararı): işverenin Messenger/Instagram ilan METNİNE kendisinin yazdığı telefon ve
+  e-posta ayrı alanlara (iletisim_tel, iletisim_eposta) alınır ve YALNIZ ilan sayfasında gösterilir; kartta ve
+  sosyal medya metninde yer almaz (trafik siteye gelir). Site formundan gelen ilanda telefon yayınlanmaz (formun sözü).
+  Bağlantılar hiçbir çıktıya girmez.
 Emin olunamayan her şey "beklet"e düşer; sistem tahminle yayın yapmaz.
 """
 import hashlib, re, unicodedata
@@ -108,6 +111,28 @@ def parmak_izi(metin):
     return hashlib.sha1(t.encode("utf-8")).hexdigest()[:16]
 
 
+TELEFON = re.compile(r"(?<!\d)(?:\+?90[\s.\-]*)?\(?0?[\s]*([2-5]\d{2})\)?[\s.\-]*(\d{3})[\s.\-]*(\d{2})[\s.\-]*(\d{2})(?!\d)")
+EPOSTA = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
+
+
+def iletisim_bul(ham):
+    """İlan metnindeki Türkiye telefonlarını (cep 5xx, sabit 2xx-4xx) ve e-postaları ayıklar; en çok ikişer.
+    444'lü çağrı merkezi ve alan kodu olmayan sayılar alınmaz. Biçim: 0532 574 50 28."""
+    tel = []
+    for a, b, c, d in TELEFON.findall(ham):
+        if a == "444" or a[0] not in "2345":
+            continue
+        n = f"0{a} {b} {c} {d}"
+        if n not in tel:
+            tel.append(n)
+    eposta = []
+    for e in EPOSTA.findall(ham):
+        e = e.lower().rstrip(".")
+        if e not in eposta:
+            eposta.append(e)
+    return tel[:2], eposta[:2]
+
+
 def ucret_bul(d):
     """Yalnız 'maaş/ücret' yakınında TEK ve makul aylık tutar varsa yazar; aralık ya da birden çok tutar varsa boş."""
     m = re.search(r"(maaş|maas|ücret|net|brüt)", d)
@@ -193,6 +218,11 @@ def degerlendir(metin):
                     else True if re.search(r"tecrübeli|deneyimli|tecrübe (şart|aranır|gerekli)", d) else None),
         "ucret": ucret_bul(d),
     }
+    tel, eposta = iletisim_bul(ham)
+    if tel:
+        ilan["iletisim_tel"] = tel
+    if eposta:
+        ilan["iletisim_eposta"] = eposta
     sonuc["ilan"] = ilan
     # her pozisyon ayrı ilan; "ilan" geriye uyumluluk için ilk pozisyondur
     sonuc["ilanlar"] = [dict(ilan, baslik=ad, kategori=kat) for ad, kat in bulunan]

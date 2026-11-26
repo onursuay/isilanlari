@@ -92,6 +92,7 @@
     }
     var h = a.getAttribute('href') || '';
     if (h.indexOf('mailto:') === 0) olay('eposta_tikla', { tikla_yeri: yer });
+    if (h.indexOf('tel:') === 0) olay('telefon_tikla', { tikla_yeri: yer, ilan_kodu: a.getAttribute('data-ilan-kodu') || '' });
     if (a.hasAttribute('data-sosyal')) olay('sosyal_tikla', { ag: a.getAttribute('data-sosyal') });
   });
 

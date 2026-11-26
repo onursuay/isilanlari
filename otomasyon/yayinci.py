@@ -54,13 +54,14 @@ def url_bekle(adres, deneme=40, aralik=6, tur="image"):
 
 
 def paylasim_metni(i, ilan_adresi):
-    """Facebook/Instagram metni. Telefon, e-posta ve işveren adı YOK; iş vaadi YOK."""
+    """Facebook/Instagram metni. Telefon, e-posta ve işveren adı YOK (iletişim yalnız ilan sayfasında); iş vaadi YOK."""
     yer = f"{i['ilce']}" + (f" ({i['semt']})" if i.get("semt") and i["semt"] != i["ilce"] else "")
     satirlar = [f"{i['baslik']} · {yer}", "", i["aciklama"], "",
                 f"• Çalışma: {i['calisma']}" + (f" · {i['vardiya']}" if i.get("vardiya") else "")]
     if i.get("ucret"):
         satirlar.append(f"• Ücret: {i['ucret']}")
-    satirlar += ["", f"Başvuru ve ayrıntılar: {ilan_adresi}", "",
+    cagri = "İşverenin telefonu ve başvuru" if i.get("iletisim_tel") else "Başvuru ve ayrıntılar"
+    satirlar += ["", f"{cagri}: {ilan_adresi}", "",
                  f"Ankara'da eleman arıyorsanız ilanınızı ücretsiz yayınlayalım: {SITE}/ilan-ver", ""]
     etiketler = ["#ankaraişilanı", "#ankara", "#işilanı", "#elemanaranıyor", "#işarayanlar",
                  "#" + re.sub(r"\s+", "", i["ilce"].lower().replace("İ", "i").replace("I", "ı")) + "işilanları"]

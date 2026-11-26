@@ -548,7 +548,7 @@ ${cagri()}`;
       <ul class="kontrol">
         <li><span class="im im-evet" aria-hidden="true">✓</span><span><strong>Aday para ödemez.</strong> Kapora, kargo, üyelik ya da eğitim bedeli isteyen ilanları yayınlamıyoruz.</span></li>
         <li><span class="im im-evet" aria-hidden="true">✓</span><span><strong>İlanlar yayından önce okunur.</strong> Cinsiyet ve yaş şartı gibi ayrımcı ifadeler çıkarılır.</span></li>
-        <li><span class="im im-evet" aria-hidden="true">✓</span><span><strong>Telefon numaraları sitede yer almaz.</strong> Başvurular bizim üzerimizden yürür.</span></li>
+        <li><span class="im im-evet" aria-hidden="true">✓</span><span><strong>İşverenin ilanında paylaştığı telefon ilan sayfasında yer alır.</strong> Adaylar işverenle doğrudan görüşür ya da formla bizim üzerimizden başvurur.</span></li>
         <li><span class="im im-evet" aria-hidden="true">✓</span><span><strong>Sahte ilan bildirimi hızlı sonuçlanır.</strong> Bildirilen ilanı siteden, Instagram'dan ve Facebook sayfasından aynı gün kaldırıyoruz.</span></li>
       </ul>
     </div>
@@ -669,6 +669,7 @@ ${cagri()}`;
     <h2>Veri sorumlusu</h2>
     <p>Bu sitenin veri sorumlusu Ankara İş İlanı'dır. Bize ${EPOSTA} adresinden ulaşabilirsiniz.</p>
     <h2>Hangi bilgileri işliyoruz?</h2>
+    <p><strong>Sayfamıza mesajla gönderilen ilanlar:</strong> Facebook sayfamıza ya da Instagram hesabımıza mesajla gönderilen ilanlarda, işverenin ilan metnine yazdığı telefon ve e-posta, adayların işverene ulaşabilmesi için ilan sayfasında yayınlanır. İşverenin adı yayınlanmaz. Telefon ve e-posta Instagram ve Facebook paylaşımlarında yer almaz. İşveren bu bilgilerin kaldırılmasını istediğinde ilan sayfasından çıkarılır.</p>
     <p><strong>İlan formu:</strong> firma veya yetkili adı, telefon, e-posta ve ilanla ilgili bilgiler. Formu gönderdiğinizde bu bilgiler, ilanınızı değerlendirebilmemiz için Google E-Tablolar'daki (Google LLC) ilan listemize kaydedilir. Kaydın yanına reklamdan ya da başka bir siteden geldiyseniz o kaynağın adı da yazılır.</p>
     <p><strong>İlana başvuru formu:</strong> ad soyad, telefon ve isteğe bağlı kısa not. Başvuruyu gönderdiğinizde bu bilgiler, başvurunuzu ilgili işverene iletebilmemiz için Google E-Tablolar'daki (Google LLC) başvuru listemize kaydedilir ve işverene iletilir. Kaydın yanına başvurduğunuz ilanın kodu ve geldiğiniz kaynağın adı da yazılır.</p>
     <p><strong>Makale yorumları:</strong> yorum formuna yazdığınız ad (ya da takma ad) ve yorum metni. E-posta ve telefon istemiyoruz. Yorumunuz Google E-Tablolar'daki (Google LLC) yorum listemize kaydedilir; ekip onaylarsa makale sayfasında adınızla birlikte herkese açık gösterilir, onaylanmazsa yayınlanmaz.</p>
@@ -870,7 +871,11 @@ ${cagri('../')}`;
 }
 
 /* ——— 10. İLAN SAYFALARI ——— */
+const telAdres = t => '+90' + String(t).replace(/\D/g,'').replace(/^0/,'');
 for (const i of ilanlar) {
+  // işverenin ilan metnine kendisinin yazdığı iletişim (yalnız gelen kutusu ilanları; site formunda telefon yayınlanmaz)
+  const tels = Array.isArray(i.iletisim_tel) ? i.iletisim_tel : [];
+  const epostalar = Array.isArray(i.iletisim_eposta) ? i.iletisim_eposta : [];
   const benzer = ilanlar.filter(x=>x.kod!==i.kod && (x.ilce===i.ilce||x.kategori===i.kategori)).slice(0,3);
   const ld=[{'@context':'https://schema.org','@type':'JobPosting',title:i.baslik,description:i.aciklama,
       datePosted:i.tarih,employmentType:i.calisma==='Tam zamanlı'?'FULL_TIME':'PART_TIME',
@@ -880,7 +885,9 @@ for (const i of ilanlar) {
       identifier:{'@type':'PropertyValue',name:'Ankara İş İlanı',value:i.kod}},
     yolIzi([{ad:'Ana Sayfa',yol:''},{ad:'Güncel İlanlar',yol:'guncel-ilanlar.html'},{ad:i.baslik,yol:ilanYol(i)}])];
   const govde=`${sayfaBas({yol:yolBas('../', `<a href="../guncel-ilanlar.html">Güncel İlanlar</a>`),baslik:kac(i.baslik),lead:kac(ilanLead(i.aciklama).ilk),
-    eylem:`<a class="dugme dugme-sari" href="#basvuru-formu" data-yer="basvuru_forma_git">Bu ilana başvurun ${IK.ok}</a><a class="dugme dugme-hat" href="../guncel-ilanlar.html">Diğer ilanlar</a>`})}
+    eylem:(tels.length
+      ?`<a class="dugme dugme-sari" href="tel:${telAdres(tels[0])}" data-yer="ilan_ust_ara" data-ilan-kodu="${kac(i.kod)}">İşvereni arayın ${IK.ok}</a><a class="dugme dugme-hat" href="#basvuru-formu" data-yer="basvuru_forma_git">Formla başvurun</a>`
+      :`<a class="dugme dugme-sari" href="#basvuru-formu" data-yer="basvuru_forma_git">Bu ilana başvurun ${IK.ok}</a><a class="dugme dugme-hat" href="../guncel-ilanlar.html">Diğer ilanlar</a>`)})}
 <section class="bolum">
   <div class="kap ikili">
     <div class="panel">
@@ -893,6 +900,8 @@ ${i.vardiya?`        <li style="grid-template-columns:1fr"><span><strong>Vardiya
         <li style="grid-template-columns:1fr"><span><strong>Sigorta:</strong> ${i.sigorta?'İşveren tarafından yapılır':'İlanda belirtilmemiş'}</span></li>
 ${(i.tecrube===true||i.tecrube===false)?`        <li style="grid-template-columns:1fr"><span><strong>Tecrübe:</strong> ${i.tecrube?'Tecrübeli aday aranıyor':'Şart değil'}</span></li>`:''}
 ${i.ucret?`        <li style="grid-template-columns:1fr"><span><strong>Ücret:</strong> ${kac(i.ucret)}</span></li>`:''}
+${tels.map(t=>`        <li style="grid-template-columns:1fr"><span><strong>İşveren telefonu:</strong> <a href="tel:${telAdres(t)}" data-yer="ilan_bilgi_ara" data-ilan-kodu="${kac(i.kod)}">${kac(t)}</a></span></li>`).join('\n')}
+${epostalar.map(e=>`        <li style="grid-template-columns:1fr"><span><strong>İşveren e-postası:</strong> <a href="mailto:${kac(e)}" data-yer="ilan_bilgi_eposta">${kac(e)}</a></span></li>`).join('\n')}
         <li style="grid-template-columns:1fr"><span><strong>İlan kodu:</strong> ${kac(i.kod)} · ${trTarih(i.tarih)}</span></li>
       </ul>
     </div>
@@ -900,7 +909,7 @@ ${i.ucret?`        <li style="grid-template-columns:1fr"><span><strong>Ücret:</
       <h2 style="font-size:1.35rem">Başvuru güvenliği</h2>
       <p>Bu ilan ücret talebi kontrolünden geçti. İşe girmek için sizden kapora, kargo, üyelik ya da eğitim ücreti istenmez.</p>
       <ul class="kontrol">
-        <li><span class="im im-evet" aria-hidden="true">✓</span><span>Başvurunuz bizim üzerimizden işverene iletilir</span></li>
+        <li><span class="im im-evet" aria-hidden="true">✓</span><span>${tels.length?'İşverenle doğrudan görüşün ya da formla başvurun':'Başvurunuz bizim üzerimizden işverene iletilir'}</span></li>
         <li><span class="im im-hayir" aria-hidden="true">✕</span><span>Para isteyen olursa başvurmayın, bize bildirin</span></li>
       </ul>
     </div>
