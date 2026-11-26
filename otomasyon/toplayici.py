@@ -16,7 +16,10 @@ import json, os, re, sys, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import suzgec  # noqa: E402
+import eposta_kaynagi, suzgec  # noqa: E402
+
+EPOSTA_NIYET = re.compile(r"eleman|personel|aran[ıi]yor|al[ıi]nacak|alınacaktır|iş ilan|işe al|kadro|usta|çalışma arkadaş|garson|kasiyer|şoför|kurye")
+EPOSTA_HATASI = None  # e-posta kutusuna girilemezse dolar; hat tur sonunda bildirir
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SAYFA_ID = "106370611224653"
@@ -126,13 +129,28 @@ def calistir(kuru=False, geriye_gun=None):
         baslangic = iso(durum["baslangic"])
 
     mesajlar = yeni_mesajlar(jeton, baslangic)
+    # e-posta (26.11.2026): ilk çalışmada başlangıç bugüne kurulur, geçmiş kutu yayınlanmaz
+    global EPOSTA_HATASI
+    EPOSTA_HATASI = None
+    if geriye_gun is None and not durum.get("eposta_baslangic"):
+        durum["eposta_baslangic"] = simdi.isoformat()
+    else:
+        try:
+            mesajlar += eposta_kaynagi.yeni_epostalar(baslangic if geriye_gun is not None else iso(durum["eposta_baslangic"]))
+            mesajlar.sort(key=lambda r: r["zaman"])
+        except RuntimeError as e:
+            EPOSTA_HATASI = str(e)  # öteki kaynaklar yine işlenir; hat tur sonunda hata verip bildirir
+            print(f"  ! {e}")
     gorulen_izler = {v.get("iz") for v in durum["islenen"].values() if v.get("iz")}
     kararlar = []
     for r in mesajlar:
         if r["id"] in durum["islenen"]:
             continue
         s = suzgec.degerlendir(r["metin"])
-        if r.get("ekler") and s["karar"] != "yayinla":
+        if r["platform"] == "eposta" and not EPOSTA_NIYET.search(suzgec.kucuk(r["metin"])):
+            # kutuya düşen SEO/dolandırıcılık iletileri (İngilizce, ekli) her turda boş uyarı üretmesin
+            s.update(karar="reddet", gerekce="e-posta iş ilanı ifadesi taşımıyor", ilan=None, ilanlar=None)
+        elif r.get("ekler") and s["karar"] != "yayinla":
             # ilan metin yerine görselde/dosyada olabilir: reddetmek ya da yanlış gerekçeyle bekletmek ilanı kaçırır
             s["karar"] = "beklet"
             s["gerekce"] = "ilan görsel veya dosya olarak gönderilmiş (" + ", ".join(sorted(set(r["ekler"]))) + "); ekip ilanı elle girmeli"

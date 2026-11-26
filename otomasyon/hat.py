@@ -224,3 +224,5 @@ def sinama():
 if __name__ == "__main__":
     mod = sys.argv[1] if len(sys.argv) > 1 else "hazirlik"
     {"hazirlik": hazirlik, "yayinla": yayinla, "sinama": sinama}[mod]()
+    if toplayici.EPOSTA_HATASI:  # öteki kaynaklar işlendi; e-posta kaynağı düştüyse tur hata verir (VPS bildirir)
+        raise SystemExit("E-POSTA KAYNAĞI: " + toplayici.EPOSTA_HATASI)
