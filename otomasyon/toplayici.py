@@ -147,7 +147,8 @@ def calistir(kuru=False, geriye_gun=None):
         if r["id"] in durum["islenen"]:
             continue
         s = suzgec.degerlendir(r["metin"])
-        if r["platform"] == "eposta" and not EPOSTA_NIYET.search(suzgec.kucuk(r["metin"])):
+        # markanın kendi adı ("Ankara İş İlanı") niyet sayılmaz: kutuya gelen her ileti bu adı içerebilir
+        if r["platform"] == "eposta" and not EPOSTA_NIYET.search(re.sub(r"ankara iş ilan\w*", " ", suzgec.kucuk(r["metin"]))):
             # kutuya düşen SEO/dolandırıcılık iletileri (İngilizce, ekli) her turda boş uyarı üretmesin
             s.update(karar="reddet", gerekce="e-posta iş ilanı ifadesi taşımıyor", ilan=None, ilanlar=None)
         elif r.get("ekler") and s["karar"] != "yayinla":
