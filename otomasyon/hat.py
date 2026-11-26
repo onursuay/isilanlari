@@ -107,6 +107,9 @@ def yayinla():
         tekil.append(k)
     adaylar = tekil
     if not adaylar:
+        # tekrar-ilan "reddet" güncellemesi bellekteydi, dosyaya hiç yazılmıyordu (26.11.2026: 25.11 mesajı
+        # durumda "yayinla" görünüp yayınlanmamıştı) → önce diske yaz, sonra gönder
+        toplayici.durum_yaz(durum)
         git_yayinla("Hat: gelen kutusu kararları", ["veri/_hat_durumu.json"])  # beklet/reddet kararları kaybolmasın
         return
     son = max([int(re.sub(r"\D", "", i["kod"])) for i in veri["ilanlar"]] + [int(durum.get("son_kod", 0))])

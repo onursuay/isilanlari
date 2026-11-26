@@ -130,12 +130,17 @@ def calistir(kuru=False, geriye_gun=None):
         if iz in gorulen_izler and s["karar"] == "yayinla":
             s["karar"], s["gerekce"] = "reddet", "aynı ilan daha önce işlendi (mükerrer)"
         gorulen_izler.add(iz)
-        kayit = {"id": r["id"], "platform": r["platform"], "konusma": r["konusma"], "zaman": r["zaman"],
-                 "karar": s["karar"], "gerekce": s["gerekce"], "iz": iz, "ilan": s["ilan"]}
-        kararlar.append(kayit)
-        if not kuru:
-            # depoya yalnız kimlik + karar + gerekçe + parmak izi yazılır
-            durum["islenen"][r["id"]] = {"karar": s["karar"], "gerekce": s["gerekce"], "iz": iz,
+        # bir mesajda birden çok pozisyon varsa her biri ayrı karar olur (ilki mesaj kimliğini taşır)
+        ilanlar = s.get("ilanlar") if s["karar"] == "yayinla" else None
+        parcalar = ilanlar or [s["ilan"]]
+        for n, ilan in enumerate(parcalar, 1):
+            kid = r["id"] if n == 1 else f"{r['id']}#{n}"
+            kayit = {"id": kid, "platform": r["platform"], "konusma": r["konusma"], "zaman": r["zaman"],
+                     "karar": s["karar"], "gerekce": s["gerekce"], "iz": iz if n == 1 else f"{iz}#{n}", "ilan": ilan}
+            kararlar.append(kayit)
+            if not kuru:
+                # depoya yalnız kimlik + karar + gerekçe + parmak izi yazılır
+                durum["islenen"][kid] = {"karar": s["karar"], "gerekce": s["gerekce"], "iz": kayit["iz"],
                                          "zaman": r["zaman"], "konusma": r["konusma"]}
     if not kuru:
         durum_yaz(durum)

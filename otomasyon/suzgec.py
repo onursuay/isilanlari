@@ -39,6 +39,12 @@ MEVKILER = [
     (r"temizlik (görevli|personel|eleman|çalışan)\w*", "Temizlik görevlisi", "temizlik"),
     (r"temizlikçi\w*", "Temizlik görevlisi", "temizlik"),
     (r"(kat|oda) (görevli|personel|eleman)\w*", "Kat görevlisi", "temizlik"),
+    # tatlıcı ustaları (26.11.2026: "BAKKAVA KADAYIF USTALARI" sözlükte yoktu, ilan sessizce düştü;
+    # "bakkava" sık yazım hatası olduğu için kalıba dahil). "tatlıcı" tek başına işyeri adıdır, pozisyon sayılmaz.
+    (r"(bakla+va|bakkava|baklva)\w*\s+(ve\s+)?kadayıf\w*\s+usta\w*", "Baklava ve kadayıf ustası", "yeme-icme"),
+    (r"(bakla+va|bakkava|baklva)\w*\s+usta\w*", "Baklava ustası", "yeme-icme"),
+    (r"kadayıf\w*\s+usta\w*", "Kadayıf ustası", "yeme-icme"),
+    (r"(tatlı|pasta)\w*\s+usta\w*|pastacı\w*", "Tatlı ustası", "yeme-icme"),
     (r"aşçı (yardımcı)\w*", "Aşçı yardımcısı", "yeme-icme"),
     (r"aşçı\w*|mutfak (personel|eleman|görevli)\w*", "Aşçı / mutfak personeli", "yeme-icme"),
     (r"garson (yardımcı)\w*", "Garson yardımcısı", "yeme-icme"),
@@ -143,8 +149,10 @@ def degerlendir(metin):
             kapali.append((m.start(), m.end()))
             if (ad, kat) not in bulunan:
                 bulunan.append((ad, kat))
-    if len(bulunan) > 1:
-        sonuc["karar"], sonuc["gerekce"] = "beklet", "birden fazla pozisyon geçiyor: " + ", ".join(a for a, _ in bulunan)
+    # Aynı işyeri için 2-3 pozisyon (26.11.2026 Owner onayı): her pozisyon ayrı ilan olur, yer ve
+    # koşullar ortaktır. Daha fazlası toplu/belirsiz ilan sayılır → beklet.
+    if len(bulunan) > 3:
+        sonuc["karar"], sonuc["gerekce"] = "beklet", "üçten fazla pozisyon geçiyor: " + ", ".join(a for a, _ in bulunan)
         return sonuc
     mevki, kategori = bulunan[0] if bulunan else (None, None)
 
@@ -186,8 +194,12 @@ def degerlendir(metin):
         "ucret": ucret_bul(d),
     }
     sonuc["ilan"] = ilan
+    # her pozisyon ayrı ilan; "ilan" geriye uyumluluk için ilk pozisyondur
+    sonuc["ilanlar"] = [dict(ilan, baslik=ad, kategori=kat) for ad, kat in bulunan]
     sonuc["karar"] = "yayinla"
     sonuc["gerekce"] = "süzgeçten geçti" + (f"; {sonuc['ayrimci_sayisi']} ayrımcı ifade metne alınmadı" if sonuc["ayrimci_sayisi"] else "")
+    if len(bulunan) > 1:
+        sonuc["gerekce"] += f"; {len(bulunan)} pozisyon ayrı ilan: " + ", ".join(a for a, _ in bulunan)
     return sonuc
 
 
