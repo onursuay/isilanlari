@@ -4,8 +4,10 @@ name: İlan hattı
 # Zamanlanmış koşu: depo değişkeni YAYIN_ACIK=1 ise "yayinla", değilse "hazirlik" (hiçbir şey yayınlamaz).
 # 13.11.2026'ya kadar zamanlanmış koşu YAYIN_ACIK'tan bağımsız hep hazirlik'ti; değişken tek başına yayını açmıyordu.
 on:
-  schedule:
-    - cron: '17 5,8,11,14,17,20 * * *'   # UTC; Türkiye saatiyle 08:17 - 23:17, 3 saatte bir
+  # 26.11.2026: zamanlanmış koşu KALDIRILDI. GitHub cron 3 saatlik ayarı günde ~2 koşuya düşürüyordu
+  # (ilan yarım gün bekliyordu). Hat artık VPS'te 15 dakikada bir çalışır (Agency Wizard
+  # _automation/ilan_hatti_vps/). İki çalıştırıcı aynı anda çalışırsa çift yayın riski olur;
+  # bu iş akışı yalnız elle (workflow_dispatch) yedek olarak kalır.
   workflow_dispatch:
     inputs:
       mod:
