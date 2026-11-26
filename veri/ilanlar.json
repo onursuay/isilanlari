@@ -1,6 +1,23 @@
 {
-  "guncelleme": "2026-11-25",
+  "guncelleme": "2026-11-26",
   "ilanlar": [
+    {
+      "baslik": "Baklava ve kadayıf ustası",
+      "ilce": "Keçiören",
+      "semt": "Etlik",
+      "calisma": "Tam zamanlı",
+      "vardiya": "",
+      "kategori": "yeme-icme",
+      "sigorta": false,
+      "yemek": false,
+      "servis": false,
+      "tecrube": null,
+      "ucret": "",
+      "kod": "A-1488",
+      "aciklama": "Keçiören (Etlik) bölgesindeki bir işletmede görev alacak baklava ve kadayıf ustası aranıyor.",
+      "kaynak": "hat",
+      "tarih": "2026-11-26"
+    },
     {
       "baslik": "Barista",
       "ilce": "Çankaya",
