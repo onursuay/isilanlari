@@ -89,15 +89,21 @@ def yeni_mesajlar(jeton, baslangic):
         for k in kons.get("data", []):
             if iso(k["updated_time"]) <= baslangic:
                 continue
-            m = al(f"{k['id']}/messages", {"fields": "id,message,created_time,from", "limit": 20}, jeton)
+            # 50: koşular arası bir konuşmaya çok mesaj gelirse eskiler okunmadan kalmasın (önce 20'ydi)
+            m = al(f"{k['id']}/messages", {"fields": "id,message,created_time,from,attachments{mime_type}", "limit": 50}, jeton)
             for x in m.get("data", []):
                 gonderen = (x.get("from") or {}).get("id", "")
-                if gonderen == SAYFA_ID or not x.get("message"):
-                    continue  # kendi yanıtımız ya da metinsiz (görsel/sticker)
+                if gonderen == SAYFA_ID:
+                    continue  # kendi yanıtımız
                 if iso(x["created_time"]) <= baslangic:
                     continue
+                ekler = [a.get("mime_type", "") for a in (x.get("attachments") or {}).get("data", [])]
+                if not x.get("message") and not ekler:
+                    continue  # sticker/beğeni gibi boş öğe
+                # 26.11.2026: işverenler ilanı görsel olarak da gönderiyor; metinsiz mesaj eskiden sessizce
+                # atlanıyordu. Artık "beklet" kararı alır ve yayın denetçisi Telegram'a bildirir.
                 sonuc.append({"id": x["id"], "platform": platform, "konusma": k["id"],
-                              "zaman": x["created_time"], "metin": x["message"]})
+                              "zaman": x["created_time"], "metin": x.get("message") or "", "ekler": ekler})
     sonuc.sort(key=lambda r: r["zaman"])
     return sonuc
 
@@ -126,6 +132,13 @@ def calistir(kuru=False, geriye_gun=None):
         if r["id"] in durum["islenen"]:
             continue
         s = suzgec.degerlendir(r["metin"])
+        if r.get("ekler") and s["karar"] != "yayinla":
+            # ilan metin yerine görselde/dosyada olabilir: reddetmek ya da yanlış gerekçeyle bekletmek ilanı kaçırır
+            s["karar"] = "beklet"
+            s["gerekce"] = "ilan görsel veya dosya olarak gönderilmiş (" + ", ".join(sorted(set(r["ekler"]))) + "); ekip ilanı elle girmeli"
+            s["ilan"], s["ilanlar"] = None, None
+            if not r["metin"].strip():
+                s["parmak_izi"] = suzgec.parmak_izi(r["id"])  # boş metnin izi herkes için aynı olurdu
         iz = s["parmak_izi"]
         if iz in gorulen_izler and s["karar"] == "yayinla":
             s["karar"], s["gerekce"] = "reddet", "aynı ilan daha önce işlendi (mükerrer)"
