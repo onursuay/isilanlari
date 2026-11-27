@@ -53,10 +53,15 @@ def url_bekle(adres, deneme=40, aralik=6, tur="image"):
     return False
 
 
-def paylasim_metni(i, ilan_adresi):
-    """Facebook/Instagram metni. Telefon, e-posta ve işveren adı YOK (iletişim yalnız ilan sayfasında); iş vaadi YOK."""
+IG_TAKIP = "Güncel iş ilanlarından anında haberdar olmak için @ankaraisilanicom hesabımızı takip edin."
+
+
+def paylasim_metni(i, ilan_adresi, kanal="facebook"):
+    """Facebook/Instagram metni. Telefon, e-posta ve işveren adı YOK (iletişim yalnız ilan sayfasında); iş vaadi YOK.
+    Instagram'da takip çağrısı 2. satırdadır (Owner 27.11.2026: izlenme çok, takip az; IG açıklamanın yalnız ilk
+    satırları 'devamı' olmadan görünür)."""
     yer = f"{i['ilce']}" + (f" ({i['semt']})" if i.get("semt") and i["semt"] != i["ilce"] else "")
-    satirlar = [f"{i['baslik']} · {yer}", "", i["aciklama"], "",
+    satirlar = [f"{i['baslik']} · {yer}"] + ([IG_TAKIP] if kanal == "instagram" else []) + ["", i["aciklama"], "",
                 f"• Çalışma: {i['calisma']}" + (f" · {i['vardiya']}" if i.get("vardiya") else "")]
     if i.get("ucret"):
         satirlar.append(f"• Ücret: {i['ucret']}")

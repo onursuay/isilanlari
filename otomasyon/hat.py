@@ -189,10 +189,10 @@ def sosyal_paylas(yayinci, durum, i, bilgi, deneme=40):
             durum.setdefault("form_islenen", {})[bilgi["mesaj"]] = {"karar": "yayinla", "kod": kod, "iz": bilgi.get("iz"), "sosyal": "bekliyor"}
             form_kaynagi.durum_yaz(bilgi["satir"], f"Otomatik: sitede {kod} olarak eklendi, sosyal paylaşım sonraki koşuda denenecek")
         return False
-    metin = yayinci.paylasim_metni(i, ilan_adresi)
     for kanal in ("facebook", "instagram"):
         if bilgi.get(kanal):
             continue
+        metin = yayinci.paylasim_metni(i, ilan_adresi, kanal)
         try:
             if kanal == "facebook":
                 bilgi["facebook"] = yayinci.fb_foto(gorsel, metin).get("link")
