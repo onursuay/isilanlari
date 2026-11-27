@@ -150,7 +150,8 @@ def calistir(kuru=False, geriye_gun=None):
             mesajlar += grup_kaynagi.yeni_mesajlar(durum["islenen"])
             mesajlar.sort(key=lambda r: r["zaman"])
             yas, kalp = grup_kaynagi.kalp_atisi()
-            if yas is None or yas > grup_kaynagi.KALP_SAAT or "HATA" in kalp or "EKSİK" in kalp:
+            # K1 "KAPALI": tarama Owner kararıyla durduruldu (27.11.2026, Meta hesabı riske girmesin) → uyarı yok
+            if not kalp.startswith("KAPALI") and (yas is None or yas > grup_kaynagi.KALP_SAAT or "HATA" in kalp or "EKSİK" in kalp):
                 GRUP_HATASI = f"Mac grup taraması güncel değil ya da hatalı (K1: {kalp or 'boş'}); köprü Chrome açık mı?"
                 print(f"  ! {GRUP_HATASI}")
         except Exception as e:  # noqa: BLE001 — öteki kaynaklar yine işlenir
