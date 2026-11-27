@@ -16,7 +16,7 @@ import json, os, re, subprocess, sys
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import form_kaynagi, suzgec, toplayici  # noqa: E402
+import form_kaynagi, grup_kaynagi, suzgec, toplayici  # noqa: E402
 
 KOK = toplayici.KOK
 ILANLAR = os.path.join(KOK, "veri", "ilanlar.json")
@@ -81,6 +81,11 @@ def yayinla():
         kararlar += form
     else:
         print("  ! site formu kaynağı yapılandırılmamış (GOOGLE_SA_* / ILAN_SHEET_ID yok), atlandı")
+    # Facebook grubu (27.11.2026): beklet/reddet kararı hemen 'Facebook Grubu' sekmesinin Durum sütununa
+    for k in kararlar:
+        if k["platform"] == "facebook-grubu" and k["karar"] != "yayinla" and "#" not in k["id"]:
+            etiket = "bekletildi, ekip kontrol etmeli" if k["karar"] == "beklet" else "reddedildi"
+            grup_kaynagi.durum_yaz(k["satir"], f"Otomatik: {etiket} ({k['gerekce']})")
     adaylar = [k for k in kararlar if k["karar"] == "yayinla"]
     print(f"YAYIN: {len(adaylar)} yayına uygun ilan")
     for k in kararlar:
@@ -102,6 +107,8 @@ def yayinla():
                 durum["form_islenen"][k["id"]] = {"karar": "reddet", "gerekce": gerekce, "iz": k["iz"]}
             elif k["id"] in durum.get("islenen", {}):
                 durum["islenen"][k["id"]].update({"karar": "reddet", "gerekce": gerekce})
+                if k["platform"] == "facebook-grubu" and "#" not in k["id"]:
+                    grup_kaynagi.durum_yaz(k["satir"], f"Otomatik: reddedildi ({gerekce})")
             continue
         gorulen[_imza(k["ilan"])] = "bu koşu"
         tekil.append(k)
@@ -133,6 +140,13 @@ def yayinla():
     toplayici.durum_yaz(durum)
     yollar = ["veri/ilanlar.json", "veri/_hat_durumu.json", "medya", "ilan", "guncel-ilanlar.html", "index.html", "genel-ilanlar.html", "sitemap.xml"]
     git_yayinla("Hat: " + ", ".join(i["kod"] for _, i in yeni) + " yayına alındı", yollar, izlenenler_de=True)
+    # grup satırına yayınlanan kod(lar) yazılır; Mac taraması bunu görüp gönderiyi grupta onaylar
+    grup_kodlari = {}
+    for k, i in yeni:
+        if k["platform"] == "facebook-grubu":
+            grup_kodlari.setdefault(k["satir"], []).append(i["kod"])
+    for satir, kodlar in grup_kodlari.items():
+        grup_kaynagi.durum_yaz(satir, "Otomatik: yayınlandı " + ", ".join(kodlar))
     for k, i in yeni:
         bilgi = {"mesaj": k["id"], "platform": k["platform"], "satir": k.get("satir"), "iz": k.get("iz"), "deneme": 0}
         sosyal_paylas(yayinci, durum, i, bilgi, deneme=40)
@@ -224,5 +238,13 @@ def sinama():
 if __name__ == "__main__":
     mod = sys.argv[1] if len(sys.argv) > 1 else "hazirlik"
     {"hazirlik": hazirlik, "yayinla": yayinla, "sinama": sinama}[mod]()
+    # grup taraması (Mac) bayat ya da hatalıysa tur DÜŞMEZ (öteki kaynaklar çalışıyor); uyarı dosyası VPS
+    # çalıştırıcısına bırakılır, o da günde en çok bir kez Telegram'a yazar (27.11.2026)
+    uyari = os.environ.get("ILAN_GRUP_UYARI_DOSYA")
+    if uyari:
+        if toplayici.GRUP_HATASI:
+            open(uyari, "w", encoding="utf-8").write(toplayici.GRUP_HATASI)
+        elif os.path.exists(uyari):
+            os.remove(uyari)
     if toplayici.EPOSTA_HATASI:  # öteki kaynaklar işlendi; e-posta kaynağı düştüyse tur hata verir (VPS bildirir)
         raise SystemExit("E-POSTA KAYNAĞI: " + toplayici.EPOSTA_HATASI)

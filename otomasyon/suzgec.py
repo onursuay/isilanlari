@@ -50,6 +50,8 @@ MEVKILER = [
     (r"(tatlı|pasta)\w*\s+usta\w*|pastacı\w*", "Tatlı ustası", "yeme-icme"),
     (r"aşçı (yardımcı)\w*", "Aşçı yardımcısı", "yeme-icme"),
     (r"aşçı\w*|mutfak (personel|eleman|görevli)\w*", "Aşçı / mutfak personeli", "yeme-icme"),
+    # 27.11.2026 Facebook grubu vakaları: "salonda (MEYDANCI)", "OFİS DESTEK PERSONELİ", "Sıhhi tesisat teknisyeni"
+    (r"meydancı\w*|salon (görevli|personel|eleman)\w*", "Salon görevlisi", "yeme-icme"),
     (r"garson (yardımcı)\w*", "Garson yardımcısı", "yeme-icme"),
     (r"garson\w*", "Garson", "yeme-icme"),
     (r"bulaşıkçı\w*", "Bulaşıkçı", "yeme-icme"),
@@ -64,12 +66,15 @@ MEVKILER = [
     (r"(üretim|fabrika) (işçi|personel|eleman|çalışan)\w*|paketleme (personel|eleman|işçi)\w*|kutulama\w*", "Üretim işçisi", "uretim"),
     (r"operatör\w*", "Operatör", "uretim"),
     (r"kurye\w*|motokurye\w*", "Kurye", "lojistik"),
-    (r"şoför\w*|sürücü\w*|servis şoför\w*", "Şoför", "lojistik"),
+    # "şoförlüğü olan", "sürücü belgesi" şarttır, pozisyon değildir (27.11.2026: tesisat ilanı ikinci bir "Şoför" ilanı sanıldı)
+    (r"şoför(?!lü)\w*|sürücü(?!\s*belge)\w*|servis şoför\w*", "Şoför", "lojistik"),
     (r"güvenlik (görevli|personel)\w*", "Güvenlik görevlisi", "hizmet"),
     (r"(ön büro|resepsiyon)\w*", "Ön büro / resepsiyon görevlisi", "ofis"),
+    (r"ofis destek (personel|eleman|görevli)\w*", "Ofis destek personeli", "ofis"),
     (r"sekreter\w*|ofis (personel|eleman|görevli)\w*|büro (personel|eleman)\w*|idari (personel|işler)\w*", "Büro personeli", "ofis"),
     (r"muhasebe\w*|ön muhasebe\w*", "Muhasebe personeli", "ofis"),
     (r"çağrı merkezi\w*|müşteri temsilci\w*|müşteri hizmetleri\w*", "Müşteri temsilcisi", "ofis"),
+    (r"sıhhi tesisat\w* (teknisyen|usta|eleman|personel)\w*", "Sıhhi tesisat teknisyeni", "teknik"),
     (r"asansör (bakım|teknisyen|usta|montaj)\w*|asansör\w* (usta|teknisyen)\w*", "Asansör teknisyeni", "teknik"),
     (r"(bakım|onarım|tamir)\w* (teknisyen|usta|personel|eleman)\w*|teknisyen\w*", "Teknisyen", "teknik"),
     (r"elektrik(çi)?\w* (usta|teknisyen)\w*|elektrikçi\w*", "Elektrik ustası", "teknik"),
@@ -182,7 +187,7 @@ def degerlendir(metin):
     mevki, kategori = bulunan[0] if bulunan else (None, None)
 
     # — yer: birden fazla farklı ilçe geçiyorsa hangisinin işyeri olduğu belirsiz → beklet —
-    ek = r"(?:['’]?(?:d[ae]n?|t[ae]n?|[ae]|[ıiuü]|y[ıi]|n[ıi]n|[ıi]n|[uü]n|daki|deki|taki|teki))?"
+    ek = r"(?:['’]?(?:n?d[ae]n?|t[ae]n?|n?daki|n?deki|[ae]|[ıiuü]|y[ıi]|n[ıi]n|[ıi]n|[uü]n|daki|deki|taki|teki))?"
     semt_hit, ilce_hit = [], []
     for sm, il in SEMTLER.items():
         if re.search(r"(?<![a-zçğıöşü])" + kucuk(sm) + ek + r"(?![a-zçğıöşü])", d):

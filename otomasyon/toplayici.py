@@ -16,10 +16,11 @@ import json, os, re, sys, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import eposta_kaynagi, suzgec  # noqa: E402
+import eposta_kaynagi, grup_kaynagi, suzgec  # noqa: E402
 
 EPOSTA_NIYET = re.compile(r"eleman|personel|aran[ıi]yor|al[ıi]nacak|alınacaktır|iş ilan|işe al|kadro|usta|çalışma arkadaş|garson|kasiyer|şoför|kurye")
 EPOSTA_HATASI = None  # e-posta kutusuna girilemezse dolar; hat tur sonunda bildirir
+GRUP_HATASI = None    # Facebook grubu sekmesi okunamazsa dolar (27.11.2026); hat tur sonunda bildirir
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SAYFA_ID = "106370611224653"
@@ -141,17 +142,35 @@ def calistir(kuru=False, geriye_gun=None):
         except RuntimeError as e:
             EPOSTA_HATASI = str(e)  # öteki kaynaklar yine işlenir; hat tur sonunda hata verip bildirir
             print(f"  ! {e}")
+    # Facebook grubu (27.11.2026): Mac'teki köprü Chrome taraması E-Tablo'ya yazar, hat oradan okur
+    global GRUP_HATASI
+    GRUP_HATASI = None
+    if geriye_gun is None and grup_kaynagi.yapilandirildi():
+        try:
+            mesajlar += grup_kaynagi.yeni_mesajlar(durum["islenen"])
+            mesajlar.sort(key=lambda r: r["zaman"])
+            yas, kalp = grup_kaynagi.kalp_atisi()
+            if yas is None or yas > grup_kaynagi.KALP_SAAT or "HATA" in kalp or "EKSİK" in kalp:
+                GRUP_HATASI = f"Mac grup taraması güncel değil ya da hatalı (K1: {kalp or 'boş'}); köprü Chrome açık mı?"
+                print(f"  ! {GRUP_HATASI}")
+        except Exception as e:  # noqa: BLE001 — öteki kaynaklar yine işlenir
+            GRUP_HATASI = f"Facebook grubu sekmesi okunamadı: {type(e).__name__}: {str(e)[:150]}"
+            print(f"  ! {GRUP_HATASI}")
     gorulen_izler = {v.get("iz") for v in durum["islenen"].values() if v.get("iz")}
     kararlar = []
     for r in mesajlar:
         if r["id"] in durum["islenen"]:
             continue
-        s = suzgec.degerlendir(r["metin"])
+        if r.get("on_karar"):  # grup: eski ya da erişilemeyen gönderi süzgece girmez
+            s = {"karar": r["on_karar"][0], "gerekce": r["on_karar"][1], "ilan": None, "ilanlar": None,
+                 "parmak_izi": suzgec.parmak_izi(r["id"])}
+        else:
+            s = suzgec.degerlendir(r["metin"])
         # markanın kendi adı ("Ankara İş İlanı") niyet sayılmaz: kutuya gelen her ileti bu adı içerebilir
         if r["platform"] == "eposta" and not EPOSTA_NIYET.search(re.sub(r"ankara iş ilan\w*", " ", suzgec.kucuk(r["metin"]))):
             # kutuya düşen SEO/dolandırıcılık iletileri (İngilizce, ekli) her turda boş uyarı üretmesin
             s.update(karar="reddet", gerekce="e-posta iş ilanı ifadesi taşımıyor", ilan=None, ilanlar=None)
-        elif r.get("ekler") and s["karar"] != "yayinla":
+        elif r.get("ekler") and s["karar"] != "yayinla" and not r.get("on_karar"):
             # ilan metin yerine görselde/dosyada olabilir: reddetmek ya da yanlış gerekçeyle bekletmek ilanı kaçırır
             s["karar"] = "beklet"
             s["gerekce"] = "ilan görsel veya dosya olarak gönderilmiş (" + ", ".join(sorted(set(r["ekler"]))) + "); ekip ilanı elle girmeli"
@@ -167,7 +186,7 @@ def calistir(kuru=False, geriye_gun=None):
         parcalar = ilanlar or [s["ilan"]]
         for n, ilan in enumerate(parcalar, 1):
             kid = r["id"] if n == 1 else f"{r['id']}#{n}"
-            kayit = {"id": kid, "platform": r["platform"], "konusma": r["konusma"], "zaman": r["zaman"],
+            kayit = {"id": kid, "platform": r["platform"], "konusma": r["konusma"], "zaman": r["zaman"], "satir": r.get("satir"),
                      "karar": s["karar"], "gerekce": s["gerekce"], "iz": iz if n == 1 else f"{iz}#{n}", "ilan": ilan}
             kararlar.append(kayit)
             if not kuru:
