@@ -45,8 +45,15 @@ def kalp_atisi():
         return None, v
 
 
-def durum_yaz(satir_no, metin):
-    """H hücresine yazar ve geri okur; dolu hücrenin üzerine yazmaz (ekip elle karar yazmış olabilir)."""
+def durum_yaz(satir_no, metin, kimlik):
+    """H hücresine yazar ve geri okur; dolu hücrenin üzerine yazmaz (ekip elle karar yazmış olabilir).
+    Satır numarası kimliğe bağlanır: tablo elle sıralanıp satır kaydıysa kimlik yeniden aranır (27.11.2026)."""
+    a = form_kaynagi._sheets(_aralik(f"A{satir_no}")).get("values", [[""]])[0][0]
+    if a != kimlik:
+        satir_no = next((n for n, s in satirlar() if s[0] == kimlik), None)
+        if satir_no is None:
+            print(f"  ! grup satırı bulunamadı ({kimlik}); Durum yazılmadı")
+            return False
     hucre = _aralik(f"H{satir_no}")
     mevcut = form_kaynagi._sheets(hucre).get("values", [[""]])[0]
     if mevcut and mevcut[0].strip():

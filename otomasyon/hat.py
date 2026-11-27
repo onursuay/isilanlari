@@ -85,7 +85,7 @@ def yayinla():
     for k in kararlar:
         if k["platform"] == "facebook-grubu" and k["karar"] != "yayinla" and "#" not in k["id"]:
             etiket = "bekletildi, ekip kontrol etmeli" if k["karar"] == "beklet" else "reddedildi"
-            grup_kaynagi.durum_yaz(k["satir"], f"Otomatik: {etiket} ({k['gerekce']})")
+            grup_kaynagi.durum_yaz(k["satir"], f"Otomatik: {etiket} ({k['gerekce']})", k["id"])
     adaylar = [k for k in kararlar if k["karar"] == "yayinla"]
     print(f"YAYIN: {len(adaylar)} yayına uygun ilan")
     for k in kararlar:
@@ -108,7 +108,7 @@ def yayinla():
             elif k["id"] in durum.get("islenen", {}):
                 durum["islenen"][k["id"]].update({"karar": "reddet", "gerekce": gerekce})
                 if k["platform"] == "facebook-grubu" and "#" not in k["id"]:
-                    grup_kaynagi.durum_yaz(k["satir"], f"Otomatik: reddedildi ({gerekce})")
+                    grup_kaynagi.durum_yaz(k["satir"], f"Otomatik: reddedildi ({gerekce})", k["id"])
             continue
         gorulen[_imza(k["ilan"])] = "bu koşu"
         tekil.append(k)
@@ -144,9 +144,9 @@ def yayinla():
     grup_kodlari = {}
     for k, i in yeni:
         if k["platform"] == "facebook-grubu":
-            grup_kodlari.setdefault(k["satir"], []).append(i["kod"])
-    for satir, kodlar in grup_kodlari.items():
-        grup_kaynagi.durum_yaz(satir, "Otomatik: yayınlandı " + ", ".join(kodlar))
+            grup_kodlari.setdefault((k["satir"], k["id"].split("#")[0]), []).append(i["kod"])
+    for (satir, kimlik), kodlar in grup_kodlari.items():
+        grup_kaynagi.durum_yaz(satir, "Otomatik: yayınlandı " + ", ".join(kodlar), kimlik)
     for k, i in yeni:
         bilgi = {"mesaj": k["id"], "platform": k["platform"], "satir": k.get("satir"), "iz": k.get("iz"), "deneme": 0}
         sosyal_paylas(yayinci, durum, i, bilgi, deneme=40)
