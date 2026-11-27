@@ -2,6 +2,26 @@
   "guncelleme": "2026-11-27",
   "ilanlar": [
     {
+      "baslik": "Host / hostes",
+      "ilce": "Ankara geneli",
+      "semt": "Ankara geneli",
+      "calisma": "Tam zamanlı",
+      "vardiya": "",
+      "kategori": "lojistik",
+      "sigorta": true,
+      "yemek": false,
+      "servis": false,
+      "tecrube": null,
+      "ucret": "İşveren beyanı: en az 45.000 TL",
+      "iletisim_tel": [
+        "0538 646 56 32"
+      ],
+      "aciklama": "Ankara'da bir turizm firmasında görev alacak host / hostes aranıyor. İşveren; sigorta imkânı sunduğunu belirtiyor.",
+      "kod": "A-1492",
+      "kaynak": "elle",
+      "tarih": "2026-11-27"
+    },
+    {
       "baslik": "Salon görevlisi",
       "ilce": "Keçiören",
       "semt": "Keçiören",
