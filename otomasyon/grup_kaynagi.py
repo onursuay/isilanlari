@@ -45,7 +45,7 @@ def kalp_atisi():
         return None, v
 
 
-def durum_yaz(satir_no, metin, kimlik):
+def durum_yaz(satir_no, metin, kimlik, ustune=False):
     """H hücresine yazar ve geri okur; dolu hücrenin üzerine yazmaz (ekip elle karar yazmış olabilir).
     Satır numarası kimliğe bağlanır: tablo elle sıralanıp satır kaydıysa kimlik yeniden aranır (27.11.2026)."""
     a = form_kaynagi._sheets(_aralik(f"A{satir_no}")).get("values", [[""]])[0][0]
@@ -56,7 +56,7 @@ def durum_yaz(satir_no, metin, kimlik):
             return False
     hucre = _aralik(f"H{satir_no}")
     mevcut = form_kaynagi._sheets(hucre).get("values", [[""]])[0]
-    if mevcut and mevcut[0].strip():
+    if mevcut and mevcut[0].strip() and not ustune:  # ustune: elle yayında "bekletildi" kaydının yerine geçer
         return False
     form_kaynagi._sheets(hucre + "?valueInputOption=RAW", {"values": [[metin]]}, "PUT")
     return form_kaynagi._sheets(hucre).get("values", [[""]])[0][0] == metin

@@ -170,35 +170,89 @@ def _gun_farki(tarih, bugun):
 
 
 def sosyal_paylas(yayinci, durum, i, bilgi, deneme=40):
-    """Site yayındaysa Facebook + Instagram'da paylaşır; değilse ilanı bekleyen listesine koyar (sonraki koşu yeniden dener).
-    Aynı ilan iki kez paylaşılmaz: 'yayinlanan' kaydı varsa hiçbir şey yapılmaz."""
+    """Site yayındaysa Facebook + Instagram'da paylaşır. Kanal kanal kayıt tutar (27.11.2026): bir kanal hata verirse
+    öteki yine denenir, ilan 'sosyal_bekleyen'de kalır ve sonraki koşu YALNIZ eksik kanalı tamamlar; hata tur sonunda
+    bildirilir. Aynı ilan iki kez paylaşılmaz: 'yayinlanan' kaydı ya da kanalın gönderi bağlantısı varsa o kanal atlanır."""
     kod = i["kod"]
     bekleyen = durum.setdefault("sosyal_bekleyen", {})
     if kod in durum["yayinlanan"]:
         bekleyen.pop(kod, None)
         return True
+    bilgi = bekleyen.get(kod) or bilgi
+    bekleyen[kod] = bilgi  # önce kaydet: kesinti olursa sonraki koşu dener
     gorsel = f"{SITE}/medya/ilan-{kod.lower()}.jpg"
     ilan_adresi = f"{SITE}/ilan/{suzgec_slug(i['baslik'])}-{kod.lower()}"
     if not yayinci.url_bekle(gorsel, deneme, 6) or not yayinci.url_bekle(ilan_adresi, deneme, 6, tur="text/html"):
         bilgi["deneme"] = bilgi.get("deneme", 0) + 1
-        bekleyen[kod] = bilgi
         print(f"  ! {kod}: site henüz yayında değil, sosyal paylaşım sonraki koşuya kaldı (deneme {bilgi['deneme']})")
         if bilgi.get("platform") == "site-formu" and bilgi["deneme"] == 1:
             durum.setdefault("form_islenen", {})[bilgi["mesaj"]] = {"karar": "yayinla", "kod": kod, "iz": bilgi.get("iz"), "sosyal": "bekliyor"}
             form_kaynagi.durum_yaz(bilgi["satir"], f"Otomatik: sitede {kod} olarak eklendi, sosyal paylaşım sonraki koşuda denenecek")
         return False
     metin = yayinci.paylasim_metni(i, ilan_adresi)
-    fb = yayinci.fb_foto(gorsel, metin)
-    ig = yayinci.ig_yayinla(yayinci.ig_hazirla(gorsel, metin))
-    durum["yayinlanan"][kod] = {"facebook": fb.get("link"), "instagram": ig.get("link"), "site": ilan_adresi,
-                                "zaman": datetime.now(toplayici.TR).isoformat(timespec="seconds"), "mesaj": bilgi["mesaj"]}
+    for kanal in ("facebook", "instagram"):
+        if bilgi.get(kanal):
+            continue
+        try:
+            if kanal == "facebook":
+                bilgi["facebook"] = yayinci.fb_foto(gorsel, metin).get("link")
+            else:
+                bilgi["instagram"] = yayinci.ig_yayinla(yayinci.ig_hazirla(gorsel, metin)).get("link")
+        except Exception as e:  # noqa: BLE001 — öteki kanal yine denenir
+            SOSYAL_HATASI.append(f"{kod} {kanal}: {type(e).__name__}: {str(e)[:160]}")
+            print(f"  ! {kod} {kanal} paylaşılamadı, sonraki koşuda yeniden denenecek: {str(e)[:160]}")
+    if not (bilgi.get("facebook") and bilgi.get("instagram")):
+        bilgi["deneme"] = bilgi.get("deneme", 0) + 1
+        return False
+    durum["yayinlanan"][kod] = {"facebook": bilgi["facebook"], "instagram": bilgi["instagram"], "site": ilan_adresi,
+                                "zaman": datetime.now(toplayici.TR).isoformat(timespec="seconds"), "mesaj": bilgi.get("mesaj")}
     bekleyen.pop(kod, None)
-    print(f"  ✓ {kod} → facebook={'var' if fb.get('link') else 'YOK'} instagram={'var' if ig.get('link') else 'YOK'}")
+    print(f"  ✓ {kod} → facebook=var instagram=var")
     if bilgi.get("platform") == "site-formu":
         durum.setdefault("form_islenen", {})[bilgi["mesaj"]] = {"karar": "yayinla", "kod": kod, "iz": bilgi.get("iz")}
-        form_kaynagi.durum_yaz(bilgi["satir"], f"Otomatik: yayınlandı {kod} · {ilan_adresi} · "
-                               f"Facebook {'var' if fb.get('link') else 'YOK'} · Instagram {'var' if ig.get('link') else 'YOK'}")
+        form_kaynagi.durum_yaz(bilgi["satir"], f"Otomatik: yayınlandı {kod} · {ilan_adresi} · Facebook var · Instagram var")
     return True
+
+
+SOSYAL_HATASI = []  # bu koşuda paylaşılamayan kanallar; tur sonunda hata olarak bildirilir (ilan bekleyende kalır)
+
+
+def elle(dosya):
+    """Ekibin/Owner'ın elle onayladığı (hattın bekletiği) ilanı OTOMATİK yayınla AYNI yoldan geçirir:
+    kart → site → Facebook + Instagram (kanal kanal, eksik kanal sonraki koşuda tamamlanır). 27.11.2026.
+    Girdi JSON: {"ilan": {...ilan alanları, "aciklama" isteğe bağlı...}, "not": "...",
+                 "grup": {"kimlik": "G-…", "satir": 22}}  (grup satırına "Elle yayınlandı" yazılır; grupta ONAYLANMAZ)"""
+    import yayinci
+    girdi = json.load(open(dosya, encoding="utf-8"))
+    durum = toplayici.durum_yukle()
+    durum.setdefault("yayinlanan", {})
+    veri = json.load(open(ILANLAR, encoding="utf-8"))
+    bugun = datetime.now(toplayici.TR).strftime("%Y-%m-%d")
+    i = dict(girdi["ilan"])
+    for v in veri["ilanlar"]:
+        if _imza(v) == _imza(i) and _gun_farki(v.get("tarih"), bugun) <= TEKRAR_GUN:
+            raise SystemExit(f"aynı ilan zaten yayında ({v['kod']})")
+    son = max([int(re.sub(r"\D", "", v["kod"])) for v in veri["ilanlar"]] + [int(durum.get("son_kod", 0))]) + 1
+    i.update({"kod": f"A-{son}", "aciklama": i.get("aciklama") or suzgec.aciklama_kur(i), "kaynak": "elle", "tarih": bugun})
+    veri["ilanlar"] = [i] + veri["ilanlar"]
+    veri["guncelleme"] = bugun
+    json.dump(veri, open(ILANLAR, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    durum["son_kod"] = son
+    gecici = os.path.join(KOK, "veri", f"_kart_{i['kod']}.json")
+    json.dump(i, open(gecici, "w", encoding="utf-8"), ensure_ascii=False)
+    calistir(["node", "otomasyon/kart.mjs", gecici, f"medya/ilan-{i['kod'].lower()}.jpg"])
+    os.remove(gecici)
+    calistir(["node", "_uret.mjs"])
+    toplayici.durum_yaz(durum)
+    yollar = ["veri/ilanlar.json", "veri/_hat_durumu.json", "medya", "ilan", "guncel-ilanlar.html", "index.html", "genel-ilanlar.html", "sitemap.xml"]
+    git_yayinla(f"Hat (elle): {i['kod']} yayına alındı", yollar, izlenenler_de=True)
+    sosyal_paylas(yayinci, durum, i, {"mesaj": "elle-" + i["kod"], "platform": "elle", "deneme": 0}, deneme=40)
+    toplayici.durum_yaz(durum)
+    git_yayinla("Hat: yayın kayıtları", ["veri/_hat_durumu.json"])
+    g = girdi.get("grup")
+    if g:
+        grup_kaynagi.durum_yaz(g["satir"], f"Elle yayınlandı {i['kod']} ({girdi.get('not', 'ekip onayı')})", g["kimlik"], ustune=True)
+    print(f"ELLE: {i['kod']} {i['baslik']} · {i['ilce']}")
 
 
 def bekleyen_paylasim(yayinci, durum, veri):
@@ -237,7 +291,10 @@ def sinama():
 
 if __name__ == "__main__":
     mod = sys.argv[1] if len(sys.argv) > 1 else "hazirlik"
-    {"hazirlik": hazirlik, "yayinla": yayinla, "sinama": sinama}[mod]()
+    if mod == "elle":
+        elle(sys.argv[2])
+    else:
+        {"hazirlik": hazirlik, "yayinla": yayinla, "sinama": sinama}[mod]()
     # grup taraması (Mac) bayat ya da hatalıysa tur DÜŞMEZ (öteki kaynaklar çalışıyor); uyarı dosyası VPS
     # çalıştırıcısına bırakılır, o da günde en çok bir kez Telegram'a yazar (27.11.2026)
     uyari = os.environ.get("ILAN_GRUP_UYARI_DOSYA")
@@ -246,5 +303,7 @@ if __name__ == "__main__":
             open(uyari, "w", encoding="utf-8").write(toplayici.GRUP_HATASI)
         elif os.path.exists(uyari):
             os.remove(uyari)
+    if SOSYAL_HATASI:  # paylaşılamayan kanal sonraki koşuda yeniden denenir; tur hata verir ki Telegram'a düşsün
+        raise SystemExit("SOSYAL PAYLAŞIM: " + " | ".join(SOSYAL_HATASI))
     if toplayici.EPOSTA_HATASI:  # öteki kaynaklar işlendi; e-posta kaynağı düştüyse tur hata verir (VPS bildirir)
         raise SystemExit("E-POSTA KAYNAĞI: " + toplayici.EPOSTA_HATASI)

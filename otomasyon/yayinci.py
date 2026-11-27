@@ -63,8 +63,9 @@ def paylasim_metni(i, ilan_adresi):
     cagri = "İşverenin telefonu ve başvuru" if i.get("iletisim_tel") else "Başvuru ve ayrıntılar"
     satirlar += ["", f"{cagri}: {ilan_adresi}", "",
                  f"Ankara'da eleman arıyorsanız ilanınızı ücretsiz yayınlayalım: {SITE}/ilan-ver", ""]
-    etiketler = ["#ankaraişilanı", "#ankara", "#işilanı", "#elemanaranıyor", "#işarayanlar",
-                 "#" + re.sub(r"\s+", "", i["ilce"].lower().replace("İ", "i").replace("I", "ı")) + "işilanları"]
+    etiketler = ["#ankaraişilanı", "#ankara", "#işilanı", "#elemanaranıyor", "#işarayanlar"]
+    if not i["ilce"].startswith("Ankara"):  # "Ankara geneli" ilanında ilçe etiketi kurulmaz (27.11.2026)
+        etiketler.append("#" + re.sub(r"\s+", "", i["ilce"].lower().replace("İ", "i").replace("I", "ı")) + "işilanları")
     return "\n".join(satirlar) + " ".join(etiketler)
 
 
@@ -72,8 +73,12 @@ def fb_foto(gorsel_url, metin, yayinla=True):
     """Facebook sayfasına fotoğraflı gönderi. yayinla=False → yalnız yöneticilerin gördüğü yayınlanmamış gönderi (sınama)."""
     r = _graph(f"{SAYFA_ID}/photos", {"url": gorsel_url, "caption": metin, "published": "true" if yayinla else "false"}, "POST")
     foto_id = r.get("id")
-    okuma = _graph(foto_id, {"fields": "id,link,created_time,page_story_id"})
-    return {"id": foto_id, "link": okuma.get("link"), "gonderi": okuma.get("page_story_id")}
+    try:  # gönderi oluştu; okuma hatası "paylaşılmadı" sayılmasın (yeniden deneme çift paylaşım yapardı, 27.11.2026)
+        okuma = _graph(foto_id, {"fields": "id,link,created_time,page_story_id"})
+    except RuntimeError:
+        okuma = {}
+    return {"id": foto_id, "link": okuma.get("link") or (f"https://www.facebook.com/{foto_id}" if foto_id else None),
+            "gonderi": okuma.get("page_story_id")}
 
 
 def fb_sil(nesne_id):
@@ -95,5 +100,8 @@ def ig_hazirla(gorsel_url, metin, bekle_sn=90):
 
 def ig_yayinla(kapsayici_id):
     s = _graph(f"{IG_ID}/media_publish", {"creation_id": kapsayici_id}, "POST")
-    okuma = _graph(s["id"], {"fields": "id,permalink,timestamp"})
-    return {"id": s["id"], "link": okuma.get("permalink")}
+    try:  # yayın oldu; okuma hatası "paylaşılmadı" sayılmasın (27.11.2026)
+        okuma = _graph(s["id"], {"fields": "id,permalink,timestamp"})
+    except RuntimeError:
+        okuma = {}
+    return {"id": s["id"], "link": okuma.get("permalink") or f"instagram:{s['id']}"}
