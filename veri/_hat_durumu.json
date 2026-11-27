@@ -9,6 +9,209 @@
   }
  },
  "islenen": {
+  "G-00c817d80e2d": {
+   "gerekce": "grup gönderisi 67 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "8e4a1f6b727d0feb",
+   "karar": "reddet",
+   "konusma": "spam",
+   "zaman": "2026-09-20T14:07:00+03:00"
+  },
+  "G-01bc6e1653d9": {
+   "gerekce": "grup gönderisi 63 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "3385d1b6a60503eb",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-09-25T09:41:00+03:00"
+  },
+  "G-05558a31da8b": {
+   "gerekce": "grup gönderisi 40 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "f33563e6e0f72fbb",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-17T23:59:00+03:00"
+  },
+  "G-1482c317db66": {
+   "gerekce": "süzgeçten geçti; 1 ayrımcı ifade metne alınmadı",
+   "iz": "1a292ddc00e4c59c",
+   "karar": "yayinla",
+   "konusma": "spam",
+   "zaman": "2026-11-19T15:15:00+03:00"
+  },
+  "G-17d9dc8856b2": {
+   "gerekce": "grup gönderisi 66 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "58d9a809d5e81da9",
+   "karar": "reddet",
+   "konusma": "spam",
+   "zaman": "2026-09-21T15:50:00+03:00"
+  },
+  "G-21f5f9408941": {
+   "gerekce": "grup gönderisine erişilemiyor (sahibi kısıtlamış ya da silmiş)",
+   "iz": "612e24191b11483b",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-09-23T03:09:00+03:00"
+  },
+  "G-2b8786faee63": {
+   "gerekce": "grup gönderisi 40 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "ac118fac77a0a309",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-18T09:48:00+03:00"
+  },
+  "G-2cac297f99e7": {
+   "gerekce": "grup gönderisine erişilemiyor (sahibi kısıtlamış ya da silmiş)",
+   "iz": "6e3111bd109fb544",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-05T21:07:00+03:00"
+  },
+  "G-4193541cfd27": {
+   "gerekce": "grup gönderisi 34 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "8b6adde6b5ab9308",
+   "karar": "reddet",
+   "konusma": "spam",
+   "zaman": "2026-10-23T17:40:00+03:00"
+  },
+  "G-4244bd6a54c0": {
+   "gerekce": "grup gönderisi 52 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "34e9bc64818d20f6",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-06T10:39:00+03:00"
+  },
+  "G-4481bf6e7a8c": {
+   "gerekce": "ilan görsel veya dosya olarak gönderilmiş (image/jpeg); ekip ilanı elle girmeli",
+   "iz": "e8eb93b6ec6ae0c1",
+   "karar": "beklet",
+   "konusma": "bekleyen",
+   "zaman": "2026-11-12T11:10:00+03:00"
+  },
+  "G-44d06bdf3fe9": {
+   "gerekce": "grup gönderisi 48 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "0205ba4225ce384f",
+   "karar": "reddet",
+   "konusma": "spam",
+   "zaman": "2026-10-09T14:27:00+03:00"
+  },
+  "G-563639b6a888": {
+   "gerekce": "süzgeçten geçti; 1 ayrımcı ifade metne alınmadı",
+   "iz": "db98b28c592e53f5",
+   "karar": "yayinla",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-27T16:02:00+03:00"
+  },
+  "G-60c65341a8b2": {
+   "gerekce": "grup gönderisi 61 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "2a2e68ba5953a7ce",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-09-26T19:28:00+03:00"
+  },
+  "G-6683dda66d8e": {
+   "gerekce": "grup gönderisi 43 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "d7a68fa32d8a685e",
+   "karar": "reddet",
+   "konusma": "spam",
+   "zaman": "2026-10-14T17:37:00+03:00"
+  },
+  "G-732d265024a3": {
+   "gerekce": "grup gönderisine erişilemiyor (sahibi kısıtlamış ya da silmiş)",
+   "iz": "8b5b586fa3744c6d",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-09-21T21:06:00+03:00"
+  },
+  "G-7645681a7354": {
+   "gerekce": "grup gönderisine erişilemiyor (sahibi kısıtlamış ya da silmiş)",
+   "iz": "29bc323fbfdae9c5",
+   "karar": "reddet",
+   "konusma": "spam",
+   "zaman": "2026-09-25T20:22:00+03:00"
+  },
+  "G-8a7faef1c3e1": {
+   "gerekce": "grup gönderisi 39 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "770e96cb4384ca07",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-19T08:37:00+03:00"
+  },
+  "G-8ad6702ae5b5": {
+   "gerekce": "grup gönderisine erişilemiyor (sahibi kısıtlamış ya da silmiş)",
+   "iz": "648b71c5077b803b",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-09-20T23:22:00+03:00"
+  },
+  "G-8cbc9d486ce1": {
+   "gerekce": "grup gönderisi 48 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "6749baf3fc8465a0",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-09T17:10:00+03:00"
+  },
+  "G-8d726e06f035": {
+   "gerekce": "grup gönderisi 60 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "ae9b947a0a493561",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-09-27T19:37:00+03:00"
+  },
+  "G-91b77e94019b": {
+   "gerekce": "grup gönderisi 72 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "d0887e5382ca555c",
+   "karar": "reddet",
+   "konusma": "spam",
+   "zaman": "2026-09-16T10:15:00+03:00"
+  },
+  "G-9e46d04fdf08": {
+   "gerekce": "grup gönderisi 55 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "d3cab01eafd4476b",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-03T10:52:00+03:00"
+  },
+  "G-ae3b4c434ca6": {
+   "gerekce": "süzgeçten geçti; 3 ayrımcı ifade metne alınmadı",
+   "iz": "aad06a8e153a9b34",
+   "karar": "yayinla",
+   "konusma": "spam",
+   "zaman": "2026-11-10T01:12:00+03:00"
+  },
+  "G-baa878ccefc1": {
+   "gerekce": "grup gönderisi 55 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "100f173d4002f506",
+   "karar": "reddet",
+   "konusma": "spam",
+   "zaman": "2026-10-02T16:46:00+03:00"
+  },
+  "G-cbebfe4cd110": {
+   "gerekce": "grup gönderisi 46 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "db35b9818276c7ab",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-12T11:11:00+03:00"
+  },
+  "G-e90883de7436": {
+   "gerekce": "grup gönderisi 41 günlük; 30 günden eski ilan yayınlanmaz",
+   "iz": "3aefed48ab70b8f7",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-10-16T16:44:00+03:00"
+  },
+  "G-f7a9cb9ff10f": {
+   "gerekce": "eksik veya belirsiz: pozisyon, ilçe/semt",
+   "iz": "5727cd5a80516d5c",
+   "karar": "beklet",
+   "konusma": "spam",
+   "zaman": "2026-11-05T10:32:00+03:00"
+  },
+  "G-f81038256378": {
+   "gerekce": "grup gönderisine erişilemiyor (sahibi kısıtlamış ya da silmiş)",
+   "iz": "9846e63536f6cde1",
+   "karar": "reddet",
+   "konusma": "bekleyen",
+   "zaman": "2026-09-21T06:34:00+03:00"
+  },
   "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDQ5NjEyOTAxMzk2OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk3MDg4MzEzNTU2NjIxMDozMzEyNDcxNTU1MDQxNDI4NTM5NDk1NTE0MTI1ODQxMjAzMgZDZD": {
    "gerekce": "ilan metni değil (kısa ya da ilan ifadesi yok)",
    "iz": "afd8cf4559a956fa",
@@ -52,7 +255,7 @@
    "zaman": "2026-11-19T06:39:27+0000"
   }
  },
- "son_kod": 1488,
+ "son_kod": 1491,
  "sosyal_bekleyen": {},
  "yayinlanan": {
   "A-1485": {

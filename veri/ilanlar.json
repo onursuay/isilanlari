@@ -1,6 +1,66 @@
 {
-  "guncelleme": "2026-11-26",
+  "guncelleme": "2026-11-27",
   "ilanlar": [
+    {
+      "baslik": "Salon görevlisi",
+      "ilce": "Keçiören",
+      "semt": "Keçiören",
+      "calisma": "Tam zamanlı",
+      "vardiya": "",
+      "kategori": "yeme-icme",
+      "sigorta": true,
+      "yemek": false,
+      "servis": false,
+      "tecrube": null,
+      "ucret": "",
+      "iletisim_tel": [
+        "0501 182 75 44"
+      ],
+      "kod": "A-1489",
+      "aciklama": "Keçiören bölgesindeki bir işletmede görev alacak salon görevlisi aranıyor. İşveren; sigorta imkânı sunduğunu belirtiyor.",
+      "kaynak": "hat",
+      "tarih": "2026-11-27"
+    },
+    {
+      "baslik": "Ofis destek personeli",
+      "ilce": "Çankaya",
+      "semt": "Çankaya",
+      "calisma": "Tam zamanlı",
+      "vardiya": "",
+      "kategori": "ofis",
+      "sigorta": true,
+      "yemek": true,
+      "servis": false,
+      "tecrube": false,
+      "ucret": "İşveren beyanı: 40.000 TL",
+      "iletisim_tel": [
+        "0542 523 89 02"
+      ],
+      "kod": "A-1490",
+      "aciklama": "Çankaya bölgesindeki bir işletmede görev alacak ofis destek personeli aranıyor. İşveren; sigorta ve yemek imkânı sunduğunu belirtiyor. Tecrübe şartı yok.",
+      "kaynak": "hat",
+      "tarih": "2026-11-27"
+    },
+    {
+      "baslik": "Sıhhi tesisat teknisyeni",
+      "ilce": "Çankaya",
+      "semt": "Söğütözü",
+      "calisma": "Tam zamanlı",
+      "vardiya": "",
+      "kategori": "teknik",
+      "sigorta": false,
+      "yemek": true,
+      "servis": false,
+      "tecrube": null,
+      "ucret": "",
+      "iletisim_tel": [
+        "0539 932 58 62"
+      ],
+      "kod": "A-1491",
+      "aciklama": "Çankaya (Söğütözü) bölgesindeki bir işletmede görev alacak sıhhi tesisat teknisyeni aranıyor. İşveren; yemek imkânı sunduğunu belirtiyor.",
+      "kaynak": "hat",
+      "tarih": "2026-11-27"
+    },
     {
       "baslik": "Baklava ve kadayıf ustası",
       "ilce": "Keçiören",
