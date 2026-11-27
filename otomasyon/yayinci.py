@@ -53,7 +53,7 @@ def url_bekle(adres, deneme=40, aralik=6, tur="image"):
     return False
 
 
-IG_TAKIP = "Güncel iş ilanlarından anında haberdar olmak için @ankaraisilanicom hesabımızı takip edin."
+IG_TAKIP = "Güncel iş ilanlarından anında haberdar olmak için Instagram hesabımızı takip edin."  # Owner metni, 27.11.2026
 
 
 def paylasim_metni(i, ilan_adresi, kanal="facebook"):
